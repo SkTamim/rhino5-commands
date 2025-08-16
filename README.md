@@ -111,7 +111,7 @@ The settings are saved in the registry. To transfer the settings to another comp
 
 ### Practical Use Cases
 * **Use Case 1 (2D Collaboration):** You have designed a 3D ring, but a colleague needs to create a 2D technical drawing in AutoCAD. You would create a scheme that sets "Export surfaces as" to "Curves" and checks "Project to plane." When you export the Top view of your ring using this scheme, the drafter will receive a perfectly flat, clean 2D line drawing.
-* **Use Case 2 (Manufacturing Prep):** A laser engraving machine's software only accepts simple polylines from a DXF file. You would create a scheme where the Curves tab is set to convert all splines to polylines. This ensures the file you send is 100% compatible with the machine.
+* **Use Case 2 (Manufacturing Prep):** A laser engraving machine's software only accepts simple polylines from a DXF file. You would create a scheme where the Curves tab is set to convert all splines to polylines. This ensures the file you send is 100% compatible.
 
 ### Other Information
 This command is essential for any workflow that involves moving data from Rhino to AutoCAD. Creating multiple, named schemes for different tasks (e.g., a "2D for Laser" scheme, a "3D for Engineer" scheme) can save a significant amount of time.
@@ -139,7 +139,7 @@ This command is a direct action and has no options or toggles.
 This command is most powerful when assigned to a keyboard shortcut. This allows you to "walk" your selection along a row of control points very quickly. To see which way the U and V directions are pointing on a surface, use the `Dir` command.
 
 ### Practical Use Cases
-* **Use Case 1 (Walking a Selection):** You have selected a control point and want to select the next one in its row without deselecting the current one. Running `AddNextU` is faster than holding Shift and clicking the next point.
+* **Use Case 1 (Walking a Selection):** You have selected a control point and want to select the next one in its row without deselecting the current one. Running `AddNextU` is faster than holding Shift and clicking the next point, especially if assigned to a keyboard shortcut.
 * **Use Case 2 (Full Row Selection):** To select an entire row of control points, you can select one point in the middle, then repeatedly use `AddNextU` to select to one end, and `AddPrevU` to select to the other.
 
 ### Other Information
@@ -576,39 +576,6 @@ The cylindrical projection creates a "seam" where the two ends of the texture ma
 ### Other Information
 The documentation confirms this command adds a cylindrical texture mapping channel to an object.
 
----
-
-## 20. ApplyDisplacement
-
-### Short Info
-Constructs a displacement display mesh for surfaces, polysurfaces, or meshes.
-
-### Detailed Description
-The **ApplyDisplacement** command is a rendering and display feature that creates a "displacement mesh" on a surface or polysurface. This mesh deforms the object's appearance at render time, using the light and dark values of a texture map to create real, physical-looking bumps, grooves, and details. Unlike a bump map, which is a lighting trick, displacement actually modifies the object's silhouette.
-
-### Steps to use the command
-1.  Select the object you want to apply displacement to.
-2.  In the Properties panel, go to the Displacement section.
-3.  Click "On" and assign a texture map.
-4.  Adjust the settings (Black point, White point).
-5.  Run the command `ApplyDisplacement` to see a preview of the mesh in the viewport.
-
-### Command Options & Toggles
-The options are controlled in the Properties panel:
-* **Texture:** The image map used to drive the displacement.
-* **Black point:** The amount of inward displacement (indentation) caused by black areas of the texture.
-* **White point:** The amount of outward displacement (height) caused by white areas of the texture.
-* **Initial Quality:** Controls the density of the displacement mesh for the viewport preview.
-
-### Note for better use
-Displacement is a memory-intensive effect that is primarily calculated at render time. The viewport preview is a lower-quality approximation. For displacement to show fine details, the underlying object must have a dense render mesh. You can increase this in the Document Properties. After applying displacement, you can use the `ExtractRenderMesh` command to convert the visual displacement effect into a real, editable mesh object that can be 3D printed.
-
-### Practical Use Cases
-* **Use Case 1 (Realistic Textures):** You want to create a realistic, bumpy hammered texture on a ring for a client presentation, without having to manually sculpt every single dent. Find or create a black and white texture map of a hammered pattern. Apply this texture to the ring in the displacement slot. The white areas of the texture will create the raised bumps, giving a highly realistic result in the final render.
-* **Use Case 2 (Complex Patterns):** You need to create a knurled (cross-hatch diamond) pattern on the edge of a bezel. Apply a knurled pattern texture map using displacement. Once you are happy with the look of the preview, use `ExtractRenderMesh` to turn the visual effect into a real, 3D printable mesh.
-
-### Other Information
-The documentation confirms this command constructs a displacement display mesh for surfaces, polysurfaces, or meshes.
 ---
 
 ## 20. ApplyDisplacement
@@ -1598,7 +1565,7 @@ This command is ideal for situations where a simple round fillet is not desired.
 * **Use Case 2 (Blending Sculpted Elements):** You have a sculpted leaf or flower that you have placed on top of a ring, and you want to blend it smoothly into the ring's surface. `BlendEdge` can create a beautiful, flowing transition between the base of the sculpted element and the main surface of the ring.
 
 ### Other Information
-This is an advanced surfacing tool for creating high-quality transitions.
+This is an advanced surfacing tool for creating high-quality transitions between connected edges of a single object.
 
 ---
 
@@ -1632,7 +1599,7 @@ Sometimes a blend surface can twist. This can be caused by the surface normals n
 * **Use Case 2 (Closing Gaps):** You have modeled two parts of a complex, organic bracelet, and there is a gap between them that needs to be filled with a smooth, transitional surface. `BlendSrf` is the ideal tool to bridge the gap between the two surface edges, creating a single, seamless-looking object.
 
 ### Other Information
-Mastering `BlendSrf` is essential for creating high-quality, freeform surfaces.
+Mastering `BlendSrf` is essential for creating high-quality, freeform surfaces between separate objects.
 
 ---
 
@@ -1663,8 +1630,8 @@ The options are in the dialog box:
 A Group is just a simple selection set. A Block is a powerful component definition. If you have 100 copies of a grouped object and need to change one, you have to change all 100 individually. If you have 100 instances of a block, you only need to edit the block definition once, and all 100 will update. Using blocks can also significantly reduce your file size.
 
 ### Practical Use Cases
-* **Use Case 1 (Managing Gemstones):** You are designing a piece with dozens of 1.5mm round diamonds. Model one 1.5mm diamond and turn it into a block named "Diamond_1.5mm". Now, insert instances of this block wherever you need a stone. If you later decide to change the diamond's model (e.g., use a more detailed one for rendering), you only need to edit the one block definition, and all the diamonds in your piece will update instantly.
-* **Use Case 2 (Reusable Components):** You have designed a custom 4-prong setting that you use frequently in your designs. Turn the entire setting into a block. You can then insert this block into any new design. This saves you from having to remodel it every time and ensures consistency across your work.
+* **Use Case 1 (Managing Gemstones):** You are designing a piece with dozens of 1.5mm round diamonds. Model one 1.5mm diamond and turn it into a block named "Diamond_1.5mm". Now, insert instances of this block wherever you need a stone. If you later decide to change the diamond's model, you only need to edit the one block definition, and all the diamonds in your piece will update instantly.
+* **Use Case 2 (Reusable Components):** You have designed a custom 4-prong setting that you use frequently in your designs. Turn the entire setting into a block. You can then insert this block into any new design. This saves you from having to remodel it every time.
 
 ### Other Information
 Blocks are a powerful tool for efficiency, organization, and file size management in complex models.
@@ -1677,7 +1644,7 @@ Blocks are a powerful tool for efficiency, organization, and file size managemen
 Select a block instance to change the block geometry and update the block definition.
 
 ### Detailed Description
-The **BlockEdit** command is the tool used to modify the geometry within a block definition. When you run this command and select a block instance, it temporarily opens a special editing session where only the objects inside that block are visible and editable. Any changes you make (moving, deleting, adding objects) are saved to the block definition. When you exit the editing session, all instances of that block throughout your model will update to reflect your changes.
+The **BlockEdit** command is the tool used to modify the geometry within a block definition. When you run this command and select a block instance, it temporarily opens a special editing session where only the objects inside that block are visible and editable. Any changes you make are saved to the block definition. When you exit the editing session, all instances of that block throughout your model will update to reflect your changes.
 
 ### Steps to use the command
 1.  Run the command `BlockEdit`.
@@ -1696,7 +1663,7 @@ The options are in the initial dialog box:
 While in block edit mode, you can add new objects to the block or delete existing ones. You can also change the block's base point while in the editing session.
 
 ### Practical Use Cases
-* **Use Case 1 (Changing Gem Proportions):** You have used a block for all the 1.5mm diamonds in your model. You now decide that the pavilion (bottom part) of the diamond model is too deep. Run `BlockEdit` on any one of the diamond instances. In the editing session, scale the pavilion to make it shallower. When you exit, all the diamonds in your entire piece will update with the new proportions.
+* **Use Case 1 (Changing Gem Proportions):** You have used a block for all the 1.5mm diamonds in your model. You now decide that the pavilion of the diamond model is too deep. Run `BlockEdit` on any one of the diamond instances. In the editing session, scale the pavilion to make it shallower. When you exit, all the diamonds in your entire piece will update.
 * **Use Case 2 (Modifying a Setting):** You have used your custom 4-prong setting block in a new design, but for this particular ring, the prongs need to be slightly thicker. Use `BlockEdit` to open the setting's block definition. Thicken the prongs. When you exit, the setting in your current design will be updated.
 
 ### Other Information
@@ -1727,7 +1694,7 @@ The options are the buttons within the dialog box:
 * **Count:** Reports how many instances of the selected block are in the model.
 
 ### Note for better use
-You can create blocks that are linked to an external Rhino file. This is very powerful for team collaboration. If one person updates the external file (e.g., changes the design of a standard clasp), everyone else using that linked block will be notified in the `BlockManager` that an update is available. If you have deleted all instances of a block, its definition still exists in the file. You can use the `Purge` command or the `Delete` button in the `BlockManager` to remove these unused definitions and reduce file size.
+You can create blocks that are linked to an external Rhino file. This is very powerful for team collaboration. If one person updates the external file (e.g., changes the design of a standard clasp), everyone else using that linked block will be notified in the `BlockManager` that an update is available. If you have deleted all instances of a block, its definition still exists in the file. You can use the `Purge` command or the `Delete` button in the `BlockManager` to remove these unused definitions.
 
 ### Practical Use Cases
 * **Use Case 1 (Stone Counting):** You are preparing a file for a client and want to see how many of each size of gemstone are used in the design. Open `BlockManager`. It will list all of your gemstone blocks (e.g., "Diamond_1.5mm", "Sapphire_3mm"). By selecting each one and clicking "Count," you can quickly generate an accurate stone count for the entire piece.
@@ -2129,29 +2096,35 @@ This is a window management tool, not a modeling tool.
 Create a control cage object used by the CageEdit command to deform other objects.
 
 ### Detailed Description
-The **Cage** command creates a special "control cage" object. This cage, which can be a box, sphere, or other shape, is not part of your final model. Instead, it is used by the `CageEdit` command as a tool to smoothly deform other objects. You create the cage around the geometry you want to edit, and then you manipulate the control points of the cage to push, pull, and twist the geometry inside it.
+The **Cage** command is the first step in a powerful two-part free-form modeling process. Its purpose is to create a "control object" or "cage" that surrounds the geometry you intend to deform. This cage is a simpler object (like a box, sphere, or even a custom shape) with its own set of control points. This cage does not become part of your final model; it acts only as a deformation tool. Once the cage is created, you use the `CageEdit` command to link it to your target geometry.
 
 ### Steps to use the command
 1.  Run the command `Cage`.
 2.  The command line will show several options for the shape of the cage.
 3.  Select an option (e.g., `BoundingBox`).
-4.  Follow the prompts to define the cage object. For `BoundingBox`, you would select the objects to be deformed.
-5.  A new cage object with its own control points will be created around your selected geometry.
+4.  Follow the prompts to define the cage object. For the `BoundingBox` option, you will be prompted to select the objects you want to deform.
+5.  After defining the cage, you will be prompted to define the number of control points and the degree for the X, Y, and Z directions.
+6.  A new cage object with its own control points will be created around your selected geometry.
 
 ### Command Options & Toggles
-* **BoundingBox:** Creates a cage that is the same size as the bounding box of selected objects.
-* **Line, Rectangle, Box, Sphere, etc.:** Allows you to create a cage with a specific primitive shape.
-* **Deformable:** Creates a NURBS cage instead of a simple cage object.
+* **BoundingBox:** Creates a cage that is the same size as the bounding box of the object(s) you select.
+* **Line:** Creates a cage from a line.
+* **Rectangle:** Creates a planar rectangular cage.
+* **Box:** Allows you to draw a box-shaped cage by defining its corners and height.
+* **Sphere:** Creates a spherical cage.
+* **Cylinder:** Creates a cylindrical cage.
+* **Deformable:** Creates a NURBS cage instead of a simple cage object, offering more editing flexibility.
+* **PointCount:** (Appears after defining the cage shape) Sets the number of control points in the U, V, and W (or X, Y, Z) directions.
+* **Degree:** (Appears after defining the cage shape) Sets the mathematical degree for the cage in the U, V, and W directions.
 
 ### Note for better use
-`Cage` only creates the control object. The actual deformation is done with the `CageEdit` command. You can define the number of control points in the X, Y, and Z directions when you create the cage. More points allow for more detailed deformation, while fewer points create a smoother, more global deformation.
+The number of control points and the degree you choose for the cage are very important. Fewer points and a lower degree will result in a smoother, more global deformation. More points and a higher degree will allow for more detailed, localized changes to the captive object. `Cage` only creates the control object; the actual deformation is done with the `CageEdit` command.
 
 ### Practical Use Cases
-* **Use Case 1 (Pinching a Shank):** You have a simple, straight-sided ring shank and you want to create a gentle, organic "pinch" or taper in the middle. Create a `Box` cage around the ring shank. Use `CageEdit` to associate the ring with the cage. Then, select the control points in the middle of the cage and scale them inward. The ring shank inside will deform smoothly.
-* **Use Case 2 (Adding Swell):** You have a flat pendant and want to make it swell out in the middle, like it was inflated. Create a cage around the pendant. Use `CageEdit`, and then pull the control points on the top and bottom of the cage outward. The flat pendant will deform into a smooth, domed shape.
+* **Use Case 1 (Preparing to Deform):** You have a finished, complex ring model and want to make it slightly wider in the middle. Before you can use `CageEdit`, you must first create the cage. You would run `Cage`, select the `BoundingBox` option, select your ring, and then define the number of control points for the cage (e.g., 4 in each direction) to create the deformation tool.
 
 ### Other Information
-This command is the first step in a powerful two-step free-form deformation process.
+This command is always the first step. You cannot use `CageEdit` without first creating a control object with `Cage`.
 
 ---
 
@@ -2161,32 +2134,98 @@ This command is the first step in a powerful two-step free-form deformation proc
 Deform objects smoothly using control cage objects.
 
 ### Detailed Description
-The **CageEdit** command is the second part of the cage editing process. It associates a "captive" object (the geometry you want to deform) with a "control" object (the cage you created with the `Cage` command). Once the association is made, you can turn on the control points for the cage and move them. As you move the cage's control points, the captive geometry inside will be smoothly and organically deformed.
+The **CageEdit** command is the second, active part of the cage editing process. It establishes a link between a "captive" object (the geometry you want to deform) and a "control" object (the cage you created with the `Cage` command). Once this association is made, you can turn on the control points for the cage and manipulate them. As you move, scale, or rotate the cage's control points, the captive geometry inside will be smoothly and organically deformed, following the influence of the cage.
 
 ### Steps to use the command
-1.  Run the command `CageEdit`.
-2.  At the **Select captive object(s)** prompt, select the geometry you want to deform (e.g., your ring) and press Enter.
-3.  At the **Select control object** prompt, select the cage you created earlier.
-4.  The association is now active.
-5.  Select the cage object and turn on its control points (F10).
-6.  Move, scale, or rotate the cage's control points to deform the captive object.
+1.  Select the captive object (object to edit).
+2.  Select or create a control object.
+3.  Define the region to edit.
 
 ### Command Options & Toggles
-* **Region to edit:** Allows you to define a falloff distance so that the deformation is localized to a specific area.
+* **Options for control object:** (These are available when prompted to "Select control object")
+    * **BoundingBox:** Uses the captive objects' bounding box to create the cage.
+        * **CoordinateSystem:** (Sub-option) Defines the orientation of the bounding box (CPlane or World coordinates).
+    * **Line:** Allows you to draw a line to be used as the control object.
+    * **Rectangle:** Allows you to draw a plane to be used as a control object.
+    * **Box:** Allows you to draw a box to be used as a control object.
+
+* **Deformation Options:**
+    * **Accurate:** Slower to update but may result in denser, more accurate surfaces when deformed objects are refit.
+    * **Fast:** Creates surfaces with fewer control points, which is faster but less accurate.
+    * **PreserveStructure (Yes/No):**
+        * **Yes:** Preserves the control point structure of the surface. Deformation may be less accurate if there are too few control points on the object.
+        * **No:** Objects are refit as needed with more control points to allow accurate deformation.
+
+* **Region options:**
+    * **Global:** Objects are deformed throughout 3-D space. The influence of the control object is not limited.
+    * **Local:** Allows you to specify a **Falloff** distance from the control object where the deformation effect fades to zero.
+    * **Other:** Allows you to define a box, sphere, or cylinder that limits the influence of the control object.
+
+* **Cage points:** (Appears after defining a new cage shape within the command)
+    * **XPointCount / YPointCount / ZPointCount:** Sets the number of control points in each direction.
+    * **XDegree / YDegree / ZDegree:** Sets the mathematical degree in each direction.
 
 ### Note for better use
-When you are finished deforming the object, you can use the `ReleaseFromCage` command to break the link between the captive and control objects. You can have a single cage control multiple captive objects at the same time.
+Cage editing allows smooth deformation of surfaces with dense control points. Polysurfaces are not broken apart at the seams by CageEdit deformation. When you are finished deforming an object, you can use the `ReleaseFromCage` command to break the link.
 
 ### Practical Use Cases
-* **Use Case 1 (Tapering a Bezel):** You have a straight-walled bezel and want to give it a slight, smooth taper. Create a box cage around the bezel. Use `CageEdit` to link them. Turn on the cage's control points, select the entire top row of points, and use the 2D scale command to shrink them slightly. The bezel will deform into a perfect, smooth taper.
-* **Use Case 2 (Asymmetrical Shapes):** You have a perfectly symmetrical pendant and want to give it a more handmade, asymmetrical look by twisting it slightly. Create a cage around the pendant and link them with `CageEdit`. Select one side of the cage's control points and rotate them slightly. The pendant inside will twist and deform in a very smooth, organic way.
+* **Use Case 1 (Tapering a Bezel):** You have a straight-walled bezel. Run `CageEdit`, select the bezel as captive, then choose the `BoundingBox` option to create the control cage. Once the link is made, turn on the cage's control points, select the entire top row of points, and use the 2D scale command to shrink them slightly. The bezel will deform into a perfect, smooth taper.
+* **Use Case 2 (Asymmetrical Shapes):** You have a perfectly symmetrical pendant and want to give it a more handmade, asymmetrical look. Use `CageEdit` with a `BoundingBox` control. Select one side of the cage's control points and rotate them slightly. The pendant inside will twist and deform in a very smooth, organic way.
 
 ### Other Information
-This is a powerful free-form modeling technique for creating complex, organic shapes.
+The `CageEdit` command has a built-in `History` connection, regardless of the global History setting. This means that if you edit the control object (the cage) after the initial deformation, the captive object will continue to update.
 
 ---
 
-## 71. Calc
+## 71. CageEdit
+
+### Short Info
+Deform objects smoothly using control cage objects.
+
+### Detailed Description
+(This is a duplicate entry in the source documentation list, pointing to the same command as #70). The **CageEdit** command is a powerful free-form deformation tool that allows you to modify complex objects ("captives") by manipulating the control points of a simpler "control" object. The control object, or cage, can be an existing curve or surface, or it can be a primitive shape like a box, sphere, or line that you create within the command itself. Once the captive object is associated with the control cage, moving the cage's control points will smoothly and organically deform the captive geometry inside.
+
+### Steps to use the command
+1.  Select the captive object (object to edit).
+2.  Select or create a control object.
+3.  Define the region to edit.
+
+### Command Options & Toggles
+* **Options for control object:** (These are available when prompted to "Select control object")
+    * **BoundingBox:** Uses the captive objects' bounding box to create the cage.
+        * **CoordinateSystem:** (Sub-option) Defines the orientation of the bounding box (CPlane or World coordinates).
+    * **Line:** Allows you to draw a line to be used as the control object.
+    * **Rectangle:** Allows you to draw a plane to be used as a control object.
+    * **Box:** Allows you to draw a box to be used as a control object.
+
+* **Deformation Options:**
+    * **Accurate:** Slower to update but may result in denser, more accurate surfaces when deformed objects are refit.
+    * **Fast:** Creates surfaces with fewer control points, which is faster but less accurate.
+    * **PreserveStructure (Yes/No):**
+        * **Yes:** Preserves the control point structure of the surface. Deformation may be less accurate if there are too few control points on the object.
+        * **No:** Objects are refit as needed with more control points to allow accurate deformation.
+
+* **Region options:**
+    * **Global:** Objects are deformed throughout 3-D space.
+    * **Local:** Allows you to specify a **Falloff** distance.
+    * **Other:** Allows you to define a box, sphere, or cylinder that limits the influence.
+
+* **Cage points:** (Appears after defining a new cage shape within the command)
+    * **XPointCount / YPointCount / ZPointCount:** Sets the number of control points in each direction.
+    * **XDegree / YDegree / ZDegree:** Sets the mathematical degree in each direction.
+
+### Note for better use
+When you are finished deforming an object, you can use the `ReleaseFromCage` command to break the link.
+
+### Practical Use Cases
+* **Use Case 1 (Adding Organic Swell):** You have a flat signet ring top and want to make it swell out in the middle, like it was inflated. Use `CageEdit` with a `Box` control cage. After linking them, pull the control points on the top of the cage upward. The flat top will deform into a smooth, domed shape.
+
+### Other Information
+This entry is a duplicate of command #70.
+
+---
+
+## 72. Calc
 
 ### Short Info
 Open the on-screen calculator.
@@ -2212,7 +2251,7 @@ This is a simple convenience utility.
 
 ---
 
-## 72. CalcRPN
+## 73. CalcRPN
 
 ### Short Info
 Open the on-screen Reverse Polish Notation calculator.
@@ -2238,7 +2277,7 @@ This is a specialized utility for a specific type of user.
 
 ---
 
-## 73. Camera
+## 74. Camera
 
 ### Short Info
 Show, hide, and toggle the visibility of the viewport camera.
@@ -2270,7 +2309,7 @@ This is a key tool for advanced camera control, animations, and setting up preci
 
 ---
 
-## 74. Cancel
+## 75. Cancel
 
 ### Short Info
 Cancel the current command and deselects objects.
@@ -2296,7 +2335,7 @@ For daily interactive use, always use the Esc key instead of typing this command
 
 ---
 
-## 75. Cap
+## 76. Cap
 
 ### Short Info
 Fill planar openings with a surface joined to the hole edge.
@@ -2324,7 +2363,7 @@ This is a very fast and efficient way to close simple, flat openings in objects.
 
 ---
 
-## 76. Chamfer
+## 77. Chamfer
 
 ### Short Info
 Create a line segment between two curves.
@@ -2355,7 +2394,7 @@ This is a basic 2D drawing tool for creating beveled corners.
 
 ---
 
-## 77. ChamferEdge
+## 78. ChamferEdge
 
 ### Short Info
 Create a ruled surface at polysurface edges.
@@ -2386,7 +2425,7 @@ This is a fundamental tool for detailing and finishing solid models.
 
 ---
 
-## 78. ChamferSrf
+## 79. ChamferSrf
 
 ### Short Info
 Create a chamfer surface between two surfaces.
@@ -2418,7 +2457,7 @@ For most jewelry modeling where you are working with a single solid, `ChamferEdg
 
 ---
 
-## 79. ChangeDegree
+## 80. ChangeDegree
 
 ### Short Info
 Change the degree of a curve or surface.
@@ -2447,13 +2486,13 @@ This is an advanced tool for users who need precise control over the mathematica
 
 ---
 
-## 80. ChangeLayer
+## 81. ChangeLayer
 
 ### Short Info
 Change an object's layer.
 
 ### Detailed Description
-The **ChangeLayer** command moves one or more selected objects to a different layer. Layers are the primary method for organizing a Rhino model. This command opens a dialog box that lists all the layers in your model, allowing you to choose the destination layer for the selected objects.
+The **ChangeLayer** command moves one or more selected objects to a different layer. Layers are the primary method for organizing a Rhino model, allowing you to control the visibility, color, and other properties of groups of objects. This command opens a dialog box that lists all the layers in your model, allowing you to choose the destination layer for the selected objects.
 
 ### Steps to use the command
 1.  Select the object(s) you want to move.
@@ -2466,18 +2505,18 @@ The **ChangeLayer** command moves one or more selected objects to a different la
 The options are the buttons within the dialog box, allowing you to select a layer or create a new one.
 
 ### Note for better use
-There are several ways to change an object's layer. You can also right-click on the layer in the Layer panel and choose "Change Object Layer," or use the pie menu in Matrix. The `ChangeLayer` command is simply the typed-command method.
+There are several ways to change an object's layer. You can also right-click on the layer in the Layer panel and choose "Change Object Layer," or use the pie menu in Matrix. The `ChangeLayer` command is simply the typed-command method for users who prefer it.
 
 ### Practical Use Cases
-* **Use Case 1 (Organization):** You have just created a set of prongs for a ring. To keep your model organized, you select the new prongs, run `ChangeLayer`, and move them to your "Prongs" layer.
-* **Use Case 2 (Correcting Mistakes):** You realize you accidentally created a gemstone on your "Metal" layer. You select the gemstone, run `ChangeLayer`, and move it to the correct "Gems" layer.
+* **Use Case 1 (Organization):** You have just created a set of prongs for a ring. To keep your model organized, you select the new prongs, run `ChangeLayer`, and move them to your "Prongs" layer. This allows you to hide or show all prongs at once.
+* **Use Case 2 (Correcting Mistakes):** You realize you accidentally created a gemstone on your "Metal" layer. You select the gemstone, run `ChangeLayer`, and move it to the correct "Gems" layer to ensure it has the right appearance and properties.
 
 ### Other Information
 Proper layer management is one of the most important habits for efficient and professional CAD modeling.
 
 ---
 
-## 81. ChangeToCurrentLayer
+## 82. ChangeToCurrentLayer
 
 ### Short Info
 Change an object's layer to the current layer.
@@ -2495,23 +2534,23 @@ The **ChangeToCurrentLayer** command is a faster alternative to `ChangeLayer`. I
 This command has no options. It is an immediate action.
 
 ### Note for better use
-This command is very efficient and is often assigned to a custom toolbar button or keyboard shortcut for rapid layer organization.
+This command is very efficient and is often assigned to a custom toolbar button or keyboard shortcut for rapid layer organization. It streamlines the process of layer management by removing the need to select a layer from a list.
 
 ### Practical Use Cases
 * **Use Case 1 (Fast Workflow):** You are modeling a ring and are currently working on the "Shank" layer. You create a new curve that will be part of the shank. Since the "Shank" layer is already active, you can simply select the curve, run this command, and it will be moved instantly without any extra clicks.
 
 ### Other Information
-This command streamlines the process of layer management by removing the need to select a layer from a list.
+This is a simple but very effective command for speeding up your organizational workflow.
 
 ---
 
-## 82. Check
+## 83. Check
 
 ### Short Info
 Inspect an object for errors.
 
 ### Detailed Description
-The **Check** command is a diagnostic tool that examines the data structure of a selected object for any internal errors, corruption, or invalid geometry. If it finds a problem, it will report it in the command history. This is an important tool for troubleshooting problematic objects that are failing in other commands.
+The **Check** command is a diagnostic tool that examines the data structure of a selected object for any internal errors, corruption, or invalid geometry. If it finds a problem, it will report it in the command history. This is an important tool for troubleshooting problematic objects that are failing in other commands, especially boolean operations.
 
 ### Steps to use the command
 1.  Select the object you want to check.
@@ -2533,7 +2572,7 @@ This is a key diagnostic tool for maintaining a healthy and error-free model.
 
 ---
 
-## 83. CheckInLicense
+## 84. CheckInLicense
 
 ### Short Info
 Return a license to the Zoo.
@@ -2560,7 +2599,7 @@ This is purely a license administration command.
 
 ---
 
-## 84. CheckNewObjects
+## 85. CheckNewObjects
 
 ### Short Info
 Turn on checking of new objects.
@@ -2580,15 +2619,15 @@ This command is a simple toggle between **Enabled** and **Disabled**.
 While this can be useful for catching errors early, leaving this feature on all the time can slightly slow down your workflow, as every object creation has to go through a validation check. It's often used as a temporary diagnostic tool rather than a permanent setting.
 
 ### Practical Use Cases
-* **Use Case 1 (Troubleshooting a Bad Import):** You are importing a complex IGES file that is known to have some problematic surfaces. Before importing, you can enable `CheckNewObjects`. As Rhino imports the file, it will alert you to each individual bad surface as it is created, making it much easier to find and fix them.
-* **Use Case 2 (Diagnosing a Failing Command):** You are using a complex command that is creating bad objects. You can turn on `CheckNewObjects` to get an immediate warning the moment the bad geometry is created, helping you to diagnose the problem with the command's inputs or settings.
+* **Use Case 1 (Troubleshooting Imports):** You are importing a complex IGES file that is known to have some problematic surfaces. Before importing, you can enable `CheckNewObjects`. As Rhino imports the file, it will alert you to each individual bad surface as it is created, making it much easier to find and fix them.
+* **Use Case 2 (Diagnosing Failing Commands):** You are using a complex command that is creating bad objects. You can turn on `CheckNewObjects` to get an immediate warning the moment the bad geometry is created, helping you to diagnose the problem with the command's inputs or settings.
 
 ### Other Information
 This is an advanced diagnostic tool for pinpointing the source of bad geometry.
 
 ---
 
-## 85. CheckOutLicense
+## 86. CheckOutLicense
 
 ### Short Info
 Check out a license from the Zoo.
@@ -2615,7 +2654,7 @@ This is purely a license administration command for network license users.
 
 ---
 
-## 86. Circle
+## 87. Circle
 
 ### Short Info
 Draw a circle from center and radius.
@@ -2648,7 +2687,7 @@ This is one of the most frequently used commands in any form of CAD design.
 
 ---
 
-## 87. ClearAllMeshes
+## 88. ClearAllMeshes
 
 ### Short Info
 Clear all analysis and display meshes.
@@ -2674,7 +2713,7 @@ This is a file maintenance utility, not a modeling command.
 
 ---
 
-## 88. ClearDrawOrder
+## 89. ClearDrawOrder
 
 ### Short Info
 Return the curve draw order to the default.
@@ -2700,7 +2739,7 @@ This is a utility for managing the 2D display of curves.
 
 ---
 
-## 89. ClearUndo
+## 90. ClearUndo
 
 ### Short Info
 Clear the undo buffer.
@@ -2727,7 +2766,7 @@ This is a system utility for managing memory usage in extreme situations.
 
 ---
 
-## 90. ClippingPlane
+## 91. ClippingPlane
 
 ### Short Info
 Create a clipping plane object that represents a plane for visibly clipping away geometry in a viewport.
@@ -2755,3 +2794,251 @@ You can move, copy, and rotate the clipping plane object like any other piece of
 
 ### Other Information
 This is a powerful visualization tool for inspecting and presenting the internal structure of solid models.
+
+---
+
+## 92. CloseCrv
+
+### Short Info
+Close an open curve.
+
+### Detailed Description
+The **CloseCrv** command closes an open curve by creating a straight line segment between its start and end points. This is a fundamental command for turning an open profile into a closed, continuous loop, which is often a requirement for creating solid objects.
+
+### Steps to use the command
+1.  Select one or more open curves.
+2.  Run the command `CloseCrv`.
+3.  A straight line segment will be added connecting the start and end of each selected curve.
+
+### Command Options & Toggles
+This command has no options. It is an immediate action.
+
+### Note for better use
+This command always adds a straight line. If you need a smooth, curved connection to close a curve, you should use the `BlendCrv` command and then `Join` the result. `CloseCrv` will create a sharp corner (a kink) at the new segment if the start and end tangents are not aligned.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for Extrusion):** You have drawn the profile of a ring shank, but you left a small gap between the start and end points. Before you can `ExtrudeCrv` to create a solid, the curve must be closed. `CloseCrv` will quickly bridge that gap, making the profile ready for extrusion.
+* **Use Case 2 (Creating Planar Surfaces):** You have traced an outline for a flat pendant, and you want to turn it into a surface using `PlanarSrf`. The `PlanarSrf` command requires a closed, planar curve. If your trace is open, `CloseCrv` is the first step to making it a valid boundary for the surface.
+
+### Other Information
+This is a simple but essential command for preparing 2D geometry for 3D modeling operations.
+
+---
+
+## 93. CloseRenderWindow
+
+### Short Info
+Close the render window.
+
+### Detailed Description
+The **CloseRenderWindow** command closes the window that displays the results of a render. This is a simple utility command for managing the windows on your screen.
+
+### Steps to use the command
+1.  Run the command `CloseRenderWindow`.
+2.  The render window, if open, will be closed.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is equivalent to clicking the "X" button on the render window's title bar. It is most useful when included in scripts or macros.
+
+### Practical Use Cases
+* **Use Case 1 (Scripting):** You are writing a macro that creates a render, saves the image, and then cleans up the workspace. You would include `CloseRenderWindow` at the end of the macro to automatically close the render window after the image has been saved.
+
+### Other Information
+This is purely a window management command.
+
+---
+
+## 94. ClosestPt
+
+### Short Info
+Create a point object on an object at the closest location to a picked point.
+
+### Detailed Description
+The **ClosestPt** command is an analysis and object creation tool. It finds the point on a curve, surface, or mesh that is geometrically closest to a specified location in space, and it places a new point object at that location. It also reports the coordinates of this closest point in the command history.
+
+### Steps to use the command
+1.  Run the command `ClosestPt`.
+2.  At the **Select object for closest point** prompt, select the curve or surface.
+3.  At the **Point to test for** prompt, click a location in space.
+4.  A new point object will be created on the selected object.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is very useful for finding the exact point of perpendicularity from a location to an object, as the closest point will always lie along a line that is normal (perpendicular) to the curve or surface at that spot.
+
+### Practical Use Cases
+* **Use Case 1 (Positioning a Prong):** You have a curved ring shank and a prong that you need to place on the surface, directly underneath a gemstone. You can run `ClosestPt`, select the ring shank as the object, and then snap to the center of the gemstone for the "point to test for." The command will create a point on the shank's surface that is the precise location for the base of your prong.
+* **Use Case 2 (Measuring Clearance):** You have two complex, non-parallel surfaces and need to find the minimum distance between them. You can create a point on one surface, then use `ClosestPt` to find the corresponding closest point on the second surface. The distance between these two new points is the minimum clearance.
+
+### Other Information
+This is a powerful tool for precision modeling and analysis.
+
+---
+
+## 95. CloseViewport
+
+### Short Info
+Close the active viewport.
+
+### Detailed Description
+The **CloseViewport** command closes the currently active viewport. This is a viewport management utility.
+
+### Steps to use the command
+1.  Make the viewport you want to close active by clicking in it.
+2.  Run the command `CloseViewport`.
+3.  The active viewport will be closed, and the remaining viewports will resize to fill the space.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+You can restore the default layout at any time by using the `4View` command.
+
+### Practical Use Cases
+* **Use Case 1 (Customizing Workspace):** You are working on a 2D pattern and have no need for the Perspective or Right viewports. You can close them to create a larger workspace for the Top and Front views.
+
+### Other Information
+This is a simple workspace customization tool.
+
+---
+
+## 96. CollapseMeshEdge
+
+### Short Info
+Merge the two vertices of a mesh edge.
+
+### Detailed Description
+The **CollapseMeshEdge** command is a low-level mesh editing tool that merges the two vertices at the ends of a selected mesh edge into a single vertex at the edge's midpoint. This action also removes any mesh faces that rely on that edge, effectively simplifying the mesh topology.
+
+### Steps to use the command
+1.  Run the command `CollapseMeshEdge`.
+2.  At the **Select a mesh edge to collapse** prompt, click on a mesh edge.
+3.  The edge will collapse to its midpoint.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a destructive editing tool that permanently alters the structure of the mesh. It is often used as part of a manual "polygon reduction" workflow to simplify a mesh.
+
+### Practical Use Cases
+* **Use Case 1 (Manual Mesh Retopology):** You have a very dense mesh from a 3D scan and you are manually cleaning it up to reduce the polygon count. `CollapseMeshEdge` can be used to strategically remove edges in flat areas to simplify the geometry without significantly changing the overall shape.
+
+### Other Information
+This is an advanced tool for users who are doing detailed mesh editing.
+
+---
+
+## 97. CollapseMeshFace
+
+### Short Info
+Merge the vertices of a mesh face to a single vertex.
+
+### Detailed Description
+The **CollapseMeshFace** command is a low-level mesh editing tool that takes a single selected mesh face and merges all of its vertices into a single new vertex located at the face's center. This effectively deletes the original face and any adjacent faces that share all of its vertices.
+
+### Steps to use the command
+1.  Run the command `CollapseMeshFace`.
+2.  At the **Select a mesh face to collapse** prompt, click on a mesh face.
+3.  The face will collapse to a single point.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a more aggressive simplification tool than `CollapseMeshEdge`. It is useful for quickly removing small, problematic faces or for terminating edge loops in complex meshes.
+
+### Practical Use Cases
+* **Use Case 1 (Removing Small Artifacts):** After a boolean operation on a mesh, you are sometimes left with tiny, sliver-like triangular faces. `CollapseMeshFace` can be used to select one of these tiny faces and instantly collapse it, cleaning up the area.
+
+### Other Information
+This is an advanced tool for users who are doing detailed mesh editing.
+
+---
+
+## 98. CollapseMeshFacesByArea
+
+### Short Info
+Collapse small mesh faces.
+
+### Detailed Description
+The **CollapseMeshFacesByArea** command is an automated mesh simplification tool. It finds all mesh faces that have an area smaller than a value you specify and collapses them. This is a way to automatically clean up a mesh by removing tiny, unnecessary polygons.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `CollapseMeshFacesByArea`.
+3.  At the **Area less than** prompt, type a small number and press Enter.
+4.  All faces with an area smaller than that value will be collapsed.
+
+### Command Options & Toggles
+The only option is the area value you enter.
+
+### Note for better use
+Start with a very small number and gradually increase it. If you enter too large a value, you can accidentally delete important details from your mesh. Always work on a copy of your mesh when using automated clean-up tools.
+
+### Practical Use Cases
+* **Use Case 1 (Automated Mesh Cleanup):** You have a complex mesh that resulted from a messy boolean operation or a 3D scan. It is likely full of thousands of tiny, invisible faces that add to the file size but not to the detail. Running this command with a small tolerance can automatically remove this "mesh noise."
+
+### Other Information
+This is a powerful but potentially destructive automated tool for mesh simplification.
+
+---
+
+## 99. CollapseMeshFacesByAspectRatio
+
+### Short Info
+Collapse long skinny mesh faces.
+
+### Detailed Description
+The **CollapseMeshFacesByAspectRatio** command is an automated mesh simplification tool that finds and collapses mesh faces that are long and skinny. The "aspect ratio" is a measure of how elongated a shape is. This command is useful for cleaning up meshes that have long, thin, sliver-like polygons, which can sometimes cause problems in 3D printing or other applications.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `CollapseMeshFacesByAspectRatio`.
+3.  At the **Aspect ratio greater than** prompt, type a number (e.g., 10 for faces that are 10 times longer than they are wide) and press Enter.
+4.  All faces with an aspect ratio greater than that value will be collapsed.
+
+### Command Options & Toggles
+The only option is the aspect ratio value you enter.
+
+### Note for better use
+Like `CollapseMeshFacesByArea`, start with a high number and work your way down. A value between 5 and 10 is often a good starting point for cleaning up typical sliver faces.
+
+### Practical Use Cases
+* **Use Case 1 (Fixing Bad Triangulation):** When a NURBS surface is converted to a mesh, sometimes long, thin triangles are created, especially in areas where trimmed edges are close together. This command can automatically find and remove these problematic sliver faces.
+
+### Other Information
+This is another automated tool for cleaning and simplifying complex meshes.
+
+---
+
+## 100. CollapseMeshFacesByEdgeLength
+
+### Short Info
+Collapse mesh faces with short edges.
+
+### Detailed Description
+The **CollapseMeshFacesByEdgeLength** command is an automated mesh simplification tool. It finds all mesh faces that have edges shorter than a value you specify and collapses them. This is another method for automatically cleaning up a mesh by removing polygons that are too small to contribute meaningful detail.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `CollapseMeshFacesByEdgeLength`.
+3.  At the **Edge length less than** prompt, type a small number (in your current model units) and press Enter.
+4.  All faces with edges shorter than that value will be collapsed.
+
+### Command Options & Toggles
+The only option is the edge length value you enter.
+
+### Note for better use
+This command is very useful for removing "mesh dust" - tiny, disconnected mesh fragments that have very short edges. Be careful not to set the length too high, or you will start to lose important details in your model.
+
+### Practical Use Cases
+* **Use Case 1 (Post-Boolean Cleanup):** After a complex boolean operation, small slivers and fragments can be left behind. This command can quickly find and remove any fragments whose edges are smaller than a certain tolerance (e.g., 0.01mm).
+
+### Other Information
+This is a powerful automated tool for mesh simplification and repair.
