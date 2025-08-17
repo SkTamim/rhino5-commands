@@ -3042,3 +3042,2828 @@ This command is very useful for removing "mesh dust" - tiny, disconnected mesh f
 
 ### Other Information
 This is a powerful automated tool for mesh simplification and repair.
+
+
+---
+
+## 101. CollapseMeshVertex
+
+### Short Info
+Merge a mesh vertex into a neighboring vertex.
+
+### Detailed Description
+The **CollapseMeshVertex** command is a low-level mesh editing tool that merges a selected mesh vertex with one of its adjacent, connected vertices. This is a manual way to reduce the polygon count and simplify the mesh in a very precise, controlled way, by effectively deleting a vertex and re-triangulating the surrounding faces.
+
+### Steps to use the command
+1.  Run the command `CollapseMeshVertex`.
+2.  At the **Vertex to collapse from** prompt, select a mesh vertex.
+3.  At the **Vertex to collapse to** prompt, select an adjacent vertex that is connected to the first one by an edge.
+4.  The first vertex will be merged into the second vertex.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This gives you more control than `CollapseMeshEdge`, as you can choose the final location of the merged vertex. It's a useful tool for precision retopology where you need to carefully manage the flow of mesh edges.
+
+### Practical Use Cases
+* **Use Case 1 (Precision Retopology):** You are manually simplifying a mesh and need to remove a vertex, but you want to control exactly where the surrounding geometry moves to. `CollapseMeshVertex` allows you to pick which neighboring vertex will become the new corner point for the surrounding faces, maintaining the mesh flow.
+
+### Other Information
+This is an advanced tool for users who are doing detailed, manual mesh editing and simplification.
+
+---
+
+## 102. CommandHelp
+
+### Short Info
+Open the Command Help window.
+
+### Detailed Description
+The **CommandHelp** command is a utility that opens a dedicated help panel inside the Rhino interface. When you run another command, this panel automatically displays the content of the help file for that specific command, including its description, steps, and options.
+
+### Steps to use the command
+1.  Run the command `CommandHelp`.
+2.  The Command Help panel will open.
+3.  Now, run any other command (e.g., `Line`).
+4.  The help information for the `Line` command will automatically appear in the panel.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Keeping the Command Help window open on a second monitor or docked to the side of your screen is an excellent way to learn new commands or to remind yourself of the specific options for a command you don't use often.
+
+### Practical Use Cases
+* **Use Case 1 (Learning Rhino):** A new user is learning the software. By keeping the Command Help panel open, they can get instant, context-sensitive information about every tool they try, which greatly accelerates the learning process.
+* **Use Case 2 (Exploring Options):** An experienced user is about to use a complex command like `Sweep2` and wants to be reminded of all the available sub-options for controlling the surface. The Command Help panel provides a quick reference without having to open the main help file.
+
+### Other Information
+This is a core part of the Rhino user interface designed to make the software easier to learn and use.
+
+---
+
+## 103. CommandHistory
+
+### Short Info
+Open the command history window.
+
+### Detailed Description
+The **CommandHistory** command opens a floating window that displays a complete, scrollable record of all the commands you have run and the output that was generated in the command line during your current Rhino session. This is useful for reviewing your steps, copying previous command outputs, or debugging scripts.
+
+### Steps to use the command
+1.  Run the command `CommandHistory`.
+2.  The command history window appears.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+You can also open this window by pressing the F2 key. You can select and copy text from this window just like any other text editor.
+
+### Practical Use Cases
+* **Use Case 1 (Checking a Measurement):** You used the `Distance` command a few minutes ago to measure a critical part of your model but have since run other commands. You can open the `CommandHistory` window to scroll back and find the exact measurement that was reported.
+* **Use Case 2 (Debugging a Macro):** You are testing a long macro, and it fails. The `CommandHistory` window will show you every step the macro took and at which command the error occurred, making it much easier to find and fix the problem.
+
+### Other Information
+This is an essential utility for reviewing your actions and for scripting.
+
+---
+
+## 104. CommandList
+
+### Short Info
+Open the command list window.
+
+### Detailed Description
+The **CommandList** command is a utility that opens a window displaying a simple, searchable list of all available commands in Rhino. This is useful for finding commands when you can't remember the exact name.
+
+### Steps to use the command
+1.  Run the command `CommandList`.
+2.  The Command List window appears.
+3.  You can scroll through the list or type in the search box to filter the commands.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The list shows both the command name and a very brief description of what it does. Double-clicking a command in the list will run it.
+
+### Practical Use Cases
+* **Use Case 1 (Finding a Command):** You remember there is a command for creating a surface from a network of curves, but you can't remember its name. You can open the `CommandList` and type "network" or "surface" in the search box to quickly find the `NetworkSrf` command.
+
+### Other Information
+This is a simple help utility for discovering and launching commands.
+
+---
+
+## 105. CommandPrompt
+
+### Short Info
+Manage the command prompt window.
+
+### Detailed Description
+The **CommandPrompt** command is a utility that controls the visibility and position of the command prompt window within the Rhino interface.
+
+### Steps to use the command
+1.  Run the command `CommandPrompt`.
+2.  The command line will present several options for controlling the window.
+
+### Command Options & Toggles
+* **Show (Yes/No):** Toggles the visibility of the command prompt window.
+* **Position:** Allows you to change the location of the window (e.g., Top, Bottom, Floating).
+
+### Note for better use
+If you ever accidentally close the command prompt, typing `CommandPrompt` and choosing "Show" is the way to get it back.
+
+### Practical Use Cases
+* **Use Case 1 (Customizing UI):** A user prefers to have the command prompt floating in a separate window on a second monitor instead of docked at the top of the screen. They can use this command to change its position.
+
+### Other Information
+This is purely an interface customization command.
+
+---
+
+## 106. Commands
+
+### Short Info
+Open the Commands help topic.
+
+### Detailed Description
+The **Commands** command is a simple utility that opens the main Rhino help file directly to the "Commands" section, which contains an alphabetical list of all commands.
+
+### Steps to use the command
+1.  Run the command `Commands`.
+2.  The Rhino help window will open.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (General Help):** You want to browse the main help file to learn about commands. This is a direct shortcut to that section of the documentation.
+
+### Other Information
+This is a simple help access command.
+
+---
+
+## 107. ComputeVertexColors
+
+### Short Info
+Apply vertex colors to a mesh.
+
+### Detailed Description
+The **ComputeVertexColors** command is a specialized mesh utility. It calculates colors for the vertices of a mesh object based on either the colors of a texture map or the colors of another mesh, and then "bakes" those colors into the mesh itself. This vertex color data can then be used by certain rendering engines or exported for use in applications that support vertex coloring (like 3D printing with color).
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `ComputeVertexColors`.
+3.  The mesh's vertices will be colored based on the active texture or other source.
+
+### Command Options & Toggles
+This command has no options in the command line; it relies on the material and texture applied to the object.
+
+### Note for better use
+This is an advanced command, primarily for workflows that involve exporting data to other specialized applications. The vertex colors may not be visible in all of Rhino's display modes.
+
+### Practical Use Cases
+* **Use Case 1 (Color 3D Printing):** You have designed a ring and applied a complex, multi-colored texture map to it for a render. You want to 3D print the ring on a machine that supports full-color printing (like a Z-Corp printer). You would use `ComputeVertexColors` to transfer the texture's color information to the mesh's vertices, which is the format the 3D printer's software requires.
+
+### Other Information
+This command is a data-conversion tool for specific export workflows.
+
+---
+
+## 108. Cone
+
+### Short Info
+Draw a solid cone.
+
+### Detailed Description
+The **Cone** command is a fundamental solid creation tool used to draw a solid cone. It can create both pointed cones and truncated cones (cones with the top cut off).
+
+### Steps to use the command
+1.  Run the command `Cone`.
+2.  Follow the prompts. For a basic cone:
+    a. At the **Base of cone** prompt, pick a center point.
+    b. At the **Radius** prompt, drag the mouse and click, or type a value.
+    c. At the **End of cone** prompt, drag the mouse up or down for the height and click.
+
+### Command Options & Toggles
+* **3Point:** Defines the base circle by three points.
+* **Vertical:** Creates a cone that is vertical to the active CPlane.
+* **AroundCurve:** Creates a cone that is normal to a curve at a specified point.
+
+### Note for better use
+To create a truncated cone, simply click a point for the height and then, at the final prompt, specify a radius for the top surface instead of bringing it to a point.
+
+### Practical Use Cases
+* **Use Case 1 (Gemstone Pavilions):** The pavilion (bottom part) of a standard round brilliant gemstone is essentially a cone. The `Cone` command is the fastest way to model this basic form, which can then be trimmed or faceted.
+* **Use Case 2 (Ring Shanks):** A cone can be used as a cutting object in a boolean operation to create a tapered opening or feature in a ring shank.
+
+### Other Information
+This is one of the basic solid modeling primitives.
+
+---
+
+## 109. Conic
+
+### Short Info
+Draw a conic section curve.
+
+### Detailed Description
+The **Conic** command draws a conic section curve, which can be a parabola, hyperbola, or ellipse, depending on the points you pick. This is an advanced curve creation tool used for creating very specific and smooth shapes that are mathematically defined.
+
+### Steps to use the command
+1.  Run the command `Conic`.
+2.  Follow the prompts to define the curve by picking its start, end, apex, and a curve-through point.
+
+### Command Options & Toggles
+This command has no clickable options.
+
+### Note for better use
+The shape of the conic is determined by the "rho" value, which is controlled by the fourth point you pick. A rho value of 0.5 creates a parabola, less than 0.5 creates an ellipse, and greater than 0.5 creates a hyperbola.
+
+### Practical Use Cases
+* **Use Case 1 (Smooth Transitions):** You need to create a very smooth, flowing curve to define the profile of a shank or the edge of a pendant. A conic curve can provide a more aesthetically pleasing and mathematically pure transition than a standard NURBS curve in some situations.
+
+### Other Information
+This is an advanced curve tool for users who need precise mathematical shapes.
+
+---
+
+## 110. Connect
+
+### Short Info
+Extend and trim curves to meet.
+
+### Detailed Description
+The **Connect** command extends and/or trims two curves so that their endpoints meet precisely. This is a quick utility for cleaning up 2D line work where curves have small gaps or overlaps.
+
+### Steps to use the command
+1.  Run the command `Connect`.
+2.  At the **Select first curve to connect** prompt, click near the end of the first curve.
+3.  At the **Select second curve to connect** prompt, click near the end of the second curve.
+4.  The curves will be extended or trimmed to meet.
+
+### Command Options & Toggles
+* **Join:** Toggles whether the two curves are joined into a single curve after the operation.
+* **SubCrv:** Allows you to connect a segment of a polycurve instead of the entire curve.
+
+### Note for better use
+This command is for 2D curves. The 3D equivalent for surfaces is `ConnectSrf`.
+
+### Practical Use Cases
+* **Use Case 1 (Closing Gaps):** You have drawn two lines that are supposed to form a corner, but there is a small gap between their endpoints. `Connect` will extend them so they meet perfectly.
+* **Use Case 2 (Cleaning Up Traces):** You have traced a sketch, resulting in several curves that slightly overlap or don't quite touch. `Connect` is a fast way to go through and clean up all these intersections before joining the curves into a clean outline.
+
+### Other Information
+This is a fundamental 2D cleanup and editing tool.
+
+---
+
+## 111. ConnectSrf
+
+### Short Info
+Extend surfaces to meet and trims.
+
+### Detailed Description
+The **ConnectSrf** command is a surface editing tool that extends two surfaces until they meet, and then trims them to each other. This is the 3D equivalent of the `Connect` command for curves.
+
+### Steps to use the command
+1.  Run the command `ConnectSrf`.
+2.  At the **Select first surface to connect** prompt, select the first surface.
+3.  At the **Select second surface to connect** prompt, select the second surface.
+4.  The surfaces will be extended and trimmed.
+
+### Command Options & Toggles
+* **Join:** Toggles whether the two surfaces are joined into a single polysurface after the operation.
+
+### Note for better use
+This command works best on simple, untrimmed surfaces. The surfaces are extended in a straight, tangential direction from their edges.
+
+### Practical Use Cases
+* **Use Case 1 (Joining Shank Halves):** You have modeled the two halves of a ring shank as separate surfaces, and there is a small gap between them at the bottom. `ConnectSrf` can extend both surfaces until they meet, creating a clean seam.
+
+### Other Information
+This is a useful tool for joining surfaces that don't quite meet.
+
+---
+
+## 112. ContentFilter
+
+### Short Info
+Open the Content Filter panel.
+
+### Detailed Description
+The **ContentFilter** command opens a panel that allows you to search for and filter content like materials, environments, and textures that are stored in your Rhino libraries. This is an organizational tool for managing your rendering assets.
+
+### Steps to use the command
+1.  Run the command `ContentFilter`.
+2.  The Content Filter panel appears.
+3.  You can type search terms to find specific materials or textures.
+
+### Command Options & Toggles
+The options are the search and filter controls within the panel itself.
+
+### Note for better use
+This tool is most useful when you have a large library of rendering materials and need a quick way to find a specific one (e.g., "18k yellow gold").
+
+### Practical Use Cases
+* **Use Case 1 (Finding Materials):** You are preparing a model for rendering and need to find the specific "brushed platinum" material you saved last week. Instead of browsing through folders, you can open the `ContentFilter`, type "platinum," and it will show you all matching materials in your library.
+
+### Other Information
+This is an interface panel for managing rendering assets.
+
+---
+
+## 113. ContinueCurve
+
+### Short Info
+Continue to draw the selected curve using control points.
+
+### Detailed Description
+The **ContinueCurve** command allows you to resume drawing a curve that you previously stopped. It picks up from the end point of the selected curve and allows you to add more segments by placing new control points, maintaining the same degree and structure as the original curve.
+
+### Steps to use the command
+1.  Select a curve.
+2.  Run the command `ContinueCurve`.
+3.  You can now click in the viewport to add new control points to the end of the curve.
+4.  Press Enter when you are finished.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command continues the curve using control points. If you want to continue a curve by picking points that the curve must pass *through*, use the `ContinueInterpCrv` command instead.
+
+### Practical Use Cases
+* **Use Case 1 (Extending a Design):** You have drawn a flowing scrollwork curve but realize it needs to be longer to cover more of the ring shank. You can select the curve and use `ContinueCurve` to add more control points and extend the scroll in a smooth, continuous way.
+
+### Other Information
+This is a simple curve editing utility.
+
+---
+
+## 114. ContinueInterpCrv
+
+### Short Info
+Continue to draw the selected curve by picking points on the curve.
+
+### Detailed Description
+The **ContinueInterpCrv** command allows you to resume drawing an interpolated curve that you previously stopped. An interpolated curve is one that passes directly through the points you pick. This command picks up from the end point of the selected curve and allows you to add more segments by picking new points for the curve to pass through.
+
+### Steps to use the command
+1.  Select an interpolated curve.
+2.  Run the command `ContinueInterpCrv`.
+3.  You can now click in the viewport to add new points for the curve to pass through.
+4.  Press Enter when you are finished.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is the counterpart to `ContinueCurve`. Use `ContinueCurve` to add control points, and `ContinueInterpCrv` to add curve-through points.
+
+### Practical Use Cases
+* **Use Case 1 (Continuing a Trace):** You were tracing a complex sketch with an interpolated curve and had to stop. `ContinueInterpCrv` allows you to select the curve and pick up tracing exactly where you left off.
+
+### Other Information
+This is a simple curve editing utility.
+
+---
+
+## 115. Contour
+
+### Short Info
+Create a spaced series of planar curves and points through objects.
+
+### Detailed Description
+The **Contour** command creates a series of evenly spaced, parallel cross-section curves by slicing through one or more objects. You define a start point, an end point (which sets the direction of the cuts), and the distance between each cut.
+
+### Steps to use the command
+1.  Select the object(s) to contour.
+2.  Run the command `Contour`.
+3.  At the **Contour plane base point** prompt, pick a point to start the contours.
+4.  At the **Direction perpendicular to contour planes** prompt, pick a second point to define the direction of the cuts.
+5.  At the **Distance between contours** prompt, type a value and press Enter.
+6.  A series of cross-section curves will be created.
+
+### Command Options & Toggles
+* **JoinCurves:** Allows you to join curves from separate objects at each contour level.
+* **GroupObjectsBy:** Groups the resulting curves by contour level.
+
+### Note for better use
+This command is incredibly powerful for analyzing a 3D shape or for creating the profile curves needed for a `Loft` or `NetworkSrf`.
+
+### Practical Use Cases
+* **Use Case 1 (Analyzing a Shank):** You have a complex, organic ring shank and want to understand how its cross-section changes along its length. You can run `Contour` along the shank to generate a series of profile curves. This is excellent for checking for undercuts or areas that are too thin.
+* **Use Case 2 (Reverse Engineering):** You have a 3D scan of a ring (as a mesh) and need to remodel it as a clean NURBS surface. You can use `Contour` on the mesh to generate a series of cross-section curves. You can then use these curves as the input for a `Loft` to rebuild the surface.
+
+### Other Information
+This is a key tool for both analysis and reverse engineering workflows.
+
+---
+
+## 116. Convert
+
+### Short Info
+Change a complex curve to a simpler curve.
+
+### Detailed Description
+The **Convert** command rebuilds a NURBS curve into a simpler representation made up of only straight line segments and circular arcs. This is useful for exporting to older machines or software that cannot handle complex splines.
+
+### Steps to use the command
+1.  Select the curve(s) to convert.
+2.  Run the command `Convert`.
+3.  A dialog box appears where you can set the tolerance for the conversion.
+4.  Click OK. The curve will be rebuilt into lines and arcs.
+
+### Command Options & Toggles
+The options are in the dialog box and control the accuracy of the conversion:
+* **Tolerance:** How far the new curve is allowed to deviate from the original.
+* **AngleTolerance:** Sets the tolerance for angles.
+* **MinLength / MaxLength:** Sets the minimum and maximum length for the resulting segments.
+
+### Note for better use
+This is a destructive command that changes the curve's structure. The `SimplifyCrv` command is a similar but often more intuitive tool for this purpose.
+
+### Practical Use Cases
+* **Use Case 1 (CNC Machining):** You are sending a 2D pattern to be cut on an older CNC machine that can only read lines and arcs, not complex NURBS curves. You would use `Convert` on your curves before exporting the file to ensure compatibility.
+
+### Other Information
+This is a specialized tool for converting modern curve types to a legacy format.
+
+---
+
+## 117. ConvertDots
+
+### Short Info
+Change annotation dots to points or text.
+
+### Detailed Description
+The **ConvertDots** command is a utility that changes annotation dot objects into either point objects or text objects.
+
+### Steps to use the command
+1.  Run the command `ConvertDots`.
+2.  A dialog box appears.
+3.  Choose whether to convert the dots to points or text.
+4.  Choose whether to delete the original dots.
+5.  Click OK.
+
+### Command Options & Toggles
+* **Output (Points/Text):** The type of object to create.
+* **DeleteInput (Yes/No):** Deletes the original dot objects.
+
+### Note for better use
+This can be useful if you have used dots to mark locations and now need actual point objects at those locations for modeling or analysis.
+
+### Practical Use Cases
+* **Use Case 1 (Marking Gem Locations):** You have used the `Dot` command to place markers on a ring where you plan to set gemstones. To use a command like `OrientOnSrf`, you need real point objects. `ConvertDots` can quickly change all your visual markers into usable point geometry.
+
+### Other Information
+This is a simple utility for converting between annotation and geometry types.
+
+---
+
+## 118. Dot
+
+### Short Info
+Create an annotation dot.
+
+### Detailed Description
+The **Dot** command creates a small, text-based annotation object that is used to mark a location and display a short piece of text. The dot is always parallel to the view and scales with the view, so it remains readable even when you zoom in and out.
+
+### Steps to use the command
+1.  Run the command `Dot`.
+2.  At the **Location of annotation dot** prompt, pick a point.
+3.  The text from the previous dot is displayed. Press Enter to accept it, or type new text and press Enter.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The appearance of the dot (font, size) is controlled by the current Annotation Style settings in your Document Properties.
+
+### Practical Use Cases
+* **Use Case 1 (Leaving Notes):** You are working on a design and need to leave a note for yourself or a colleague about a specific area, for example, "Check thickness here." You can use the `Dot` command to place a marker with that text directly on the model.
+* **Use Case 2 (Labeling Parts):** You have a complex assembly and want to label the different parts. You can use dots to label the "shank," "head," "gallery," etc.
+
+### Other Information
+This is a fundamental annotation tool for communication and note-taking within a model.
+
+---
+
+## 119. ConvertExtrusion
+
+### Short Info
+Change extrusion objects to surfaces and polysurfaces.
+
+### Detailed Description
+The **ConvertExtrusion** command changes a special "lightweight" extrusion object into a standard NURBS surface or polysurface. In Rhino 5, simple extruded shapes (like from `Box` or `ExtrudeCrv`) are sometimes created as a special, memory-efficient object type. While these are good for performance, they cannot be edited in advanced ways (like moving individual control points). This command converts them to standard geometry so they can be fully edited.
+
+### Steps to use the command
+1.  Select one or more extrusion objects.
+2.  Run the command `ConvertExtrusion`.
+3.  The objects will be converted to standard polysurfaces.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+You can control whether Rhino creates lightweight extrusions in the first place by using the `UseExtrusions` command.
+
+### Practical Use Cases
+* **Use Case 1 (Enabling Advanced Editing):** You have created a ring shank with `ExtrudeCrv`. You now want to use `CageEdit` to deform it, but `CageEdit` works best on standard NURBS surfaces. You would first run `ConvertExtrusion` on the shank to turn it into a polysurface, and then proceed with the cage editing.
+
+### Other Information
+This is a utility command for converting between different internal object types in Rhino.
+
+---
+
+## 120. ConvertToBeziers
+
+### Short Info
+Change a NURBS object to a series of Bézier curves.
+
+### Detailed Description
+The **ConvertToBeziers** command converts a NURBS curve or surface into an equivalent object composed of multiple, joined Bézier curve segments. Bézier curves are a specific type of curve commonly used in graphic design programs like Adobe Illustrator. This command is used for exporting geometry to software that has better support for Béziers than for general NURBS.
+
+### Steps to use the command
+1.  Select the NURBS object(s).
+2.  Run the command `ConvertToBeziers`.
+3.  The object will be converted.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a highly specialized command for workflows that involve moving data to and from graphic design software. For most 3D modeling within Rhino, there is no need to convert objects to Béziers.
+
+### Practical Use Cases
+* **Use Case 1 (Exporting to Illustrator):** You have created a complex logo shape in Rhino using NURBS curves and need to export it to Adobe Illustrator for a graphic designer to use. Running `ConvertToBeziers` before exporting can sometimes result in a cleaner, more editable file in Illustrator.
+
+### Other Information
+This is a specialized data conversion tool for specific export workflows.
+
+
+---
+
+## 121. Copy
+
+### Short Info
+Duplicate objects.
+
+### Detailed Description
+The **Copy** command is a fundamental transformation tool that creates one or more duplicates of selected objects. It works by prompting you to pick a base point and then one or more destination points. This allows for precise placement of copies relative to the original object or other geometry in the scene.
+
+### Steps to use the command
+1.  Select the object(s) to copy.
+2.  Run the command `Copy`.
+3.  At the **Point to copy from** prompt, pick a base point.
+4.  At the **Point to copy to** prompt, pick one or more locations to place the copies.
+5.  Press Enter to end the command.
+
+### Command Options & Toggles
+* **InPlace:** The **InPlace** option makes a copy of an object in the exact same location as the original. This is useful for creating a duplicate on which to perform an action while keeping the original as a backup.
+* **Vertical:** The **Vertical** option constrains the movement of the copy to the Z-axis of the current construction plane. This is useful for copying objects straight up or down.
+
+### Note for better use
+Using object snaps when picking the "point to copy from" and "point to copy to" is essential for precision. For example, to copy a prong from one side of a bezel to the other, you would snap the base point to the quadrant of the bezel and the destination point to the opposite quadrant.
+
+### Practical Use Cases
+* **Use Case 1 (Duplicating Settings):** You have created a single prong for a gemstone setting. You can use the `Copy` command with the `Cen` (center) object snap to precisely copy the prong from its current location to the other required locations around the center of the stone.
+* **Use Case 2 (Creating Layers):** You are about to perform a complex or destructive operation on a part of your model, like a `BooleanUnion`. Before doing so, you can use the `Copy` command with the `InPlace` option to create a duplicate of the objects on a separate, hidden layer as a backup in case the operation fails or you need to revert to the original.
+
+### Other Information
+The `Copy` command is one of the most frequently used commands in all of CAD. Mastering its use with object snaps is a fundamental skill.
+
+---
+
+## 122. CopyCPlaneSettingsToAll
+
+### Short Info
+Copy grid and snap settings from one viewport to all viewports.
+
+### Detailed Description
+The **CopyCPlaneSettingsToAll** command is a viewport management utility. It takes the construction plane settings—specifically the grid spacing, snap spacing, and grid extents—from the currently active viewport and applies them to all other viewports in the model.
+
+### Steps to use the command
+1.  Configure the grid and snap settings in one viewport exactly as you want them.
+2.  Make that viewport active.
+3.  Run the command `CopyCPlaneSettingsToAll`.
+4.  The settings from the active viewport will be copied to all other viewports.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command only copies the settings related to the grid and snaps. It does not copy the orientation or origin of the construction plane itself. For that, you would use the `CopyCPlaneToAll` command.
+
+### Practical Use Cases
+* **Use Case 1 (Standardizing a Workspace):** You are working on a project that requires a very specific grid spacing (e.g., 0.5mm) for precise layout work. After setting this up in your Top view, you can use `CopyCPlaneSettingsToAll` to instantly ensure that your Front and Right views have the exact same grid setup, maintaining consistency across your workspace.
+
+### Other Information
+This is a simple utility for quickly standardizing your modeling environment.
+
+---
+
+## 123. CopyCPlaneToAll
+
+### Short Info
+Copy the construction plane from one viewport to all viewports.
+
+### Detailed Description
+The **CopyCPlaneToAll** command is a viewport management utility. It takes the entire construction plane—its origin point and orientation—from the currently active viewport and applies it to all other viewports.
+
+### Steps to use the command
+1.  Set up a custom construction plane in one viewport using the `CPlane` command.
+2.  Make that viewport active.
+3.  Run the command `CopyCPlaneToAll`.
+4.  The custom CPlane from the active viewport will be copied to all other viewports.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command can be disorienting if used improperly, as it can result in all viewports having a non-standard orientation (e.g., all viewports showing a tilted plane). It is most useful in specific, controlled situations. To restore the default viewports, use the `4View` command twice.
+
+### Practical Use Cases
+* **Use Case 1 (Working on an Angled Surface):** You are setting pavé stones on a surface that is tilted at a 37-degree angle. You use the `CPlane > Surface` option to set the construction plane in your Perspective view to be aligned with this tilted surface. To make it easier to work, you can then use `CopyCPlaneToAll` to make the Top, Front, and Right views also use this same tilted plane, so that your 2D drawing actions are perfectly aligned with the 3D surface.
+
+### Other Information
+This is an advanced viewport setup tool for working on non-standard planes.
+
+---
+
+## 124. CopyDetailToViewport
+
+### Short Info
+Copy a Layout detail view to a modeling viewport.
+
+### Detailed Description
+The **CopyDetailToViewport** command is a utility used within the Layout space (paper space). It takes the camera view (the position, projection, and zoom level) from a selected detail view window on a layout page and applies it to a standard modeling viewport.
+
+### Steps to use the command
+1.  Go to a Layout page.
+2.  Run the command `CopyDetailToViewport`.
+3.  At the **Select detail to copy** prompt, select a detail view window.
+4.  At the **Select viewport to copy to** prompt, click inside the modeling viewport you want to change.
+5.  The modeling viewport will update to match the detail view's camera.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is useful if you have set up a perfect camera angle for a drawing in a detail view and want to return to that exact view in your main modeling space to continue working.
+
+### Practical Use Cases
+* **Use Case 1 (Matching Drawing Views):** You have carefully arranged a perspective view in a detail window for a client presentation sheet. You notice a small modeling error. You can use `CopyDetailToViewport` to instantly set your main Perspective viewport to the exact same camera angle, make the correction, and be confident that the updated model will look correct in the layout.
+
+### Other Information
+This is a tool for synchronizing views between the modeling space and the paper layout space.
+
+---
+
+## 125. CopyLayout
+
+### Short Info
+Copy a layout.
+
+### Detailed Description
+The **CopyLayout** command creates a duplicate of an entire layout page. This includes the page size, all detail views, and any dimensions or annotations that have been placed on the layout.
+
+### Steps to use the command
+1.  Make the layout page you want to copy active by clicking its tab.
+2.  Run the command `CopyLayout`.
+3.  A new layout tab will appear with a copy of the original.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is much faster than creating a new layout from scratch and manually copying all the detail views and annotations.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Drawing Variations):** You have created a complete technical drawing of a ring on a layout page. You now want to create a second page that is identical but shows a different version of the ring. You can use `CopyLayout` to duplicate the entire page, then simply change the model view within the detail windows on the new page.
+* **Use Case 2 (Templating):** You have a standard title block and layout format that you use for all your client presentations. You can create one perfect layout page and then use `CopyLayout` to quickly create new pages that already have your title block and company information in place.
+
+### Other Information
+This is a time-saving utility for managing multi-page drawing sets.
+
+---
+
+## 126. CopyRenderWindowToClipboard
+
+### Short Info
+Copy the image in the render window to the Clipboard.
+
+### Detailed Description
+The **CopyRenderWindowToClipboard** command takes the image currently displayed in the Rhino Render window and copies it to the computer's clipboard. This allows you to quickly paste the rendered image into another application like an email, a Word document, or an image editor like Photoshop.
+
+### Steps to use the command
+1.  Create a render using the `Render` command.
+2.  When the render is finished and displayed in the render window, run the command `CopyRenderWindowToClipboard`.
+3.  The image is now on your clipboard.
+4.  Go to another application and use the Paste command (Ctrl+V).
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a quick way to share a render without having to first save it as a file (e.g., a JPG or PNG) and then insert that file into the other application.
+
+### Practical Use Cases
+* **Use Case 1 (Quick Client Updates):** You have just finished a quick render of a design modification for a client. You can use `CopyRenderWindowToClipboard` and then paste the image directly into an email to send to them for immediate feedback.
+* **Use Case 2 (Creating Reports):** You are creating a project report in Microsoft Word and need to include several renders. You can create each render, use this command to copy it, and paste it directly into your document without creating a folder full of temporary image files.
+
+### Other Information
+This is a simple but very useful workflow efficiency tool.
+
+---
+
+## 127. CopyToClipboard
+
+### Short Info
+Copy selected objects to the Clipboard.
+
+### Detailed Description
+The **CopyToClipboard** command copies the selected Rhino geometry (curves, surfaces, solids, etc.) to the Windows clipboard. This allows you to paste the geometry into another Rhino window or, in some cases, into other programs that can accept 3D geometry from the clipboard.
+
+### Steps to use the command
+1.  Select the object(s) you want to copy.
+2.  Run the command `CopyToClipboard`.
+3.  The objects are now on the clipboard.
+4.  Use the `Paste` command in the destination window.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the equivalent of the standard Windows shortcut Ctrl+C. Using the shortcut is much faster than typing the command.
+
+### Practical Use Cases
+* **Use Case 1 (Moving Objects Between Files):** You have designed a custom clasp in one Rhino file and want to use it in your current ring project. You can open the clasp file, select the clasp, use `CopyToClipboard` (or Ctrl+C), switch to your ring file, and use `Paste` (or Ctrl+V) to bring it in.
+* **Use Case 2 (Creating Variations):** You want to try a different design idea on a copy of your ring. You can select the entire ring, copy it to the clipboard, and then paste it to the side to create a duplicate to work on.
+
+### Other Information
+This is a fundamental command for managing objects within and between files.
+
+---
+
+## 128. CopyToLayer
+
+### Short Info
+Copy objects to a different layer.
+
+### Detailed Description
+The **CopyToLayer** command creates a duplicate of the selected object(s) and places the copy on a different layer that you specify. The original object remains on its original layer.
+
+### Steps to use the command
+1.  Select the object(s) to copy.
+2.  Run the command `CopyToLayer`.
+3.  The "Copy to Layer" dialog box will appear.
+4.  Select the destination layer from the list.
+5.  Click OK. A copy of the object will be created on the chosen layer.
+
+### Command Options & Toggles
+The options are the layers available in the dialog box.
+
+### Note for better use
+This is useful for creating backup or construction geometry. You can copy a key surface to a new layer before you trim or modify it, preserving the original.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Construction Geometry):** You have a final, clean model of a ring shank. You need to create some temporary construction curves that are based on the shank's edges. You can use `DupEdge` to create the curves, and then immediately use `CopyToLayer` to place a copy of them onto a "Construction" layer, keeping your main "Curves" layer clean.
+* **Use Case 2 (Design Variations):** You have a ring on your "Version 1" layer. You want to create a second version. You can select all the objects, use `CopyToLayer` to place a duplicate on a new "Version 2" layer, and then hide the "Version 1" layer to work on the new design.
+
+### Other Information
+This is a key organizational command for managing complex projects and design iterations.
+
+---
+
+## 129. CopyViewportToDetail
+
+### Short Info
+Copy a modeling viewport view to a Layout detail.
+
+### Detailed Description
+The **CopyViewportToDetail** command is a utility used within the Layout space (paper space). It takes the camera view (the position, projection, and zoom level) from a standard modeling viewport and applies it to a selected detail view window on a layout page.
+
+### Steps to use the command
+1.  Go to a Layout page.
+2.  Run the command `CopyViewportToDetail`.
+3.  At the **Select detail to change** prompt, select a detail view window.
+4.  At the **Viewport to copy view from** prompt, click inside the modeling viewport that has the view you want to copy.
+5.  The detail view will update to match the modeling viewport's camera.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the opposite of the `CopyDetailToViewport` command. It is useful for setting up your drawing sheets. You can navigate and compose your shot perfectly in the main modeling viewport, and then use this command to transfer that exact view to your detail window.
+
+### Practical Use Cases
+* **Use Case 1 (Setting Up a Drawing):** You are creating a presentation sheet for a client. In your main Perspective viewport, you tumble and zoom the model to get the perfect, dramatic "hero shot." You then switch to your Layout, run `CopyViewportToDetail`, select your main detail view, and then select the Perspective viewport. The detail view now shows the exact hero shot you framed.
+
+### Other Information
+This is a tool for synchronizing views between the modeling space and the paper layout space.
+
+---
+
+## 130. CPlane
+
+### Short Info
+Set the construction plane in the active viewport.
+
+### Detailed Description
+The **CPlane** command is a fundamental tool that sets the orientation and origin of the construction plane in the active viewport. The construction plane is the imaginary 2D grid (the "floor") on which you are currently working. By default, the Top view's CPlane is the world XY plane, the Front view's is the XZ, and the Right view's is the YZ. This command allows you to create custom construction planes aligned to objects, angles, or specific views.
+
+### Steps to use the command
+1.  Run the command `CPlane`.
+2.  The command line will show many options for how to define the new plane.
+3.  Select an option (e.g., `Surface`).
+4.  Follow the prompts for that option. For `Surface`, you would select a surface, and the CPlane would align to it.
+
+### Command Options & Toggles
+* **3Point:** Sets the CPlane by picking an origin, an X-axis point, and a Y-axis point.
+* **Object:** Sets the CPlane to match a selected object's orientation.
+* **Surface:** Aligns the CPlane to be tangent to a point on a surface.
+* **View:** Sets the CPlane to be parallel to the current view.
+* **World:** Resets the CPlane to one of the default Top, Front, or Right orientations.
+* **Undo/Redo:** Cycles through previous CPlane orientations.
+
+### Note for better use
+Custom CPlanes are temporary. You can always return to the default world planes by running `CPlane` and choosing the `World` option. You can save and restore custom CPlanes using the `NamedCPlane` command.
+
+### Practical Use Cases
+* **Use Case 1 (Working on Angled Surfaces):** You need to set pavé stones on a surface that is tilted at a 37-degree angle. Running `CPlane` and using the `Surface` option will align the grid to that tilted surface. Now, when you draw circles for your cutters, they will be perfectly aligned and perpendicular to the surface you are working on.
+* **Use Case 2 (Creating Angled Prongs):** You need to model prongs that stick out from a bezel at a specific angle. You can create a new CPlane that is rotated to that angle, making it easy to draw the prong profiles in the correct orientation.
+
+### Other Information
+Mastering the use of custom construction planes is an essential skill for advanced 3D modeling.
+
+---
+
+## 131. CreaseSplitting
+
+### Short Info
+Control whether commands split surfaces at creases.
+
+### Detailed Description
+The **CreaseSplitting** command is a system setting that controls how Rhino handles surfaces with sharp corners or "creases." When CreaseSplitting is ON, commands like `Loft`, `Sweep`, and `Extrude` will automatically split a surface with a crease into a polysurface made of separate, simpler faces. When it is OFF, the command will create a single, more complex surface that has a crease running through it.
+
+### Steps to use the command
+1.  Run the command `CreaseSplitting`.
+2.  The command line will show the current state (Yes or No).
+3.  Click the option to toggle it.
+
+### Command Options & Toggles
+* **SplitAlongCreases (Yes/No):** The main toggle for the feature.
+
+### Note for better use
+For most jewelry modeling, leaving this setting ON (the default) is recommended. It creates simpler, cleaner polysurfaces that are generally easier to work with. Turning it OFF is an advanced technique used for creating single surfaces for specific types of surface analysis or deformation where a single surface is required.
+
+### Practical Use Cases
+* **Use Case 1 (Standard Modeling - ON):** You extrude a rectangular curve with sharp corners. With CreaseSplitting ON, Rhino creates a polysurface with four distinct side faces, which is easy to edit with commands like `MoveFace`.
+* **Use Case 2 (Advanced Surfacing - OFF):** You are modeling a car body and need to create a single, flowing surface for a door panel that has a sharp character line creased into it. By turning CreaseSplitting OFF before running a command like `NetworkSrf`, you can create a single surface with a crease, which can be better for certain types of analysis and editing.
+
+### Other Information
+This is a global setting that affects the output of many surface creation commands.
+
+---
+
+## 132. CreateRegions
+
+### Short Info
+Create planar surfaces from curve regions.
+
+### Detailed Description
+The **CreateRegions** command is a specialized tool for fixing complex, non-manifold polysurfaces. A non-manifold object is one that has errors, such as edges that are shared by more than two faces. This command attempts to break down the problematic object into a collection of separate, valid, closed (solid) regions.
+
+### Steps to use the command
+1.  Select a non-manifold polysurface.
+2.  Run the command `CreateRegions`.
+3.  The command will analyze the object and, if successful, will output one or more valid, closed polysurfaces.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is an advanced repair tool. It is used when a complex boolean operation or imported file results in a single, messy object that cannot be used for further modeling or 3D printing.
+
+### Practical Use Cases
+* **Use Case 1 (Repairing a Failed Boolean):** You perform a `BooleanUnion` on several complex, overlapping parts of a ring, and the result is a single, non-manifold polysurface with internal errors. `CreateRegions` can sometimes analyze this messy object and successfully separate it back into the intended solid parts.
+
+### Other Information
+This is a "last resort" repair tool for very specific types of geometric problems.
+
+---
+
+## 133. CreateSolid
+
+### Short Info
+Create a closed solid from a set of surfaces.
+
+### Detailed Description
+The **CreateSolid** command takes a collection of surfaces or polysurfaces that form a closed "watertight" volume and joins them into a single, closed polysurface (a solid). It is essentially a combination of the `Join` command and a check to see if the result is a valid solid.
+
+### Steps to use the command
+1.  Select all the surfaces that form the boundary of your intended solid.
+2.  Run the command `CreateSolid`.
+3.  If the surfaces form a closed volume, they will be joined into a single solid.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+All of the selected surfaces must meet at their edges with no gaps (naked edges) for this command to be successful. You can use the `ShowEdges` command beforehand to check for any open gaps.
+
+### Practical Use Cases
+* **Use Case 1 (Assembling from Parts):** You have modeled the top, bottom, and side surfaces of a bezel as separate pieces. You select all of these surfaces and run `CreateSolid`. If they are all perfectly aligned, the command will join them into a single, solid bezel ready for further operations.
+
+### Other Information
+This command is very similar to `Join`, but it provides more feedback in the command line about whether a valid solid was created.
+
+---
+
+## 134. CreateUVCrv
+
+### Short Info
+Project a surface boundary and trim curves to the world x-y plane.
+
+### Detailed Description
+The **CreateUVCrv** command takes a surface or polysurface and "unrolls" its trim and border curves into a flat, 2D pattern on the world XY construction plane. The "UV" refers to the U and V directions that define a surface's parameter space. This command is essential for creating flat 2D patterns from 3D shapes, especially for preparing designs that will be applied back onto the surface.
+
+### Steps to use the command
+1.  Select one or more surfaces.
+2.  Run the command `CreateUVCrv`.
+3.  Flat 2D curves representing the edges and trim boundaries of the selected surfaces will be created at the origin of the world XY plane.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The resulting 2D curves represent the "flattened" texture space of the 3D surface. Any curves you draw within this 2D boundary can be accurately mapped back onto the original 3D surface using the `ApplyCrv` command.
+
+### Practical Use Cases
+* **Use Case 1 (Pattern Layout):** You want to apply a complex filigree pattern to a curved ring shank. First, use `CreateUVCrv` on the ring shank to get its flattened 2D outline. Now you can draw or arrange your filigree pattern perfectly within this 2D boundary. Finally, use `ApplyCrv` to wrap the new 2D pattern back onto the 3D ring shank.
+* **Use Case 2 (Texture Mapping Prep):** This command is invaluable for creating guides for texture maps. By creating the UV curves, you can export them to a program like Photoshop or Illustrator, create your texture around them, and be confident that the texture will align perfectly when applied back to the 3D model.
+
+### Other Information
+This is a fundamental command for any workflow that involves creating flat patterns from 3D surfaces.
+
+---
+
+## 135. Crv2View
+
+### Short Info
+Create a curve by averaging two curves.
+
+### Detailed Description
+The **Crv2View** (Curve Two Views) command is a specialized curve creation tool. It takes two 2D curves drawn in two different orthographic viewports (e.g., a profile in the Top view and a profile in the Front view) and creates a single 3D curve that is the spatial average of the two inputs.
+
+### Steps to use the command
+1.  Draw a curve in one viewport (e.g., Top).
+2.  Draw a second curve in another viewport (e.g., Front).
+3.  Run the command `Crv2View`.
+4.  At the **Select first curve** prompt, select one of the curves.
+5.  At the **Select second curve** prompt, select the other curve.
+6.  A new 3D curve will be created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+For this command to work predictably, the two input curves should have the same structure (e.g., the same number of control points). You can use the `Rebuild` command to ensure this.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Complex Shank Rails):** This is the primary use case. You can draw the top-down shape of a ring shank in the Top view, and the side-profile shape in the Front view. `Crv2View` will combine these to create a single, complex 3D curve that can be used as a rail for a `Sweep1` command, creating a shank that is shaped correctly from both views at once.
+
+### Other Information
+This is a powerful technique for creating complex 3D curves from simple 2D inputs.
+
+---
+
+## 136. CrvDeviation
+
+### Short Info
+Report the distance between two curves.
+
+### Detailed Description
+The **CrvDeviation** (Curve Deviation) command is an analysis tool that measures and reports the maximum and minimum distance between two selected curves. It places point objects on the curves at the locations of maximum and minimum deviation and draws lines connecting them.
+
+### Steps to use the command
+1.  Run the command `CrvDeviation`.
+2.  At the **Select first curve** prompt, select a curve.
+3.  At the **Select second curve** prompt, select another curve.
+4.  The command history will report the distances, and markers will appear on the objects.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is useful for quality control and for comparing a simplified or rebuilt curve to its original to ensure it is still within an acceptable tolerance.
+
+### Practical Use Cases
+* **Use Case 1 (Checking a Rebuilt Curve):** You have used the `Rebuild` command to simplify a complex curve. To ensure the new, simpler curve is still accurate enough, you can use `CrvDeviation` to measure the maximum distance between it and the original curve. If the distance is within your manufacturing tolerance, the rebuilt curve is acceptable.
+
+### Other Information
+This is a precision analysis tool for quality control.
+
+---
+
+## 137. CrvEnd
+
+### Short Info
+Place a point object at the end of a curve.
+
+### Detailed Description
+The **CrvEnd** command is a simple utility that places a point object at the exact end point of a selected curve.
+
+### Steps to use the command
+1.  Select one or more curves.
+2.  Run the command `CrvEnd`.
+3.  A point object will be created at the end of each selected curve.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a shortcut for the `End` object snap. You could achieve the same result by running the `Point` command and using the `End` snap on the curve.
+
+### Practical Use Cases
+* **Use Case 1 (Marking a Location):** You need to place a permanent marker at the end of a specific curve to use as a reference point for other operations, like the start of a `Sweep` or the location for a `Transform`.
+
+### Other Information
+This is a simple utility command. Its counterpart is `CrvStart`.
+
+---
+
+## 138. CrvSeam
+
+### Short Info
+Change the seam of a closed curve.
+
+### Detailed Description
+The **CrvSeam** (Curve Seam) command allows you to change the location of the start/end point (the "seam") on a closed curve. The seam is the point where a closed curve begins and ends. Its location can affect how other commands, especially surface creation commands, interact with the curve.
+
+### Steps to use the command
+1.  Run the command `CrvSeam`.
+2.  At the **Select curve to change seam** prompt, select a closed curve.
+3.  A point will appear on the curve, showing the current seam. You can drag this point along the curve to a new location.
+4.  Click to place the new seam.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The location of a curve's seam is often very important for the `Loft` and `Sweep` commands. If you are creating a surface and it has an unexpected twist, it is often because the seams of your profile curves are not aligned. Use `CrvSeam` to line them all up before creating the surface.
+
+### Practical Use Cases
+* **Use Case 1 (Fixing a Twisted Loft):** You are trying to `Loft` three circular profile curves to create a simple ring shank, but the resulting surface is twisted. This is likely because the seams on the three circles are not aligned. You can use `CrvSeam` on each circle and snap the seam to the same quadrant (e.g., the top quadrant) on all three curves. Now, the `Loft` will produce a clean, untwisted surface.
+
+### Other Information
+The 3D equivalent for surfaces is the `SrfSeam` command.
+
+---
+
+## 139. CrvStart
+
+### Short Info
+Place a point object at the start of a curve.
+
+### Detailed Description
+The **CrvStart** command is a simple utility that places a point object at the exact start point of a selected curve.
+
+### Steps to use the command
+1.  Select one or more curves.
+2.  Run the command `CrvStart`.
+3.  A point object will be created at the start of each selected curve.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a shortcut for the `Start` object snap. You could achieve the same result by running the `Point` command and using the `Start` snap on the curve.
+
+### Practical Use Cases
+* **Use Case 1 (Marking a Path):** You are about to use a curve as a path for an `ArrayCrv` or `Sweep` command and want to be certain which end is the start. Running `CrvStart` will place a point there, giving you a clear visual confirmation.
+
+### Other Information
+This is a simple utility command. Its counterpart is `CrvEnd`.
+
+---
+
+## 140. CSec
+
+### Short Info
+Create cross-sections through profile curves.
+
+### Detailed Description
+The **CSec** (Cross Section) command creates a new curve from the cross-section of a series of profile curves. You draw a line that cuts through the profiles, and the command creates a new curve by placing a control point on each profile where the cutting line intersects it.
+
+### Steps to use the command
+1.  Arrange a series of profile curves in space.
+2.  Run the command `CSec`.
+3.  At the **Select profile curves** prompt, select the profiles in order and press Enter.
+4.  You will then be prompted to draw the cross-section line(s) that cut through the profiles.
+5.  A new curve will be created for each cross-section line.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is a manual way to create the curves that would be used in a command like `NetworkSrf`. It gives you a high degree of control over the shape of the resulting surface.
+
+### Practical Use Cases
+* **Use Case 1 (Manual Surface Creation):** You are modeling a very complex, organic shape, like the body of a custom ring. You have created several profile curves that define its shape at different points. You can use `CSec` to create the longitudinal curves that connect these profiles. You can then use all of these curves together in a `NetworkSrf` to create a very precise and controlled surface.
+
+### Other Information
+This is an advanced curve creation tool used for complex surface modeling.
+
+
+---
+
+## 141. CullControlPolygon
+
+### Short Info
+Do not draw control points and mesh vertices on the back side of objects.
+
+### Detailed Description
+The **CullControlPolygon** command is a display toggle that affects the visibility of control points and mesh vertices. When enabled, it "culls" or hides any control points or vertices that are on the back side of a surface or mesh, relative to the current view. This helps to de-clutter the display, making it much easier to see and select the points on the front side of an object without accidentally selecting points on the back.
+
+### Steps to use the command
+1.  Run the command `CullControlPolygon`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+
+### Command Options & Toggles
+This command is a simple toggle between **On** and **Off**.
+
+### Note for better use
+This is a global display setting that affects all objects in all viewports. It is an essential tool to turn on when you are doing detailed control point editing on complex, closed 3D objects.
+
+### Practical Use Cases
+* **Use Case 1 (Editing a Gemstone):** You have turned on the control points for a complex faceted gemstone model. With `CullControlPolygon` turned off, you see a confusing jumble of points from both the front and back of the stone. By turning it on, the view instantly cleans up, showing you only the control points for the facets facing you, making them easy to select and adjust.
+* **Use Case 2 (Sculpting an Organic Shape):** You are editing the surface of a complex, organic ring shank. You want to select a group of control points on the top surface to pull them up. With this command enabled, you can safely drag a selection window around the points on top, confident that you will not accidentally select and move any points on the underside of the shank.
+
+### Other Information
+This command only affects the display of control points and mesh vertices; it does not affect the geometry itself.
+
+---
+
+## 142. CullDegenerateMeshFaces
+
+### Short Info
+Delete mesh faces with zero area.
+
+### Detailed Description
+The **CullDegenerateMeshFaces** command is a mesh cleanup and repair tool. It searches a mesh object for any "degenerate" faces—polygons whose vertices are all co-linear (in a straight line) or co-incident (in the same location), resulting in a face with zero area. These zero-area faces are errors in the mesh structure and can cause problems for 3D printing, rendering, and other mesh operations. This command automatically finds and deletes them.
+
+### Steps to use the command
+1.  Select one or more mesh objects.
+2.  Run the command `CullDegenerateMeshFaces`.
+3.  The command will report how many degenerate faces were found and deleted.
+
+### Command Options & Toggles
+This command has no options. It is an immediate action.
+
+### Note for better use
+This is a safe and useful command to run as part of a standard mesh cleanup workflow, along with commands like `Weld` and checking for naked edges. It is a good practice to run this on any mesh you import from another program or after performing complex boolean operations.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for 3D Printing):** Before exporting a model as an STL file for 3D printing, you should run a series of cleanup commands. Running `CullDegenerateMeshFaces` ensures that the file you send to the printer does not contain these small errors, which can sometimes cause slicing failures.
+* **Use Case 2 (Fixing Imported Meshes):** You have imported an OBJ or STL file from an online source, and it is behaving strangely. Running this command can often fix hidden problems by removing invalid faces that are not immediately visible.
+
+### Other Information
+This is a key command in any professional mesh repair workflow.
+
+---
+
+## 143. Curvature
+
+### Short Info
+Evaluate the curvature of a curve or surface.
+
+### Detailed Description
+The **Curvature** command is an analysis tool that allows you to evaluate the curvature at a specific point on a curve or surface. When you run the command and click on a point, it displays the circle that matches the curve's "tightness" at that exact spot. It also reports the radius of that circle and the curvature value (which is 1/radius) in the command line. This is used to analyze the smoothness and consistency of a curve.
+
+### Steps to use the command
+1.  Run the command `Curvature`.
+2.  At the **Select curve or surface for curvature measurement** prompt, select an object.
+3.  Move your mouse along the object. A circle representing the curvature at the cursor's location will be displayed dynamically.
+4.  Click a point to place a permanent curvature circle and report the values in the command history.
+
+### Command Options & Toggles
+* **MarkCurvature (Yes/No):** If Yes, the command will create a permanent circle object and a point at the location you click. If No, it will only report the value.
+
+### Note for better use
+A smaller circle means higher curvature (a tighter bend), while a larger circle means lower curvature (a flatter section). For a perfectly smooth curve, the transition between the curvature circles as you move along it should be smooth and gradual.
+
+### Practical Use Cases
+* **Use Case 1 (Fairing a Curve):** You are designing a flowing, organic piece and want to ensure the main design lines are perfectly smooth, without any small kinks or flat spots. You can use the `Curvature` command to move along the curve and visually check that the curvature circle changes size smoothly and consistently.
+* **Use Case 2 (Checking for Kinks):** You have a curve that looks smooth but is causing a problem in a `Sweep` command. You can use `Curvature` to check the point where the sweep fails. If the curvature circle suddenly jumps in size or disappears, it indicates a hidden kink or problem at that point on the curve.
+
+### Other Information
+This is a more precise, point-by-point analysis tool compared to the more visual `CurvatureGraph` or `CurvatureAnalysis` commands.
+
+---
+
+## 144. CurvatureAnalysis
+
+### Short Info
+Visually evaluate surface curvature using a false-color map.
+
+### Detailed Description
+The **CurvatureAnalysis** command is a powerful surface analysis tool. It applies a false-color map to a surface that visually represents its curvature. This allows you to instantly see the shape and smoothness of a surface, identify any unwanted flat spots or wrinkles, and check for smooth transitions between joined surfaces.
+
+### Steps to use the command
+1.  Select the surface(s) to analyze.
+2.  Run the command `CurvatureAnalysis`.
+3.  A dialog box will appear with options to control the color map and the type of curvature being displayed.
+4.  The selected surfaces will be colored in the viewport.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **Gaussian:** This is the most common type. It shows flat areas as green, convex areas (domes) in one color range (e.g., red), and concave areas (bowls) in another (e.g., blue).
+* **Mean:** Shows the average curvature.
+* **Min Radius / Max Radius:** Shows the minimum or maximum amount of curve at any point.
+* **Auto Range:** Automatically adjusts the color map to fit the curvature range of the selected object.
+
+### Note for better use
+For a high-quality, "Class-A" surface, the color transitions in the curvature map should be very smooth and gradual. Any sudden, sharp changes in color indicate a problem area, like a kink or a point where tangency is not smooth.
+
+### Practical Use Cases
+* **Use Case 1 (Checking Surface Quality):** You have just created a complex, flowing surface for a ring using `NetworkSrf`. To ensure it is perfectly smooth before proceeding, you can run `CurvatureAnalysis`. If you see smooth, blended color transitions, the surface is good. If you see sharp lines or splotches of color, you know the surface needs to be rebuilt or repaired.
+* **Use Case 2 (Verifying Blends):** You have used `BlendSrf` to connect two surfaces. To verify that you have achieved true G2 (curvature) continuity, you can turn on `CurvatureAnalysis` for all three surfaces. If the color stripes flow seamlessly from one surface, across the blend, and onto the next surface, the blend is perfect.
+
+### Other Information
+This is an essential tool for any designer creating high-quality, free-form surfaces.
+
+---
+
+## 145. CurvatureAnalysisOff
+
+### Short Info
+Turn off curvature analysis.
+
+### Detailed Description
+The **CurvatureAnalysisOff** command is a simple utility that turns off the false-color curvature map created by the `CurvatureAnalysis` command and returns the objects to their normal display color.
+
+### Steps to use the command
+1.  Run the command `CurvatureAnalysisOff`.
+2.  The curvature analysis display will be turned off for all objects.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Ending Analysis):** You have finished inspecting your surfaces with `CurvatureAnalysis` and now want to continue modeling. You run `CurvatureAnalysisOff` to remove the color map and return to a standard shaded view.
+
+### Other Information
+This is the companion command to `CurvatureAnalysis`.
+
+---
+
+## 146. CurvatureGraph
+
+### Short Info
+Display a graph of the curvature on a curve or surface.
+
+### Detailed Description
+The **CurvatureGraph** command is an analysis tool that displays a visual "graph" on a curve or surface to represent its curvature. The graph consists of small lines (often called "hairs") that stick out from the object. The length of these lines corresponds to the amount of curvature at that point—longer lines mean higher curvature (tighter bends), and shorter lines mean lower curvature (flatter sections).
+
+### Steps to use the command
+1.  Select the curve(s) or surface(s) to analyze.
+2.  Run the command `CurvatureGraph`.
+3.  A dialog box will appear with options to control the appearance of the graph.
+4.  The curvature graph will be displayed on the selected objects.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **Display Scale:** Controls the length of the "hairs" to make the graph more or less exaggerated and easier to see.
+* **Hair Density:** Controls how many lines are displayed along the curve or surface.
+* **U / V:** On surfaces, allows you to display the graph in the U direction, V direction, or both.
+
+### Note for better use
+For a curve to be considered smooth and "fair," its curvature graph should be smooth and have no sudden jumps or breaks. A perfect circle will have a graph where all the hairs are the same length. A straight line will have no graph at all (zero curvature).
+
+### Practical Use Cases
+* **Use Case 1 (Fairing a Curve):** You are designing a key profile curve for a ring shank. To ensure it is perfectly smooth and has no imperfections, you turn on the `CurvatureGraph`. You can then edit the curve's control points and watch the graph update in real-time, aiming to make the graph as smooth and flowing as possible.
+* **Use Case 2 (Checking for Kinks):** If a curve has a hidden sharp point or kink, the curvature graph will show a sudden spike or break at that exact location, making it very easy to find and fix the problem.
+
+### Other Information
+This is an indispensable tool for anyone creating high-quality curves that will be used to generate surfaces.
+
+---
+
+## 147. CurvatureGraphOff
+
+### Short Info
+Turn off the curvature graph display.
+
+### Detailed Description
+The **CurvatureGraphOff** command is a simple utility that turns off the curvature graph created by the `CurvatureGraph` command.
+
+### Steps to use the command
+1.  Run the command `CurvatureGraphOff`.
+2.  The curvature graph display will be turned off for all objects.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Ending Analysis):** You have finished inspecting and fairing your curves with `CurvatureGraph` and now want to continue modeling. You run `CurvatureGraphOff` to remove the graph display.
+
+### Other Information
+This is the companion command to `CurvatureGraph`.
+
+---
+
+## 148. Curve
+
+### Short Info
+Draw a curve from control point locations.
+
+### Detailed Description
+The **Curve** command is one of the most fundamental 2D drawing tools. It creates a smooth, free-form NURBS curve by allowing you to place its control points. The curve does not pass through the control points (except for the start and end); instead, the points act like "magnets," pulling the curve towards them. This allows for the creation of smooth, flowing shapes.
+
+### Steps to use the command
+1.  Run the command `Curve`.
+2.  At the **Start of curve** prompt, click to place the first control point.
+3.  Continue clicking to place additional control points. A preview of the curve will update with each click.
+4.  Press Enter when you are finished.
+
+### Command Options & Toggles
+* **Degree:** Sets the mathematical degree of the curve. The default of 3 is standard for most free-form curves.
+* **Close:** Closes the curve by creating a segment from the last point back to the first.
+* **Undo:** Removes the last control point placed.
+
+### Note for better use
+For curves that must pass through specific points, use the `InterpCrv` (Interpolate Curve) command instead. Understanding the difference between control-point curves (`Curve`) and interpolated curves (`InterpCrv`) is a fundamental concept in NURBS modeling.
+
+### Practical Use Cases
+* **Use Case 1 (Drawing Organic Shapes):** You are drawing the flowing outline of a leaf or a scroll for a piece of filigree. The `Curve` command allows you to create a smooth, organic shape with a minimal number of control points, making it easy to edit later.
+* **Use Case 2 (Creating Profile Curves):** You are drawing the cross-section profile for a comfort-fit wedding band. The `Curve` command is ideal for creating the smooth, gentle arcs of the profile.
+
+### Other Information
+This is a workhorse command and one of the first that new users learn for 2D drawing.
+
+---
+
+## 149. CurveBoolean
+
+### Short Info
+Trim, split, and join curves based on their overlapping regions.
+
+### Detailed Description
+The **CurveBoolean** command is a powerful 2D editing tool. It takes two or more overlapping, closed, planar curves and allows you to create new curves based on their combined regions. You can create the union (the total outline), the intersection (only the shared area), or the difference (subtracting one area from another). It is the 2D equivalent of the 3D boolean commands.
+
+### Steps to use the command
+1.  Select two or more overlapping, closed, planar curves.
+2.  Run the command `CurveBoolean`.
+3.  The command line will present several options.
+4.  Click inside the regions you want to keep. A preview of the resulting curve will appear.
+5.  Press Enter to create the new curve(s).
+
+### Command Options & Toggles
+* **CombineRegions:** Toggles between creating a single outline (Union) or separate curves for each region.
+* **DeleteInput:** Deletes the original curves.
+* **AllRegions:** Automatically generates curves for every possible region.
+
+### Note for better use
+All input curves must be closed and they must all lie on the same plane for this command to work correctly.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Crescent Shape):** You want to create a perfect crescent moon shape. Draw two overlapping circles. Select both and run `CurveBoolean`. Click in the area of one circle that is *not* overlapping the other. Press Enter. The result is a single, clean crescent-shaped curve.
+* **Use Case 2 (Creating Complex Patterns):** You have created a complex pattern by overlapping many different shapes (circles, squares, etc.). `CurveBoolean` is the perfect tool to combine all of these into a single, clean outer boundary and/or to cut out the interior negative spaces.
+
+### Other Information
+This is an essential tool for creating complex 2D shapes from simpler components.
+
+---
+
+## 150. CurveThroughPolyline
+
+### Short Info
+Create a curve that passes through the vertices of a polyline.
+
+### Detailed Description
+The **CurveThroughPolyline** command takes a polyline (a curve made of straight line segments) and creates a new, smooth NURBS curve that passes through the vertices (corners) of that polyline. It is essentially a one-step way to smooth out a jagged polyline.
+
+### Steps to use the command
+1.  Select a polyline.
+2.  Run the command `CurveThroughPolyline`.
+3.  A new smooth curve is created.
+
+### Command Options & Toggles
+* **Degree:** Sets the degree of the resulting curve.
+* **DeleteInput:** Deletes the original polyline.
+
+### Note for better use
+This command is very similar to `CurveThroughPt`, but it uses the vertices of an existing polyline as its input instead of separate point objects.
+
+### Practical Use Cases
+* **Use Case 1 (Smoothing a Rough Trace):** You have quickly traced a design using the `Polyline` command, resulting in a shape with sharp corners. To get a smooth, organic version of your trace, you can run `CurveThroughPolyline`.
+
+### Other Information
+This is a simple utility for converting one curve type to another.
+
+---
+
+## 151. CurveThroughPt
+
+### Short Info
+Create a curve that passes through a selection of point objects.
+
+### Detailed Description
+The **CurveThroughPt** command creates a smooth NURBS curve that passes through a set of pre-existing point objects. This is different from the `InterpCrv` command, where you pick the points interactively. This command uses point objects that are already in your model.
+
+### Steps to use the command
+1.  Place two or more point objects in your model.
+2.  Run the command `CurveThroughPt`.
+3.  Select the point objects in the order you want the curve to pass through them.
+4.  Press Enter. A new curve is created.
+
+### Command Options & Toggles
+* **Degree:** Sets the degree of the resulting curve.
+* **Close:** Closes the curve.
+
+### Note for better use
+The order in which you select the points is critical, as it determines the path of the curve.
+
+### Practical Use Cases
+* **Use Case 1 (Reverse Engineering):** You have used a digitizing arm or another method to capture a series of specific data points from a physical object. You can use `CurveThroughPt` to generate a smooth curve that accurately represents the shape defined by those points.
+* **Use Case 2 (Plotting Data):** You have a set of X, Y, Z coordinates from a spreadsheet that you have imported as point objects. `CurveThroughPt` can be used to draw a smooth graph or path through this data.
+
+### Other Information
+This command is essential for workflows that involve creating geometry from pre-defined data points.
+
+---
+
+## 152. CurveThroughSrfControlPt
+
+### Short Info
+Create curves through surface control points.
+
+### Detailed Description
+The **CurveThroughSrfControlPt** command is a specialized tool that creates curves that pass through the control points of a selected surface. It essentially traces the rows of control points on a surface, creating a wireframe of curves that represents the surface's underlying structure.
+
+### Steps to use the command
+1.  Select a surface.
+2.  Run the command `CurveThroughSrfControlPt`.
+3.  Curves will be created along the U and V directions of the surface's control point grid.
+
+### Command Options & Toggles
+* **Direction (U/V/Both):** Allows you to choose whether to create curves in the U direction, the V direction, or both.
+
+### Note for better use
+The resulting curves are separate from the surface and can be edited or used for other modeling operations. This is a way to "extract" the structural lines of a surface.
+
+### Practical Use Cases
+* **Use Case 1 (Rebuilding a Surface):** You have a complex surface and you want to rebuild it using `NetworkSrf`. You can use `CurveThroughSrfControlPt` to extract the main "flow lines" of the surface. You can then edit or simplify these curves and use them as the input for a new, cleaner surface.
+
+### Other Information
+This is an advanced tool for surface analysis and reconstruction.
+
+---
+
+## 153. Cut
+
+### Short Info
+Delete objects and place them on the Clipboard.
+
+### Detailed Description
+The **Cut** command removes the selected objects from the model and places them on the Windows clipboard. This allows you to then use the `Paste` command to move them to a different location, a different Rhino file, or in some cases, to another application.
+
+### Steps to use the command
+1.  Select the object(s) you want to cut.
+2.  Run the command `Cut`.
+3.  The objects will disappear from the model and be placed on the clipboard.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the equivalent of the standard Windows shortcut Ctrl+X. Using the shortcut is much faster than typing the command.
+
+### Practical Use Cases
+* **Use Case 1 (Moving Objects Between Files):** You have designed a custom clasp in one Rhino file and want to move it into your current ring project (not just copy it). You can open the clasp file, select the clasp, use `Cut` (or Ctrl+X), switch to your ring file, and use `Paste` (or Ctrl+V) to move it.
+
+### Other Information
+This is a fundamental command for managing objects within and between files.
+
+---
+
+## 154. CutPlane
+
+### Short Info
+Create a planar surface that cuts through objects.
+
+### Detailed Description
+The **CutPlane** command creates one or more planar surfaces that pass through selected objects. Unlike the `ClippingPlane` command, which is a visual-only effect, `CutPlane` creates real NURBS surfaces. These surfaces can then be used as cutting objects for commands like `Trim`, `Split`, or `BooleanSplit`.
+
+### Steps to use the command
+1.  Select the object(s) you want to create cutting planes through.
+2.  Run the command `CutPlane`.
+3.  You will be prompted to draw a line in a viewport. This line defines the orientation and location of the cutting plane.
+4.  A new planar surface will be created.
+
+### Command Options & Toggles
+* **3Point:** Allows you to define the cutting plane by picking three points.
+
+### Note for better use
+This command is a very fast way to create a cutting object that is perfectly sized to pass through your entire model.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Cross-Section):** You want to split a ring in half to see its cross-section. Select the ring, run `CutPlane`, and draw a vertical line through the middle of the ring in the Top view. This creates a planar surface that you can then use with the `Split` command to cut the ring into two pieces.
+* **Use Case 2 (Flattening a Shank):** You need to flatten the bottom of a ring shank. Use `CutPlane` to create a horizontal plane that cuts through the bottom of the shank. You can then use this plane to `Trim` away the rounded bottom, leaving a flat surface.
+
+### Other Information
+This is a quick and efficient tool for creating cutting geometry.
+
+---
+
+## 155. CutVolume
+
+### Short Info
+Report the volume of the intersection between a solid and a box.
+
+### Detailed Description
+The **CutVolume** command is a specialized analysis tool. It calculates and reports the volume of the intersection between a selected solid object and a box volume that you define.
+
+### Steps to use the command
+1.  Select a closed polysurface.
+2.  Run the command `CutVolume`.
+3.  You will be prompted to define the corners of a cutting box.
+4.  The command history will report the volume of the portion of the original solid that was inside the cutting box.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a measurement tool only. It does not create or modify any geometry.
+
+### Practical Use Cases
+* **Use Case 1 (Material Estimation):** You have a model of a ring that is made of two different materials (e.g., a platinum shank with a gold inlay). You can use `CutVolume` to draw a box around just the inlay portion to calculate its specific volume, which is needed for accurate weight and cost estimation.
+
+### Other Information
+This is a niche analysis tool for calculating the volume of a sub-region of a solid.
+
+---
+
+## 156. Cylinder
+
+### Short Info
+Draw a solid cylinder.
+
+### Detailed Description
+The **Cylinder** command is a fundamental solid creation tool used to draw a solid cylinder.
+
+### Steps to use the command
+1.  Run the command `Cylinder`.
+2.  Follow the prompts. For a basic cylinder:
+    a. At the **Base of cylinder** prompt, pick a center point.
+    b. At the **Radius** prompt, drag the mouse and click, or type a value.
+    c. At the **End of cylinder** prompt, drag the mouse up or down for the height and click.
+
+### Command Options & Toggles
+* **3Point:** Defines the base circle by three points.
+* **Vertical:** Creates a cylinder that is vertical to the active CPlane.
+* **AroundCurve:** Creates a cylinder that is normal to a curve at a specified point.
+
+### Note for better use
+The cylinder is a "primitive" shape that is often used as a starting point for more complex models or as a cutting object.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Bezel):** The fastest way to start a simple round bezel is to draw a cylinder with the outer diameter of the bezel. You can then use the `Shell` command to hollow it out, or use a second, smaller cylinder and `BooleanDifference` to cut out the inside.
+* **Use Case 2 (Creating Cutters):** Cylinders are the most common type of cutter in jewelry. They are used with `BooleanDifference` to create holes for setting round gemstones, to create drill holes for stringing pearls, or to hollow out parts of a model.
+
+### Other Information
+This is one of the most basic and frequently used solid modeling commands.
+
+---
+
+## 157. Delete
+
+### Short Info
+Erase objects.
+
+### Detailed Description
+The **Delete** command permanently erases the selected objects from the model.
+
+### Steps to use the command
+1.  Select the object(s) you want to delete.
+2.  Run the command `Delete`.
+3.  The objects will be erased.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Pressing the **Delete** key on your keyboard is the universal and much faster way to perform this action. The `Delete` command is primarily useful when writing scripts or macros.
+
+### Practical Use Cases
+* **Use Case 1 (Cleaning a Model):** You have many temporary construction curves that you no longer need. You can select them all (`SelCrv`) and press the Delete key to remove them.
+* **Use Case 2 (Scripting):** You are writing a macro that creates temporary geometry, uses it for a calculation, and then needs to clean up after itself. You would include the `Delete` command in your script to remove the temporary objects.
+
+### Other Information
+For daily interactive use, always use the Delete key instead of typing this command.
+
+---
+
+## 158. DeleteHole
+
+### Short Info
+Remove a hole from a polysurface.
+
+### Detailed Description
+The **DeleteHole** command is a surface editing tool that removes a hole from a planar surface and repairs the surface. It is a very fast way to patch or fill circular or simple holes on flat faces.
+
+### Steps to use the command
+1.  Run the command `DeleteHole`.
+2.  At the **Select hole edge(s) to remove** prompt, click on the edge of the hole you want to remove.
+3.  Press Enter.
+4.  The hole will be filled.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command works best on holes in flat (planar) surfaces. While it can sometimes work on gently curved surfaces, it may fail or produce undesirable results on complex, doubly-curved surfaces. For those, you would need to use a tool like `Untrim` or `Patch`.
+
+### Practical Use Cases
+* **Use Case 1 (Removing a Drill Hole):** You have created a hole through a flat pendant for a chain, but you decide to use a bail instead. You can use `DeleteHole` to quickly select the edge of the hole and fill it in, making the surface solid again.
+* **Use Case 2 (Editing a Signet Top):** You have cut several holes in the top of a signet ring for stone settings but need to change the layout. `DeleteHole` allows you to quickly fill in the old holes before you create the new ones.
+
+### Other Information
+This is a powerful and time-saving tool for editing holes on flat surfaces.
+
+---
+
+## 159. DeleteMeshFaces
+
+### Short Info
+Remove selected faces from a mesh.
+
+### Detailed Description
+The **DeleteMeshFaces** command is a low-level mesh editing tool that removes selected faces from a mesh object, creating a hole. This is the primary way to open up a closed mesh or to remove unwanted parts of a mesh's surface.
+
+### Steps to use the command
+1.  Run the command `DeleteMeshFaces`.
+2.  At the **Select mesh faces to delete** prompt, select one or more faces.
+3.  Press Enter.
+4.  The selected faces will be deleted.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+To select individual mesh faces (sub-objects), you may need to hold down **Ctrl + Shift** while clicking. Deleting faces will create "naked edges" and make a mesh "open" or "non-watertight," which is generally undesirable for 3D printing unless you intend to patch the hole with new faces.
+
+### Practical Use Cases
+* **Use Case 1 (Manual Mesh Repair):** You have an imported STL file with some overlapping or intersecting faces that are causing errors. You can use `DeleteMeshFaces` to remove the problematic faces, and then use `3DFace` or `FillMeshHole` to rebuild the area correctly.
+* **Use Case 2 (Creating an Opening):** You have a solid, closed mesh model of a locket and you want to create an opening for the hinge. You can use `DeleteMeshFaces` to remove the faces where the hinge will be attached.
+
+### Other Information
+This is a fundamental command for any detailed mesh editing or repair work.
+
+---
+
+## 160. DeleteSubCrv
+
+### Short Info
+Delete a segment of a curve.
+
+### Detailed Description
+The **DeleteSubCrv** (Delete Sub-Curve) command removes a segment of a curve that lies between two points that you pick on that curve.
+
+### Steps to use the command
+1.  Run the command `DeleteSubCrv`.
+2.  At the **Select a curve to shorten** prompt, select the curve.
+3.  At the **Pick first point on curve** prompt, click a location on the curve.
+4.  At the **Pick second point on curve** prompt, click another location on the curve.
+5.  The segment of the curve between the two points will be deleted.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is similar to using the `Split` command with the "Point" option and then deleting the middle segment, but it combines those actions into a single command.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Gap for a Hinge):** You have drawn a complete, closed curve that represents the outline of a bezel. You now need to remove a small segment to make space for a hinge. You can use `DeleteSubCrv` to click on either side of the hinge area and remove that piece of the curve.
+* **Use Case 2 (Shortening a Design Element):** You have a long, flowing scrollwork curve and you decide it is too long. You can use `DeleteSubCrv` to remove the end portion of the curve back to a specific point.
+
+### Other Information
+This is a simple but useful curve editing utility for making precise cuts.
+
+
+---
+
+## 161. Detail
+
+### Short Info
+Manage detail views on a layout.
+
+### Detailed Description
+The **Detail** command is a viewport management tool used exclusively within the Layout (paper space) environment. A "detail view" is a window on your layout page that looks into your 3D model space. The `Detail` command allows you to activate, deactivate, and control the properties of these windows, such as their scale and locked status.
+
+### Steps to use the command
+1.  Go to a Layout page that contains detail views.
+2.  Run the command `Detail`.
+3.  The command line will show several options for managing the detail views.
+4.  Select an option (e.g., `Activate`).
+5.  Follow the prompts for that option.
+
+### Command Options & Toggles
+* **Activate:** Activates a selected detail view, allowing you to pan, zoom, and rotate the 3D model inside it, just like a regular viewport.
+* **Deactivate:** Deactivates the active detail view, returning you to editing the 2D layout page.
+* **Enable:** Turns on a disabled detail view.
+* **Disable:** Turns off a detail view, making the model inside it invisible.
+* **Lock:** Locks a detail view, preventing its camera from being panned or zoomed. This is crucial for maintaining a set scale.
+* **Unlock:** Unlocks a locked detail view.
+
+### Note for better use
+The most common workflow is to double-click inside a detail view to activate it, and double-click outside of it to deactivate it. The `Detail` command's main advantage is its `Lock` and `Unlock` options, which are essential for creating accurate, to-scale technical drawings.
+
+### Practical Use Cases
+* **Use Case 1 (Setting a Scale):** You are creating a technical drawing that requires a precise 1:1 scale view of a ring. You would activate the detail view, set the camera and zoom level, and then use `Detail > Lock` to lock the view. This prevents you from accidentally changing the scale while you add dimensions.
+* **Use Case 2 (Multi-View Layouts):** You are creating a presentation sheet with multiple views of a single piece of jewelry. Each view (Top, Front, Perspective) is in its own detail window. The `Detail` command allows you to activate each window individually to arrange the camera angle perfectly for that specific view.
+
+### Other Information
+This command is fundamental to creating 2D drawings and layouts from your 3D models.
+
+---
+
+## 162. Diameter
+
+### Short Info
+Report the diameter of a curve.
+
+### Detailed Description
+The **Diameter** command is an analysis tool that measures the diameter of a curve at a specified point. It is typically used on circles and arcs to verify their size.
+
+### Steps to use the command
+1.  Run the command `Diameter`.
+2.  At the **Select curve for diameter measurement** prompt, select a curve.
+3.  The command will report the diameter in the command history. For arcs and circles, it will also place temporary markers showing the diameter.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a quick measurement tool. To create a permanent, visible dimension on your model, use the `DimDiameter` command instead.
+
+### Practical Use Cases
+* **Use Case 1 (Verifying Gem Size):** You have drawn a circle that will represent a 5mm round gemstone. To quickly double-check that you created it correctly, you can run `Diameter` and select the circle. The command line should report a diameter of 5.00mm.
+* **Use Case 2 (Checking a Ring Rail):** You have created a ring rail for a size 7 ring and want to confirm its inner diameter. `Diameter` will give you an instant measurement.
+
+### Other Information
+This is a simple analysis command for quick verification of circular objects.
+
+---
+
+## 163. DigBeep
+
+### Short Info
+Turn the digitizer beep on and off.
+
+### Detailed Description
+The **DigBeep** command is a utility for users with a hardware digitizing arm connected to Rhino. It controls whether the computer makes a beeping sound each time a point is captured by the digitizer.
+
+### Steps to use the command
+1.  Run the command `DigBeep`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+
+### Command Options & Toggles
+This command is a simple toggle between **On** and **Off**.
+
+### Note for better use
+This is a user-preference setting and has no effect on the geometry or the digitizing process itself.
+
+### Practical Use Cases
+* **Use Case 1 (User Feedback):** A user is digitizing a physical model in a noisy workshop. They turn `DigBeep` on to get audible confirmation that each point they press with the digitizer's stylus has been successfully registered by the computer.
+
+### Other Information
+This command is only relevant for users with a hardware digitizing arm.
+
+---
+
+## 164. DigCalibrate
+
+### Short Info
+Calibrate a digitizer.
+
+### Detailed Description
+The **DigCalibrate** command is a utility for users with a hardware digitizing arm. It initiates a calibration process to ensure that the physical movements of the digitizer arm are accurately translated into the digital coordinates within the Rhino model space. This involves touching the digitizer's stylus to a series of known reference points.
+
+### Steps to use the command
+1.  Run the command `DigCalibrate`.
+2.  Follow the prompts in the command line, which will guide you through picking a series of points on your physical setup and the corresponding points in your Rhino model.
+
+### Command Options & Toggles
+The options are presented as a sequence of prompts during the calibration process.
+
+### Note for better use
+Calibration is a critical first step whenever you set up a digitizing arm for the first time or if you notice that the captured points are not aligning correctly with your model.
+
+### Practical Use Cases
+* **Use Case 1 (Initial Setup):** You have just connected a new digitizing arm to your computer. Before you can use it to trace a model, you must run `DigCalibrate` to establish the relationship between the physical space of the digitizer and the virtual space of your Rhino file.
+
+### Other Information
+This is a hardware setup and calibration tool, only used with digitizing arms.
+
+---
+
+## 165. DigCamera
+
+### Short Info
+Align the view to the digitizer.
+
+### Detailed Description
+The **DigCamera** command is a utility for users with a hardware digitizing arm. It synchronizes the viewport camera with the digitizer's stylus. When activated, the viewport camera will point in the same direction as the stylus, and the camera's target will be at the stylus's tip.
+
+### Steps to use the command
+1.  Run the command `DigCamera`.
+2.  The active viewport will update to match the digitizer's orientation.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This can be a useful way to navigate a 3D model by physically moving the digitizer arm, providing a more tactile way to inspect a digital object.
+
+### Practical Use Cases
+* **Use Case 1 (Model Inspection):** A designer is comparing a physical prototype on their desk to the 3D model. They can use `DigCamera` to point the physical digitizer stylus at a feature on the prototype, and the viewport camera will instantly pan and rotate to show the same feature on the digital model.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 166. DigClick
+
+### Short Info
+Simulate a mouse click at the digitizer's location.
+
+### Detailed Description
+The **DigClick** command is a utility for users with a hardware digitizing arm. It simulates a left mouse button click at the current location of the digitizer's stylus.
+
+### Steps to use the command
+1.  Run the command `DigClick`.
+2.  A mouse click is registered at the current stylus location.
+
+### Command Options & Toggles
+* **Auto (Yes/No):** When set to Yes, a click is automatically registered every time the digitizer pedal is pressed.
+
+### Note for better use
+This command allows for hands-free operation, where the user can trigger commands and select points using only the digitizer and its foot pedal.
+
+### Practical Use Cases
+* **Use Case 1 (Hands-Free Digitizing):** A user is tracing a delicate physical object and needs both hands to hold it steady. They can use the digitizer's foot pedal, linked to `DigClick`, to register points without having to touch the mouse or keyboard.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 167. DigDisconnect
+
+### Short Info
+Disconnect the digitizer.
+
+### Detailed Description
+The **DigDisconnect** command is a utility for users with a hardware digitizing arm. It closes the connection between Rhino and the digitizer.
+
+### Steps to use the command
+1.  Run the command `DigDisconnect`.
+2.  The connection to the digitizer is terminated.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+It is good practice to disconnect the digitizer when you are finished using it to free up the COM port on your computer.
+
+### Practical Use Cases
+* **Use Case 1 (Ending a Session):** You have finished tracing a physical object with your digitizer. You run `DigDisconnect` to properly close the software connection to the hardware.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 168. Digitize
+
+### Short Info
+Calibrate and connect a digitizer.
+
+### Detailed Description
+The **Digitize** command is the main utility for connecting and managing a hardware digitizing arm. It opens a dialog box that allows you to select the digitizer model, configure its connection settings (like the COM port), and initiate the calibration process.
+
+### Steps to use the command
+1.  Run the command `Digitize`.
+2.  The "Digitizer" dialog box appears.
+3.  Select your digitizer from the list and configure the port settings.
+4.  Click "Connect" to establish a connection.
+5.  Click "Calibrate" to run the `DigCalibrate` command.
+
+### Command Options & Toggles
+The options are all contained within the dialog box for connecting, disconnecting, and calibrating the hardware.
+
+### Note for better use
+This is the central control panel for setting up and managing your digitizer.
+
+### Practical Use Cases
+* **Use Case 1 (Setup):** This is the first command you would run when you want to start a new digitizing session to connect and prepare the hardware for use.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 169. DigLine
+
+### Short Info
+Draw a line normal to a surface with a digitizer.
+
+### Detailed Description
+The **DigLine** command is a specialized drawing tool for users with a hardware digitizing arm. It allows you to draw a line that is perpendicular (normal) to a surface at the point where you touch the digitizer's stylus to a corresponding physical object.
+
+### Steps to use the command
+1.  Run the command `DigLine`.
+2.  Follow the prompts to digitize points on the physical object.
+3.  A line normal to the corresponding digital surface will be created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This tool is useful for reverse-engineering tasks where you need to determine the surface normal at specific locations on a physical model.
+
+### Practical Use Cases
+* **Use Case 1 (Reverse Engineering):** You are digitizing a complex, physical model of a ring. You need to place prongs on the digital surface that are perfectly perpendicular to it. You can use `DigLine` to touch the physical model at the desired prong locations, which will create normal lines on your digital surface, providing a perfect axis for building the prongs.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 170. DigPause
+
+### Short Info
+Pause the digitizer.
+
+### Detailed Description
+The **DigPause** command is a utility for users with a hardware digitizing arm. It temporarily pauses the input from the digitizer, allowing you to move the stylus without sending any data to Rhino.
+
+### Steps to use the command
+1.  Run the command `DigPause`.
+2.  The digitizer input will be paused.
+3.  Run the command again to resume.
+
+### Command Options & Toggles
+This command is a toggle.
+
+### Note for better use
+This is useful when you need to reposition the digitizer arm to a new section of your physical model without creating unwanted points or lines in your digital model.
+
+### Practical Use Cases
+* **Use Case 1 (Repositioning):** You are tracing the outline of a large object. After tracing one side, you need to move the object and the digitizer to get access to the other side. You would use `DigPause` before moving everything to prevent stray points from being created, and then resume once you are in the new position.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 171. DigScale
+
+### Short Info
+Set the digitizer scale factor.
+
+### Detailed Description
+The **DigScale** command is a utility for users with a hardware digitizing arm. It allows you to set a scaling factor for the points being captured. This is useful if the physical model you are tracing is not at a 1:1 scale with the digital model you want to create.
+
+### Steps to use the command
+1.  Run the command `DigScale`.
+2.  You will be prompted to enter a scaling factor.
+
+### Command Options & Toggles
+The only option is the numerical scale factor you provide.
+
+### Note for better use
+You can also define the scale factor by picking reference points on the physical model and in the digital model.
+
+### Practical Use Cases
+* **Use Case 1 (Scaling Up):** You are digitizing a small, hand-carved wax model of a ring, but you want the final digital model to be 10% larger. You can set the `DigScale` factor to 1.1. Now, every point you capture from the small wax model will be created 10% larger in the Rhino file.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 172. DigSection
+
+### Short Info
+Create cross-sections through objects with a digitizer.
+
+### Detailed Description
+The **DigSection** command is a specialized drawing tool for users with a hardware digitizing arm. It allows you to create cross-section curves of a digital object by defining a cutting plane with the digitizer.
+
+### Steps to use the command
+1.  Run the command `DigSection`.
+2.  You will be prompted to digitize three points with the stylus. These three points define the cutting plane.
+3.  A cross-section curve will be created where that plane intersects the selected digital object.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a powerful reverse-engineering tool that allows you to capture the cross-sectional shape of a physical object by defining the section plane with the digitizer.
+
+### Practical Use Cases
+* **Use Case 1 (Capturing Profiles):** You have a physical model of a ring shank and need to capture its cross-sectional profile at various points. You can use `DigSection` to define cutting planes along the shank, which will generate the exact profile curves needed to remodel the shank digitally.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 173. DigSketch
+
+### Short Info
+Sketch a curve with a digitizer.
+
+### Detailed Description
+The **DigSketch** command is a drawing tool for users with a hardware digitizing arm. It allows you to "sketch" a curve by moving the digitizer's stylus across the surface of a physical object. Rhino captures a series of points as you move and creates a smooth curve from them.
+
+### Steps to use the command
+1.  Run the command `DigSketch`.
+2.  Press and hold the digitizer's foot pedal (or button).
+3.  Move the stylus across the physical object.
+4.  Release the pedal to stop sketching.
+5.  A curve will be created in the digital model.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is useful for quickly tracing organic outlines or surface details from a physical model. The accuracy of the curve depends on the smoothness of your hand movement.
+
+### Practical Use Cases
+* **Use Case 1 (Tracing a Pattern):** You have a pendant with a hand-engraved scrollwork pattern on it. You can use `DigSketch` to trace over the engraved lines on the physical object, which will create corresponding curves in your digital model that you can then use to recreate the pattern.
+
+### Other Information
+This is a hardware interface command, only used with digitizing arms.
+
+---
+
+## 174. Dim
+
+### Short Info
+Create a horizontal or vertical linear dimension.
+
+### Detailed Description
+The **Dim** (Dimension) command is a fundamental annotation tool. It creates a linear dimension that measures the distance between two points, constrained to be either horizontal or vertical relative to the active construction plane.
+
+### Steps to use the command
+1.  Run the command `Dim`.
+2.  Pick the first point.
+3.  Pick the second point.
+4.  Pick the location for the dimension line.
+
+### Command Options & Toggles
+* **Horizontal:** Forces the dimension to be horizontal.
+* **Vertical:** Forces the dimension to be vertical.
+* **Rotated:** Allows you to create a dimension at a specific angle.
+
+### Note for better use
+The appearance of the dimension (arrowheads, text size, font) is controlled by the current Annotation Style, which can be edited in the Document Properties.
+
+### Practical Use Cases
+* **Use Case 1 (Technical Drawings):** You are creating a 2D technical drawing of a ring for a manufacturer. You need to specify the overall width and height of the ring. The `Dim` command is used to create these clear, standard horizontal and vertical measurements.
+
+### Other Information
+This is one of the primary tools for creating 2D documentation.
+
+---
+
+## 175. DimAligned
+
+### Short Info
+Create a linear dimension aligned with two points.
+
+### Detailed Description
+The **DimAligned** command is an annotation tool that creates a linear dimension whose measurement line is parallel to the line between the two points being measured. Unlike the `Dim` command, it is not constrained to be horizontal or vertical.
+
+### Steps to use the command
+1.  Run the command `DimAligned`.
+2.  Pick the first point.
+3.  Pick the second point.
+4.  Pick the location for the dimension line.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Measuring Angled Features):** You are creating a technical drawing of a bezel setting with tapered walls. To specify the length of the angled wall itself, you would use `DimAligned` and click on the top and bottom points of the wall.
+* **Use Case 2 (Diagonal Measurements):** You need to specify the corner-to-corner distance of a square gemstone. `DimAligned` will create a dimension that is aligned with the diagonal.
+
+### Other Information
+This is the tool to use for any linear dimension that is not perfectly horizontal or vertical.
+
+---
+
+## 176. DimAngle
+
+### Short Info
+Dimension the angle between two lines.
+
+### Detailed Description
+The **DimAngle** command is an annotation tool that creates an angular dimension to show the angle between two lines.
+
+### Steps to use the command
+1.  Run the command `DimAngle`.
+2.  Select the first line.
+3.  Select the second line.
+4.  Pick the location for the dimension arc.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Specifying Prong Angles):** You are creating a technical drawing for a multi-prong setting and need to specify the exact angle between the prongs. `DimAngle` is used to create a clear, visible dimension showing this angle.
+* **Use Case 2 (Taper Angles):** You need to show the draft angle on a bezel wall. `DimAngle` can be used between the bezel wall and a vertical construction line to create this dimension.
+
+### Other Information
+This is a standard tool for technical drafting and annotation.
+
+---
+
+## 177. DimArea
+
+### Short Info
+Dimension the area of a closed curve, hatch, surface, or mesh.
+
+### Detailed Description
+The **DimArea** command is an annotation tool that calculates the area of a closed object and creates a text field displaying that area, often with a leader line pointing to the object.
+
+### Steps to use the command
+1.  Run the command `DimArea`.
+2.  Select a closed curve, hatch, surface, or mesh.
+3.  The area will be displayed at the cursor. Click to place the text.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The text created is a "Text Field," which means if you scale or change the object, the area value in the dimension can be updated automatically using the `UpdateText` command.
+
+### Practical Use Cases
+* **Use Case 1 (Material Callouts):** You are creating a drawing for a piece that will be enameled. You can use `DimArea` to create a label that points to the enameled section and displays its exact surface area, which is useful information for the enameler.
+
+### Other Information
+This is a specialized annotation tool for displaying area measurements directly on a drawing.
+
+---
+
+## 178. DimCreaseAngle
+
+### Short Info
+Dimension the angle between two surfaces.
+
+### Detailed Description
+The **DimCreaseAngle** command is an annotation tool that measures and creates a dimension for the angle between two adjacent faces of a polysurface.
+
+### Steps to use the command
+1.  Run the command `DimCreaseAngle`.
+2.  At the **Select a surface** prompt, select the first face.
+3.  At the **Select a second surface** prompt, select an adjacent face.
+4.  Pick a location for the dimension.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Facet Angles):** You have modeled a custom-cut gemstone and need to create a diagram for the gem cutter that specifies the exact angle between the table facet and the star facets. `DimCreaseAngle` is the tool used to create these dimensions.
+
+### Other Information
+This is a specialized 3D dimensioning tool.
+
+---
+
+## 179. DimCurveLength
+
+### Short Info
+Dimension the length of a curve.
+
+### Detailed Description
+The **DimCurveLength** command is an annotation tool that calculates the length of a curve and creates a text field displaying that length, with a leader line pointing to the curve.
+
+### Steps to use the command
+1.  Run the command `DimCurveLength`.
+2.  Select a curve.
+3.  The length will be displayed at the cursor. Click to place the text.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Like `DimArea`, this creates a Text Field that can be updated if the curve's length changes.
+
+### Practical Use Cases
+* **Use Case 1 (Chain Length):** You have drawn a curve representing the path of a necklace chain and need to label its total length on a drawing. `DimCurveLength` will create this label automatically.
+
+### Other Information
+This is a specialized annotation tool for displaying curve length measurements.
+
+---
+
+## 180. DimDiameter
+
+### Short Info
+Dimension the diameter of a curve.
+
+### Detailed Description
+The **DimDiameter** command is a fundamental annotation tool used to create a diameter dimension for a circle or arc.
+
+### Steps to use the command
+1.  Run the command `DimDiameter`.
+2.  Select the circle or arc to dimension.
+3.  Pick the location for the dimension line.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Specifying Gem Sizes):** You are creating a technical drawing for a ring. You must use `DimDiameter` to create a clear dimension showing the exact diameter of the center stone and any accent stones. This is critical information for the stone setter.
+* **Use Case 2 (Ring Size):** On a drawing, you can use `DimDiameter` to specify the inner diameter of the ring shank, which corresponds to the finger size.
+
+### Other Information
+This is one of the most frequently used dimensioning tools in jewelry design.
+
+
+---
+
+## 181. DimOrdinate
+
+### Short Info
+Create ordinate dimensions.
+
+### Detailed Description
+The **DimOrdinate** command is a specialized annotation tool used in technical drafting to create ordinate dimensions. Unlike linear dimensions that measure the distance between two points, ordinate dimensions measure the X or Y distance of a feature from a single, fixed base point (the origin). All dimensions in a set share this common origin, which keeps drawings clean and avoids tolerance buildup.
+
+### Steps to use the command
+1.  Run the command `DimOrdinate`.
+2.  At the **Select point to dimension** prompt, pick the location of the feature you want to dimension.
+3.  At the **Leader end point** prompt, drag the leader line to a clear location and click.
+4.  The dimension text, showing the X or Y coordinate relative to the origin, will be placed.
+
+### Command Options & Toggles
+* **Direction (X_datum/Y_datum):** Specifies whether you are creating a dimension for the X-coordinate or the Y-coordinate.
+* **UseCPlaneCoordinates:** Measures the coordinates relative to the current construction plane's origin, rather than the world origin.
+
+### Note for better use
+Ordinate dimensioning is a standard practice in mechanical engineering and manufacturing drawings. It ensures that all features are measured from a single reference point, which is critical for precision machining.
+
+### Practical Use Cases
+* **Use Case 1 (Technical Plate Drawing):** You are creating a 2D manufacturing drawing for a flat metal plate that will have several holes drilled in it. Instead of creating a complex web of linear dimensions between each hole, you would establish a base point at one corner of the plate. Then, use `DimOrdinate` to create clean X and Y dimensions for the center of each hole, all referencing that single corner.
+
+### Other Information
+This is a formal drafting tool and is less commonly used in artistic jewelry design but is essential for creating precise manufacturing schematics.
+
+---
+
+## 182. DimRadius
+
+### Short Info
+Dimension the radius of a curve.
+
+### Detailed Description
+The **DimRadius** command is a fundamental annotation tool used to create a radius dimension for a circle or an arc. It displays the radius value with a leader line pointing from the text to the curve.
+
+### Steps to use the command
+1.  Run the command `DimRadius`.
+2.  At the **Select curve for radius dimension** prompt, select a circle or arc.
+3.  At the **Pick dimension line location** prompt, click to place the dimension text and leader line.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The appearance of the dimension (arrowheads, text size, font) is controlled by the current Annotation Style. This command is the counterpart to `DimDiameter`.
+
+### Practical Use Cases
+* **Use Case 1 (Specifying Fillets):** You have created a ring with rounded edges using the `FilletEdge` command. In your technical drawing, you must specify the radius of these fillets. `DimRadius` is the correct tool to create a clear label showing the fillet radius.
+* **Use Case 2 (Defining Corners):** You are creating a drawing for a custom-shaped bezel with rounded corners. You would use `DimRadius` to specify the exact radius of each corner for the manufacturer.
+
+### Other Information
+This is one of the most frequently used dimensioning tools.
+
+---
+
+## 183. DimRecenterText
+
+### Short Info
+Return dimension text to its default location.
+
+### Detailed Description
+The **DimRecenterText** command is a utility for cleaning up dimensions. If you have manually moved the text of a dimension to a custom location, this command will instantly snap it back to its original, default position as defined by the current annotation style.
+
+### Steps to use the command
+1.  Select one or more dimension objects whose text has been moved.
+2.  Run the command `DimRecenterText`.
+3.  The text on the selected dimensions will move back to its default location.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Cleaning Up Drawings):** You have been moving dimension text around to fit in a crowded area of your drawing. Now, after rearranging the drawing, you want to restore the text to its proper, standardized position. `DimRecenterText` does this for all selected dimensions in one step.
+
+### Other Information
+This is a simple but useful utility for maintaining consistency and standards in your technical drawings.
+
+---
+
+## 184. DimRotated
+
+### Short Info
+Create a rotated linear dimension.
+
+### Detailed Description
+The **DimRotated** command is an annotation tool that creates a linear dimension, but allows you to specify a rotation angle for the dimension line itself. This is useful for measuring the distance between two points along a specific direction that is not necessarily aligned with the points or the main axes.
+
+### Steps to use the command
+1.  Run the command `DimRotated`.
+2.  At the **First dimension point** prompt, pick a point.
+3.  At the **Second dimension point** prompt, pick a second point.
+4.  At the **Rotation angle** prompt, define the angle for the dimension line.
+5.  Pick the location for the dimension line.
+
+### Command Options & Toggles
+This command has no options; the angle is set interactively.
+
+### Note for better use
+This command is different from `DimAligned`. `DimAligned` creates a dimension line that is *parallel* to the two points. `DimRotated` creates a dimension line at *any angle you specify* and measures the distance between the two points along that direction.
+
+### Practical Use Cases
+* **Use Case 1 (Measuring Part Width at an Angle):** You have a tapered ring shank and you need to specify its width at a location that is 30 degrees from the top. You can use `DimRotated` to create a dimension that measures the width specifically along that 30-degree line.
+
+### Other Information
+This is a specialized dimensioning tool for measuring objects along a specific, non-axial direction.
+
+---
+
+## 185. Dir
+
+### Short Info
+Display and edit an object's normal direction.
+
+### Detailed Description
+The **Dir** (Direction) command is a powerful analysis and editing tool that allows you to see and change the "direction" of curves, surfaces, and meshes. For a curve, this is its start and end. For a surface, this is its U, V, and Normal (outward) direction. The direction of an object is a critical property that affects how many other commands, especially boolean and surfacing commands, work.
+
+### Steps to use the command
+1.  Select an object.
+2.  Run the command `Dir`.
+3.  White arrows will appear on the object indicating its current direction(s).
+4.  The command line will show options for changing the direction. Click on the object to flip the direction.
+5.  Press Enter when you are finished.
+
+### Command Options & Toggles
+* **Flip:** Reverses the object's direction.
+* **SwapUV:** (Surfaces only) Swaps the U and V directions.
+* **ReverseU/ReverseV:** (Surfaces only) Reverses the U or V direction individually.
+
+### Note for better use
+If a boolean operation gives you the opposite result of what you expected (e.g., it cuts the wrong piece away), the most likely cause is that the normal direction of one of your surfaces is flipped inward. Use `Dir` to check and flip it so it points outward. Similarly, if a `Loft` or `Sweep` is twisted, it's often because the directions of the input curves do not match.
+
+### Practical Use Cases
+* **Use Case 1 (Fixing Booleans):** You are trying to subtract a cutter from a ring (`BooleanDifference`), but instead, the ring is subtracted from the cutter. Select the ring, run `Dir`, and you will likely see the normal arrows pointing *into* the object. Click it to flip the normals outward, and the boolean will now work correctly.
+* **Use Case 2 (Fixing a Sweep):** You are creating a `Sweep2` for a ring shank, but the profile curves are flipping upside down along the path. This is because the direction of your two rail curves are not pointing the same way. Use `Dir` on each rail curve to ensure their direction arrows are pointing in the same direction.
+
+### Other Information
+Understanding and checking object direction with `Dir` is one of the most important troubleshooting skills in Rhino.
+
+---
+
+## 186. DirectionalLight
+
+### Short Info
+Insert a directional light.
+
+### Detailed Description
+The **DirectionalLight** command adds a directional light source to the model. A directional light simulates a very distant light source, like the sun. It emits parallel rays in a single direction, so its position in the scene does not matter, only its rotation. The objects in the scene are illuminated as if the light is infinitely far away.
+
+### Steps to use the command
+1.  Run the command `DirectionalLight`.
+2.  You will be prompted to pick two points in the viewport. The line between these two points will define the direction vector of the light.
+3.  A light object will be created in your model.
+
+### Command Options & Toggles
+This command has no options in the command line. The light's properties (color, intensity) are edited in the Properties panel.
+
+### Note for better use
+The default Rhino sun is a type of directional light. Adding your own directional lights is useful for creating specific lighting schemes for rendering, such as a three-point lighting setup (key, fill, and back lights).
+
+### Practical Use Cases
+* **Use Case 1 (Studio Lighting):** You are setting up a scene to render a piece of jewelry. You can use `DirectionalLight` to create your main "key" light that defines the primary shadows, and another one with lower intensity to act as a "fill" light to soften the shadows.
+* **Use Case 2 (Simulating Sunlight):** You want to render a piece to show how it would look in direct afternoon sunlight. You can create a `DirectionalLight`, aim it at an appropriate angle, and give it a warm, yellowish color to simulate the sun.
+
+### Other Information
+This is one of the fundamental light types used in 3D rendering.
+
+---
+
+## 187. DisableClippingPlane
+
+### Short Info
+Turn off selected clipping planes in the active viewport.
+
+### Detailed Description
+The **DisableClippingPlane** command deactivates the effect of a selected `ClippingPlane` object in the currently active viewport. The clipping plane object remains in the model, but it will no longer visually clip away geometry in that specific view.
+
+### Steps to use the command
+1.  Make the viewport where you want to disable the effect active.
+2.  Run the command `DisableClippingPlane`.
+3.  At the **Select clipping planes to disable** prompt, select the clipping plane object(s).
+4.  The clipping effect will be turned off in the active viewport.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+You can also control which viewports a clipping plane is active in by selecting the clipping plane and going to its Properties panel. The `DisableClippingPlane` command is a faster way to do this for the active view. The opposite command is `EnableClippingPlane`.
+
+### Practical Use Cases
+* **Use Case 1 (Controlling Views):** You have a clipping plane that cuts through your model to show a cross-section in the Perspective view. However, you want your Top and Front views to remain un-clipped so you can take measurements. You would make the Top view active and use `DisableClippingPlane` to turn off the effect there, and then do the same for the Front view.
+
+### Other Information
+This command provides viewport-specific control over the display of clipping planes.
+
+---
+
+## 188. DisableOsnap
+
+### Short Info
+Turn off persistent object snaps.
+
+### Detailed Description
+The **DisableOsnap** command is a toggle that temporarily turns off all persistent object snaps (the ones that are checked in the Osnap panel). This is useful when you are working in a very dense area and the object snaps are making it difficult to select a point freely.
+
+### Steps to use the command
+1.  Run the command `DisableOsnap`.
+2.  The "Disabled" text will appear in the Osnap panel in the status bar, and all persistent snaps will be temporarily deactivated.
+3.  Run the command again to re-enable them.
+
+### Command Options & Toggles
+This command is a toggle.
+
+### Note for better use
+Clicking the "Disable" text in the status bar has the same effect and is much faster. You can also hold down the **Alt** key while picking a point to temporarily suspend all Osnaps for that single pick.
+
+### Practical Use Cases
+* **Use Case 1 (Working in Crowded Areas):** You are trying to place a control point in a very precise location near a complex object with many edges and corners. The object snaps keep trying to snap to an endpoint or midpoint, preventing you from placing the point exactly where you want it. You can use `DisableOsnap` to turn them all off, place your point freely, and then turn them back on.
+
+### Other Information
+This is a workflow utility for managing object snaps.
+
+---
+
+## 189. DisplayCommandPrompt
+
+### Short Info
+Show, hide, and move the command prompt window.
+
+### Detailed Description
+The **DisplayCommandPrompt** command is a utility that controls the visibility and position of the command prompt window within the Rhino interface. This is the same as the `CommandPrompt` command.
+
+### Steps to use the command
+1.  Run the command `DisplayCommandPrompt`.
+2.  The command line will present several options for controlling the window.
+
+### Command Options & Toggles
+* **Show (Yes/No):** Toggles the visibility of the command prompt window.
+* **Position:** Allows you to change the location of the window (e.g., Top, Bottom, Floating).
+
+### Note for better use
+If you ever accidentally close the command prompt, typing this command and choosing "Show" is the way to get it back.
+
+### Practical Use Cases
+* **Use Case 1 (UI Customization):** A user prefers to have the command prompt floating in a separate window on a second monitor instead of docked at the top of the screen. They can use this command to change its position.
+
+### Other Information
+This is purely an interface customization command.
+
+---
+
+## 190. DisplayProperties
+
+### Short Info
+Open the Display panel.
+
+### Detailed Description
+The **DisplayProperties** command opens the "Display" panel. This panel allows you to override the display mode settings for specific, selected objects. This means you can have one object appear in wireframe while all other objects are in shaded mode within the same viewport.
+
+### Steps to use the command
+1.  Run the command `DisplayProperties`.
+2.  The Display panel will open (often docked with other panels like Layers and Properties).
+3.  Select an object.
+4.  In the Display panel, you can assign a specific display mode to that object that is different from the viewport's overall display mode.
+
+### Command Options & Toggles
+The options are all contained within the panel, allowing you to assign any available display mode (Wireframe, Shaded, Rendered, etc.) to the selected object.
+
+### Note for better use
+This is a powerful tool for visualization and for working with complex models. To remove the override, select the object and choose the "Use View" option in the Display panel.
+
+### Practical Use Cases
+* **Use Case 1 (Reference Geometry):** You have a complex ring model and have also created a set of construction curves on its surface. To make the curves easier to see against the solid model, you can select the main ring, open the Display panel, and set its mode to "Shaded" while keeping the viewport in "Wireframe." Now the ring will be solid, but the rest of the scene, including your curves, will be in wireframe.
+* **Use Case 2 (X-Ray Vision):** You have a bezel setting with a gemstone inside. You want to see both the solid metal and the gemstone, even though the gem is inside. You can select the bezel and set its display mode to "Ghosted" or "X-Ray." This will make the bezel transparent, allowing you to see the gemstone clearly inside it.
+
+### Other Information
+This command provides per-object control over display modes, which is very useful for advanced visualization.
+
+---
+
+## 191. Distance
+
+### Short Info
+Report the distance between two locations.
+
+### Detailed Description
+The **Distance** command is a fundamental analysis tool that measures and reports the distance between two points that you pick in the viewport. It provides a detailed breakdown in the command line, including the straight-line distance, the delta (distance) in the X, Y, and Z axes, and the angle in the CPlane.
+
+### Steps to use the command
+1.  Run the command `Distance`.
+2.  At the **First point** prompt, pick a location.
+3.  At the **Second point** prompt, pick another location.
+4.  The distance measurements will be reported in the command history.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Use object snaps to ensure you are measuring between the exact points you intend (e.g., from the `End` of one line to the `Midpoint` of another).
+
+### Practical Use Cases
+* **Use Case 1 (Checking Clearances):** You are designing a channel setting and need to ensure the distance between the two channel walls is exactly 3mm. You can use the `Distance` command with the `Near` or `Perp` snaps to measure the gap and verify its size.
+* **Use Case 2 (Verifying Shank Thickness):** You need to check that the bottom of your ring shank is at least 1.5mm thick. You can use the `Distance` command in the Front or Right view to measure from the inside surface to the outside surface.
+
+### Other Information
+This is one of the most frequently used analysis commands for verifying a model's dimensions.
+
+---
+
+## 192. Divide
+
+### Short Info
+Create point objects along a curve.
+
+### Detailed Description
+The **Divide** command is a point creation tool that places a specified number of evenly spaced point objects along a curve.
+
+### Steps to use the command
+1.  Select the curve you want to divide.
+2.  Run the command `Divide`.
+3.  At the **Number of segments** prompt, type the number of sections you want to divide the curve into and press Enter.
+4.  Point objects will be created at the end of each segment.
+
+### Command Options & Toggles
+* **Length:** Allows you to divide the curve into segments of a specified length instead of a specified number.
+* **Split:** If set to Yes, this option will split the curve into separate segments at the division points instead of just placing point objects.
+
+### Note for better use
+The command asks for the "Number of segments." If you enter 10 segments, you will get 11 point objects (one at the start, one at the end, and 9 in between).
+
+### Practical Use Cases
+* **Use Case 1 (Placing Prongs):** You need to place 5 prongs evenly spaced around the top edge of a bezel. You can select the top edge curve, run `Divide`, and enter 5 for the number of segments. This will create 5 evenly spaced points on the edge, which are the perfect locations to place your prongs.
+* **Use Case 2 (Arranging Decorative Elements):** You want to place small decorative spheres along a curved line on a pendant. The `Divide` command can create the precise, evenly spaced points you need to snap the center of each sphere to.
+
+### Other Information
+This is a fundamental tool for layout and for creating guide geometry.
+
+---
+
+## 193. DivideAlongCreases
+
+### Short Info
+Split a surface at creases.
+
+### Detailed Description
+The **DivideAlongCreases** command is a surface editing tool that takes a single surface that has sharp corners or "creases" and splits it into a polysurface made of separate, simpler faces. This is useful for breaking down complex surfaces into more manageable parts.
+
+### Steps to use the command
+1.  Select a surface that has one or more creases.
+2.  Run the command `DivideAlongCreases`.
+3.  The surface will be split into a polysurface.
+
+### Command Options & Toggles
+* **SplitAtTangents:** If set to Yes, this option will also split the surface at locations where the curve is tangent, not just at sharp corners.
+
+### Note for better use
+This command is essentially the opposite of what happens when you create a surface with the `CreaseSplitting` option turned OFF. This command allows you to retroactively split a creased surface that was created as a single entity.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for Editing):** You have imported a surface from another program that has sharp corners but is still a single surface. This can make it difficult to edit with commands like `MoveFace`. By running `DivideAlongCreases`, you can break it down into a standard polysurface with separate faces that are easier to select and manipulate.
+
+### Other Information
+This is a specialized tool for converting single creased surfaces into standard polysurfaces.
+
+---
+
+## 194. DocumentProperties
+
+### Short Info
+Manage settings for the current model.
+
+### Detailed Description
+The **DocumentProperties** command (more commonly accessed by running the `Options` command) opens the main settings dialog box for the current Rhino file. This is the central location for managing all file-specific settings, including units, tolerances, annotation styles, render settings, and much more.
+
+### Steps to use the command
+1.  Run the command `DocumentProperties` or `Options`.
+2.  The Rhino Options dialog box will appear.
+3.  Navigate through the different pages on the left to access and change the settings for your file.
+
+### Command Options & Toggles
+The options are the vast array of settings contained within the dialog box, organized into pages like:
+* **Units:** Sets the model units (millimeters, inches) and tolerances.
+* **Grid:** Controls the appearance and behavior of the construction plane grid.
+* **Annotation Styles:** Where you define the font, size, and appearance of all dimensions and text.
+* **Mesh:** Controls the quality of the render meshes used for shaded and rendered views.
+
+### Note for better use
+The settings in Document Properties are saved *with the file*. They are different from the main Rhino Options, which are global settings for the application. It is a good idea to create a template file with all of your preferred document properties (like units set to millimeters and your custom dimension style) and use that template to start all your new jewelry projects.
+
+### Practical Use Cases
+* **Use Case 1 (Setting Up a New Project):** Before you begin any new jewelry model, the first step should be to open `DocumentProperties` and ensure your Units are set to Millimeters and your Absolute tolerance is set to an appropriate value (e.g., 0.001).
+* **Use Case 2 (Customizing Dimensions):** You want all the dimensions in your technical drawings to use a specific font and have a certain text size. You would go to `DocumentProperties > Annotation Styles`, edit your style, and set the font and text height. All dimensions using that style will update.
+
+### Other Information
+Understanding and properly configuring the Document Properties is essential for professional and accurate modeling.
+
+---
+
+## 195. DocumentPropertiesPage
+
+### Short Info
+Open a specific page in the Document Properties dialog.
+
+### Detailed Description
+The **DocumentPropertiesPage** command is a utility that opens the Document Properties dialog box directly to a specific page that you name. This is a shortcut to avoid having to open the main dialog and then navigate to the page you want.
+
+### Steps to use the command
+1.  Run the command `DocumentPropertiesPage`.
+2.  At the **Page name** prompt, type the name of the page you want to open (e.g., "Units", "Grid").
+3.  The Document Properties dialog box will open with that page already selected.
+
+### Command Options & Toggles
+This command has no options other than the page name you provide.
+
+### Note for better use
+This command is most useful when creating custom toolbar buttons or macros for quick access to a settings page you use frequently.
+
+### Practical Use Cases
+* **Use Case 1 (Custom Toolbar):** You frequently need to adjust the render mesh settings for your models. You could create a custom button on your toolbar with the macro `! _DocumentPropertiesPage Mesh` to instantly open the mesh settings without any extra clicks.
+
+### Other Information
+This is a simple workflow efficiency command for power users.
+
+---
+
+## 196. DollyZoom
+
+### Short Info
+Move the camera location and change the lens length simultaneously.
+
+### Detailed Description
+The **DollyZoom** command is a camera manipulation tool that creates a cinematic effect known as a "dolly zoom" or "Vertigo effect." It works by moving the camera toward or away from the target while simultaneously changing the camera's lens length. This results in the main subject staying the same size in the frame, while the background appears to either expand and become more distorted, or compress and become flatter.
+
+### Steps to use the command
+1.  Make a perspective viewport active.
+2.  Run the command `DollyZoom`.
+3.  Drag the mouse up or down in the viewport to perform the dolly zoom.
+4.  Click to end the command.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a purely visual, cinematic effect and has no practical application for the geometric modeling of jewelry. It is used for creating dramatic camera movements for animations or presentations.
+
+### Practical Use Cases
+* **Use Case 1 (Animation):** You are creating an animation to present a ring and want to create a dramatic shot where the ring stays in focus but the background seems to warp around it. `DollyZoom` is the tool used to create this specific camera effect.
+
+### Other Information
+This is a specialized camera tool for creating a specific visual effect.
+
+---
+
+## 197. Domain
+
+### Short Info
+Report the domain of a curve or surface.
+
+### Detailed Description
+The **Domain** command is a technical analysis tool that reports the "domain" of a curve or surface. The domain is the range of numbers (from a minimum to a maximum) that Rhino uses internally to describe the parameter space of an object. For a curve, this is a single range (e.g., from 0 to 12.5). For a surface, it has two ranges, one for the U direction and one for the V direction.
+
+### Steps to use the command
+1.  Select a curve or surface.
+2.  Run the command `Domain`.
+3.  The domain range(s) will be reported in the command history.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Understanding the domain is an advanced concept, but it can be important for certain scripting and surfacing workflows. For example, some commands work best on objects that have a simple domain (like 0 to 1). The `Rebuild` command can be used to simplify an object's domain.
+
+### Practical Use Cases
+* **Use Case 1 (Scripting):** A script writer is creating a tool that needs to place an object at the exact midpoint of a curve. They can use the `Domain` command to find the start and end values of the curve's parameter space, and then calculate the midpoint value to use in their script.
+
+### Other Information
+This is an advanced, technical command primarily used by scripters and power users.
+
+---
+
+## 198. Dot
+
+### Short Info
+Create an annotation dot.
+
+### Detailed Description
+The **Dot** command creates a small, text-based annotation object that is used to mark a location and display a short piece of text. The dot is always parallel to the view and scales with the view, so it remains readable even when you zoom in and out.
+
+### Steps to use the command
+1.  Run the command `Dot`.
+2.  At the **Location of annotation dot** prompt, pick a point.
+3.  The text from the previous dot is displayed. Press Enter to accept it, or type new text and press Enter.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The appearance of the dot (font, size) is controlled by the current Annotation Style settings in your Document Properties.
+
+### Practical Use Cases
+* **Use Case 1 (Leaving Notes):** You are working on a design and need to leave a note for yourself or a colleague about a specific area, for example, "Check thickness here." You can use the `Dot` command to place a marker with that text directly on the model.
+* **Use Case 2 (Labeling Parts):** You have a complex assembly and want to label the different parts. You can use dots to label the "shank," "head," "gallery," etc.
+
+### Other Information
+This is a fundamental annotation tool for communication and note-taking within a model.
+
+---
+
+## 199. DraftAngleAnalysis
+
+### Short Info
+Visually evaluate surface draft angle.
+
+### Detailed Description
+The **DraftAngleAnalysis** command is a powerful manufacturing analysis tool. It applies a false-color map to a surface that visually represents its "draft angle" relative to the construction plane. The draft angle is the amount of taper on a vertical surface, which is critical for ensuring that a part can be easily removed from a mold.
+
+### Steps to use the command
+1.  Select the object(s) to analyze.
+2.  Run the command `DraftAngleAnalysis`.
+3.  A dialog box appears where you can set the minimum and maximum angles for the color display.
+4.  The object will be colored in the viewport. Areas with sufficient draft will be one color (e.g., green), and areas with insufficient or negative draft will be another color (e.g., red).
+
+### Command Options & Toggles
+The options are in the dialog box:
+* **Min angle / Max angle:** Sets the angle range for the color display.
+* **Auto Range:** Automatically sets the range based on the object.
+
+### Note for better use
+This command is essential for anyone designing parts that will be cast using a rubber or metal mold. It instantly shows you any "undercuts" or vertical walls that would prevent the part from being removed from the mold.
+
+### Practical Use Cases
+* **Use Case 1 (Checking a Signet Ring for Molding):** You have designed a signet ring that will be mass-produced via casting in a rubber mold. Before sending the file, you must run `DraftAngleAnalysis`. This will highlight any surfaces on the side of the ring that are perfectly vertical (90 degrees) or undercut, which would tear the mold. You can then add a slight taper to these surfaces until the analysis shows all green.
+* **Use Case 2 (Analyzing a Bezel):** You want to ensure the inside wall of a bezel has a consistent taper to allow for easy stone setting. `DraftAngleAnalysis` can provide a clear visual confirmation of this taper.
+
+### Other Information
+This is a critical pre-manufacturing analysis tool.
+
+---
+
+## 200. DraftAngleAnalysisOff
+
+### Short Info
+Turn off draft angle analysis.
+
+### Detailed Description
+The **DraftAngleAnalysisOff** command is a simple utility that turns off the false-color draft angle map created by the `DraftAngleAnalysis` command and returns the objects to their normal display color.
+
+### Steps to use the command
+1.  Run the command `DraftAngleAnalysisOff`.
+2.  The draft angle analysis display will be turned off for all objects.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Ending Analysis):** You have finished inspecting your model with `DraftAngleAnalysis` and have fixed all the problem areas. You now want to continue modeling. You run `DraftAngleAnalysisOff` to remove the color map and return to a standard shaded view.
+
+### Other Information
+This is the companion command to `DraftAngleAnalysis`.
