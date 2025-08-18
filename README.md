@@ -10058,3 +10058,4154 @@ To draw a series of connected line segments, use the `Polyline` command. Holding
 
 ### Other Information
 This is one of the most basic and frequently used commands in all of CAD.
+
+
+---
+
+## 351. LinearLight
+
+### Short Info
+Insert a linear light.
+
+### Detailed Description
+The **LinearLight** command adds a linear light source to the model, which simulates a light source shaped like a fluorescent tube. This type of light emits rays from an imaginary line, creating softer shadows than a point light and providing a broad, even illumination. It is useful for creating studio-style lighting setups for rendering.
+
+### Steps to use the command
+1.  Run the command `LinearLight`.
+2.  At the **Start of light** prompt, pick a point to begin the line.
+3.  At the **End of light** prompt, pick a second point to define the length and orientation of the light.
+4.  A linear light object will be created in your model.
+
+### Command Options & Toggles
+This command has no options in the command line. The light's properties, such as color, intensity, and length, are edited in the Properties panel after it has been created.
+
+### Note for better use
+Linear lights are excellent for creating soft, rectangular highlights on reflective surfaces, which is a key technique in professional product photography. The length of the light object affects how the shadows are cast.
+
+### Practical Use Cases
+* **Use Case 1 (Studio Rendering):** You are setting up a render for a ring and want to create soft, broad highlights that mimic the large softbox lights used in a photography studio. You can place one or two `LinearLight` objects above and to the side of the ring to achieve this effect.
+* **Use Case 2 (Illuminating a Channel):** You want to create a render that emphasizes a channel of gemstones. You can place a `LinearLight` directly above and parallel to the channel to create a long, continuous highlight that makes the stones pop.
+
+### Other Information
+This is one of the standard light types used for creating realistic rendering setups.
+
+---
+
+## 352. Lines
+
+### Short Info
+Draw a series of connected line segments.
+
+### Detailed Description
+The **Lines** command is a 2D drawing tool that creates a polyline object, which is a single curve made up of multiple connected straight-line segments. Unlike the `Line` command which creates a single segment, `Lines` allows you to continue clicking to create a chain of segments.
+
+### Steps to use the command
+1.  Run the command `Lines`.
+2.  At the **Start of line** prompt, pick a point.
+3.  Continue picking points to create the vertices of the polyline.
+4.  Press Enter when you are finished.
+
+### Command Options & Toggles
+* **Close:** Closes the polyline by creating a final segment from the last point back to the first point.
+
+### Note for better use
+The `Polyline` command is a more versatile and modern version of this command, as it allows you to switch between drawing straight line segments and arc segments within the same command run. For most new work, `Polyline` is the preferred tool.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Faceted Outlines):** You are drawing the outline of a princess-cut or emerald-cut gemstone. The `Lines` command is perfect for creating this type of geometric shape made of connected straight lines.
+* **Use Case 2 (Quick Tracing):** You are doing a quick, rough trace of a sketch to block out the basic shape. The `Lines` command allows you to quickly create a multi-segmented outline.
+
+### Other Information
+This is a basic 2D drawing tool, largely superseded by the more flexible `Polyline` command.
+
+---
+
+## 353. LineThroughPt
+
+### Short Info
+Create the best-fit line through points.
+
+### Detailed Description
+The **LineThroughPt** (Line Through Points) command is a construction tool that creates a single straight line that represents the "best fit" through a selection of two or more point objects. This is useful for finding the central axis or average direction of a set of points.
+
+### Steps to use the command
+1.  Select two or more point objects.
+2.  Run the command `LineThroughPt`.
+3.  A new line will be created that passes through the points.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+If you select only two points, the command will create a line that passes directly through them. If you select more than two, the command performs a linear regression to find the line that has the smallest average distance to all the points.
+
+### Practical Use Cases
+* **Use Case 1 (Finding an Axis):** You have imported a 3D scan of a ring shank that is slightly crooked. You can place several point objects along the center of the shank and then use `LineThroughPt` to find the true central axis of the shank. You can then use this new line to re-orient the shank so it is perfectly straight.
+* **Use Case 2 (Aligning Stones):** You have placed several gemstones in a slightly irregular line and want to create a perfectly straight channel for them. You can place a point at the center of each stone, use `LineThroughPt` to find the average line, and then use this line as a guide to perfectly align the stones.
+
+### Other Information
+This is a powerful tool for reverse-engineering and for finding the underlying structure in imprecise geometry.
+
+---
+
+## 354. LinetypeDisplay
+
+### Short Info
+Toggle linetype display in the viewports.
+
+### Detailed Description
+The **LinetypeDisplay** command is a global display toggle. It controls whether curves in the model are displayed with their assigned linetype (e.g., dashed, dotted, center-line) or as simple solid lines in the viewports.
+
+### Steps to use the command
+1.  Run the command `LinetypeDisplay`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+
+### Command Options & Toggles
+This command is a simple toggle between **On** and **Off**.
+
+### Note for better use
+This is a display setting only and does not affect how the lines will print. The printing of linetypes is controlled by the settings in the Print dialog box. Turning this off can sometimes improve viewport performance in very complex 2D drawings.
+
+### Practical Use Cases
+* **Use Case 1 (Drafting):** You are creating a technical drawing and have assigned a "centerline" linetype to your construction curves. Turning `LinetypeDisplay` on allows you to see this linetype directly in the viewport as you work, confirming that you have assigned the correct properties.
+
+### Other Information
+This is a simple display toggle for 2D drafting purposes.
+
+---
+
+## 355. List
+
+### Short Info
+Report object properties details.
+
+### Detailed Description
+The **List** command is a diagnostic tool that displays detailed technical information about a selected object in the command history window. This includes information about the object's type, layer, render material, and geometric properties like its control points and knot vectors.
+
+### Steps to use the command
+1.  Select an object.
+2.  Run the command `List`.
+3.  Detailed information about the object will be printed in the command history.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command provides more in-depth technical data than the standard Properties panel. It is primarily used by advanced users and script writers who need to understand the underlying data structure of an object.
+
+### Practical Use Cases
+* **Use Case 1 (Advanced Troubleshooting):** A surface is behaving unexpectedly. A power user can use the `List` command to examine the surface's knot vector and control point structure to diagnose the problem at a mathematical level.
+
+### Other Information
+For most users, the standard Properties panel (`Properties` command) provides all the necessary information about an object in a more user-friendly format.
+
+---
+
+## 356. LoadScript
+
+### Short Info
+Load a script file.
+
+### Detailed Description
+The **LoadScript** command is a utility for scripters. It loads a script file (like a .rvb or .py file) into Rhino's memory so that the functions and aliases defined within that script become available to be run from the command line.
+
+### Steps to use the command
+1.  Run the command `LoadScript`.
+2.  A file browser will open.
+3.  Select the script file you want to load.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command only loads the script for the current Rhino session. To have a script load automatically every time Rhino starts, you must add it to the list of startup scripts in the Rhino Options.
+
+### Practical Use Cases
+* **Use Case 1 (Testing a Script):** A developer has just written a new script. They can use `LoadScript` to load it into Rhino and then test its functions from the command line without having to restart the program.
+
+### Other Information
+This is a utility for developers and advanced users who work with custom scripts.
+
+---
+
+## 357. Lock
+
+### Short Info
+Lock objects.
+
+### Detailed Description
+The **Lock** command is a fundamental organizational and safety tool. It "locks" selected objects, which prevents them from being selected or modified with the mouse. Locked objects are still visible (they appear in a different color, which can be set in the options), and you can still snap to them, but you cannot accidentally move, edit, or delete them.
+
+### Steps to use the command
+1.  Select the object(s) you want to lock.
+2.  Run the command `Lock`.
+3.  The objects will become locked.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The command to unlock objects is `Unlock`. The command `LockSwap` will lock all unlocked objects and unlock all locked objects, which is a very fast way to switch between editing two different sets of objects.
+
+### Practical Use Cases
+* **Use Case 1 (Protecting Reference Geometry):** You have imported a client's gemstone model and are building a bezel around it. To prevent yourself from accidentally moving the gemstone, you can select it and `Lock` it. You can still snap to its edges to build your bezel, but you cannot accidentally move it out of position.
+* **Use Case 2 (Isolating Work):** You are working on the prongs of a setting and don't want to accidentally select the shank or the gem. You can lock the shank and the gem, allowing you to freely select and edit only the prongs.
+
+### Other Information
+This is an essential command for maintaining an organized and error-free workflow in complex models.
+
+---
+
+## 358. LockSwap
+
+### Short Info
+Lock all unlocked objects and unlock all locked objects.
+
+### Detailed Description
+The **LockSwap** command is a display management utility that inverts the locked state of all objects in the model. All objects that are currently unlocked will become locked, and all objects that are currently locked will become unlocked.
+
+### Steps to use the command
+1.  Run the command `LockSwap`.
+2.  The locked/unlocked state of all objects will be inverted.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Alternating Edits):** You are working on a complex ring and have locked the main shank to work on the prongs. Now you need to edit the shank. Instead of unlocking the shank and then locking all the prongs, you can simply run `LockSwap`. This will instantly lock the prongs and unlock the shank, allowing you to immediately start editing it.
+
+### Other Information
+This is a very fast and efficient way to toggle between editing two different sets of objects.
+
+---
+
+## 359. Loft
+
+### Short Info
+Fit a surface through profile curves that define the surface shape.
+
+### Detailed Description
+The **Loft** command is a fundamental and powerful surface creation tool. It creates a smooth NURBS surface that is fitted through a series of selected "profile" or "cross-section" curves. This is one of the primary methods for creating complex, free-form shapes.
+
+### Steps to use the command
+1.  Draw two or more profile curves.
+2.  Run the command `Loft`.
+3.  At the **Select curves to loft** prompt, select the profile curves in the order you want the surface to pass through them.
+4.  Press Enter. A dialog box will appear with options for controlling the surface.
+5.  Adjust the options and click OK to create the surface.
+
+### Command Options & Toggles
+The options are in the dialog box:
+* **Style (Normal, Loose, Tight, Straight sections):** Controls how closely the surface fits to the profile curves. `Normal` is the standard. `Straight sections` creates a faceted, polyhedral surface.
+* **Closed:** Creates a closed surface that loops back to the first curve.
+* **Align curves:** Allows you to adjust the seam points of the curves to prevent the surface from twisting.
+* **Rebuild with X control points:** Rebuilds the surface with a specified number of control points for a cleaner, simpler result.
+
+### Note for better use
+The order in which you select the curves is critical. You must select them in the sequence that you want the surface to follow. The direction of the curves is also important; if the resulting surface is twisted, it is likely because the direction of one of your profile curves is opposite to the others. Use the `Dir` command to check and align them.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Ring Shank):** This is a classic use. You can create three circular profile curves: one for the bottom of the shank, one for the shoulders, and one for the top. By using `Loft` through these three profiles, you can create a basic, tapered ring shank.
+* **Use Case 2 (Organic Pendants):** You are designing a free-form, organic pendant. You can draw a series of different-shaped cross-section curves at different heights and then use `Loft` to create a smooth, flowing surface that blends between all of them.
+
+### Other Information
+Mastering the `Loft` command, especially its options for aligning seams and rebuilding, is an essential skill for any NURBS modeler.
+
+
+---
+
+## 360. MacroEditor
+
+### Short Info
+Open the macro editor.
+
+### Detailed Description
+The **MacroEditor** command is a utility that opens a simple text editor window inside Rhino. This editor is used for writing and editing command macros. A macro is a sequence of Rhino commands that can be saved to a button to automate a repetitive task.
+
+### Steps to use the command
+1.  Run the command `MacroEditor`.
+2.  The Macro Editor window will appear, allowing you to type and test command sequences.
+
+### Command Options & Toggles
+This command has no options. The functionality is within the editor window itself.
+
+### Note for better use
+This editor is for simple, multi-command macros. For more complex automation involving logic and variables, it is better to use the `EditPythonScript` or `EditScript` commands to open the full scripting editors.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Custom Tool):** You frequently need to create a 1mm pipe, turn on its control points, and then select the points. You could use the `MacroEditor` to write the macro `! _Pipe 1 _Enter _SelLast _PointsOn _SelPt`, and then save this macro to a custom button. Now, one click runs all four commands in sequence.
+
+### Other Information
+This is a key tool for customizing the Rhino interface and automating simple, repetitive workflows.
+
+---
+
+## 361. Maelstrom
+
+### Short Info
+Deform objects in a spiral.
+
+### Detailed Description
+The **Maelstrom** command is a deformation tool that deforms objects by twisting them in a spiral pattern around a central axis. It is similar to the `Twist` command but creates a more complex, swirling deformation.
+
+### Steps to use the command
+1.  Select the object(s) to deform.
+2.  Run the command `Maelstrom`.
+3.  You will be prompted to define the axis of the spiral.
+4.  You will then be prompted to define the amount and direction of the deformation.
+
+### Command Options & Toggles
+This command has no clickable options. The deformation is controlled by the points you pick.
+
+### Note for better use
+This is a very specialized, free-form modeling tool. The results can be unpredictable, and it is often used for creating abstract, sculptural shapes rather than precise mechanical parts.
+
+### Practical Use Cases
+* **Use Case 1 (Abstract Pendants):** You have a simple, solid bar and want to turn it into an abstract, swirling pendant. The `Maelstrom` command can be used to apply a chaotic, spiral twist to the bar, creating an interesting and unique organic form.
+
+### Other Information
+This is an artistic deformation tool for creating non-traditional shapes.
+
+---
+
+## 362. Make2D
+
+### Short Info
+Project geometry to the construction plane.
+
+### Detailed Description
+The **Make2D** command is a fundamental drafting and documentation tool. It takes selected 3D objects and creates a flat, 2D line drawing of them from the point of view of the active viewport. This is the primary method for creating traditional 2D technical drawings (top, front, side views) from your 3D models.
+
+### Steps to use the command
+1.  Arrange your 3D model in the desired view (e.g., the Front view).
+2.  Select the object(s) you want to create a drawing of.
+3.  Run the command `Make2D`.
+4.  A dialog box will appear with options for the drawing.
+5.  Click OK. A new set of 2D curves will be created on the Top view's construction plane.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **Projection:** Sets the view to use for the drawing.
+* **Object Properties:** Controls how the output curves are organized (e.g., by layer, maintaining source layers).
+* **Show hidden lines:** Creates dashed lines to represent the edges that are hidden from the camera.
+* **Show tangent edges:** Creates lines at the tangent edges of curved surfaces.
+
+### Note for better use
+The 2D drawing is created on the world XY plane, so it's best viewed from the Top viewport. The resulting curves are separate from the original 3D model and can be moved, edited, and dimensioned on a Layout page.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Technical Drawings):** This is the command's primary purpose. To create a standard three-view drawing of a ring, you would run `Make2D` once from the Top view, once from the Front view, and once from the Right view. You can then arrange these three 2D line drawings on a Layout page and add dimensions.
+* **Use Case 2 (Extracting Profiles):** You need a flat, 2D outline of a complex 3D object. You can position the object in the desired view and use `Make2D` to instantly generate this outline as a clean curve.
+
+### Other Information
+This is an essential command for bridging the gap between 3D modeling and 2D documentation.
+
+---
+
+## 363. MakeHole
+
+### Short Info
+Project a closed curve to a surface to make a hole.
+
+### Detailed Description
+The **MakeHole** command is a specialized trimming tool. It takes one or more closed, planar curves and projects them onto a surface or polysurface to create a hole. It is a faster alternative to using `Project` and then `Trim`.
+
+### Steps to use the command
+1.  Select the closed curve(s) that will define the shape of the hole.
+2.  Run the command `MakeHole`.
+3.  At the **Select surface or polysurface to make hole in** prompt, select the object to be cut.
+4.  A hole will be created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The command projects the curves in the direction of the active view's CPlane normal. Make sure you are in the correct viewport (e.g., Top view) before running the command to ensure the hole is projected in the right direction.
+
+### Practical Use Cases
+* **Use Case 1 (Perforating a Surface):** You have designed a flat pendant and have drawn several small, decorative circles on top of it. You can select all the circles, run `MakeHole`, and select the pendant to cut all the holes in a single operation.
+* **Use Case 2 (Creating a Bezel Seat):** You have a flat-topped bezel and have drawn a circle representing the inside edge. `MakeHole` can be used to quickly cut the main opening for the gemstone.
+
+### Other Information
+This is a workflow-efficiency command that combines projection and trimming into one step.
+
+---
+
+## 364. MakeNonPeriodic
+
+### Short Info
+Add a kink at the start/end of a curve or surface.
+
+### Detailed Description
+The **MakeNonPeriodic** command is a technical editing tool that modifies the structure of a closed curve or surface. It adds a "kink" or sharp corner at the seam (the start/end point) of the object. This is done by stacking multiple control points at the seam location.
+
+### Steps to use the command
+1.  Select a closed, periodic (smooth) curve or surface.
+2.  Run the command `MakeNonPeriodic`.
+3.  A kink will be added at the object's seam.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+A "periodic" curve is a smooth, closed curve with no sharp corners. A "non-periodic" curve is a closed curve that has a sharp corner at its seam. Some commands or export formats require non-periodic curves. The opposite command is `MakePeriodic`.
+
+### Practical Use Cases
+* **Use Case 1 (Export Compatibility):** You are exporting a circular curve to a file format that does not support smooth, periodic curves. You would use `MakeNonPeriodic` to convert the circle into a non-periodic curve with a kink before exporting to ensure it translates correctly.
+
+### Other Information
+This is an advanced tool for controlling the underlying mathematical structure of an object.
+
+---
+
+## 365. MakePeriodic
+
+### Short Info
+Remove the kink from the start/end of a curve or surface.
+
+### Detailed Description
+The **MakePeriodic** command is a technical editing tool that modifies the structure of a closed curve or surface. It removes the "kink" or sharp corner from the seam of a non-periodic object, making it a smooth, continuous, periodic object.
+
+### Steps to use the command
+1.  Select a closed, non-periodic (kinked) curve or surface.
+2.  Run the command `MakePeriodic`.
+3.  The kink at the seam will be removed, and the object will become smooth.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command can change the shape of the object, as it has to adjust the control points to create the smooth transition. The opposite command is `MakeNonPeriodic`.
+
+### Practical Use Cases
+* **Use Case 1 (Smoothing a Profile):** You have created a closed profile curve for a ring by joining several segments, which has resulted in a sharp corner at the join. If you want this profile to be perfectly smooth all the way around, you can use `MakePeriodic` to remove the kink.
+
+### Other Information
+This is an advanced tool for controlling the underlying mathematical structure of an object.
+
+---
+
+## 366. MakeUniform
+
+### Short Info
+Make the knot vector of a curve or surface uniform.
+
+### Detailed Description
+The **MakeUniform** command is an advanced editing tool that modifies the internal mathematical structure of a NURBS curve or surface. It re-spaces the "knots" of the object so that they are perfectly uniform (evenly spaced). This can simplify the object's structure and make it behave more predictably with certain commands, but it will also slightly change the object's shape.
+
+### Steps to use the command
+1.  Select a curve or surface.
+2.  Run the command `MakeUniform`.
+3.  The object's knot vector will be made uniform.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is an advanced command that should be used with caution, as it will alter the shape of your geometry. For most general simplification or smoothing tasks, the `Rebuild` command is a better and more intuitive choice.
+
+### Practical Use Cases
+* **Use Case 1 (Advanced Surfacing):** A designer is creating a "Class-A" surface and needs to ensure that the parameterization of a surface is as clean and simple as possible for analysis. `MakeUniform` is one of the tools they might use to simplify the surface's internal structure.
+
+### Other Information
+This is a tool for advanced users who need to directly manipulate the mathematical properties of NURBS objects.
+
+---
+
+## 367. MakeUniformUV
+
+### Short Info
+Make the knot vector of a surface uniform in one direction.
+
+### Detailed Description
+The **MakeUniformUV** command is a more controlled version of `MakeUniform` that works only on surfaces. It allows you to make the knot vector uniform in only the U direction, only the V direction, or both.
+
+### Steps to use the command
+1.  Select a surface.
+2.  Run the command `MakeUniformUV`.
+3.  The command line will prompt you to choose a direction.
+4.  Select U, V, or Both.
+
+### Command Options & Toggles
+* **Direction (U/V/Both):** Specifies the direction(s) to make uniform.
+
+### Practical Use Cases
+* **Use Case 1 (Advanced Surfacing):** Similar to `MakeUniform`, this is used by advanced modelers to clean up the internal structure of a surface, but with more precise control over which direction is being modified.
+
+### Other Information
+This is a tool for advanced users who need to directly manipulate the mathematical properties of NURBS surfaces.
+
+---
+
+## 368. MappingWidgetOff
+
+### Short Info
+Turn off the texture mapping widget.
+
+### Detailed Description
+The **MappingWidgetOff** command turns off the visibility of texture mapping widgets. Mapping widgets are the wireframe guides (shaped like a box, sphere, or cylinder) that are created when you use commands like `ApplyBoxMapping`. This command hides those guides from view.
+
+### Steps to use the command
+1.  Run the command `MappingWidgetOff`.
+2.  All visible mapping widgets will be hidden.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The companion command is `MappingWidget`, which turns the widgets on.
+
+### Practical Use Cases
+* **Use Case 1 (De-cluttering the View):** You have applied texture mapping to several objects, and the view is now cluttered with the wireframe mapping widgets. `MappingWidgetOff` will hide them all at once, giving you a clearer view of your model.
+
+### Other Information
+This is a simple display management command for rendering workflows.
+
+---
+
+## 369. MappingWidget
+
+### Short Info
+Turn on the texture mapping widget.
+
+### Detailed Description
+The **MappingWidget** command turns on the visibility of the texture mapping widget for a selected object. This allows you to see the wireframe guide (box, sphere, etc.) and manipulate it with commands like `Move`, `Scale`, and `Rotate` to adjust how the texture is applied to the object.
+
+### Steps to use the command
+1.  Select an object that has texture mapping applied.
+2.  Run the command `MappingWidget`.
+3.  The mapping widget for that object will become visible.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The companion command is `MappingWidgetOff`.
+
+### Practical Use Cases
+* **Use Case 1 (Adjusting a Texture):** You have applied a wood grain texture to a box using `ApplyBoxMapping`, but the grain is running in the wrong direction. You can use `MappingWidget` to turn on the box widget, and then use the `Rotate` command on the widget itself to change the orientation of the texture on the model.
+
+### Other Information
+This is a key command for editing and fine-tuning texture map placement.
+
+---
+
+## 370. MarkFoci
+
+### Short Info
+Place point objects at the focal points of conic curves.
+
+### Detailed Description
+The **MarkFoci** command is an analysis tool that finds the focal points (foci) of conic curves (ellipses, hyperbolas, parabolas) and places point objects at their locations.
+
+### Steps to use the command
+1.  Select one or more conic curves.
+2.  Run the command `MarkFoci`.
+3.  Point objects will be created at the focal points.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command only works on true conic section curves.
+
+### Practical Use Cases
+* **Use Case 1 (Optical Design):** An engineer designing a reflector would use this command to find the exact focal point of a parabolic curve, which is the location where all reflected rays will converge. This command has very limited use in jewelry design.
+
+### Other Information
+This is a specialized geometric analysis tool.
+
+---
+
+## 371. Match
+
+### Short Info
+Change a curve end to meet another curve or surface edge with specified continuity.
+
+### Detailed Description
+The **Match** command is a powerful curve editing tool that adjusts the end of a curve to smoothly meet another curve or a surface edge. It provides options to control the level of smoothness (continuity) of the connection, allowing you to create perfect G0 (Position), G1 (Tangency), or G2 (Curvature) connections.
+
+### Steps to use the command
+1.  Run the command `Match`.
+2.  At the **Select curve to change** prompt, click near the end of the curve you want to edit.
+3.  At the **Select curve to match** prompt, click near the end of the target curve.
+4.  A dialog box will appear with options to control the continuity.
+5.  Click OK to modify the curve.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **Continuity (Position/Tangency/Curvature):** Sets the level of smoothness for the connection.
+* **Preserve other end:** Prevents the start of the curve from changing shape while the end is being matched.
+* **Average curves:** Modifies both curves to meet in the middle.
+
+### Note for better use
+This command permanently changes the shape of the curve. For creating high-quality, flowing surfaces, matching your input curves for at least Tangency, and preferably Curvature, is a critical step.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for a Sweep):** You have a profile curve and a rail curve for a `Sweep1`. To ensure the sweep starts smoothly, you can use `Match` to force the start of the rail curve to be perfectly tangent to the profile curve.
+* **Use Case 2 (Creating Smooth Outlines):** You have drawn two separate curves that form the outline of a pendant, and you want the connection between them to be perfectly smooth. `Match` with the "Curvature" option will adjust the curves to create a seamless G2 transition.
+
+### Other Information
+The 3D equivalent for surfaces is the `MatchSrf` command.
+
+---
+
+## 372. MatchCrvDir
+
+### Short Info
+Change a curve's direction to match another curve's direction.
+
+### Detailed Description
+The **MatchCrvDir** (Match Curve Direction) command is a utility that changes the direction of one curve to match the direction of another curve. This is a quick way to ensure that multiple curves are all pointing in the same direction, which is often a requirement for surfacing commands like `Loft` and `Sweep`.
+
+### Steps to use the command
+1.  Run the command `MatchCrvDir`.
+2.  At the **Select curve to change direction** prompt, select the curve you want to flip.
+3.  At the **Select curve with direction to match** prompt, select the guide curve.
+4.  The first curve's direction will be flipped if necessary to match the second.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is faster than using the `Dir` command on each curve individually to check and flip them.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for a Loft):** You are about to `Loft` three profile curves to create a ring shank. To prevent the surface from twisting, all three curves must have the same direction. You can select the first curve as your target, and then use `MatchCrvDir` to quickly make sure the other two curves are pointing in the same direction.
+
+### Other Information
+This is a simple but very important workflow utility for surfacing.
+
+---
+
+## 373. MatchLayer
+
+### Short Info
+Change an object's layer to match another object's layer.
+
+### Detailed Description
+The **MatchLayer** command is an organizational tool that changes the layer of one or more selected objects to match the layer of a target object that you specify.
+
+### Steps to use the command
+1.  Select the object(s) you want to move to a new layer.
+2.  Run the command `MatchLayer`.
+3.  At the **Select object on destination layer** prompt, click on an object that is on the layer you want to move to.
+4.  The originally selected objects will be moved to that layer.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is often faster than using the `ChangeLayer` command, as you don't need to find and select the layer from a list; you can just click on any object that is already on the correct layer.
+
+### Practical Use Cases
+* **Use Case 1 (Quick Organization):** You have created a new prong for a setting, and it was created on the default layer. Your other prongs are already on the "Prongs" layer. You can select the new prong, run `MatchLayer`, and then click on one of the old prongs. The new prong will instantly be moved to the "Prongs" layer.
+
+### Other Information
+This is a very efficient tool for layer management.
+
+---
+
+## 374. MatchMapping
+
+### Short Info
+Match the texture mapping of one object to another.
+
+### Detailed Description
+The **MatchMapping** command is a utility that copies the texture mapping properties from one object to another. This is a very fast way to apply the same texture mapping (e.g., the same box mapping widget and its orientation) to multiple objects.
+
+### Steps to use the command
+1.  Select the object(s) that you want to apply the mapping to.
+2.  Run the command `MatchMapping`.
+3.  At the **Select object with mapping to copy** prompt, select the source object that has the correct mapping.
+4.  The mapping properties will be copied to the object(s) you originally selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Texturing a Pair of Earrings):** You have a pair of earrings. You have spent time carefully applying and adjusting a complex texture map to the first earring. To apply the exact same mapping to the second earring, you can simply select the second earring, run `MatchMapping`, and then click on the first earring.
+
+### Other Information
+This is a time-saving utility for rendering workflows.
+
+---
+
+## 375. MatchMeshEdge
+
+### Short Info
+Move the open edges of a mesh to meet the edges of an adjacent mesh.
+
+### Detailed Description
+The **MatchMeshEdge** command is a mesh editing tool that moves the vertices on a naked (open) edge of one mesh to the corresponding locations of the vertices on a naked edge of another mesh. This is used to make the edges of two separate mesh objects line up perfectly so they can be joined.
+
+### Steps to use the command
+1.  Select a mesh object with a naked edge.
+2.  Run the command `MatchMeshEdge`.
+3.  At the **Select mesh edge to change** prompt, select the naked edge you want to move.
+4.  At the **Select mesh edge to match** prompt, select the target naked edge on the other mesh.
+5.  The vertices of the first edge will snap to the positions of the second edge's vertices.
+
+### Command Options & Toggles
+* **DistanceToAdjust:** Controls how far the vertices are allowed to move.
+
+### Practical Use Cases
+* **Use Case 1 (Joining Mesh Parts):** You have two halves of a ring that were modeled as separate mesh objects, and there is a small, inconsistent gap between them. `MatchMeshEdge` can be used to force the edges of one half to snap to the edges of the other. After matching, you can use the `Join` command, followed by the `Weld` command, to stitch the two halves into a single, watertight mesh.
+
+### Other Information
+This is an important tool for assembling and repairing models that are made of multiple mesh parts.
+
+---
+
+## 376. MatchProperties
+
+### Short Info
+Change the properties of an object to match another object.
+
+### Detailed Description
+The **MatchProperties** command is a powerful utility that copies various properties from one object to another. This can include properties like layer, display color, print color, print width, and material assignment.
+
+### Steps to use the command
+1.  Select the object(s) you want to change.
+2.  Run the command `MatchProperties`.
+3.  At the **Select object to match properties from** prompt, select the source object.
+4.  A dialog box will appear, allowing you to choose which specific properties you want to copy.
+5.  Click OK. The selected properties will be applied to the destination object(s).
+
+### Command Options & Toggles
+The options are the checkboxes in the dialog box, allowing you to select which properties to match (e.g., Color, Layer, Linetype, Material, etc.).
+
+### Practical Use Cases
+* **Use Case 1 (Standardizing a Drawing):** You have a complex drawing with objects on many different layers and with different colors. You want to make a group of objects match the properties of a "master" object. You can select the group, run `MatchProperties`, select the master object, and then choose to match the Layer and Color properties.
+* **Use Case 2 (Applying Materials):** You have assigned a complex "18k Yellow Gold" material to one part of your model. To quickly apply the exact same material to ten other parts, you can select the ten parts, run `MatchProperties`, select the first part as the source, and make sure only the "Material" checkbox is ticked.
+
+### Other Information
+This is a very efficient command for managing object properties and maintaining consistency in a model.
+
+---
+
+## 377. MatchSrf
+
+### Short Info
+Adjust a surface edge to have continuity with another surface.
+
+### Detailed Description
+The **MatchSrf** (Match Surface) command is one of the most important tools for creating high-quality, "Class-A" surfaces. It adjusts the edge of one surface to smoothly and continuously meet the edge of another. It provides precise control over the level of continuity (Position, Tangency, or Curvature), ensuring a seamless transition between the two surfaces.
+
+### Steps to use the command
+1.  Run the command `MatchSrf`.
+2.  At the **Select edge of surface to change** prompt, select the edge of the surface you want to edit.
+3.  At the **Select target edge** prompt, select the edge on the other surface that you want to match to.
+4.  A dialog box will appear with options to control the continuity.
+5.  Click OK to modify the surface.
+
+### Command Options & Toggles
+The options are in the dialog box:
+* **Continuity (Position/Tangency/Curvature):** Sets the level of smoothness for the connection.
+* **Preserve other end:** Prevents the opposite side of the surface from changing shape.
+* **Average surfaces:** Modifies both surfaces to meet in the middle.
+
+### Note for better use
+Achieving G2 (Curvature) continuity is the goal for creating professional, high-quality models that will have perfectly smooth reflections across seams. After matching surfaces, you can use the `Zebra` or `EMap` commands to visually verify the quality of the connection.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Seamless Shank):** You have modeled the two halves of a ring shank as separate surfaces. To ensure the seam where they join at the top and bottom is perfectly invisible, you must use `MatchSrf` with Curvature continuity on both halves before you `Join` them.
+* **Use Case 2 (Blending a Head to a Shank):** You have a setting and a shank that meet. To create a perfectly smooth, flowing transition between them, you would use `MatchSrf` to make the edge of the shank curvature-continuous with the edge of the setting.
+
+### Other Information
+Mastering `MatchSrf` is a critical skill for any advanced NURBS surface modeler.
+
+---
+
+## 378. MaterialEditor
+
+### Short Info
+Open the Material Editor panel.
+
+### Detailed Description
+The **MaterialEditor** command opens a panel that is the central hub for creating, editing, and managing the render materials in your model. A material defines the appearance of an object's surface in a render, including its color, reflectivity, texture, and transparency.
+
+### Steps to use the command
+1.  Run the command `MaterialEditor`.
+2.  The Material Editor panel will open.
+3.  You can right-click to create new materials, or select an existing material to edit its properties (color, texture maps, etc.).
+
+### Command Options & Toggles
+All options are contained within the panel's interface.
+
+### Note for better use
+You can assign materials to objects by dragging them from the Material Editor onto the object in the viewport, or by selecting an object and assigning the material in the Properties panel.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Gold Material):** You are preparing a ring for rendering. You open the `MaterialEditor`, create a new material, name it "18k Yellow Gold," and then adjust its color, reflectivity, and polish settings to create a realistic gold appearance.
+* **Use Case 2 (Applying a Gemstone Material):** You would use the Material Editor to create a "Diamond" material, where you would set the color to white, increase the transparency, and set the correct Index of Refraction (IOR) to make it look like a real diamond in the render.
+
+### Other Information
+This is a fundamental panel for all rendering workflows.
+
+---
+
+## 379. Maximize
+
+### Short Info
+Maximize the Rhino window.
+
+### Detailed Description
+The **Maximize** command maximizes the main Rhino application window to fill the entire screen.
+
+### Steps to use the command
+1.  Run the command `Maximize`.
+2.  The Rhino window will maximize.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is equivalent to clicking the "Maximize" button in the top-right corner of the Rhino window.
+
+### Practical Use Cases
+* **Use Case 1 (Workspace Management):** You are working with multiple programs and have resized your Rhino window. This command quickly expands it back to fill the screen.
+
+### Other Information
+This is a simple window management command.
+
+---
+
+## 380. MaxViewport
+
+### Short Info
+Maximize the active viewport.
+
+### Detailed Description
+The **MaxViewport** (Maximize Viewport) command maximizes the currently active viewport to fill the entire application window. This is used to focus on a single view (e.g., the Perspective view) for detailed modeling.
+
+### Steps to use the command
+1.  Make a viewport active by clicking in it.
+2.  Run the command `MaxViewport`.
+3.  The viewport will expand to fill the screen.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Double-clicking on a viewport's title is a much faster shortcut for this command. Double-clicking again will restore the previous multi-viewport layout.
+
+### Practical Use Cases
+* **Use Case 1 (Detailed 3D Work):** You are doing fine-detail sculpting on a model and need the largest possible view. You can activate the Perspective viewport and run `MaxViewport` to give yourself the maximum amount of screen space to work with.
+* **Use Case 2 (2D Tracing):** You are tracing a complex image in the Top view. You can maximize the Top view to make the tracing process easier and more accurate.
+
+### Other Information
+This is one of the most frequently used viewport management commands, although it is almost always activated by the double-click shortcut.
+
+---
+
+## 381. Merge2MeshFaces
+
+### Short Info
+Merge two triangular mesh faces into one quadrangular mesh face.
+
+### Detailed Description
+The **Merge2MeshFaces** command is a low-level mesh editing tool that combines two adjacent triangular mesh faces into a single quadrangular (four-sided) face. This is a key tool for "quadrangulating" a mesh, which is the process of converting a mesh made of triangles into one made primarily of quads. Quad-based meshes are often cleaner and easier to work with in subdivision modeling and sculpting programs.
+
+### Steps to use the command
+1.  Run the command `Merge2MeshFaces`.
+2.  At the **Select first mesh face** prompt, click on a triangular face.
+3.  At the **Select second mesh face to merge** prompt, click on an adjacent triangular face that shares an edge with the first.
+4.  The two triangles will be merged into a single quad.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command only works on two triangles that share a common edge. It is a manual tool for cleaning up mesh topology. For an automated approach, use the `QuadrangulateMesh` command.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for Subdivision Modeling):** You have an STL file (which is always made of triangles) that you want to import into a subdivision modeling program like ZBrush or Blender for sculpting. To get the best results, you would first try to convert as much of the mesh to quads as possible. `Merge2MeshFaces` allows you to do this manually in specific, critical areas to control the flow of the polygons.
+
+### Other Information
+This is an advanced tool for users who are doing detailed mesh topology work.
+
+---
+
+## 382. MergeAllEdges
+
+### Short Info
+Merge all possible edges of a single surface.
+
+### Detailed Description
+The **MergeAllEdges** command is a surface repair and simplification tool. It inspects a single, un-trimmed surface and attempts to merge any interior edges that are co-linear. This can simplify the surface structure by removing unnecessary breaks.
+
+### Steps to use the command
+1.  Select a single surface.
+2.  Run the command `MergeAllEdges`.
+3.  If possible, interior edges will be merged.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is for single surfaces, not polysurfaces. To merge the faces of a polysurface, use `MergeAllFaces`. This command is most effective on surfaces that have been created by joining simpler, rectangular surfaces together.
+
+### Practical Use Cases
+* **Use Case 1 (Cleaning Imported Geometry):** You import a surface from another CAD program, and it is made up of several smaller, co-linear patches. `MergeAllEdges` can sometimes be used to combine these patches into a single, cleaner surface with a simpler structure.
+
+### Other Information
+This is a specialized surface cleanup utility.
+
+---
+
+## 383. MergeAllFaces
+
+### Short Info
+Merge all possible faces of a polysurface.
+
+### Detailed Description
+The **MergeAllFaces** command is a polysurface simplification tool. It inspects a selected polysurface and merges any adjacent faces that are co-planar (lie on the same flat plane). This is a very useful command for cleaning up models, especially after boolean operations or importing files, by removing unnecessary edges from flat areas.
+
+### Steps to use the command
+1.  Select a polysurface.
+2.  Run the command `MergeAllFaces`.
+3.  All co-planar faces on the object will be merged into single faces.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a safe command to run and is good practice for cleaning up models. It simplifies the geometry without changing its shape. The single-face equivalent is `MergeFace`.
+
+### Practical Use Cases
+* **Use Case 1 (Cleaning a Signet Ring):** You have created a signet ring by booleaning several box and cylinder shapes together. The flat top surface is now made up of several separate, co-planar faces. Running `MergeAllFaces` will combine them all into a single, clean top surface.
+* **Use Case 2 (Simplifying Imported Files):** You import a STEP file, and many of the flat surfaces are broken up into multiple faces. `MergeAllFaces` is the best tool to quickly clean this up and simplify the model.
+
+### Other Information
+This is a fundamental command for model cleanup and simplification.
+
+---
+
+## 384. MergeEdge
+
+### Short Info
+Merge two edges of the same surface.
+
+### Detailed Description
+The **MergeEdge** command is a surface editing tool that merges two adjacent edges on the same surface. This is a manual, single-edge version of the `MergeAllEdges` command.
+
+### Steps to use the command
+1.  Run the command `MergeEdge`.
+2.  At the **Select edge on surface to merge** prompt, select the first edge.
+3.  At the **Select another edge on the same surface to merge** prompt, select an adjacent edge.
+4.  The two edges will be merged.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Both edges must belong to the same surface.
+
+### Practical Use Cases
+* **Use Case 1 (Precision Cleanup):** You have a surface where you only want to merge two specific co-linear edges, but leave other co-linear edges on the same surface separate. `MergeEdge` gives you this precise, manual control.
+
+### Other Information
+This is a specialized surface cleanup utility for manual control.
+
+---
+
+## 385. MergeFace
+
+### Short Info
+Merge two faces of a polysurface.
+
+### Detailed Description
+The **MergeFace** command is a polysurface editing tool that merges two adjacent, co-planar faces into a single face. This is the manual, two-face version of the `MergeAllFaces` command.
+
+### Steps to use the command
+1.  Run the command `MergeFace`.
+2.  At the **Select a face to merge** prompt, select the first face.
+3.  At the **Select a second face to merge** prompt, select an adjacent, co-planar face.
+4.  The two faces will be merged.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The two faces must be co-planar for the command to work.
+
+### Practical Use Cases
+* **Use Case 1 (Targeted Cleanup):** You have a model where you want to merge two specific co-planar faces, but you want to leave other co-planar faces on the object separate for a specific reason (e.g., for texture mapping). `MergeFace` allows you to perform this targeted merge without affecting the rest of the object.
+
+### Other Information
+This is a specialized polysurface cleanup utility for manual control.
+
+---
+
+## 386. MergeSrf
+
+### Short Info
+Merge two surfaces.
+
+### Detailed Description
+The **MergeSrf** (Merge Surface) command combines two separate surfaces into a single surface. This command only works along un-trimmed edges, and the surfaces must be perfectly aligned and have the same direction.
+
+### Steps to use the command
+1.  Run the command `MergeSrf`.
+2.  At the **Select surface to merge** prompt, select the first surface near the edge to be merged.
+3.  At the **Select surface to merge with** prompt, select the second surface near the shared edge.
+4.  The two surfaces will be merged into one.
+
+### Command Options & Toggles
+* **Smooth (Yes/No):**
+    * **Yes:** Adjusts the control points to make the seam between the surfaces smooth (tangent). This will change the shape of the surface.
+    * **No:** Merges the surfaces without changing their shape, which may leave a crease at the seam.
+* **Tolerance:** Sets the tolerance for how far apart the edges can be and still be merged.
+
+### Note for better use
+The `Join` command is for creating a polysurface from separate surfaces. The `MergeSrf` command is for creating a single, larger surface from two smaller surfaces. For `MergeSrf` to work, the shared edge must be an un-trimmed, natural edge of both surfaces.
+
+### Practical Use Cases
+* **Use Case 1 (Extending a Shank):** You have modeled one half of a ring shank. You mirror it to create the other half. If both halves are un-trimmed, you can use `MergeSrf` with the `Smooth=Yes` option to merge them into a single, seamless shank surface.
+
+### Other Information
+This is an advanced surfacing tool for creating clean, single-surface objects from multiple parts.
+
+---
+
+## 387. Mesh
+
+### Short Info
+Create a mesh from a NURBS surface or polysurface.
+
+### Detailed Description
+The **Mesh** command is the primary tool for converting a smooth NURBS object into a polygon mesh. This is a critical step in preparing a model for 3D printing, rendering in other programs, or for any workflow that requires polygonal geometry (like STL or OBJ files). The command opens a dialog box that gives you detailed control over the quality and density of the resulting mesh.
+
+### Steps to use the command
+1.  Select the NURBS object(s) you want to convert.
+2.  Run the command `Mesh`.
+3.  The "Polygon Mesh Options" dialog box will appear.
+4.  Adjust the sliders and settings to control the mesh density. A preview is shown in the viewport.
+5.  Click OK to create the mesh object.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **Simple controls:** A single slider from "Fewer polygons" to "More polygons."
+* **Detailed controls:** Allows you to set specific parameters like **Maximum distance, edge to surface**, which is the most common and precise way to control the mesh quality.
+* **Preview:** Shows a preview of the mesh in the viewport as you adjust the settings.
+
+### Note for better use
+The "Maximum distance, edge to surface" setting is the most important. This tells Rhino the maximum distance the flat edge of a polygon is allowed to be from the true curved NURBS surface. A smaller number (e.g., 0.01mm) will create a very dense, high-quality mesh that is good for 3D printing.
+
+### Practical Use Cases
+* **Use Case 1 (Creating an STL for 3D Printing):** This is the most common use. You have a finished, solid NURBS model of a ring. You run `Mesh`, use the detailed controls to set a high tolerance (e.g., 0.01mm), and create a high-quality mesh. You can then export this new mesh object as an STL file.
+* **Use Case 2 (Exporting to a Sculpting Program):** You want to add sculpted details to your ring in a program like ZBrush. You would first use `Mesh` to convert your NURBS model into a clean polygon mesh that can be imported into the sculpting application.
+
+### Other Information
+This is the fundamental command for converting from the NURBS modeling world to the polygon mesh world.
+
+---
+
+## 388. MeshBooleanDifference
+
+### Short Info
+Subtract the volume of one set of meshes from another.
+
+### Detailed Description
+The **MeshBooleanDifference** command performs a boolean difference operation specifically on mesh objects. It subtracts the volume of one set of meshes from another.
+
+### Steps to use the command
+1.  Run the command `MeshBooleanDifference`.
+2.  Select the mesh(es) to subtract from and press Enter.
+3.  Select the mesh(es) to subtract with and press Enter.
+4.  The volume of the second set will be cut away from the first.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+For this command to work reliably, all input meshes should be "closed" (watertight) and have no errors.
+
+### Practical Use Cases
+* **Use Case 1 (Editing STL Files):** You have an STL file of a ring and an STL file of a cutter. You can use `MeshBooleanDifference` to subtract the cutter directly from the ring mesh, without ever converting the objects to NURBS.
+* **Use Case 2 (Hollowing a Model):** You have a solid mesh of a pendant. You can create a smaller, interior mesh shape and use `MeshBooleanDifference` to subtract it from the outer mesh, hollowing it out to save material.
+
+### Other Information
+This is the mesh-based equivalent of the standard `BooleanDifference` command.
+
+---
+
+## 389. MeshBooleanIntersection
+
+### Short Info
+Create a new mesh from meshes' intersected volumes.
+
+### Detailed Description
+The **MeshBooleanIntersection** command performs a boolean intersection operation specifically on mesh objects. It creates a new mesh object from only the shared, overlapping volume of the input meshes.
+
+### Steps to use the command
+1.  Run the command `MeshBooleanIntersection`.
+2.  Select the first set of meshes and press Enter.
+3.  Select the second set of meshes and press Enter.
+4.  A new mesh object will be created from the overlapping volume.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Complex Mesh Creation):** You have two complex mesh objects that intersect, and you want to create a new object that represents only their shared space. This command will calculate that volume directly.
+
+### Other Information
+This is the mesh-based equivalent of the standard `BooleanIntersection` command.
+
+---
+
+## 390. MeshBooleanSplit
+
+### Short Info
+Split meshes at intersections.
+
+### Detailed Description
+The **MeshBooleanSplit** command splits one set of mesh objects where they are intersected by another set of mesh objects. It keeps all the resulting pieces.
+
+### Steps to use the command
+1.  Run the command `MeshBooleanSplit`.
+2.  Select the mesh(es) to split and press Enter.
+3.  Select the cutting mesh(es) and press Enter.
+4.  The first set of meshes will be split into multiple pieces.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Two-Tone Meshes):** You have a single STL file of a ring and want to split it into two pieces for two-tone casting. You can create a simple cutting plane (as a mesh object) and use `MeshBooleanSplit` to divide the ring mesh into two separate parts along that plane.
+
+### Other Information
+This is the mesh-based equivalent of the standard `BooleanSplit` command.
+
+---
+
+## 391. MeshBooleanUnion
+
+### Short Info
+Combine the volumes of one or more meshes.
+
+### Detailed Description
+The **MeshBooleanUnion** command merges two or more overlapping mesh objects into a single, continuous mesh. It removes the interior, overlapping faces.
+
+### Steps to use the command
+1.  Select two or more overlapping mesh objects.
+2.  Run the command `MeshBooleanUnion`.
+3.  The meshes will be merged into a single mesh.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Assembling STL Files):** You have downloaded separate STL files for a ring shank and a setting. You can position them so they overlap and then use `MeshBooleanUnion` to combine them into a single, printable STL file.
+
+### Other Information
+This is the mesh-based equivalent of the standard `BooleanUnion` command.
+
+---
+
+## 392. MeshBox
+
+### Short Info
+Draw a mesh box.
+
+### Detailed Description
+The **MeshBox** command creates a simple box made of mesh faces. It is the mesh-primitive equivalent of the NURBS `Box` command.
+
+### Steps to use the command
+1.  Run the command `MeshBox`.
+2.  Follow the prompts to define the corners and height of the box.
+
+### Command Options & Toggles
+The options allow you to specify the number of polygons in the X, Y, and Z directions, controlling the density of the mesh box.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Mesh Primitives):** You are working in a primarily mesh-based workflow and need a simple box shape to use as a cutter or a base for sculpting. `MeshBox` creates this primitive directly, without you needing to create a NURBS box and then convert it.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 393. MeshCone
+
+### Short Info
+Draw a mesh cone.
+
+### Detailed Description
+The **MeshCone** command creates a simple cone made of mesh faces. It is the mesh-primitive equivalent of the NURBS `Cone` command.
+
+### Steps to use the command
+1.  Run the command `MeshCone`.
+2.  Follow the prompts to define the base and height of the cone.
+
+### Command Options & Toggles
+The options allow you to control the number of polygons around the circumference and along the height of the cone.
+
+### Practical Use Cases
+* **Use Case 1 (Mesh Cutters):** You need a simple conical cutter for a mesh boolean operation. `MeshCone` can create this directly.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 394. MeshCylinder
+
+### Short Info
+Draw a mesh cylinder.
+
+### Detailed Description
+The **MeshCylinder** command creates a simple cylinder made of mesh faces. It is the mesh-primitive equivalent of the NURBS `Cylinder` command.
+
+### Steps to use the command
+1.  Run the command `MeshCylinder`.
+2.  Follow the prompts to define the base and height of the cylinder.
+
+### Command Options & Toggles
+The options allow you to control the number of polygons around the circumference and along the height of the cylinder.
+
+### Practical Use Cases
+* **Use Case 1 (Mesh Bezels):** You are working in a mesh-only workflow and need to create a simple bezel shape. `MeshCylinder` can create the basic form.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 395. MeshEllipsoid
+
+### Short Info
+Draw a mesh ellipsoid.
+
+### Detailed Description
+The **MeshEllipsoid** command creates a simple ellipsoid made of mesh faces. It is the mesh-primitive equivalent of the NURBS `Ellipsoid` command.
+
+### Steps to use the command
+1.  Run the command `MeshEllipsoid`.
+2.  Follow the prompts to define the center and axes of the ellipsoid.
+
+### Command Options & Toggles
+The options allow you to control the number of polygons around the ellipsoid.
+
+### Practical Use Cases
+* **Use Case 1 (Mesh Cabochons):** You need a simple, dome-shaped mesh to use as a base for sculpting or as part of a larger mesh assembly. `MeshEllipsoid` can create this shape, which can then be cut in half.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 396. MeshIntersect
+
+### Short Info
+Create a polyline at the intersection of two meshes.
+
+### Detailed Description
+The **MeshIntersect** command calculates the intersection between two or more mesh objects and creates a new polyline curve where they cross.
+
+### Steps to use the command
+1.  Select two or more intersecting mesh objects.
+2.  Run the command `MeshIntersect`.
+3.  A polyline curve will be created along the line of intersection.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Finding a Seam on an STL):** You have two STL files that are positioned to interlock. You can use `MeshIntersect` to generate the exact curve along the seam where they meet. This curve can then be used as a guide for other modeling operations.
+
+### Other Information
+This is the mesh equivalent of the `Intersect` command.
+
+---
+
+## 397. MeshOutline
+
+### Short Info
+Create a polyline outline of a mesh.
+
+### Detailed Description
+The **MeshOutline** command creates a 2D polyline that represents the silhouette or outline of a selected mesh object as seen from the active viewport.
+
+### Steps to use the command
+1.  Select one or more mesh objects.
+2.  Make the desired viewport active (e.g., Front view).
+3.  Run the command `MeshOutline`.
+4.  A flat, 2D polyline of the outline will be created on the CPlane.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a 2D Profile from a Scan):** You have a 3D scan of an organic object (as a mesh) and you need to get a clean 2D outline of its side profile. You can position the object in the Front view and use `MeshOutline` to generate this curve.
+
+### Other Information
+This is the mesh equivalent of the `Silhouette` command.
+
+---
+
+## 398. MeshPatch
+
+### Short Info
+Create a mesh from curves and points.
+
+### Detailed Description
+The **MeshPatch** command creates a mesh by fitting it to a set of input curves and points. It is similar to the NURBS `Patch` command but it generates a mesh object directly. This is useful for creating free-form mesh surfaces.
+
+### Steps to use the command
+1.  Select the curves and points that will define the mesh.
+2.  Run the command `MeshPatch`.
+3.  A dialog box will appear with options to control the mesh density.
+4.  Click OK to create the mesh.
+
+### Command Options & Toggles
+The options in the dialog box control the density and stiffness of the resulting mesh.
+
+### Practical Use Cases
+* **Use Case 1 (Filling a Hole in a Scan):** You have a 3D scan with a large, irregular hole. You can use `DupMeshHoleBoundary` to create a curve around the hole, and then use `MeshPatch` with this curve as input to create a mesh patch that fills the opening.
+
+### Other Information
+This is a powerful tool for free-form mesh creation and repair.
+
+---
+
+## 399. MeshPlane
+
+### Short Info
+Draw a mesh plane.
+
+### Detailed Description
+The **MeshPlane** command creates a simple, flat rectangular plane made of mesh faces. It is the mesh-primitive equivalent of the NURBS `Plane` command.
+
+### Steps to use the command
+1.  Run the command `MeshPlane`.
+2.  Follow the prompts to define the corners of the plane.
+
+### Command Options & Toggles
+The options allow you to specify the number of polygons in the X and Y directions, controlling the density of the mesh plane.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Base):** You are starting a sculpting project in a mesh-based workflow and need a simple, flat base to build upon. `MeshPlane` is the fastest way to create this.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 400. MeshPolyline
+
+### Short Info
+Create a mesh from a closed polyline.
+
+### Detailed Description
+The **MeshPolyline** command takes a closed, planar polyline and creates a single, flat mesh face that fills its boundary.
+
+### Steps to use the command
+1.  Select a closed, planar polyline.
+2.  Run the command `MeshPolyline`.
+3.  A new mesh object will be created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The input curve must be a polyline (made of straight segments) and it must be both closed and planar.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Custom Mesh Faces):** You need to create a complex, multi-sided polygon to patch a hole in a mesh. You can draw the outline of the polygon using the `Polyline` command and then use `MeshPolyline` to turn it into a single mesh face that you can then join to your main mesh.
+
+### Other Information
+This is a simple but useful tool for creating custom n-gons (polygons with more than 4 sides) in a mesh workflow.
+
+---
+
+## 401. MeshRepair
+
+### Short Info
+Open the Mesh Repair wizard.
+
+### Detailed Description
+The **MeshRepair** command opens a dedicated, floating panel that provides a suite of tools to help find and fix problems in mesh objects. This is a comprehensive utility for making meshes "watertight" and suitable for 3D printing. The wizard guides you through a series of checks and repair steps, such as checking for bad faces, filling holes, and unifying normals.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `MeshRepair`.
+3.  The Mesh Repair panel will open.
+4.  Follow the steps in the panel, starting with "Check Mesh."
+5.  Use the various buttons like "Fill Holes" or "Unify Normals" to fix any reported problems.
+
+### Command Options & Toggles
+All options are contained within the Mesh Repair panel's interface. It includes buttons and readouts for:
+* Checking for various mesh problems.
+* Filling all holes.
+* Unifying mesh normals.
+* Rebuilding the mesh.
+
+### Note for better use
+The Mesh Repair wizard is an excellent tool for beginners and experts alike, as it consolidates many of the most common mesh repair commands into a single, logical interface. It is a very good practice to run any mesh intended for 3D printing through this wizard to ensure it is a valid, closed, and manifold object.
+
+### Practical Use Cases
+* **Use Case 1 (Pre-Print Check):** This is the primary use case. Before exporting a final ring model as an STL file, you would run `MeshRepair` on it. The wizard will immediately tell you if the mesh is closed and valid. If not, you can use the "Fill Holes" and other tools within the panel to fix it.
+* **Use Case 2 (Repairing Scans):** You have a raw 3D scan of a piece of jewelry that is full of holes and flipped faces. The `MeshRepair` wizard provides a step-by-step process to identify and fix all of these issues to turn the raw scan into a usable, solid mesh.
+
+### Other Information
+This command is a front-end interface that combines the functionality of many other individual mesh repair commands (`FillMeshHoles`, `UnifyMeshNormals`, `CullDegenerateMeshFaces`, etc.).
+
+---
+
+## 402. MeshSphere
+
+### Short Info
+Draw a mesh sphere.
+
+### Detailed Description
+The **MeshSphere** command creates a simple sphere made of mesh faces. It is the mesh-primitive equivalent of the NURBS `Sphere` command.
+
+### Steps to use the command
+1.  Run the command `MeshSphere`.
+2.  Follow the prompts to define the center and radius of the sphere.
+
+### Command Options & Toggles
+The options allow you to control the density of the mesh:
+* **Vertical faces:** Sets the number of polygons around the sphere's circumference.
+* **Around faces:** Sets the number of polygons from pole to pole.
+
+### Note for better use
+The `MeshSphere` command creates a sphere with a standard "UV" topology, which has poles at the top and bottom where the vertices converge.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Milgrain):** You need to create a small bead for a milgrain edge in a mesh-based workflow. `MeshSphere` is the fastest way to create this primitive shape.
+* **Use Case 2 (Mesh Cutters):** You need a simple spherical cutter for a mesh boolean operation. `MeshSphere` can create this directly.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 403. MeshSplit
+
+### Short Info
+Split a mesh with another object.
+
+### Detailed Description
+The **MeshSplit** command divides a mesh object into multiple pieces using another object (a surface, polysurface, or another mesh) as a cutter.
+
+### Steps to use the command
+1.  Run the command `MeshSplit`.
+2.  At the **Select mesh to split** prompt, select the mesh object(s) and press Enter.
+3.  At the **Select cutting object** prompt, select the object(s) that will act as the cutters and press Enter.
+4.  The mesh will be split into multiple separate mesh objects.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is the mesh equivalent of the `Split` command for NURBS objects.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Two-Tone Mesh):** You have a single STL file of a ring and want to split it into two pieces for two-tone casting. You can create a simple cutting plane (as a NURBS surface) and use `MeshSplit` to divide the ring mesh into two separate parts along that plane.
+* **Use Case 2 (Sizing a Mesh Ring):** You have an STL file of a finished ring that is the wrong size. You can use `MeshSplit` to cut a section out of the bottom of the shank. You can then move the two halves apart and rebuild the bottom section to make the ring larger.
+
+### Other Information
+This is a fundamental tool for editing and deconstructing mesh objects.
+
+---
+
+## 404. MeshTCone
+
+### Short Info
+Draw a truncated mesh cone.
+
+### Detailed Description
+The **MeshTCone** (Mesh Truncated Cone) command creates a simple truncated cone (a cone with its tip cut off) made of mesh faces. It is the mesh-primitive equivalent of the NURBS `TCone` command.
+
+### Steps to use the command
+1.  Run the command `MeshTCone`.
+2.  Follow the prompts to define the base radius, the top radius, and the height of the truncated cone.
+
+### Command Options & Toggles
+The options allow you to control the number of polygons around the circumference and along the height of the cone.
+
+### Practical Use Cases
+* **Use Case 1 (Mesh Bezel Base):** You are building a tapered bezel in a mesh-only workflow. `MeshTCone` is the fastest way to create the basic tapered shape.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 405. MeshToNURB
+
+### Short Info
+Duplicate each mesh face with a NURBS surface.
+
+### Detailed Description
+The **MeshToNURB** command is a conversion tool that takes a mesh object and converts it into a NURBS polysurface. It does this by creating a separate, trimmed NURBS surface for every single face of the original mesh.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `MeshToNURB`.
+3.  A new NURBS polysurface will be created that has the exact same faceted appearance as the original mesh.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command creates an extremely heavy and complex polysurface, as each triangle or quad in the mesh becomes its own surface. It does **not** create a single, smooth NURBS surface. For that kind of reverse-engineering, you would need to use other tools to draw curves on the mesh and build a new surface with commands like `Loft` or `NetworkSrf`.
+
+### Practical Use Cases
+* **Use Case 1 (Converting Simple Geometry):** You have a very simple, low-polygon mesh object with flat faces that you need to convert to a NURBS object to use with commands that only work on NURBS (like some of the Matrix builders). `MeshToNURB` can perform this conversion.
+* **Use Case 2 (Preparing for Booleans):** You need to perform a boolean operation between a mesh object and a NURBS object. You could use `MeshToNURB` to convert the mesh into a polysurface so that you can use the standard `BooleanDifference` command.
+
+### Other Information
+This is a very literal conversion tool and should be used with caution on dense meshes, as it can create extremely complex polysurfaces that will slow down your computer.
+
+---
+
+## 406. MeshTorus
+
+### Short Info
+Draw a mesh torus.
+
+### Detailed Description
+The **MeshTorus** command creates a simple torus (a donut shape) made of mesh faces. It is the mesh-primitive equivalent of the NURBS `Torus` command.
+
+### Steps to use the command
+1.  Run the command `MeshTorus`.
+2.  Follow the prompts to define the center, the major radius, and the minor radius of the torus.
+
+### Command Options & Toggles
+The options allow you to control the number of polygons around the major and minor radii, controlling the density of the mesh.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Jump Rings):** You are working in a mesh-only workflow and need to create simple jump rings for a chain. `MeshTorus` is the fastest way to create this primitive shape.
+
+### Other Information
+This is one of several commands for creating primitive mesh shapes.
+
+---
+
+## 407. MeshTrim
+
+### Short Info
+Trim a mesh with a curve on the mesh.
+
+### Detailed Description
+The **MeshTrim** command is a mesh editing tool that trims away a portion of a mesh. It is the mesh equivalent of the `Trim` command. It works by splitting the mesh with a cutting curve and then allows you to discard the unwanted pieces.
+
+### Steps to use the command
+1.  Run the command `MeshTrim`.
+2.  At the **Select cutting objects** prompt, select one or more curves or surfaces and press Enter.
+3.  At the **Select mesh to trim** prompt, click on the part of the mesh you want to remove.
+4.  The selected portion of the mesh will be deleted.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command will create holes in your mesh, making it "non-watertight." You will need to use other tools like `Patch` or `FillMeshHole` if you need to close the mesh again.
+
+### Practical Use Cases
+* **Use Case 1 (Creating an Opening in an STL):** You have an STL file of a solid pendant and you want to cut an opening in it. You can draw a closed curve on the surface of the mesh and then use `MeshTrim` to cut out the hole.
+
+### Other Information
+This is a fundamental tool for editing and cutting mesh objects.
+
+---
+
+## 408. Minimize
+
+### Short Info
+Minimize the Rhino window.
+
+### Detailed Description
+The **Minimize** command minimizes the main Rhino application window to the taskbar.
+
+### Steps to use the command
+1.  Run the command `Minimize`.
+2.  The Rhino window will be minimized.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is equivalent to clicking the "Minimize" button in the top-right corner of the Rhino window.
+
+### Practical Use Cases
+* **Use Case 1 (Window Management):** You need to quickly access another program or your desktop. `Minimize` will hide the Rhino window.
+
+### Other Information
+This is a simple window management command.
+
+---
+
+## 409. Mirror
+
+### Short Info
+Create a mirror-image copy of objects.
+
+### Detailed Description
+The **Mirror** command is a fundamental transformation tool that creates a mirrored copy of an object across a defined line or plane. This is an essential tool for creating symmetrical objects.
+
+### Steps to use the command
+1.  Select the object(s) to mirror.
+2.  Run the command `Mirror`.
+3.  At the **Start of mirror plane** prompt, pick the first point of your mirror line.
+4.  At the **End of mirror plane** prompt, pick the second point.
+5.  A mirrored copy of the object will be created.
+
+### Command Options & Toggles
+This command has no options in the command line.
+
+### Note for better use
+Using Ortho (holding `Shift`) or snapping to grid lines when defining the mirror plane is essential for creating perfect, symmetrical copies.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Symmetrical Ring):** This is a primary use case. You model one half of a detailed, symmetrical ring shank or pendant. When you are finished, you select the half, run `Mirror`, and draw the mirror plane down the center of your design. This creates the other half perfectly. You can then `Join` the two halves to create the final object.
+* **Use Case 2 (Placing Accent Stones):** You have carefully placed a group of accent stones on one side of a ring. You can select them all and use `Mirror` to create an identical, symmetrical group on the other side.
+
+### Other Information
+This is one of the most frequently used and important commands for efficient modeling.
+
+---
+
+## 410. MirrorHole
+
+### Short Info
+Mirror a hole on a planar surface.
+
+### Detailed Description
+The **MirrorHole** command is a specialized utility that creates a mirrored copy of a hole on a single, planar surface.
+
+### Steps to use the command
+1.  Run the command `MirrorHole`.
+2.  At the **Select hole to mirror** prompt, click the edge of the hole.
+3.  You will then be prompted to define the start and end of the mirror plane.
+4.  A mirrored copy of the hole will be created on the same surface.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command only works on flat (planar) surfaces.
+
+### Practical Use Cases
+* **Use Case 1 (Symmetrical Patterns):** You are creating a design on a flat plate that requires a symmetrical pattern of holes. You can create the holes on one side, and then use `MirrorHole` to create their perfect counterparts on the other side.
+
+### Other Information
+This is a specialized tool that combines mirroring and trimming into a single operation for holes.
+
+
+---
+
+## 411. ModelBasepoint
+
+### Short Info
+Set a base point for the model.
+
+### Detailed Description
+The **ModelBasepoint** command sets a location in the current model that will be used as the insertion base point when this file is inserted into another Rhino file as a block instance. By default, a model's base point is the world origin (0,0,0). This command allows you to define a more logical insertion point, such as the center of an object.
+
+### Steps to use the command
+1.  Run the command `ModelBasepoint`.
+2.  At the **Model base point** prompt, pick a location.
+3.  The base point for the model is now set to that location.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Setting a logical base point is crucial when creating a library of parts that will be inserted into other models. For example, the base point for a gemstone model should be its center (culet or table), and the base point for a setting should be the center where the stone will sit. This makes assembling parts much easier.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Component Library):** You have designed a standard 4-prong setting that you will use in many different ring designs. Before saving the setting as its own file, you run `ModelBasepoint` and set the base point to the exact center where the gemstone's culet would be. Now, when you `Insert` this setting file into a new ring project, it will insert from that logical center point, making it easy to snap to a ring rail.
+* **Use Case 2 (Aligning Imports):** You are exporting a pendant to be inserted into a separate file containing a chain. You can set the model base point of the pendant to the center of its bail. When the pendant is inserted into the other file, its insertion point will be at the bail, making it easy to snap to the chain.
+
+### Other Information
+This is a file-level property, not an object property. It affects how the entire file behaves when used as a component in another project.
+
+---
+
+## 412. ModifyRadius
+
+### Short Info
+Change the radius of circles and arcs.
+
+### Detailed Description
+The **ModifyRadius** command is a simple editing tool that allows you to change the radius of existing circles and arcs by specifying a new radius value.
+
+### Steps to use the command
+1.  Run the command `ModifyRadius`.
+2.  At the **Select circle or arc to change radius** prompt, select the object. The current radius will be displayed.
+3.  At the **New radius** prompt, type a new value and press Enter.
+4.  The circle or arc will be resized.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a direct and precise way to edit the size of circles and arcs without having to rescale them.
+
+### Practical Use Cases
+* **Use Case 1 (Resizing a Gemstone Outline):** You have drawn a 5mm circle to represent a gemstone, but the client decides they want a 6mm stone instead. You can run `ModifyRadius`, select the circle, and simply type "3" (since the radius is half the diameter) to instantly resize it to the correct dimension.
+* **Use Case 2 (Adjusting a Bezel):** You have created the inner wall of a bezel from an arc. You realize the radius is slightly too small. `ModifyRadius` allows you to enter the precise, correct radius value to fix it.
+
+### Other Information
+This is a simple but frequently used editing command for basic geometric shapes.
+
+---
+
+## 413. Move
+
+### Short Info
+Move objects from one location to another.
+
+### Detailed Description
+The **Move** command is one of the most fundamental transformation tools. It relocates selected objects from a base point to a new destination point.
+
+### Steps to use the command
+1.  Select the object(s) to move.
+2.  Run the command `Move`.
+3.  At the **Point to move from** prompt, pick a base point.
+4.  At the **Point to move to** prompt, pick a destination point.
+5.  The object(s) will be moved.
+
+### Command Options & Toggles
+* **Vertical:** Constrains the movement to be vertical to the current construction plane.
+
+### Note for better use
+Using object snaps is critical for moving objects with precision. For example, to move a prong so its tip touches the surface of a gemstone, you would pick the tip of the prong as the "point to move from" and use the `OnSrf` snap for the "point to move to." The Gumball widget is often a faster, more interactive way to perform simple moves.
+
+### Practical Use Cases
+* **Use Case 1 (Positioning a Gemstone):** You have a ring shank and a gemstone. You need to move the gemstone into the correct position above the shank. You would select the stone, run `Move`, snap the base point to the stone's culet (bottom point), and snap the destination point to the top of the ring rail.
+* **Use Case 2 (Adjusting Components):** You have placed a bezel on a ring, but it is slightly off-center. You can use the `Move` command, snapping from the center of the bezel to the center of the ring, to perfectly align it.
+
+### Other Information
+This is a core command that is used constantly in every modeling workflow.
+
+---
+
+## 414. MoveCrv
+
+### Short Info
+Move a polycurve segment.
+
+### Detailed Description
+The **MoveCrv** (Move Curve) command is a specialized editing tool that allows you to move an entire segment of a polycurve. The adjacent segments stretch to stay connected to the moved segment.
+
+### Steps to use the command
+1.  Run the command `MoveCrv`.
+2.  At the **Select polycurve segment to move** prompt, click on the segment you want to move.
+3.  Follow the prompts to define the move, similar to the standard `Move` command.
+4.  The segment will be moved, and the adjacent segments will stretch to meet it.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command only works on polycurves (curves made of multiple joined segments).
+
+### Practical Use Cases
+* **Use Case 1 (Adjusting a Profile):** You have drawn the cross-section of a ring shank as a polycurve. You decide that the flat bottom segment needs to be wider. You can use `MoveCrv` to select the top segment and move it upwards, which will cause the vertical side segments to stretch, making the entire profile taller.
+
+### Other Information
+This is a specialized tool for editing polycurves.
+
+---
+
+## 415. MoveEdge
+
+### Short Info
+Move a polysurface edge.
+
+### Detailed Description
+The **MoveEdge** command is a direct solid editing tool that allows you to select an edge of a polysurface and move it. The surfaces connected to that edge will be stretched or compressed to follow the moved edge.
+
+### Steps to use the command
+1.  Run the command `MoveEdge`.
+2.  At the **Select edges to move** prompt, select one or more edges and press Enter.
+3.  Follow the prompts to define the move, similar to the standard `Move` command.
+4.  The edge will be moved, and the adjacent surfaces will be modified.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a powerful tool for making direct edits to solid models without having to explode them. It works best on simple, planar shapes.
+
+### Practical Use Cases
+* **Use Case 1 (Widening a Bezel Wall):** You have a solid bezel, and you decide the wall is too thin. You can run `MoveEdge`, select the top outer edge of the bezel, and move it outward. The outer wall surface will stretch, making the entire bezel thicker.
+* **Use Case 2 (Adjusting a Signet Ring):** You have a box-shaped signet ring top and want to make it longer. You can select the front edge and use `MoveEdge` to pull it forward, stretching the top and side surfaces to the new length.
+
+### Other Information
+This is a key command for direct solid modeling.
+
+---
+
+## 416. MoveFace
+
+### Short Info
+Move a polysurface face.
+
+### Detailed Description
+The **MoveFace** command is a direct solid editing tool that allows you to select a face of a polysurface and move it. The adjacent faces will be stretched or compressed to stay connected.
+
+### Steps to use the command
+1.  Run the command `MoveFace`.
+2.  At the **Select faces to move** prompt, select one or more faces and press Enter.
+3.  Follow the prompts to define the move.
+4.  The face will be moved, and the surrounding surfaces will be modified.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a very powerful and intuitive way to make changes to solid models. It allows you to push and pull the faces of an object as if it were made of clay.
+
+### Practical Use Cases
+* **Use Case 1 (Making a Shank Thicker):** You have a solid ring shank and decide it needs to be thicker at the bottom. You can use `MoveFace` to select the outer bottom face of the shank and simply pull it outward to add thickness.
+* **Use Case 2 (Tapering a Bezel):** You have a straight-walled bezel. You can select the outer face and use the `Rotate` command on it to give the wall a tapered angle.
+
+### Other Information
+This is a fundamental command for direct solid modeling workflows.
+
+---
+
+## 417. MoveHole
+
+### Short Info
+Move a hole in a planar surface.
+
+### Detailed Description
+The **MoveHole** command is a specialized editing tool that allows you to move a hole within a single, planar surface.
+
+### Steps to use the command
+1.  Run the command `MoveHole`.
+2.  At the **Select hole edge(s) to move** prompt, select the edge of the hole.
+3.  Follow the prompts to define the move, similar to the standard `Move` command.
+4.  The hole will be moved to the new location, and the surface will be repaired.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command only works on holes within a single, flat (planar) surface. It will not work on holes that cross multiple faces or on curved surfaces.
+
+### Practical Use Cases
+* **Use Case 1 (Repositioning a Setting):** You have cut a hole in the flat top of a signet ring for a gemstone, but you realize it is slightly off-center. `MoveHole` allows you to select the hole and move it to the correct, centered position without having to undo and re-trim.
+
+### Other Information
+This is a time-saving utility for editing features on flat surfaces.
+
+---
+
+## 418. MoveTargetToObjects
+
+### Short Info
+Move the viewport camera target to the center of selected objects.
+
+### Detailed Description
+The **MoveTargetToObjects** command is a viewport navigation tool. It changes the "target" or pivot point of the active viewport's camera to be the center of the bounding box of the selected objects.
+
+### Steps to use the command
+1.  Select one or more objects.
+2.  Run the command `MoveTargetToObjects`.
+3.  The camera's target will be moved.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+After running this command, when you tumble or rotate the view with the mouse, the camera will now pivot around the center of the objects you selected. This is very useful for inspecting a specific part of a large model.
+
+### Practical Use Cases
+* **Use Case 1 (Inspecting a Prong):** You are working on a large, complex ring and you want to zoom in and rotate the view to inspect a single, tiny prong. If you just zoom in, the camera will still be pivoting around the center of the entire ring, which can be awkward. Instead, you would select the prong, run `MoveTargetToObjects`, and then run `Zoom` with the `Selected` option. Now, when you rotate the view, the camera will tumble perfectly around that single prong.
+
+### Other Information
+This is a key command for efficient navigation in complex scenes.
+
+---
+
+## 419. MoveUntrimmedEdge
+
+### Short Info
+Move an un-trimmed edge of a polysurface face.
+
+### Detailed Description
+The **MoveUntrimmedEdge** command is an advanced direct editing tool. It allows you to move an edge of a single face within a polysurface, but only if that edge is an "un-trimmed" or natural edge of the underlying surface.
+
+### Steps to use the command
+1.  Run the command `MoveUntrimmedEdge`.
+2.  Select an un-trimmed edge of a polysurface face.
+3.  Follow the prompts to define the move.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a more technical and less commonly used command than `MoveEdge`. `MoveEdge` works on any edge, while this command is restricted to the natural edges of the surfaces that make up the polysurface.
+
+### Practical Use Cases
+* **Use Case 1 (Advanced Surface Editing):** An advanced user is editing a polysurface that was built from simple, un-trimmed surfaces. This command gives them a way to modify the underlying structure of one of those surfaces without having to `Explode` the object.
+
+### Other Information
+For most direct editing tasks, `MoveEdge` and `MoveFace` are more intuitive and versatile.
+
+---
+
+## 420. MoveUntrimmedFace
+
+### Short Info
+Move an un-trimmed polysurface face.
+
+### Detailed Description
+The **MoveUntrimmedFace** command is an advanced direct editing tool. It allows you to move a single face of a polysurface, but only if that face is an "un-trimmed" or natural surface. The adjacent faces will be extended to meet the new location of the moved face.
+
+### Steps to use the command
+1.  Run the command `MoveUntrimmedFace`.
+2.  Select an un-trimmed face of a polysurface.
+3.  Follow the prompts to define the move.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a more technical and less commonly used command than `MoveFace`. `MoveFace` works on any face, while this command is restricted to faces that have not been trimmed.
+
+### Practical Use Cases
+* **Use Case 1 (Advanced Solid Editing):** An advanced user is editing a polysurface that was built from simple, un-trimmed surfaces (like a box). This command allows them to move one of the original faces and have the adjacent faces automatically extend to stay connected.
+
+### Other Information
+For most direct editing tasks, `MoveFace` is more intuitive and versatile.
+
+
+---
+
+## 421. MoveUVN
+
+### Short Info
+Move surface control points along u-, v-, and normal-directions.
+
+### Detailed Description
+The **MoveUVN** command opens a special panel with sliders that allow you to move selected surface control points along the surface's natural U, V, and Normal directions. This is an extremely powerful and intuitive tool for making smooth, controlled edits to a curved surface. Instead of guessing the correct direction to move a point with the standard `Move` command, this tool ensures your edits flow along the surface's own coordinate system.
+
+### Steps to use the command
+1.  Turn on the control points for a surface (`PointsOn` or F10).
+2.  Select one or more control points.
+3.  Run the command `MoveUVN`.
+4.  The Move UVN panel will appear.
+5.  Use the U, V, and N sliders to move the selected points. The surface will update in real-time.
+
+### Command Options & Toggles
+The options are all contained within the Move UVN panel:
+* **U, V, N sliders:** Control the movement of the points along the surface's directions.
+* **Scale:** Controls the sensitivity or "speed" of the sliders. A smaller value allows for finer adjustments.
+* **Un-Do:** Reverts the last slider adjustment.
+
+### Note for better use
+The "N" slider, which moves points along the surface normal (straight in or out from the surface), is particularly useful for creating bumps or depressions. This tool is often superior to the standard `Move` command for editing curved surfaces because it prevents you from accidentally creating wrinkles or flat spots by moving points in an unnatural direction.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Depression):** You want to create a smooth, concave "thumbprint" depression on the surface of a ring. You can select a group of control points in the center, open the `MoveUVN` panel, and use the "N" slider to push the points inward along the surface normal, creating a perfect depression.
+* **Use Case 2 (Sliding a Feature):** You have a feature on a curved surface defined by a group of control points, and you need to slide it slightly along the surface's length. The "U" and "V" sliders allow you to do this precisely, without the feature lifting off the surface or changing its orientation.
+
+### Other Information
+This is a fundamental tool for high-quality, organic surface editing.
+
+---
+
+## 422. MPlane
+
+### Short Info
+Set up a mobile construction plane.
+
+### Detailed Description
+The **MPlane** (Mobile Plane) command is an advanced utility that sets up a construction plane that is linked to a specific object. This "mobile" CPlane will move and rotate along with the object it is attached to.
+
+### Steps to use the command
+1.  Select an object.
+2.  Run the command `MPlane`.
+3.  The construction plane in the active viewport will now be attached to that object.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a highly specialized command and is not used in typical modeling workflows. Its primary purpose is for use with specific hardware controllers (like a 6-axis mouse) that can manipulate objects and the CPlane simultaneously.
+
+### Practical Use Cases
+* **Use Case 1 (Advanced Navigation):** A user with a 6-axis controller could use `MPlane` to link the CPlane to an object. Then, as they use the controller to move the object through 3D space, the construction plane would move with it, allowing them to draw new objects that are always relative to the moving part. This has very limited application in jewelry design.
+
+### Other Information
+This is a specialized command for alternative input devices.
+
+---
+
+## 423. NamedCPlane
+
+### Short Info
+Save and restore named construction planes.
+
+### Detailed Description
+The **NamedCPlane** command opens a panel that allows you to save and restore custom construction planes. If you have created a specific, custom CPlane using the `CPlane` command that you need to use frequently, you can save it with a name. This command allows you to instantly recall that saved CPlane at any time.
+
+### Steps to use the command
+1.  Run the command `NamedCPlane`.
+2.  The Named CPlanes panel will open.
+3.  To save a CPlane, set up your custom CPlane in a viewport and click the "Save" icon in the panel.
+4.  To restore a CPlane, select its name from the list and click the "Restore" icon.
+
+### Command Options & Toggles
+All options are contained within the panel's interface for saving, restoring, and deleting CPlanes.
+
+### Note for better use
+Saving your custom CPlanes is essential when you are working on a model with multiple angled or complex surfaces. It saves you from having to redefine the CPlane every time you want to work on a specific part of the model.
+
+### Practical Use Cases
+* **Use Case 1 (Working on a Tilted Bezel):** You are designing a ring where the main bezel is tilted at a 15-degree angle. You create a custom CPlane aligned to this bezel. You can then save this as "TiltedBezel_CPlane." Now, you can switch back to the default World Top CPlane to work on the shank, and whenever you need to work on the bezel again, you can simply restore your saved CPlane to instantly align your grid and drawing tools to the bezel's angle.
+
+### Other Information
+This is a fundamental tool for staying organized and working efficiently on complex, multi-angled objects.
+
+---
+
+## 424. NamedPosition
+
+### Short Info
+Save and restore the position of objects.
+
+### Detailed Description
+The **NamedPosition** command opens a panel that allows you to save and restore the exact location, scale, and rotation of objects in your model. This is like a bookmark for the position of your geometry.
+
+### Steps to use the command
+1.  Run the command `NamedPosition`.
+2.  The Named Positions panel will open.
+3.  Select the object(s) whose position you want to save.
+4.  Click the "Save" icon in the panel and give the position a name.
+5.  You can now move the objects. To return them to the saved position, select the objects, select the saved position name in the panel, and click the "Restore" icon.
+
+### Command Options & Toggles
+All options are contained within the panel's interface.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Exploded Views):** You have a complex, assembled ring. You can save the current state as a "Closed" named position. Then, you can move the parts away from each other to create an "exploded" view for a diagram. You can save this state as an "Exploded" named position. Now you can instantly switch the objects between the two states.
+* **Use Case 2 (Design Options):** You are trying out several different positions for a side-stone setting. You can save each position with a name ("Position A," "Position B," etc.) to easily switch between them and show a client the different options.
+
+### Other Information
+This is a powerful tool for presentations, animations, and managing design variations.
+
+---
+
+## 425. NamedView
+
+### Short Info
+Save and restore views.
+
+### Detailed Description
+The **NamedView** command opens a panel that allows you to save and restore specific camera views. This includes the camera's position, rotation, target, and lens length. It's like creating a bookmark for a specific way of looking at your model.
+
+### Steps to use the command
+1.  Run the command `NamedView`.
+2.  The Named Views panel will open.
+3.  Arrange your viewport to the exact camera angle you want to save.
+4.  Click the "Save" icon in the panel and give the view a name.
+5.  To return to that view later, simply double-click its name in the list.
+
+### Command Options & Toggles
+All options are contained within the panel's interface.
+
+### Note for better use
+Saving your views is essential for creating consistent renders and for easily returning to a specific perspective when working on a complex model.
+
+### Practical Use Cases
+* **Use Case 1 (Consistent Renders):** You have found the perfect "hero shot" perspective angle for rendering your ring. You use `NamedView` to save this as "Render_Angle_01." Now, you can make changes to your model, and whenever you are ready to render, you can instantly return to that exact same camera angle, ensuring all your renders are consistent.
+* **Use Case 2 (Working Views):** You are working on a very detailed area of a model that requires you to be zoomed in at a specific, awkward angle. You can save this as a "Working_View" so you can quickly navigate back to it after zooming out to look at the whole model.
+
+### Other Information
+This is a fundamental tool for rendering, presentation, and workflow management.
+
+---
+
+## 426. NetworkSrf
+
+### Short Info
+Create a surface from a network of crossing curves.
+
+### Detailed Description
+The **NetworkSrf** (Network Surface) command is one of the most powerful and versatile surface creation tools in Rhino. It creates a smooth NURBS surface that is fitted through a network of intersecting curves. This command can handle very complex shapes and gives you a high degree of control over the resulting surface by allowing you to specify the continuity at the edges.
+
+### Steps to use the command
+1.  Create a network of curves that intersect each other, forming a grid-like pattern.
+2.  Run the command `NetworkSrf`.
+3.  At the **Select curves in network** prompt, select all of your curves.
+4.  Press Enter. A dialog box will appear with options for controlling the surface fit.
+5.  Adjust the tolerances and edge continuity as needed and click OK.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **Edge matching (Loose/Position/Tangency/Curvature):** Allows you to set the desired level of smoothness (continuity) for the surface edges that lie on other surfaces.
+* **Tolerances:** Control how accurately the surface fits the input curves.
+
+### Note for better use
+For the best results, the curves in your network should intersect cleanly. The command works best with a grid of curves running in roughly perpendicular directions (U and V). `NetworkSrf` is often the best tool for creating a single, clean surface over a complex four-sided area where other commands like `Sweep2` or `Loft` do not provide enough control.
+
+### Practical Use Cases
+* **Use Case 1 (Complex Ring Surfaces):** You are modeling a ring with a very complex, organic top surface that is not a simple dome. You can create a series of cross-section curves in one direction, and then create several longitudinal curves that cross them. `NetworkSrf` can then be used to create a single, smooth surface that perfectly fits this entire curve network.
+* **Use Case 2 (Closing a Difficult Hole):** You have a complex, irregular four-sided hole in your model that needs to be filled. You can use `DupEdge` to extract the four boundary curves and then use `NetworkSrf` to create a patch surface that is perfectly continuous (tangent or curvature) with the surrounding geometry.
+
+### Other Information
+Mastering `NetworkSrf` is a key skill for advanced free-form surface modeling.
+
+---
+
+## 427. New
+
+### Short Info
+Create a new model.
+
+### Detailed Description
+The **New** command closes the current file and creates a new, blank model. It will prompt you to select a template file, which sets up the units, grid, and default layers for your new project.
+
+### Steps to use the command
+1.  Run the command `New`.
+2.  If your current file has unsaved changes, you will be prompted to save it.
+3.  A dialog box will appear, asking you to choose a template file.
+4.  Select a template and click "Open." A new, blank model will be created.
+
+### Command Options & Toggles
+The only option is the template file you choose.
+
+### Note for better use
+It is a very good practice to create your own custom template file that has all of your preferred settings (units set to millimeters, your standard layers already created, your favorite dimension style, etc.). You can create a template by setting up a blank file exactly how you like it and then using the `SaveAsTemplate` command.
+
+### Practical Use Cases
+* **Use Case 1 (Starting a Project):** This is the command you run when you want to start modeling a new piece of jewelry from scratch.
+
+### Other Information
+This is a fundamental file management command.
+
+---
+
+## 428. NewFloatingViewport
+
+### Short Info
+Create a new floating viewport.
+
+### Detailed Description
+The **NewFloatingViewport** command creates a new modeling viewport that is contained within its own separate, floating window. This window can be moved around your screen (or to a second monitor) and resized independently of the main Rhino window.
+
+### Steps to use the command
+1.  Run the command `NewFloatingViewport`.
+2.  A new floating viewport window will appear.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Floating viewports are useful for creating a persistent detail view or for taking advantage of a multi-monitor setup.
+
+### Practical Use Cases
+* **Use Case 1 (Multi-Monitor Workflow):** You have two monitors. You can keep your main 4-view layout on your primary monitor, and create a large, floating perspective view on your second monitor, giving you a massive, dedicated 3D view at all times.
+* **Use Case 2 (Persistent Detail View):** You are working on a very fine detail on a large model. You can create a small, floating viewport that is permanently zoomed in on that one detail. You can keep this window in the corner of your screen as a constant reference while you work on the main model.
+
+### Other Information
+This is a workspace customization tool.
+
+---
+
+## 429. NewViewport
+
+### Short Info
+Create a new viewport.
+
+### Detailed Description
+The **NewViewport** command adds a new, standard, docked viewport to your main Rhino window.
+
+### Steps to use the command
+1.  Run the command `NewViewport`.
+2.  A new viewport with the default perspective view will be added to your layout.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Custom Layout):** You want to create a custom 5-view layout. You could start with the default `4View` layout and then use `NewViewport` to add a fifth viewport, which you could then resize and arrange as needed.
+
+### Other Information
+This is a simple workspace customization tool.
+
+---
+
+## 430. NextOrthoViewport
+
+### Short Info
+Activate the next viewport with a parallel projection.
+
+### Detailed Description
+The **NextOrthoViewport** command is a viewport navigation utility. It cycles through and activates the next viewport that has a parallel (orthographic) projection, such as Top, Front, or Right. It skips any perspective viewports.
+
+### Steps to use the command
+1.  Run the command `NextOrthoViewport`.
+2.  The next orthographic viewport in the sequence will become the active viewport.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is most useful when assigned to a keyboard shortcut, allowing you to quickly cycle through your 2D views without using the mouse.
+
+### Practical Use Cases
+* **Use Case 1 (Keyboard Navigation):** A power user might assign this command to a shortcut like Ctrl+Tab to allow them to quickly jump between their Top, Front, and Right views while keeping their hands on the keyboard.
+
+### Other Information
+This is a workflow efficiency and navigation tool.
+
+---
+
+## 431. NextPerspectiveViewport
+
+### Short Info
+Activate the next viewport with a perspective projection.
+
+### Detailed Description
+The **NextPerspectiveViewport** command is a viewport navigation utility. It cycles through and activates the next viewport that has a perspective projection.
+
+### Steps to use the command
+1.  Run the command `NextPerspectiveViewport`.
+2.  The next perspective viewport in the sequence will become the active viewport.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is most useful if you have created multiple perspective viewports.
+
+### Practical Use Cases
+* **Use Case 1 (Multiple 3D Views):** You have set up your main Perspective view and also a second, floating perspective view. This command allows you to quickly toggle which one is active.
+
+### Other Information
+This is a workflow efficiency and navigation tool.
+
+---
+
+## 432. NextU
+
+### Short Info
+Select the next control point in the u-direction.
+
+### Detailed Description
+The **NextU** command is a control point selection utility. It deselects the currently selected control point(s) and selects the very next control point in the positive U direction.
+
+### Steps to use the command
+1.  Turn on control points for a curve or surface.
+2.  Select one control point.
+3.  Run the command `NextU`.
+4.  The original point will be deselected, and the next point in the U direction will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is different from `AddNextU`, which *adds* to the selection. `NextU` *replaces* the selection. This command is designed to be used with keyboard shortcuts to "walk" a single selection along a row of control points.
+
+### Practical Use Cases
+* **Use Case 1 (Sequential Adjustments):** You need to adjust each control point in a row, one at a time. You can select the first point, make your adjustment, then use `NextU` to move the selection to the next point, make another adjustment, and so on, without having to re-select each point with the mouse.
+
+### Other Information
+This is a specialized selection command for advanced control point editing.
+
+---
+
+## 433. NextV
+
+### Short Info
+Select the next control point in the v-direction.
+
+### Detailed Description
+The **NextV** command is a control point selection utility. It deselects the currently selected control point(s) and selects the very next control point in the positive V direction on a surface.
+
+### Steps to use the command
+1.  Turn on control points for a surface.
+2.  Select one control point.
+3.  Run the command `NextV`.
+4.  The original point will be deselected, and the next point in the V direction will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the V-direction equivalent of the `NextU` command.
+
+### Practical Use Cases
+* **Use Case 1 (Sequential Adjustments):** Similar to `NextU`, this allows you to move your selection one step at a time along a column of control points on a surface.
+
+### Other Information
+This is a specialized selection command for advanced control point editing.
+
+---
+
+## 434. NextViewport
+
+### Short Info
+Activate the next viewport.
+
+### Detailed Description
+The **NextViewport** command is a viewport navigation utility. It activates the next viewport in the standard sequence (typically Top > Front > Right > Perspective).
+
+### Steps to use the command
+1.  Run the command `NextViewport`.
+2.  The next viewport in the sequence will become active.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The keyboard shortcut Ctrl+Tab is the default and much faster way to perform this action.
+
+### Practical Use Cases
+* **Use Case 1 (Keyboard Navigation):** A user who prefers to work with the keyboard can use this command (or its shortcut) to cycle through the viewports without having to move their hand to the mouse to click in a different window.
+
+### Other Information
+This is a basic navigation command.
+
+---
+
+## 435. NextViewportToTop
+
+### Short Info
+Bring the next viewport to the front.
+
+### Detailed Description
+The **NextViewportToTop** command is a viewport management utility for floating viewports. It cycles through the floating viewports, bringing the next one in the sequence to the front of the stack.
+
+### Steps to use the command
+1.  Have multiple floating viewports open.
+2.  Run the command `NextViewportToTop`.
+3.  The next floating viewport will be brought in front of the others.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Managing Floating Views):** You have several floating viewports open on a second monitor. This command allows you to cycle through them, bringing each one to the front in turn.
+
+### Other Information
+This is a window management tool for users with complex, multi-viewport layouts.
+
+---
+
+## 436. NoEcho
+
+### Short Info
+Stop displaying script commands in the history window.
+
+### Detailed Description
+The **NoEcho** command is a utility used in scripting. It prevents the commands being run by a script from being displayed (echoed) in the command history window. This makes the script run faster and silently, without cluttering the command line.
+
+### Steps to use the command
+1.  This command is used inside a script file.
+2.  Placing the line `Rhino.NoEcho` at the beginning of a script will suppress the display of subsequent commands.
+
+### Command Options & Toggles
+This command is a toggle within a script. The opposite command is `Echo`.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Clean Tool):** A developer is creating a custom tool for a designer. They use `NoEcho` at the beginning of the script so that when the designer runs the tool, they are not distracted by hundreds of lines of code flashing through the command prompt. The tool will simply run silently in the background.
+
+### Other Information
+This is a utility for script developers.
+
+---
+
+## 437. NonmanifoldMerge
+
+### Short Info
+Create a non-manifold polysurface from intersecting surfaces.
+
+### Detailed Description
+The **NonmanifoldMerge** command is an advanced surfacing tool. It takes a collection of surfaces and polysurfaces that intersect and joins them into a single "non-manifold" polysurface. A non-manifold object is one that has edges connected to more than two faces, which is not allowed in a valid "solid" model. This command is used to create complex single objects that could not be created with `BooleanUnion`.
+
+### Steps to use the command
+1.  Select two or more intersecting surfaces or polysurfaces.
+2.  Run the command `NonmanifoldMerge`.
+3.  The objects will be joined into a single non-manifold polysurface.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The result of this command is, by definition, not a valid solid and cannot be 3D printed. This is a tool for creating complex single objects for specific modeling or rendering purposes, not for manufacturing.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Single Mesh):** You have several intersecting surfaces and you want to create a single mesh from all of them using the `Mesh` command. If you `Join` them, you might get multiple separate meshes. By using `NonmanifoldMerge` first, you create a single object that will result in a single, continuous mesh (though it will still be non-manifold).
+
+### Other Information
+This is an advanced tool for creating complex geometry that does not need to adhere to the rules of solid modeling.
+
+---
+
+## 438. Notes
+
+### Short Info
+Open a text window for notes.
+
+### Detailed Description
+The **Notes** command opens a simple, floating text box where you can type and store notes. The content of the notes window is saved with your 3DM file.
+
+### Steps to use the command
+1.  Run the command `Notes`.
+2.  The Notes window will appear.
+3.  Type your text into the window. It is saved automatically.
+
+### Command Options & Toggles
+The options are the text formatting controls within the Notes window itself.
+
+### Note for better use
+This is a good place to store general information about a project, such as client details, stone dimensions, or manufacturing instructions that don't need to be attached to a specific object.
+
+### Practical Use Cases
+* **Use Case 1 (Project Brief):** When you start a new project for a client, you can open the `Notes` window and paste in the client's name, contact information, due date, and a description of the design requirements. This information will now be permanently stored with the 3D model file.
+* **Use Case 2 (Manufacturing Instructions):** You can use the Notes to write detailed instructions for the jeweler or stone setter, such as "Set all 1.5mm stones with a bright cut" or "Final weight should be approx. 8.5g in 14k gold."
+
+### Other Information
+This is a simple but very useful tool for keeping project information organized and attached to the relevant file.
+
+---
+
+## 439. Offset
+
+### Short Info
+Copy a curve parallel to the original.
+
+### Detailed Description
+The **Offset** command is a fundamental 2D editing tool that creates a new curve that is a parallel copy of an existing curve at a specified distance.
+
+### Steps to use the command
+1.  Run the command `Offset`.
+2.  At the **Select curve to offset** prompt, select a curve.
+3.  The command line will show options. Click the **Distance** option and enter a value.
+4.  Click on the side of the original curve where you want the new curve to be created.
+
+### Command Options & Toggles
+* **Distance:** Sets the distance between the two curves.
+* **Corner (Sharp/Round/Smooth):** Controls how the corners of the offset curve are created.
+* **ThroughPoint:** Allows you to create the offset by picking a point that the new curve must pass through.
+
+### Note for better use
+The `Offset` command is for curves. The 3D equivalent for surfaces is `OffsetSrf`.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Bezel Wall):** You have drawn a single curve representing the outline of a gemstone. To create the bezel, you can use `Offset` to create a second, larger curve around the first one. The space between these two curves defines the thickness of the bezel wall. You can then `Loft` the two curves to create the 3D bezel.
+* **Use Case 2 (Creating a Shank Profile):** You have drawn the outer profile of a ring shank. You can use `Offset` to create the inner profile, giving the shank its thickness.
+
+### Other Information
+This is one of the most frequently used commands for creating geometry with a consistent thickness.
+
+---
+
+## 440. OffsetCrvOnSrf
+
+### Short Info
+Copy a curve on a surface parallel to the original.
+
+### Detailed Description
+The **OffsetCrvOnSrf** (Offset Curve On Surface) command creates a parallel copy of a curve that lies on a surface. The new curve will also lie on the surface, following its curvature.
+
+### Steps to use the command
+1.  Run the command `OffsetCrvOnSrf`.
+2.  At the **Select curve on surface to offset** prompt, select the curve.
+3.  At the **Select base surface** prompt, select the surface the curve is on.
+4.  Define the offset distance and click on the side you want the new curve to be.
+
+### Command Options & Toggles
+* **Distance:** Sets the offset distance.
+* **ThroughPoint:** Creates the offset by picking a point on the surface.
+
+### Note for better use
+The input curve must lie on the surface for this command to work.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Channel):** You have drawn a single curve down the middle of a curved ring shank where you want a channel setting to be. You can use `OffsetCrvOnSrf` to create two new curves, one on each side of the center curve. These two new curves are the perfect boundaries for your channel.
+* **Use Case 2 (Creating an Inlay Boundary):** You have a decorative curve on the surface of a pendant. You can `OffsetCrvOnSrf` to create a parallel boundary curve, defining an area that you can then recess for an enamel or stone inlay.
+
+### Other Information
+This is an essential tool for creating parallel line designs on curved 3D surfaces.
+
+
+---
+
+## 441. OffsetMesh
+
+### Short Info
+Copy a mesh parallel to the original.
+
+### Detailed Description
+The **OffsetMesh** command creates a new mesh that is a parallel copy of an existing mesh. This is the primary method for giving a mesh object thickness or creating a shell. The command pushes each vertex of the mesh outward or inward along its vertex normal.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `OffsetMesh`.
+3.  At the **Offset distance** prompt, enter a numerical value. A positive number offsets outward, a negative number offsets inward.
+4.  A new mesh object will be created.
+
+### Command Options & Toggles
+* **Direction (Flipped/BothSides):**
+    * **Flipped:** Reverses the offset direction.
+    * **BothSides:** Offsets in both the inward and outward directions simultaneously.
+* **Solid (Yes/No):** If Yes, the command will create connecting faces between the original and offset mesh boundaries to create a closed, solid object.
+* **DeleteInput (Yes/No):** Deletes the original mesh.
+
+### Note for better use
+For this command to create a clean, solid result, the input mesh must be a good quality, manifold object. The `Solid=Yes` option is essential for creating 3D printable shells from single-surface meshes.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Shell):** You have an STL file of a pendant that is just a single, open surface, but you need it to be a solid object with a 1mm thickness for 3D printing. You would run `OffsetMesh`, enter a distance of 1, and make sure the `Solid` option is set to Yes. This will create a solid, printable shell.
+* **Use Case 2 (Hollowing a Solid):** You have a solid mesh model of a large, chunky ring and you want to hollow it out to save material and weight. You can run `OffsetMesh` with a negative distance (e.g., -1.5) and `Solid=Yes`. This will create a smaller, interior surface and connect it to the original, but you will need to manually create an opening (a "sprue hole") and use boolean operations to subtract the new interior volume. A better command for this specific task is often `Shell`.
+
+### Other Information
+This is the mesh equivalent of the `OffsetSrf` command.
+
+---
+
+## 442. OffsetNormal
+
+### Short Info
+Offset a curve on a surface in the surface normal direction.
+
+### Detailed Description
+The **OffsetNormal** command is a specialized curve editing tool. It takes a curve that lies on a surface and creates a parallel copy, offsetting it in the direction of the surface's normals (straight "out" from the surface).
+
+### Steps to use the command
+1.  Run the command `OffsetNormal`.
+2.  At the **Select curve to offset** prompt, select a curve that is on a surface.
+3.  At the **Select base surface** prompt, select the surface the curve lies on.
+4.  Define the offset distance.
+
+### Command Options & Toggles
+* **Distance:** Sets the offset distance.
+* **ThroughPoint:** Creates the offset by picking a point in space.
+
+### Note for better use
+This is different from `OffsetCrvOnSrf`, which creates the new curve *on* the surface. `OffsetNormal` creates the new curve *in space*, floating above or below the surface.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Rails for a Raised Channel):** You have a curve on the surface of a ring where you want to build a raised channel setting. `OffsetNormal` can be used to lift a copy of that curve straight off the surface. You can then use this new, elevated curve as a rail for a `Sweep` command to build the channel walls.
+
+### Other Information
+This is a specialized tool for creating 3D construction geometry based on a surface's form.
+
+---
+
+## 443. OffsetSrf
+
+### Short Info
+Copy a surface or polysurface parallel to the original.
+
+### Detailed Description
+The **OffsetSrf** (Offset Surface) command is a fundamental solid modeling tool that creates a new surface or polysurface that is a parallel copy of the original. This is the primary method for giving thickness to a NURBS object or creating a shell.
+
+### Steps to use the command
+1.  Select the surface or polysurface to offset.
+2.  Run the command `OffsetSrf`.
+3.  The command line will show several options. Set your desired distance.
+4.  Arrows will appear on the object indicating the offset direction. Click the arrows or the `FlipAll` option to change the direction.
+5.  Press Enter to create the offset surface.
+
+### Command Options & Toggles
+* **Distance:** Sets the distance between the original and offset surface.
+* **FlipAll:** Reverses the offset direction for all selected surfaces.
+* **Solid (Yes/No):** If Yes, the command will create connecting faces between the original and offset surface boundaries to create a closed, solid object.
+* **Tolerance:** Sets the tolerance for the offset operation.
+
+### Note for better use
+Offsetting complex, tightly curved surfaces inward can sometimes cause the offset surface to self-intersect or fail. If this happens, you may need to offset by a smaller distance or manually remodel the problematic areas. The `Shell` command is a specialized version of this tool for hollowing out closed solids.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Shell):** This is the most common use. You have modeled a pendant as a single, open surface. To make it a solid for 3D printing, you run `OffsetSrf`, set the `Solid` option to Yes, and enter a thickness (e.g., 1.0mm). This creates a perfect, solid shell.
+* **Use Case 2 (Creating an Inlay Pocket):** You have the top surface of a signet ring. You can use `OffsetSrf` with a negative distance to create a second surface just inside the first one. You can then use these two surfaces to create a solid cutter to boolean a shallow pocket for an inlay.
+
+### Other Information
+This is a workhorse command for creating solid parts from single surfaces.
+
+---
+
+## 444. OneLayerOff
+
+### Short Info
+Turn off the layer of a selected object.
+
+### Detailed Description
+The **OneLayerOff** command is a layer management utility that turns off the layer of a selected object. All objects on that layer will become invisible.
+
+### Steps to use the command
+1.  Run the command `OneLayerOff`.
+2.  At the **Select object on layer to turn off** prompt, click on an object.
+3.  The layer that the object resides on will be turned off.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is often faster than finding and turning off the layer in the Layer panel, especially in a file with many layers.
+
+### Practical Use Cases
+* **Use Case 1 (Quickly Hiding Components):** You are working on a ring and want to quickly hide all the gemstones to see the metalwork underneath. You can simply run `OneLayerOff` and click on any one of the gemstones. The entire "Gems" layer will instantly turn off.
+
+### Other Information
+This is a simple but very useful workflow efficiency tool.
+
+---
+
+## 445. OneLayerOn
+
+### Short Info
+Turn one layer on and all others off.
+
+### Detailed Description
+The **OneLayerOn** command is a layer management utility that isolates a single layer. It turns on the layer of the object you select and turns every other layer in the model off.
+
+### Steps to use the command
+1.  Run the command `OneLayerOn`.
+2.  At the **Select object on layer to turn on** prompt, click on an object.
+3.  The layer that the object resides on will be turned on, and all other layers will be hidden.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+To turn all the layers back on, you can right-click in the Layer panel and choose "Turn on all layers."
+
+### Practical Use Cases
+* **Use Case 1 (Isolating a Part):** You are working on a very complex assembly with dozens of layers. You need to focus only on the objects on the "Prongs" layer. You can run `OneLayerOn` and click on any prong. All other geometry in the model will be hidden, leaving you with a clean view of only the prongs.
+
+### Other Information
+This is an essential command for focusing on specific parts of a complex model.
+
+---
+
+## 446. Open
+
+### Short Info
+Open an existing model.
+
+### Detailed Description
+The **Open** command closes the currently active file and opens an existing model file from your computer or network.
+
+### Steps to use the command
+1.  Run the command `Open`.
+2.  If your current file has unsaved changes, you will be prompted to save it.
+3.  A file browser will appear.
+4.  Navigate to and select the file you want to open.
+5.  Click "Open."
+
+### Command Options & Toggles
+The options in the dialog box allow you to see a thumbnail preview and information about the selected file before opening it.
+
+### Note for better use
+This is the standard file-opening command. To bring the contents of another file into your *current* model without closing it, use the `Import` or `Insert` commands.
+
+### Practical Use Cases
+* **Use Case 1 (Starting Work):** You are starting your workday and need to continue working on a ring project you saved yesterday. You would use the `Open` command to load the ring's .3dm file.
+
+### Other Information
+This is a fundamental file management command.
+
+---
+
+## 447. Options
+
+### Short Info
+Open the Rhino Options dialog box.
+
+### Detailed Description
+The **Options** command opens the main Rhino Options dialog box. This is the central location for managing all of Rhino's global application settings (which affect every file you open) and the current model's Document Properties (which are settings saved with the specific file).
+
+### Steps to use the command
+1.  Run the command `Options`.
+2.  The Rhino Options dialog box will appear.
+3.  Navigate through the different pages on the left to access and change the settings.
+
+### Command Options & Toggles
+The options are the vast array of settings contained within the dialog box.
+
+### Note for better use
+There is a key distinction between the top section (Rhino Options) and the bottom section (Document Properties). Changes made in "Rhino Options" (like Aliases, Appearance, Mouse settings) are permanent for your Rhino installation. Changes made in "Document Properties" (like Units, Annotation Styles, Grid) are only for the file you currently have open.
+
+### Practical Use Cases
+* **Use Case 1 (Setting Units):** Before starting any new jewelry project, the first step is to run `Options` and go to the Document Properties > Units page to ensure your model units are set to Millimeters.
+* **Use Case 2 (Creating an Alias):** You use the `BooleanDifference` command very frequently. You can go to Rhino Options > Aliases and create a new alias "bd" that runs the `BooleanDifference` command. Now you can just type "bd" instead of the full command name.
+
+### Other Information
+This is the main control panel for all Rhino settings.
+
+---
+
+## 448. OptionsExport
+
+### Short Info
+Save options to a file.
+
+### Detailed Description
+The **OptionsExport** command saves your custom Rhino Options settings to an external file (.ini). This allows you to back up your settings or transfer your customized workspace environment to another computer.
+
+### Steps to use the command
+1.  Run the command `OptionsExport`.
+2.  A file save dialog will appear.
+3.  Choose a location and name for your settings file.
+4.  Click "Save."
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Migrating to a New Computer):** You have just gotten a new computer and want to set up Rhino with all the same custom toolbars, aliases, and display modes that you had on your old machine. On the old computer, you run `OptionsExport` to save your settings to a file. On the new computer, you use the `OptionsImport` command to load that file, instantly restoring your entire custom environment.
+
+### Other Information
+This is a key utility for backing up and transferring your personalized workspace.
+
+---
+
+## 449. Options (Duplicate Entry)
+
+### Short Info
+Open the Rhino Options dialog box.
+
+### Detailed Description
+(This is a duplicate entry in the source documentation list, pointing to the same command as #447). The **Options** command opens the main Rhino Options dialog box, which is the central location for managing all global application settings and the current model's Document Properties.
+
+### Steps to use the command
+1.  Run the command `Options`.
+2.  The Rhino Options dialog box will appear.
+
+### Command Options & Toggles
+The options are the settings within the dialog box.
+
+### Note for better use
+It is a good practice to create a template file with all of your preferred Document Properties (like units set to millimeters) and use that template to start all new projects.
+
+### Practical Use Cases
+* **Use Case 1 (Setting Up a New Project):** Before you begin any new jewelry model, the first step should be to run `Options` and go to the Document Properties > Units page to ensure your model units are set to Millimeters.
+
+### Other Information
+This entry is a duplicate of command #447.
+
+---
+
+## 450. OptionsImport
+
+### Short Info
+Restore options from a file.
+
+### Detailed Description
+The **OptionsImport** command restores your Rhino Options settings from an external file (.ini) that was created with the `OptionsExport` command. This allows you to load a backed-up or shared workspace environment.
+
+### Steps to use the command
+1.  Run the command `OptionsImport`.
+2.  A file browser will appear.
+3.  Select the .ini settings file you want to load.
+4.  A dialog box will appear, allowing you to choose which specific settings you want to import.
+5.  Click OK. Your Rhino settings will be updated.
+
+### Command Options & Toggles
+The options are the checkboxes in the dialog box that let you choose which categories of settings to import.
+
+### Practical Use Cases
+* **Use Case 1 (Restoring a Workspace):** You have just installed Rhino on a new computer. You use `OptionsImport` to load the settings file you saved from your old computer, which instantly restores all of your custom toolbars, aliases, and other preferences.
+* **Use Case 2 (Standardizing a Studio):** A CAD manager can create a perfect, standardized Rhino workspace and export the settings. They can then have all the designers in the studio use `OptionsImport` to load this file, ensuring everyone is working with the same interface and tools.
+
+### Other Information
+This is the companion command to `OptionsExport`.
+
+---
+
+## 451. Options (Duplicate Entry)
+
+### Short Info
+Open the Rhino Options dialog box.
+
+### Detailed Description
+(This is a duplicate entry in the source documentation list, pointing to the same command as #447). The **Options** command opens the main Rhino Options dialog box, which is the central location for managing all global application settings and the current model's Document Properties.
+
+### Steps to use the command
+1.  Run the command `Options`.
+2.  The Rhino Options dialog box will appear.
+
+### Command Options & Toggles
+The options are the settings within the dialog box.
+
+### Note for better use
+It is a good practice to create a template file with all of your preferred Document Properties (like units set to millimeters) and use that template to start all new projects.
+
+### Practical Use Cases
+* **Use Case 1 (Setting Up a New Project):** Before you begin any new jewelry model, the first step should be to run `Options` and go to the Document Properties > Units page to ensure your model units are set to Millimeters.
+
+### Other Information
+This entry is a duplicate of command #447.
+
+---
+
+## 452. OptionsPage
+
+### Short Info
+Open a specific page in the Options dialog.
+
+### Detailed Description
+The **OptionsPage** command is a utility that opens the Rhino Options dialog box directly to a specific page that you name. This is a shortcut to avoid having to open the main dialog and then navigate to the page you want.
+
+### Steps to use the command
+1.  Run the command `OptionsPage`.
+2.  At the **Page name** prompt, type the name of the page you want to open (e.g., "Units", "Grid").
+3.  The Rhino Options dialog box will open with that page already selected.
+
+### Command Options & Toggles
+This command has no options other than the page name you provide.
+
+### Note for better use
+This command is most useful when creating custom toolbar buttons or macros for quick access to a settings page you use frequently.
+
+### Practical Use Cases
+* **Use Case 1 (Custom Toolbar):** You frequently need to adjust the render mesh settings for your models. You could create a custom button on your toolbar with the macro `! _DocumentPropertiesPage Mesh` to instantly open the mesh settings without any extra clicks.
+
+### Other Information
+This is a simple workflow efficiency command for power users.
+
+---
+
+## 453. Orient
+
+### Short Info
+Transform objects using two reference and two target points.
+
+### Detailed Description
+The **Orient** command is a powerful transformation tool that moves, rotates, and scales an object in a single operation. It works by asking you to define a line on the object you want to move (using two reference points) and then a corresponding line in the scene where you want the object to go (using two target points). The command will transform the object so that the reference line perfectly matches the target line.
+
+### Steps to use the command
+1.  Select the object(s) to orient.
+2.  Run the command `Orient`.
+3.  At the **Reference point 1** prompt, pick a first point on or near your object.
+4.  At the **Reference point 2** prompt, pick a second point on or near your object.
+5.  At the **Target point 1** prompt, pick the destination for the first reference point.
+6.  At the **Target point 2** prompt, pick the destination for the second reference point.
+
+### Command Options & Toggles
+* **Copy:** Creates a copy of the object instead of moving the original.
+* **Scale (None/1D/3D):** Controls whether the object is also scaled to fit the new location. `3D` scaling is common.
+
+### Note for better use
+This command is extremely useful for placing components precisely. Using object snaps for all four points is essential.
+
+### Practical Use Cases
+* **Use Case 1 (Placing a Gemstone):** You have a ring shank and a gemstone model off to the side. You want to place the stone on the shank. You can run `Orient`, select the stone, and for the reference points, pick the two opposite quadrant points on the stone's girdle. For the target points, you would pick two corresponding points on the top of the shank. The stone will be moved, rotated, and scaled (if the Scale option is on) to fit perfectly between those two points.
+* **Use Case 2 (Aligning a Bezel):** You have a bezel that needs to be placed on an angled surface. `Orient` is the perfect tool to take the bezel and align it to the angle of the surface in one step.
+
+### Other Information
+The `Orient3Pt` command is an even more powerful version that gives you full 3D control by using three reference and target points.
+
+---
+
+## 454. Orient3Pt
+
+### Short Info
+Transform objects using three reference and three target points.
+
+### Detailed Description
+The **Orient3Pt** (Orient 3 Points) command is an advanced transformation tool that moves, rotates, and scales an object in full 3D space. It works by asking you to define a plane on the object you want to move (using three reference points) and then a corresponding target plane in the scene (using three target points). The command will transform the object so that the reference plane perfectly matches the target plane.
+
+### Steps to use the command
+1.  Select the object(s) to orient.
+2.  Run the command `Orient3Pt`.
+3.  Pick three reference points on or near your object.
+4.  Pick three corresponding target points in the scene.
+
+### Command Options & Toggles
+* **Copy:** Creates a copy of the object.
+* **Scale (Yes/No):** Controls whether the object is also scaled.
+
+### Note for better use
+This command gives you complete control over the position and orientation of an object in 3D space. It is the most precise way to align an object to a complex, angled surface.
+
+### Practical Use Cases
+* **Use Case 1 (Setting a Tilted Stone):** You have a ring where a gemstone needs to be set at a complex angle (tilted both forward and sideways). You can use `Orient3Pt` to align the stone perfectly. For the reference points, you could pick the center of the stone's table and two opposite points on its girdle. For the target points, you would pick the corresponding three points on the tilted setting.
+
+### Other Information
+This is an advanced transformation tool for complex alignment tasks.
+
+---
+
+## 455. OrientCameraToSrf
+
+### Short Info
+Align the view to a surface normal.
+
+### Detailed Description
+The **OrientCameraToSrf** (Orient Camera To Surface) command is a viewport navigation tool. It changes the active viewport's camera so that it is looking directly down at a specific point on a surface, aligned with that surface's normal (perpendicular) direction.
+
+### Steps to use the command
+1.  Run the command `OrientCameraToSrf`.
+2.  At the **Select surface to orient camera to** prompt, select a surface.
+3.  At the **Point on surface for camera to look at** prompt, click a location on that surface.
+4.  The viewport will change to look straight down at that point.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a very fast way to get a "plan" view of a curved or angled surface, which is essential for working on that surface.
+
+### Practical Use Cases
+* **Use Case 1 (Working on a Curved Surface):** You are about to draw a pattern or place objects on a complex, doubly-curved surface. To make it easier to work, you can use `OrientCameraToSrf` to align your view to be perpendicular to your work area. This, combined with setting a custom `CPlane` to the surface, gives you a temporary 2D-like environment for working on a 3D shape.
+
+### Other Information
+This is a key command for setting up your view and construction plane for working on non-planar surfaces.
+
+---
+
+## 456. OrientCrvToEdge
+
+### Short Info
+Align a curve to a surface edge.
+
+### Detailed Description
+The **OrientCrvToEdge** (Orient Curve To Edge) command is a specialized transformation tool that moves and rotates a planar curve to align it with a selected surface edge.
+
+### Steps to use the command
+1.  Run the command `OrientCrvToEdge`.
+2.  Select a planar curve.
+3.  Select a surface edge.
+4.  The curve will be moved and rotated to align with the start of the edge.
+
+### Command Options & Toggles
+* **Copy:** Creates a copy of the curve.
+* **Flip:** Flips the alignment of the curve.
+
+### Note for better use
+This command is useful for preparing profile curves for a `Sweep` operation.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing a Sweep):** You have a rail curve for a ring shank and a separate profile curve. You can use `OrientCrvToEdge` to quickly snap the profile curve to the start of the rail curve in the correct orientation, ready for the `Sweep1` command.
+
+### Other Information
+This is a specialized setup tool for surfacing workflows.
+
+---
+
+## 457. OrientOnCrv
+
+### Short Info
+Copy and orient an object on a curve.
+
+### Detailed Description
+The **OrientOnCrv** (Orient On Curve) command is a transformation tool that copies and orients an object to a specific location on a path curve. The object is oriented to be perpendicular to the curve at that point.
+
+### Steps to use the command
+1.  Select the object(s) to orient.
+2.  Run the command `OrientOnCrv`.
+3.  Pick a base point on the object.
+4.  Select the path curve.
+5.  Click a point on the path curve to place the object.
+
+### Command Options & Toggles
+* **Copy:** Creates a copy of the object.
+* **Rotation:** Allows you to set a rotation angle after placing the object.
+
+### Note for better use
+This command is for placing a single object or a few objects at specific, manually picked locations. For placing many objects at even intervals, use the `ArrayCrv` command.
+
+### Practical Use Cases
+* **Use Case 1 (Placing a Single Prong):** You have a ring rail and a single prong. You can use `OrientOnCrv` to place the prong precisely at the 12 o'clock position on the ring rail, perfectly oriented to the curve.
+* **Use Case 2 (Manual Stone Layout):** You are creating a scattered, asymmetrical layout of gemstones along a curve. `OrientOnCrv` allows you to click and place each stone individually at irregular intervals along the path.
+
+### Other Information
+This is a manual placement tool that is a good companion to the automated array commands.
+
+---
+
+## 458. OrientOnSrf
+
+### Short Info
+Copy and orient an object on a surface.
+
+### Detailed Description
+The **OrientOnSrf** (Orient On Surface) command is a transformation tool that copies and orients an object to a specific location on a target surface. The object is oriented to be normal (perpendicular) to the surface at that point.
+
+### Steps to use the command
+1.  Select the object(s) to orient.
+2.  Run the command `OrientOnSrf`.
+3.  Pick a base point on the object.
+4.  Select the target surface.
+5.  Click a point on the surface to place the object.
+
+### Command Options & Toggles
+* **Copy:** Creates a copy of the object.
+* **Rotation:** Allows you to set a rotation angle after placing the object.
+
+### Note for better use
+This command is for placing a single object or a few objects at specific, manually picked locations on a surface. For placing many objects in a grid, use `ArraySrf`.
+
+### Practical Use Cases
+* **Use Case 1 (Placing a Single Setting):** You have a complex, organic ring shank and a single bezel setting. You can use `OrientOnSrf` to interactively slide the bezel along the surface of the shank until you find the perfect position, ensuring it is always oriented correctly to the curved surface.
+* **Use Case 2 (Adding Decorative Elements):** You want to place a few small, decorative spheres on the surface of a pendant in a scattered, random pattern. `OrientOnSrf` is the perfect tool for this manual placement.
+
+### Other Information
+This is a fundamental tool for assembling components on curved surfaces.
+
+---
+
+## 459. Ortho
+
+### Short Info
+Restrict cursor movement to an angle.
+
+### Detailed Description
+The **Ortho** command is a modeling aid that restricts the movement of the mouse cursor to specific angles relative to the construction plane. By default, it restricts movement to 90-degree increments (horizontal and vertical).
+
+### Steps to use the command
+1.  Run the command `Ortho`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+4.  Alternatively, click the "Ortho" pane in the Status Bar.
+
+### Command Options & Toggles
+* **OrthoAngle:** Allows you to change the angle that the cursor snaps to (e.g., you can set it to 45 degrees).
+
+### Note for better use
+Holding down the **Shift** key is the universal shortcut to temporarily toggle Ortho mode on or off while you are in the middle of another command. This is one of the most important shortcuts to learn.
+
+### Practical Use Cases
+* **Use Case 1 (Drawing Straight Lines):** You need to draw a perfectly horizontal or vertical line. You can turn on Ortho before running the `Line` command to ensure the line is perfectly straight.
+* **Use Case 2 (Precise Movement):** You need to move an object exactly 5mm to the right. You can select the object, run the `Move` command, pick a base point, turn on Ortho, drag the mouse to the right, type "5", and press Enter.
+
+### Other Information
+This is an essential modeling aid for all forms of precision drawing and modeling.
+
+---
+
+## 460. OrthoAngle
+
+### Short Info
+Set the Ortho angle.
+
+### Detailed Description
+The **OrthoAngle** command is a utility that sets the angle used by the `Ortho` command. While the default is 90 degrees, you can use this command to set any angle you want.
+
+### Steps to use the command
+1.  Run the command `OrthoAngle`.
+2.  At the **New angle** prompt, type a number and press Enter.
+
+### Command Options & Toggles
+This command has no options other than the angle value.
+
+### Practical Use Cases
+* **Use Case 1 (Isometric Drawing):** You are creating a 2D drawing in an isometric style. You can set the `OrthoAngle` to 30 degrees. Now, when you turn on Ortho, your lines will snap to 30-degree increments, making it easy to create the isometric drawing.
+
+### Other Information
+This is a user-preference setting for the `Ortho` modeling aid.
+
+---
+
+## 461. Osnap
+
+### Short Info
+Set object snaps.
+
+### Detailed Description
+The **Osnap** command opens and controls the Object Snap panel. Object snaps (Osnaps) are a critical modeling aid that forces your cursor to snap to precise locations on existing objects, such as endpoints, midpoints, centers, and intersections. The Osnap panel allows you to turn these different types of persistent snaps on and off.
+
+### Steps to use the command
+1.  Run the command `Osnap`.
+2.  The Osnap panel will appear (or the command line will show options).
+3.  Check the boxes for the snaps you want to be persistently active (e.g., `End`, `Mid`, `Cen`).
+
+### Command Options & Toggles
+The options are the different types of snaps you can enable:
+* **End:** Snaps to the end of a curve.
+* **Mid:** Snaps to the midpoint of a curve.
+* **Cen:** Snaps to the center of a circle or arc.
+* **Int:** Snaps to the intersection of two objects.
+* **Perp:** Snaps perpendicular to a curve.
+* **Tan:** Snaps tangent to a curve.
+* **Quad:** Snaps to the quadrant points of a circle or arc.
+* **Knot:** Snaps to a knot on a curve or surface.
+* **Point:** Snaps to a point object.
+* **Vertex:** Snaps to a mesh vertex.
+
+### Note for better use
+You can temporarily activate a single object snap for one pick, even if it is not persistently on, by typing the first three letters of its name while in a command (e.g., typing "end" and pressing Enter). Clicking the "Disable" button in the Osnap panel temporarily turns all persistent snaps off.
+
+### Practical Use Cases
+* **Use Case 1 (Precise Drawing):** You need to draw a line that goes from the exact end of one curve to the exact center of a circle. You would make sure that the `End` and `Cen` Osnaps are turned on. When you run the `Line` command, your cursor will automatically jump to these precise locations as you move it near them.
+
+### Other Information
+Mastering the use of object snaps is arguably the single most important skill for accurate and professional CAD modeling.
+
+---
+
+## 462. PackTextures
+
+### Short Info
+Pack textures of a polysurface.
+
+### Detailed Description
+The **PackTextures** command is a specialized utility for managing textures on a polysurface. It is designed to take a polysurface where each face has a different texture and combine all of those textures into a single, efficient image file and a single material.
+
+### Steps to use the command
+1.  Select a polysurface that has multiple textures applied to its faces.
+2.  Run the command `PackTextures`.
+3.  A file save dialog will appear for you to name the new, combined texture file.
+4.  The command will create a new material with the packed texture and apply it to the object.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is an advanced tool for optimizing models for export to other applications, particularly for game development or real-time rendering, where using a single texture for an object is much more efficient.
+
+### Practical Use Cases
+* **Use Case 1 (Game Asset Creation):** A game artist has created a model of a treasure chest in Rhino, with a different wood texture on each face. To optimize it for the game engine, they would use `PackTextures` to combine all the wood textures into a single image map.
+
+### Other Information
+This is a specialized texture optimization tool.
+
+---
+
+## 463. Pan
+
+### Short Info
+Shift the view camera and target.
+
+### Detailed Description
+The **Pan** command is a fundamental viewport navigation tool. It slides the camera's view parallel to the view plane, without rotating or zooming. It is like sliding a piece of paper around on your desk.
+
+### Steps to use the command
+1.  Run the command `Pan`.
+2.  Click and drag in the viewport to pan the view.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The universal and much faster way to pan is to hold down the **right mouse button** and drag in any orthographic viewport (Top, Front, Right), or to hold down **Shift + right mouse button** and drag in the Perspective view.
+
+### Practical Use Cases
+* **Use Case 1 (Adjusting the View):** You have zoomed in on a detail, but it is in the corner of your screen. You use Pan to slide the view so that the detail is in the center of the viewport, making it easier to work on.
+
+### Other Information
+This is a core navigation command, though it is almost always activated with the mouse shortcuts rather than by typing the command.
+
+---
+
+## 464. Parabola
+
+### Short Info
+Draw a parabolic curve.
+
+### Detailed Description
+The **Parabola** command is a 2D drawing tool used to create a parabolic curve. A parabola is a specific type of smooth, U-shaped curve defined by its focus and vertex.
+
+### Steps to use the command
+1.  Run the command `Parabola`.
+2.  Follow the prompts to define the parabola by picking its focus, direction, and start/end points.
+
+### Command Options & Toggles
+* **3Point:** Creates the parabola by picking three points it must pass through.
+
+### Practical Use Cases
+* **Use Case 1 (Reflector Design):** Parabolic shapes are used in the design of reflectors for lights and antennas because they reflect parallel rays to a single focal point. An engineer designing a reflector would use this command to create the precise profile. This command has very limited use in typical jewelry design.
+
+### Other Information
+This is a specialized curve creation tool for a specific mathematical shape.
+
+---
+
+## 465. Paraboloid
+
+### Short Info
+Draw a parabolic surface.
+
+### Detailed Description
+The **Paraboloid** command is a solid creation tool that creates a 3D parabolic surface or a closed solid paraboloid. It is the 3D equivalent of the `Parabola` command.
+
+### Steps to use the command
+1.  Run the command `Paraboloid`.
+2.  Follow the prompts to define the base and focus of the shape.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Bullet Shape):** The `Paraboloid` command is a fast way to create a smooth, rounded, bullet-like shape that can be used as a decorative element or as a base for sculpting.
+
+### Other Information
+This is a specialized primitive creation tool.
+
+---
+
+## 466. Paste
+
+### Short Info
+Insert objects from the Clipboard.
+
+### Detailed Description
+The **Paste** command inserts the contents of the Windows clipboard into the current model. This is used after a `Copy` or `Cut` command to place the geometry.
+
+### Steps to use the command
+1.  Use `Copy` or `Cut` to place objects on the clipboard.
+2.  Run the command `Paste`.
+3.  The objects from the clipboard will be added to your model.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the equivalent of the standard Windows shortcut Ctrl+V. Using the shortcut is much faster than typing the command.
+
+### Practical Use Cases
+* **Use Case 1 (Moving Objects Between Files):** You have designed a custom clasp in one Rhino file and want to use it in your current ring project. You can open the clasp file, select the clasp, use `Copy` (Ctrl+C), switch to your ring file, and use `Paste` (Ctrl+V) to bring it in.
+
+### Other Information
+This is a fundamental command for managing objects within and between files.
+
+---
+
+## 467. Patch
+
+### Short Info
+Fit a surface through curves and point objects.
+
+### Detailed Description
+The **Patch** command is a powerful free-form surfacing tool. It creates a NURBS surface that fits through a selection of input curves, points, and/or surface edges. It is extremely useful for filling complex, irregular holes or for creating a single, smooth surface over a complex boundary.
+
+### Steps to use the command
+1.  Select the curves, points, or edges that will define the boundary and shape of the patch.
+2.  Run the command `Patch`.
+3.  A dialog box will appear with options for controlling the surface fit.
+4.  A preview of the surface will be shown. Adjust the settings and click OK.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **U/V Spans:** Controls the number of control points on the resulting surface.
+* **Stiffness:** Controls how much the patch surface will "bulge" or how closely it will follow the input curves.
+* **Adjust Tangency:** Allows you to make the patch surface tangent to adjacent surfaces for a smoother connection.
+
+### Note for better use
+The `Patch` command works best when there is a closed loop of input curves. It can sometimes produce unexpected results if the input is very complex or has large gaps. The `Starting surface` option is very useful for getting a better initial fit.
+
+### Practical Use Cases
+* **Use Case 1 (Closing an Irregular Hole):** You have a model with a complex, non-planar, five-sided hole that cannot be closed with simple commands. You can use `DupEdge` to get the curves around the hole, and then use `Patch` with these curves as input to create a smooth surface that fills the opening.
+* **Use Case 2 (Creating a Gemstone Top):** You have the girdle outline of a free-form, fantasy-cut gemstone. `Patch` can be used to create a single, smooth domed surface for the crown of the stone using only the outer curve as input.
+
+### Other Information
+This is a workhorse command for free-form surfacing and model repair.
+
+---
+
+## 468. PatchSingleFace
+
+### Short Info
+Fill a hole in a mesh with a single face.
+
+### Detailed Description
+The **PatchSingleFace** command is a mesh repair tool that attempts to fill a hole in a mesh with a single mesh face.
+
+### Steps to use the command
+1.  Run the command `PatchSingleFace`.
+2.  At the **Select mesh boundary edges** prompt, select the edges of a single hole in your mesh.
+3.  Press Enter. A single n-gon (a polygon with more than 4 sides) will be created to fill the hole.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is useful for quickly closing holes where the quality of the patch is not critical. However, creating a single large n-gon can sometimes be problematic for other mesh operations. It is often better to fill a hole with multiple triangles using `FillMeshHole` or manually with `3DFace`.
+
+### Practical Use Cases
+* **Use Case 1 (Quick Visual Patch):** You have a hole in a mesh that you need to close quickly for a visual mock-up, and you are not concerned with perfect polygon flow. `PatchSingleFace` can close it in one step.
+
+### Other Information
+This is a simple mesh repair tool.
+
+---
+
+## 469. Pause
+
+### Short Info
+Stop a script to allow for user input.
+
+### Detailed Description
+The **Pause** command is a utility used in scripts and macros. It temporarily halts the execution of the script and allows the user to interact with the model, for example, to select an object, pick a point, or change a view. The script will resume after the user has completed the action.
+
+### Steps to use the command
+1.  This command is used inside a macro or script file.
+2.  When the script reaches the `Pause` command, it will stop and wait for user input.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Interactive Script):** You are writing a script to automate the process of creating a bezel. You can use `Pause` to stop the script and allow the user to manually select the gemstone they want to create the bezel around. After they select the stone, the script will resume and build the bezel automatically.
+
+### Other Information
+This is a fundamental command for creating interactive scripts and macros.
+
+---
+
+## 470. PerspectiveAngle
+
+### Short Info
+Set the view angle of a perspective view.
+
+### Detailed Description
+The **PerspectiveAngle** command is a viewport management tool that sets the camera's "lens length" or "field of view" for a perspective viewport. A smaller angle is like a telephoto lens (less distortion, flatter look), while a larger angle is like a wide-angle lens (more distortion, greater sense of depth).
+
+### Steps to use the command
+1.  Make a perspective viewport active.
+2.  Run the command `PerspectiveAngle`.
+3.  At the **New perspective view angle** prompt, enter a number (in degrees) and press Enter.
+
+### Command Options & Toggles
+This command has no options other than the angle value.
+
+### Note for better use
+The default angle is 50 degrees, which is similar to a standard camera lens. For jewelry rendering, a slightly longer lens (a smaller angle, like 30-35 degrees) often produces a more pleasing, less distorted image.
+
+### Practical Use Cases
+* **Use Case 1 (Product Rendering):** You are setting up a final render of a ring and want to minimize perspective distortion. You can use `PerspectiveAngle` to change the lens length to 35 degrees to get a more flattering, professional-looking shot.
+* **Use Case 2 (Dramatic Shots):** You want to create a dramatic, "in-your-face" render of a piece. You could set the angle to 70 or 80 degrees to create an exaggerated wide-angle effect.
+
+### Other Information
+This is the same setting as the "Lens length" found in the Viewport Properties panel.
+
+---
+
+## 471. PerspectiveMatch
+
+### Short Info
+Align the view to an image.
+
+### Detailed Description
+The **PerspectiveMatch** command is a specialized viewport tool that helps you adjust a perspective view's camera settings to match the perspective of a background photograph. It works by having you place corresponding pairs of points on the 2D background image and on your 3D model. The command then calculates the correct camera position, rotation, and lens length to make the 3D model align with the image.
+
+### Steps to use the command
+1.  Place a background image in a perspective viewport using the `BackgroundBitmap` command.
+2.  Run the command `PerspectiveMatch`.
+3.  Follow the prompts to pick pairs of matching points on the 2D image and the 3D model.
+4.  The view will update to match the perspective of the image.
+
+### Command Options & Toggles
+This command has no options; it is an interactive, sequential process.
+
+### Note for better use
+This command requires a background image with strong, clear perspective lines to work effectively. It is most useful for architectural visualization or for creating composite images where a 3D model needs to look like it is part of a real photograph.
+
+### Practical Use Cases
+* **Use Case 1 (Photo Compositing):** You want to create a render of a ring that looks like it is sitting on a specific table in a photograph. You would place the photograph as a background bitmap, model a simple box to represent the table, and then use `PerspectiveMatch` to align your view so that your 3D box perfectly matches the perspective of the table in the photo. You can then place your ring model on the box and it will appear correctly integrated into the scene.
+
+### Other Information
+This is an advanced tool for visualization and rendering, with limited use in day-to-day jewelry modeling.
+
+---
+
+## 472. PictureFrame
+
+### Short Info
+Create a surface with a bitmap texture.
+
+### Detailed Description
+The **PictureFrame** command creates a planar NURBS surface that has an image file already applied to it as a texture. Unlike `BackgroundBitmap`, which is a 2D overlay, the object created by `PictureFrame` is a real piece of geometry in your 3D scene. It can be moved, scaled, rotated, and interacted with like any other surface.
+
+### Steps to use the command
+1.  Run the command `PictureFrame`.
+2.  A file browser will open. Select an image file.
+3.  You will be prompted to draw a rectangle in the viewport to place the picture frame.
+4.  A new planar surface with the selected image as its material texture will be created.
+
+### Command Options & Toggles
+* **EmbedBitmap:** Determines whether the image file is saved inside your 3DM file or linked to an external file.
+* **AutoName:** Automatically names the object based on the image filename.
+
+### Note for better use
+The created surface is automatically placed in a "Picture Frame" material in the V-Ray material editor, with the image in the diffuse slot. This makes it render-ready immediately.
+
+### Practical Use Cases
+* **Use Case 1 (3D Reference Images):** This is the most common use. You have a sketch of a ring that you want to trace. Using `PictureFrame` places the sketch into the 3D scene as an object. You can then move it, rotate it, and even set its transparency to make it an easy-to-use reference plane for modeling. This is often preferred over `BackgroundBitmap` because the image is part of the model.
+* **Use Case 2 (Render Backdrops):** You are creating a render and want a specific image to appear in the background (e.g., a photo of a landscape). You can use `PictureFrame` to place this image as a large surface behind your model.
+
+### Other Information
+This command has largely replaced `BackgroundBitmap` as the preferred method for working with reference images.
+
+---
+
+## 473. Pipe
+
+### Short Info
+Create a surface with a circular profile around a curve.
+
+### Detailed Description
+The **Pipe** command is a fundamental solid creation tool that creates a 3D tube, or "pipe," with a circular profile along a selected path curve. It is one of the most common ways to turn 2D line work into 3D solid geometry.
+
+### Steps to use the command
+1.  Select the curve(s) you want to turn into a pipe.
+2.  Run the command `Pipe`.
+3.  A dialog box or command line options will appear.
+4.  Set the start and end radius for the pipe.
+5.  Press Enter to create the pipe object.
+
+### Command Options & Toggles
+* **Radius:** Sets the radius of the pipe. You can set different radii for the start and end to create a tapered pipe.
+* **Cap (None/Flat/Round):** Determines the shape of the ends of the pipe. `Round` is very common for creating a soft finish on wire work.
+* **WallThickness:** Creates a hollow tube instead of a solid pipe.
+
+### Note for better use
+The `Pipe` command creates real, editable NURBS geometry. This is different from `ApplyCurvePiping`, which is only a visual display effect. If you need to 3D print or boolean an object, you must use `Pipe`.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Wire Work):** This is the primary use. You have drawn a complex filigree or scrollwork pattern using curves. To turn this 2D line drawing into a 3D, solid object, you select all the curves and use the `Pipe` command to give them a physical thickness (e.g., a 0.8mm radius).
+* **Use Case 2 (Creating Prongs):** You have drawn a line representing the centerline of a prong. You can use the `Pipe` command with different start and end radii to create a tapered, solid prong in a single step.
+
+### Other Information
+This is a workhorse command used constantly in jewelry design to convert curves into solid, manufacturable objects.
+
+---
+
+## 474. PlaceHole
+
+### Short Info
+Project a closed curve to a surface to make a hole.
+
+### Detailed Description
+The **PlaceHole** command is a specialized trimming tool. It takes one or more closed, planar curves and projects them onto a surface or polysurface to create a hole. It is a faster alternative to using `Project` and then `Trim`. This command is identical in function to `MakeHole`.
+
+### Steps to use the command
+1.  Select the closed curve(s) that will define the shape of the hole.
+2.  Run the command `PlaceHole`.
+3.  At the **Select surface or polysurface to make hole in** prompt, select the object to be cut.
+4.  A hole will be created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The command projects the curves in the direction of the active view's CPlane normal. Make sure you are in the correct viewport (e.g., Top view) before running the command to ensure the hole is projected in the right direction.
+
+### Practical Use Cases
+* **Use Case 1 (Perforating a Surface):** You have designed a flat pendant and have drawn several small, decorative circles on top of it. You can select all the circles, run `PlaceHole`, and select the pendant to cut all the holes in a single operation.
+
+### Other Information
+This is a workflow-efficiency command that combines projection and trimming into one step.
+
+---
+
+## 475. Plan
+
+### Short Info
+Set the view to a parallel projection plan view.
+
+### Detailed Description
+The **Plan** command is a viewport navigation tool that changes the active viewport to a top-down, parallel projection "plan" view. It centers the view on the origin of the current construction plane and makes the camera look straight down at it.
+
+### Steps to use the command
+1.  Make a viewport active.
+2.  Run the command `Plan`.
+3.  The view will change to a plan view of the active CPlane.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+If you have a custom, tilted CPlane active, running `Plan` will give you a top-down view of that tilted plane, which is extremely useful for working on angled surfaces.
+
+### Practical Use Cases
+* **Use Case 1 (Returning to Top View):** You have been tumbling the Top viewport and it is now at an angle. Running `Plan` will instantly snap it back to the proper, flat, top-down orientation.
+* **Use Case 2 (Working on a Tilted Plane):** You have set a custom CPlane to the angled face of a bezel. Running `Plan` in that viewport will give you a perfect, head-on view of that face, making it easy to draw or place objects on it.
+
+### Other Information
+This is a fundamental navigation command for setting and resetting orthographic views.
+
+---
+
+## 476. Planar
+
+### Short Info
+Restrict selections to the same plane.
+
+### Detailed Description
+The **Planar** command is a modeling aid that restricts point selection to the same elevation as the last point picked. When Planar mode is on, if you pick a point in a perspective view, all subsequent points you pick will be on the same construction plane as that first point, regardless of what you snap to.
+
+### Steps to use the command
+1.  Run the command `Planar`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+4.  Alternatively, click the "Planar" pane in the Status Bar.
+
+### Command Options & Toggles
+This command is a simple toggle between **On** and **Off**.
+
+### Note for better use
+This is a powerful tool for ensuring that all the points of a curve you are drawing lie on the same plane, which is a requirement for many commands like `PlanarSrf`.
+
+### Practical Use Cases
+* **Use Case 1 (Drawing a Flat Profile):** You are tracing a reference image in a perspective view and want to ensure the resulting curve is perfectly flat. By turning Planar mode on before you start drawing, you can snap to various 3D points on your model, but Rhino will ensure that all the points for your new curve are created on the same flat plane.
+
+### Other Information
+This is an important modeling aid for creating clean, planar geometry.
+
+---
+
+## 477. PlanarMesh
+
+### Short Info
+Create a mesh from closed planar curves.
+
+### Detailed Description
+The **PlanarMesh** command takes one or more closed, planar curves and creates a single, flat mesh object that fills them. It is the mesh equivalent of the `PlanarSrf` command.
+
+### Steps to use the command
+1.  Select one or more closed, planar curves.
+2.  Run the command `PlanarMesh`.
+3.  A dialog box will appear with options for controlling the mesh density.
+4.  Click OK. A new, flat mesh object will be created.
+
+### Command Options & Toggles
+The options are in a dialog box and allow you to control the quality and density of the resulting mesh, similar to the `Mesh` command.
+
+### Note for better use
+The input curves must be closed and planar for this command to work. If you have curves within other curves, it will correctly create a mesh with holes.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Base for Sculpting):** You have drawn a complex, flat outline for a pendant. You can use `PlanarMesh` to instantly create a flat mesh object from this outline, which can then be taken into a sculpting program or deformed in Rhino.
+* **Use Case 2 (Creating a Mesh with Holes):** You have drawn the outer and inner outlines for a washer shape. `PlanarMesh` will create a single, flat mesh object with the center already cut out.
+
+### Other Information
+This is a useful tool for creating flat mesh objects from 2D line work.
+
+---
+
+## 478. PlanarSrf
+
+### Short Info
+Create a planar surface from planar curves.
+
+### Detailed Description
+The **PlanarSrf** (Planar Surface) command is a fundamental surface creation tool. It takes one or more closed, planar curves and creates a single, flat NURBS surface that fills them.
+
+### Steps to use the command
+1.  Select one or more closed, planar curves.
+2.  Run the command `PlanarSrf`.
+3.  A new, flat surface will be created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The input curves must be closed and they must be perfectly flat (planar). If the command fails, it is almost always because your input curve is not closed (`ShowEnds`) or not planar (`ProjectToCPlane`). If you select curves that are inside other curves, it will correctly create a surface with holes.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Signet Top):** You have drawn the closed outline of a signet ring top. `PlanarSrf` is the one-step command to turn that flat curve into a flat surface. You can then use a command like `ExtrudeSrf` to give it thickness.
+* **Use Case 2 (Creating a Bezel with a Hole):** You have drawn two circles, one for the outer edge of a bezel and one for the inner edge. If you select both circles and run `PlanarSrf`, it will create a single, flat, washer-like surface with the center already cut out.
+
+### Other Information
+This is a workhorse command for creating flat surfaces from 2D profiles.
+
+---
+
+## 479. Plane
+
+### Short Info
+Draw a rectangular planar surface.
+
+### Detailed Description
+The **Plane** command is a basic surface creation tool that draws a simple, rectangular NURBS surface.
+
+### Steps to use the command
+1.  Run the command `Plane`.
+2.  Follow the prompts for the chosen creation method. For the default method:
+    a. At the **First corner of plane** prompt, pick a point.
+    b. At the **Other corner** prompt, pick the opposite corner.
+
+### Command Options & Toggles
+* **3Point:** Creates a rectangular plane by picking three corner points.
+* **Vertical:** Creates a plane that is vertical to the active CPlane.
+* **Center:** Creates the plane by picking its center and then a corner.
+
+### Note for better use
+A plane is a simple, un-trimmed, degree 1 NURBS surface. It is the most basic type of surface in Rhino.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Base Surface):** You are about to model a piece of jewelry and need a flat "work surface" to build on. The `Plane` command is the fastest way to create this.
+* **Use Case 2 (Creating a Cutting Object):** You need to cut a model in half. You can use the `Plane` command to create a large rectangular surface that passes through your model, and then use this plane as the cutting object in the `Trim` or `Split` command.
+
+### Other Information
+This is a fundamental primitive creation tool.
+
+---
+
+## 480. PlaneThroughPt
+
+### Short Info
+Create a rectangular plane best-fit through points.
+
+### Detailed Description
+The **PlaneThroughPt** (Plane Through Points) command is a construction tool that creates a rectangular planar surface that represents the "best fit" through a selection of three or more point objects.
+
+### Steps to use the command
+1.  Select three or more point objects.
+2.  Run the command `PlaneThroughPt`.
+3.  A new rectangular plane will be created that passes through the points.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+If the points are not co-planar, the command will create a plane that has the smallest average distance to all the points.
+
+### Practical Use Cases
+* **Use Case 1 (Reverse Engineering):** You have used a digitizer to capture several points from a flat surface on a physical object. You can use `PlaneThroughPt` to create a best-fit plane from these points, which gives you the exact orientation of that surface in 3D space. You can then align a CPlane to this new surface to work on it.
+
+### Other Information
+This is a useful tool for reverse-engineering and for finding the orientation of a set of points.
+
+---
+
+## 481. PlayAnimation
+
+### Short Info
+Play the animation.
+
+### Detailed Description
+The **PlayAnimation** command is a utility that opens the "Animation Preview" window and plays back any animation that has been set up in the model. This includes turntable animations, sun studies, or fly-throughs. It allows you to preview the animation directly in the viewport before committing to a full render of all the frames.
+
+### Steps to use the command
+1.  Set up an animation using a command like `Turntable` or `SetFlythroughAnimation`.
+2.  Run the command `PlayAnimation`.
+3.  The Animation Preview window will appear and begin playing the animation.
+
+### Command Options & Toggles
+This command has no options in the command line. The playback controls (Play, Pause, Stop) are located within the Animation Preview window.
+
+### Note for better use
+This is a preview tool. It does not create a video file. To save your animation as a video or a sequence of images, you must use the `RecordAnimation` command.
+
+### Practical Use Cases
+* **Use Case 1 (Checking a Turntable):** You have set up a 360-degree turntable animation for a ring. Before you start the time-consuming process of rendering all 100 frames, you can use `PlayAnimation` to quickly preview the motion in a shaded viewport. This allows you to check that the rotation speed is correct and the object stays centered in the frame.
+
+### Other Information
+This is the primary tool for previewing any animation set up in Rhino.
+
+---
+
+## 482. Point
+
+### Short Info
+Draw a single point object.
+
+### Detailed Description
+The **Point** command is a fundamental object creation tool. Its sole purpose is to create a single point object at a location you specify in the viewport. Point objects are often used as markers, placeholders, or as reference geometry for other commands.
+
+### Steps to use the command
+1.  Run the command `Point`.
+2.  At the **Location of point object** prompt, click in the viewport or type coordinates.
+3.  A point object is created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+To create multiple point objects in a sequence, use the `Points` command.
+
+### Practical Use Cases
+* **Use Case 1 (Marking a Center):** You need to mark the exact center of a ring for future operations like a polar array. You can use the `Cen` object snap and the `Point` command to place a permanent point object at the center.
+* **Use Case 2 (Reference for a Loft):** You are creating a complex lofted surface and need it to pass through a specific location in space. You can place a `Point` object at that location and include it in your selection when you run the `Loft` command.
+
+### Other Information
+This is one of the most basic geometric objects in Rhino.
+
+---
+
+## 483. PointCloud
+
+### Short Info
+Create a point cloud from point objects.
+
+### Detailed Description
+The **PointCloud** command takes a selection of individual point objects and converts them into a single, more efficient "point cloud" object. A point cloud is a single object that contains many points. This is primarily a performance and organization tool, as it is much faster for Rhino to handle one object containing thousands of points than it is to handle thousands of individual point objects.
+
+### Steps to use the command
+1.  Select two or more point objects.
+2.  Run the command `PointCloud`.
+3.  The selected point objects will be converted into a single point cloud object.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The opposite of this command is `Explode`. If you explode a point cloud, it will be broken back down into its individual point objects.
+
+### Practical Use Cases
+* **Use Case 1 (Managing Scan Data):** You have imported data from a 3D scanner, which has come in as thousands of separate point objects. This can make the file slow and difficult to manage. By selecting all the points and running `PointCloud`, you can combine them into a single object, which will significantly improve viewport performance.
+
+### Other Information
+This is a data management tool for working with large sets of points.
+
+---
+
+## 484. PointCloudSection
+
+### Short Info
+Create a planar curve from the intersection of a plane and a point cloud.
+
+### Detailed Description
+The **PointCloudSection** command creates a polyline by intersecting a cutting plane with a point cloud object. It finds all the points in the cloud that lie on or very close to the plane and creates a polyline that connects them.
+
+### Steps to use the command
+1.  Select a point cloud object.
+2.  Run the command `PointCloudSection`.
+3.  You will be prompted to draw a line that defines the cutting plane.
+4.  A polyline will be created where the plane intersects the point cloud.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a key tool in the reverse-engineering process. It allows you to extract 2D cross-section curves from 3D scan data.
+
+### Practical Use Cases
+* **Use Case 1 (Reverse Engineering a Ring):** You have a 3D scan of a ring as a point cloud. To remodel it as a clean NURBS object, you need its profile curves. You can use `PointCloudSection` to create several cross-section curves along the shank. You can then use these curves as the input for a `Loft` or `Sweep` command to rebuild the 3D shank.
+
+### Other Information
+This is a specialized tool for working with point cloud data.
+
+---
+
+## 485. PointDeviation
+
+### Short Info
+Report the distance from a surface to points.
+
+### Detailed Description
+The **PointDeviation** command is an analysis tool that measures the distance between a set of point objects and a surface. It is used to check how accurately a surface fits a set of reference points. The command displays a "comb" graph on the surface and reports the minimum, maximum, and average distances in the command line.
+
+### Steps to use the command
+1.  Run the command `PointDeviation`.
+2.  At the **Select points to test** prompt, select one or more point objects and press Enter.
+3.  At the **Select surface to test against** prompt, select a surface.
+4.  A dialog box will appear, and a visual graph will be displayed in the viewport.
+
+### Command Options & Toggles
+The options are in a dialog box:
+* **Display Scale:** Controls the length of the "hairs" on the deviation comb graph.
+* **Hair Density:** Controls how many lines are displayed.
+
+### Note for better use
+This command is very useful for verifying the accuracy of a reverse-engineered surface.
+
+### Practical Use Cases
+* **Use Case 1 (Verifying a Rebuilt Surface):** You have captured a set of points from a physical model and have created a new surface that is supposed to fit them. You can use `PointDeviation` to get a detailed report and a visual graph showing exactly how close your new surface is to the original data points at all locations.
+
+### Other Information
+This is a high-precision analysis tool for quality control and reverse engineering.
+
+---
+
+## 486. PointGrid
+
+### Short Info
+Draw a rectangular grid of point objects.
+
+### Detailed Description
+The **PointGrid** command is a point creation tool that creates a rectangular grid of point objects. You define the number of points in the X and Y directions, as well as the spacing between them.
+
+### Steps to use the command
+1.  Run the command `PointGrid`.
+2.  Follow the prompts to define the number of points and the spacing for the grid.
+3.  A grid of point objects will be created on the active construction plane.
+
+### Command Options & Toggles
+The options are presented as prompts in the command line for setting the number of points and the grid spacing.
+
+### Practical Use Cases
+* **Use Case 1 (Layout for Pavé):** You are about to create a rectangular field of pavé stones. You can use `PointGrid` to create a perfectly spaced grid of points that you can then use as snap points to place your gemstones.
+* **Use Case 2 (Base for a Surface):** You want to create a surface using the `SrfPtGrid` (Surface From Point Grid) command. `PointGrid` is the tool you use to create the input grid of points for that command.
+
+### Other Information
+This is a simple but useful tool for creating layout and construction geometry.
+
+---
+
+## 487. PointLight
+
+### Short Info
+Insert a point light.
+
+### Detailed Description
+The **PointLight** command adds a point light source to the model. A point light, also known as an omni-directional light, is a light source that shines in all directions from a single point in space, like a bare light bulb.
+
+### Steps to use the command
+1.  Run the command `PointLight`.
+2.  At the **Location of point light** prompt, pick a location.
+3.  A point light object will be created in your model.
+
+### Command Options & Toggles
+This command has no options in the command line. The light's properties (color, intensity, shadow settings) are edited in the Properties panel after it has been created.
+
+### Note for better use
+Point lights tend to create sharp, well-defined shadows. For softer, more realistic lighting for jewelry, it is often better to use `RectangularLight` or `LinearLight` objects, which simulate larger light sources.
+
+### Practical Use Cases
+* **Use Case 1 (General Illumination):** You need to add some general, overall lighting to your scene. Placing a few `PointLight` objects around your model can provide this base illumination.
+* **Use Case 2 (Creating Sparkle):** To create small, sharp "specular" highlights that make a gemstone sparkle in a render, you can place several low-intensity `PointLight` objects very close to the stone's surface.
+
+### Other Information
+This is one of the fundamental light types used in 3D rendering.
+
+---
+
+## 488. Points
+
+### Short Info
+Draw multiple point objects.
+
+### Detailed Description
+The **Points** command is a point creation tool that allows you to create multiple, separate point objects in a single command run. Unlike the `Point` command which ends after creating one point, `Points` will continue to create a new point object every time you click in the viewport until you press Enter.
+
+### Steps to use the command
+1.  Run the command `Points`.
+2.  At the **Location of point object** prompt, click to place a point.
+3.  The prompt will repeat, allowing you to click to place more points.
+4.  Press Enter when you are finished.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Marking Multiple Locations):** You are planning a layout for several gemstones on a surface and need to mark the location for each one. The `Points` command allows you to quickly place all the marker points without having to run the command over and over again.
+
+### Other Information
+This is the multi-point version of the `Point` command.
+
+---
+
+## 489. PointsFromUV
+
+### Short Info
+Create point objects at surface u- and v-coordinates.
+
+### Detailed Description
+The **PointsFromUV** command is a utility that creates point objects on a surface at specific U and V coordinate locations that you enter numerically. This allows for the precise, data-driven placement of points on a surface's internal parameter space.
+
+### Steps to use the command
+1.  Select a surface.
+2.  Run the command `PointsFromUV`.
+3.  You will be prompted to enter a U-coordinate and then a V-coordinate.
+4.  A point object will be created at that exact parametric location on the surface.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Scripting and Automation):** This command is primarily used in scripts. A script could calculate a specific UV coordinate on a surface and then use `PointsFromUV` to place a point there, which could then be used as a reference for another operation.
+
+### Other Information
+This is an advanced tool for users who are scripting or working directly with the mathematical parameter space of a surface.
+
+---
+
+## 490. PointsOff
+
+### Short Info
+Turn off control points and edit points.
+
+### Detailed Description
+The **PointsOff** command turns off the visibility of control points and edit points for all objects in the model. It is the universal command to exit any point-editing mode.
+
+### Steps to use the command
+1.  Run the command `PointsOff`.
+2.  All visible control points and edit points will be hidden.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The keyboard shortcut **F11** is the fastest way to run this command. Pressing the **Esc** key twice will also usually turn off control points.
+
+### Practical Use Cases
+* **Use Case 1 (Ending an Edit):** You have finished editing the control points of a curve or surface. You run `PointsOff` (or press F11) to hide the points and see the final, clean shape of the object.
+
+### Other Information
+This is the companion command to `PointsOn` and `EditPtOn`.
+
+---
+
+## 491. PointsOn
+
+### Short Info
+Display curve and surface control points.
+
+### Detailed Description
+The **PointsOn** command turns on the visibility of an object's control points. Control points are the primary method for editing the shape of NURBS curves and surfaces. They form a "cage" or "hull" around the object, and moving a control point will pull the smooth geometry towards it.
+
+### Steps to use the command
+1.  Select the object(s) whose control points you want to see.
+2.  Run the command `PointsOn`.
+3.  The control points will appear.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The keyboard shortcut **F10** is the fastest way to run this command. To turn the points off, use the `PointsOff` command (F11).
+
+### Practical Use Cases
+* **Use Case 1 (Editing a Curve):** You have drawn a curve and need to adjust its shape. You select the curve and run `PointsOn` (or press F10). You can then select and drag the individual control points to fine-tune the curve's shape.
+* **Use Case 2 (Editing a Surface):** You have created a surface for a ring shank and want to make it slightly wider in one area. You can turn on its control points, select a row of points, and use the `Scale` command or the Gumball to move them outward, changing the shape of the surface.
+
+### Other Information
+This is one of the most fundamental and frequently used editing commands in Rhino.
+
+---
+
+## 492. Polygon
+
+### Short Info
+Draw a polygon with a specified number of sides.
+
+### Detailed Description
+The **Polygon** command is a 2D drawing tool used to create a closed, equilateral polygon (a shape with equal-length sides), such as a triangle, square, pentagon, hexagon, etc.
+
+### Steps to use the command
+1.  Run the command `Polygon`.
+2.  At the **Center of polygon** prompt, pick a location.
+3.  Drag the mouse to set the size and rotation, and click.
+
+### Command Options & Toggles
+* **NumSides:** Allows you to set the number of sides for the polygon.
+* **Edge:** Allows you to define the polygon by drawing one of its edges instead of from the center.
+* **Inscribed/Circumscribed:** Controls whether the polygon is drawn inside or outside of the defining radius.
+
+### Practical Use Cases
+* **Use Case 1 (Drawing Gemstone Shapes):** You need to draw the outline for a trillion (3 sides), princess (4 sides), or hexagonal gemstone. The `Polygon` command is the fastest way to create these perfect, equilateral shapes.
+* **Use Case 2 (Creating a Nut Shape):** You are modeling a piece with an industrial aesthetic and need to create a hexagonal nut or bolt head. You would use `Polygon` with `NumSides=6` to create the initial 2D profile.
+
+### Other Information
+This is a basic 2D primitive creation tool.
+
+---
+
+## 493. PolygonCount
+
+### Short Info
+Report the number of polygons in a mesh.
+
+### Detailed Description
+The **PolygonCount** command is a simple analysis tool that reports the number of polygons (faces) in a selected mesh object.
+
+### Steps to use the command
+1.  Select one or more mesh objects.
+2.  Run the command `PolygonCount`.
+3.  The command history will display the total number of polygons in the selection.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is useful for checking the density of a mesh before exporting it for 3D printing or to another application. Many applications have limits on the number of polygons they can handle efficiently.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for 3D Printing):** Some 3D printing services have a maximum polygon count for uploaded files. Before exporting your final ring mesh, you can run `PolygonCount` to make sure your file is within the acceptable limits. If it's too high, you may need to use the `ReduceMesh` command.
+
+### Other Information
+This is a simple mesh analysis tool.
+
+---
+
+## 494. Polyline
+
+### Short Info
+Draw a multi-segment polyline.
+
+### Detailed Description
+The **Polyline** command is a fundamental 2D drawing tool that creates a single curve object made up of multiple connected straight-line and/or arc segments. It is one of the most versatile and frequently used drawing tools.
+
+### Steps to use the command
+1.  Run the command `Polyline`.
+2.  At the **Start of polyline** prompt, pick a point.
+3.  Continue picking points to create straight line segments.
+4.  To switch to drawing an arc segment, click the `Mode=Arc` option.
+5.  Press Enter when you are finished.
+
+### Command Options & Toggles
+* **Mode (Line/Arc):** Toggles between drawing straight line segments and arc segments within the same command run.
+* **Close:** Closes the polyline by creating a final segment from the last point back to the first.
+
+### Note for better use
+The `Polyline` command creates a single object, even if it has many segments. To break it apart into its individual segments, you must use the `Explode` command.
+
+### Practical Use Cases
+* **Use Case 1 (Drawing a Shank Profile):** You are drawing the cross-section of a D-shaped ring shank. You can use the `Polyline` command to draw the straight bottom segment, then switch to Arc mode to draw the curved top segment, all while creating a single, clean, closed curve.
+* **Use Case 2 (Tracing):** `Polyline` is an excellent tool for tracing reference images that have a combination of straight lines and curves.
+
+### Other Information
+This command has largely superseded the older `Lines` command due to its ability to create both lines and arcs.
+
+---
+
+## 495. PolylineOnMesh
+
+### Short Info
+Draw a polyline on a mesh.
+
+### Detailed Description
+The **PolylineOnMesh** command is a specialized drawing tool that allows you to draw a polyline directly onto the surface of a mesh object. The points you pick are constrained to the mesh surface, and the resulting polyline will follow the contours of the mesh.
+
+### Steps to use the command
+1.  Run the command `PolylineOnMesh`.
+2.  At the **Select a mesh** prompt, select the mesh you want to draw on.
+3.  You will then be prompted to pick the start and subsequent points for the polyline, directly on the mesh surface.
+4.  Press Enter when you are finished.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the mesh equivalent of the `InterpCrvOnSrf` command.
+
+### Practical Use Cases
+* **Use Case 1 (Marking a Trim Line on an STL):** You have an STL file of a ring and you need to define a line where you want to split it. You can use `PolylineOnMesh` to draw this line directly on the mesh surface. The resulting curve can then be used as a cutter with the `MeshSplit` command.
+* **Use Case 2 (Creating a Path on a Scan):** You have a 3D scan of an organic object and you want to draw a path on its surface for placing decorative elements. `PolylineOnMesh` allows you to draw this path directly on the irregular scanned surface.
+
+### Other Information
+This is an essential tool for workflows that involve editing or adding details to mesh objects.
+
+---
+
+## 496. PopupMenu
+
+### Short Info
+Display the context menu at the cursor.
+
+### Detailed Description
+The **PopupMenu** command is a utility that displays a context-sensitive menu at the current location of the mouse cursor. The contents of this menu can be customized.
+
+### Steps to use the command
+1.  Run the command `PopupMenu`.
+2.  A menu will appear at your cursor.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is almost always used in a macro that is assigned to a mouse button or keyboard shortcut to provide quick access to a custom set of tools.
+
+### Practical Use Cases
+* **Use Case 1 (Custom UI):** A power user could create a custom menu with their 10 most-used commands and assign the `PopupMenu` command to their middle mouse button. Now, clicking the middle mouse button will instantly bring up their favorite tools right at their cursor.
+
+### Other Information
+This is an advanced interface customization tool.
+
+---
+
+## 497. PopupPopular
+
+### Short Info
+Display the most-used commands list at the cursor.
+
+### Detailed Description
+The **PopupPopular** command is a utility that displays a menu containing a list of your most recently and frequently used commands, right at your mouse cursor. This provides very fast access to the commands you use most often.
+
+### Steps to use the command
+1.  Run the command `PopupPopular`.
+2.  A menu listing your popular commands will appear at your cursor.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a great command to assign to a keyboard shortcut or a mouse button for a significant workflow speed increase.
+
+### Practical Use Cases
+* **Use Case 1 (Fast Access):** Instead of moving your mouse up to the toolbars or typing a command name, you can press a single shortcut key. The `PopupPopular` menu will appear, and the command you just used (like `FilletEdge`) will likely be at the top of the list, allowing you to select it again instantly.
+
+### Other Information
+This is a powerful workflow efficiency tool.
+
+---
+
+## 498. PopupToolbar
+
+### Short Info
+Open a toolbar at the cursor.
+
+### Detailed Description
+The **PopupToolbar** command is a utility that opens a specified toolbar as a floating menu at the current location of the mouse cursor.
+
+### Steps to use the command
+1.  Run the command `PopupToolbar`.
+2.  At the **Name of toolbar to popup** prompt, enter the name of an existing toolbar (e.g., "Solid Tools").
+3.  That toolbar will appear as a floating menu at your cursor.
+
+### Command Options & Toggles
+This command has no options other than the toolbar name.
+
+### Practical Use Cases
+* **Use Case 1 (Custom UI):** A designer could assign the macro `! _PopupToolbar "Curve Tools"` to a keyboard shortcut. Now, whenever they press that key, their entire curve drawing toolbar will appear right where they are working, saving them from having to move the mouse to the edge of the screen.
+
+### Other Information
+This is an advanced interface customization tool.
+
+---
+
+## 499. PrevU
+
+### Short Info
+Select the previous control point in the u-direction.
+
+### Detailed Description
+The **PrevU** (Previous U) command is a control point selection utility. It deselects the currently selected control point(s) and selects the very next control point in the negative U direction.
+
+### Steps to use the command
+1.  Turn on control points for a curve or surface.
+2.  Select one control point.
+3.  Run the command `PrevU`.
+4.  The original point will be deselected, and the previous point in the U direction will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is different from `AddPrevU`, which *adds* to the selection. `PrevU` *replaces* the selection. This command is designed to be used with keyboard shortcuts to "walk" a single selection along a row of control points.
+
+### Practical Use Cases
+* **Use Case 1 (Sequential Adjustments):** You need to adjust each control point in a row, one at a time, moving from right to left. You can select the last point, make your adjustment, then use `PrevU` to move the selection to the previous point, make another adjustment, and so on.
+
+### Other Information
+This is a specialized selection command for advanced control point editing.
+
+---
+
+## 500. PrevV
+
+### Short Info
+Select the previous control point in the v-direction.
+
+### Detailed Description
+The **PrevV** (Previous V) command is a control point selection utility. It deselects the currently selected control point(s) and selects the very next control point in the negative V direction on a surface.
+
+### Steps to use the command
+1.  Turn on control points for a surface.
+2.  Select one control point.
+3.  Run the command `PrevV`.
+4.  The original point will be deselected, and the previous point in the V direction will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the V-direction equivalent of the `PrevU` command.
+
+### Practical Use Cases
+* **Use Case 1 (Sequential Adjustments):** Similar to `PrevU`, this allows you to move your selection one step at a time along a column of control points on a surface, in the negative V direction.
+
+### Other Information
+This is a specialized selection command for advanced control point editing.
