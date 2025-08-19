@@ -14209,3 +14209,2678 @@ This is the V-direction equivalent of the `PrevU` command.
 
 ### Other Information
 This is a specialized selection command for advanced control point editing.
+
+---
+
+## 501. PrevViewport
+
+### Short Info
+Activate the previous viewport.
+
+### Detailed Description
+The **PrevViewport** (Previous Viewport) command is a viewport navigation utility. It makes the previously active viewport the current active viewport. This allows you to quickly toggle back and forth between two different views.
+
+### Steps to use the command
+1.  Click in one viewport to make it active (e.g., Perspective).
+2.  Click in a second viewport to make it active (e.g., Top).
+3.  Run the command `PrevViewport`.
+4.  The first viewport (Perspective) will become active again.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is most useful when assigned to a keyboard shortcut or a mouse button, allowing for a very fast toggle between two primary working views.
+
+### Practical Use Cases
+* **Use Case 1 (Toggling Views):** You are doing detailed work in the Top view but frequently need to check the result in the Perspective view. You can use `PrevViewport` to instantly switch back and forth between your Top and Perspective views without having to move your mouse to click on the viewport titles.
+
+### Other Information
+This is a simple but effective workflow efficiency tool for viewport navigation.
+
+---
+
+## 502. Print
+
+### Short Info
+Print the view or layouts.
+
+### Detailed Description
+The **Print** command opens the main Print dialog box, which allows you to send the current view, a selection of objects, or your layout pages to a physical printer or to a file (like a PDF). This dialog contains all the necessary options for controlling the scale, position, line types, colors, and output device for your print.
+
+### Steps to use the command
+1.  Make the viewport or layout page you want to print active.
+2.  Run the command `Print`.
+3.  The Print dialog box will appear.
+4.  Configure the settings (Destination, Scale, Margins, etc.).
+5.  Click "Print."
+
+### Command Options & Toggles
+The options are all contained within the dialog box:
+* **Destination:** Choose a physical printer or a file format like PDF.
+* **View and Output Scale:** This is the most critical section for setting the drawing scale (e.g., 1:1, 1:2) and position on the page.
+* **Linetypes and Line Widths:** Controls how different line styles and thicknesses are printed.
+* **Visibility:** Allows you to print items like the background color, wallpaper, or lights.
+
+### Note for better use
+Before printing, it is a very good practice to use the `PrintDisplay` command to get a preview in your viewport of how the line weights and colors will look when printed. This can help you catch errors before wasting paper.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a PDF for a Client):** You have created a technical drawing on a layout page with dimensions. You run `Print`, select "Rhino PDF" as the destination, set the scale to 1:1, and create a high-quality PDF file that you can email to the client or manufacturer.
+* **Use Case 2 (Printing a Reference Sheet):** You want a quick printout of your perspective view to sketch over. You can activate the Perspective view, run `Print`, choose your office printer, and use the "Scale to Fit" option to quickly print the view.
+
+### Other Information
+This is the fundamental command for creating physical or digital 2D output from your models.
+
+---
+
+## 503. PrintDisplay
+
+### Short Info
+Toggle print preview display.
+
+### Detailed Description
+The **PrintDisplay** command is a display mode toggle. It changes the active viewport to a "print preview" mode. In this mode, objects are displayed with the print colors and print widths assigned in their properties or layer settings. This provides an on-screen preview of how the line weights and colors will look when the view is actually printed.
+
+### Steps to use the command
+1.  Run the command `PrintDisplay`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+
+### Command Options & Toggles
+* **State (On/Off):** The main toggle for the feature.
+* **Color (Display/Print):** Toggles whether to preview print colors.
+* **Thickness (On/Off):** Toggles whether to preview print widths.
+
+### Note for better use
+This is a crucial command to use before running the `Print` command. It allows you to visually check your line weight hierarchy and ensure that important lines are thick and guide lines are thin, just as they will appear on the final printed page or PDF.
+
+### Practical Use Cases
+* **Use Case 1 (Checking a Technical Drawing):** You have created a layout for a ring and have assigned different print widths to your object lines, hidden lines, and dimension lines. Before creating the final PDF, you turn on `PrintDisplay` to get an accurate preview of how these line weights will look, allowing you to make adjustments for clarity and readability.
+
+### Other Information
+This is an essential quality control tool for anyone producing 2D documentation.
+
+---
+
+## 504. Project
+
+### Short Info
+Project curves/points toward a construction plane to intersect a surface.
+
+### Detailed Description
+The **Project** command is a fundamental curve creation and editing tool. It takes one or more curves or points and "projects" them, like a shadow, onto a selected surface or polysurface. The projection happens in the direction of the active construction plane's Z-axis (straight "down" in the Top view).
+
+### Steps to use the command
+1.  Select the curve(s) or point(s) you want to project.
+2.  Run the command `Project`.
+3.  At the **Select surfaces, polysurfaces, or meshes to project onto** prompt, select the target object(s) and press Enter.
+4.  New curves or points will be created on the target surface.
+
+### Command Options & Toggles
+* **DeleteInput (Yes/No):** Deletes the original curves after the projection.
+
+### Note for better use
+The direction of the projection is critical. For example, to project a pattern onto the top of a ring, you must run the command from the Top viewport. If you run it from the Front view, it will project sideways through the ring. The `Pull` command is a similar tool, but it pulls the curve to the *closest* point on the surface, which is not always the same as a straight projection.
+
+### Practical Use Cases
+* **Use Case 1 (Creating Trim Curves):** You have drawn a flat, 2D pattern above the curved surface of a ring. You can use `Project` to cast this pattern down onto the ring's surface. The resulting 3D curves can then be used to `Trim` or `Split` the surface to create an inlay or decorative feature.
+* **Use Case 2 (Creating a Path for Gems):** You have drawn a simple, straight line in the Top view over a complex, wavy surface. `Project` will turn this straight line into a 3D curve that follows the up-and-down contour of the surface, creating a perfect path for setting gemstones.
+
+### Other Information
+This is a workhorse command for transferring 2D geometry onto 3D surfaces.
+
+---
+
+## 505. ProjectOsnap
+
+### Short Info
+Project object snaps to the construction plane.
+
+### Detailed Description
+The **ProjectOsnap** (Project Object Snaps) command is a modeling aid. When it is active, any object snap location you pick is projected onto the current construction plane. This forces your selections to be planar, even if you are snapping to 3D geometry.
+
+### Steps to use the command
+1.  Run the command `ProjectOsnap`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+4.  Alternatively, click the "Project" pane in the Status Bar.
+
+### Command Options & Toggles
+This command is a simple toggle between **On** and **Off**.
+
+### Note for better use
+This is extremely useful for creating clean, planar 2D drawings while using existing 3D geometry as a reference.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Flat Outline):** You are in the Top view and need to draw a flat, 2D outline of a complex 3D ring. You want to snap to the edges of the 3D model, but you need your new curve to be perfectly flat. You turn on `ProjectOsnap`. Now, even though you are snapping to points that have different Z-heights, Rhino will create all the points for your new curve on the CPlane, resulting in a perfectly flat outline.
+
+### Other Information
+This is a key modeling aid for creating 2D drawings from 3D models.
+
+---
+
+## 506. ProjectToCPlane
+
+### Short Info
+Flatten objects onto the construction plane.
+
+### Detailed Description
+The **ProjectToCPlane** (Project to Construction Plane) command takes selected objects and creates flattened copies of them on the active construction plane.
+
+### Steps to use the command
+1.  Select the object(s) you want to flatten.
+2.  Run the command `ProjectToCPlane`.
+3.  At the **Delete input objects?** prompt, choose Yes or No.
+4.  New, flattened versions of the objects will be created on the CPlane.
+
+### Command Options & Toggles
+* **DeleteInput (Yes/No):** Deletes the original 3D objects after creating the flattened copies.
+
+### Note for better use
+This is a fast way to get a 2D representation of 3D geometry. It is similar to `Make2D` but is simpler and less configurable.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Profile):** You have a 3D curve that winds through space, but you need a flat, 2D version of it as seen from the Top view. You can go to the Top view, select the curve, and run `ProjectToCPlane` to get the flattened version.
+* **Use Case 2 (Fixing Non-Planar Curves):** You have a curve that is supposed to be flat but has some small variations in the Z-axis, which is preventing a command like `PlanarSrf` from working. You can use `ProjectToCPlane` to create a new, perfectly flat version of the curve.
+
+### Other Information
+This is a simple but useful utility for flattening geometry.
+
+---
+
+## 507. Properties
+
+### Short Info
+Open the Properties panel.
+
+### Detailed Description
+The **Properties** command opens the main Properties panel. This is a dockable panel that displays detailed information and editable properties for the currently selected object(s). This is the primary interface for changing an object's name, layer, color, material, and other specific attributes.
+
+### Steps to use the command
+1.  Run the command `Properties`.
+2.  The Properties panel will open.
+3.  Select an object in the viewport.
+4.  The panel will populate with the properties for that object.
+
+### Command Options & Toggles
+The options are all contained within the panel's interface, which has different tabs depending on the type of object selected (e.g., Object, Material, Texture Mapping).
+
+### Note for better use
+Most experienced users keep the Properties panel open and docked at all times. It provides constant, context-sensitive information and control over your model.
+
+### Practical Use Cases
+* **Use Case 1 (Changing an Object's Layer):** The most common way to change an object's layer is to select the object, go to the Properties panel, and choose a new layer from the dropdown menu.
+* **Use Case 2 (Assigning a Material):** To assign a render material to an object, you select the object, go to the "Material" section of the Properties panel, and choose a material from the list.
+* **Use Case 3 (Checking Object Type):** If you are unsure what type of object you have selected (e.g., is it a single surface or a polysurface?), the top of the Properties panel will tell you exactly what it is.
+
+### Other Information
+This is one of the most fundamental and essential panels in the Rhino interface.
+
+---
+
+## 508. PropertiesPage
+
+### Short Info
+Open a specific page in the Properties panel.
+
+### Detailed Description
+The **PropertiesPage** command is a utility that opens the Properties panel and brings a specific tab to the front.
+
+### Steps to use the command
+1.  Run the command `PropertiesPage`.
+2.  At the **Page name** prompt, enter the name of the tab you want to open (e.g., "Material").
+3.  The Properties panel will open with that page selected.
+
+### Command Options & Toggles
+This command has no options other than the page name you provide.
+
+### Practical Use Cases
+* **Use Case 1 (Custom Toolbar):** You could create a custom button with the macro `! _PropertiesPage Material` to instantly open the Properties panel to the Material tab, which might be slightly faster than opening the panel and then clicking the tab manually.
+
+### Other Information
+This is a simple workflow efficiency command for power users.
+
+---
+
+## 509. PtOffSelected
+
+### Short Info
+Turn off control points for selected objects.
+
+### Detailed Description
+The **PtOffSelected** (Points Off Selected) command turns off the visibility of control points and edit points, but only for the objects that are currently selected. This is a more targeted version of the global `PointsOff` command.
+
+### Steps to use the command
+1.  Have several objects with their control points turned on.
+2.  Select the specific object(s) whose points you want to hide.
+3.  Run the command `PtOffSelected`.
+4.  The control points for only the selected objects will be hidden.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (De-cluttering a Complex Edit):** You are editing a complex model and have the control points turned on for five different surfaces at once. The view is very cluttered. If you are finished editing two of the surfaces, you can select them and run `PtOffSelected` to hide their points, leaving the points on for only the surfaces you are still working on.
+
+### Other Information
+This command gives you more granular control over point visibility than the global `PointsOff` (F11) command.
+
+---
+
+## 510. Pull
+
+### Short Info
+Pull a curve or points to a surface.
+
+### Detailed Description
+The **Pull** command is a curve creation and editing tool that "pulls" curves or points onto a target surface. It works by finding the closest point on the surface for each point on the curve and creating a new curve from these new locations.
+
+### Steps to use the command
+1.  Select the curve(s) or point(s) you want to pull.
+2.  Run the command `Pull`.
+3.  At the **Select surfaces, polysurfaces, or meshes to pull to** prompt, select the target object(s) and press Enter.
+4.  New curves or points will be created on the target surface.
+
+### Command Options & Toggles
+* **DeleteInput (Yes/No):** Deletes the original curves after the pull.
+
+### Note for better use
+This command is different from `Project`. `Project` casts a shadow in a specific direction. `Pull` finds the closest point, which is always perpendicular to the target surface. For a complex, doubly-curved surface, these two commands will produce very different results.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Trim Curve):** You have a complex, organic surface and a curve that is floating near it. You want to create a trim line on the surface that exactly matches the shape of the curve. `Pull` will create this curve for you.
+* **Use Case 2 (Placing Points on a Surface):** You have a set of point objects that are near a surface, and you need to snap them directly onto the surface. `Pull` will move each point to the closest location on the surface.
+
+### Other Information
+This is a fundamental tool for transferring geometry onto curved surfaces.
+
+---
+
+## 511. Purge
+
+### Short Info
+Delete unused block definitions, groups, layers, and other unused objects.
+
+### Detailed Description
+The **Purge** command is a file maintenance utility that cleans up your current model by deleting unused items. This can include block definitions that have no instances, empty layers, unused materials, and other data that is saved with the file but is not currently being used. This is an excellent way to reduce your final file size.
+
+### Steps to use the command
+1.  Run the command `Purge`.
+2.  A dialog box will appear, listing all the unused items that can be deleted.
+3.  Check the boxes for the items you want to purge.
+4.  Click OK.
+
+### Command Options & Toggles
+The options are the checkboxes in the dialog box, allowing you to choose which types of unused items to delete.
+
+### Note for better use
+It is a very good practice to run `Purge` on a model before you send it to a client or to a 3D printer. This removes any old, unnecessary data and makes the file as clean and small as possible.
+
+### Practical Use Cases
+* **Use Case 1 (Finalizing a File):** You have finished a ring design. During the process, you created several test layers and imported some block definitions that you ended up not using. Before sending the file to be printed, you run `Purge` and check all the boxes. This cleans the file, removes the unused data, and reduces the final file size.
+
+### Other Information
+This is an essential command for good file hygiene.
+
+---
+
+## 512. PurgeRefObjects
+
+### Short Info
+Delete worksession reference objects.
+
+### Detailed Description
+The **PurgeRefObjects** (Purge Reference Objects) command is a utility used with the `Worksession` feature. It deletes any reference objects from a worksession that are no longer needed.
+
+### Steps to use the command
+1.  Have a worksession active.
+2.  Run the command `PurgeRefObjects`.
+3.  Follow the prompts to select and delete the unused reference objects.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Worksession Management):** You are working in a large, collaborative worksession and some of the linked reference files are no longer needed for your part of the project. This command allows you to clean up your session by removing them.
+
+### Other Information
+This is a specialized utility for the `Worksession` system.
+
+---
+
+## 513. PushViewportToBack
+
+### Short Info
+Send a named viewport behind all other viewports.
+
+### Detailed Description
+The **PushViewportToBack** command is a viewport management utility used with floating viewports. It takes the currently active floating viewport and sends it behind all other floating viewports in the stack.
+
+### Steps to use the command
+1.  Make a floating viewport active.
+2.  Run the command `PushViewportToBack`.
+3.  The viewport will be sent to the back of the display order.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the opposite of the `BringViewportToTop` command.
+
+### Practical Use Cases
+* **Use Case 1 (Managing Floating Views):** You have a large, floating perspective view and a smaller, floating detail view. You want to send the large view to the back so you can see the smaller detail view on top of it.
+
+### Other Information
+This is a window management tool, not a modeling tool.
+
+---
+
+## 514. Pyramid
+
+### Short Info
+Draw a pyramid.
+
+### Detailed Description
+The **Pyramid** command is a solid creation tool that creates a pyramid with a specified number of sides at its base.
+
+### Steps to use the command
+1.  Run the command `Pyramid`.
+2.  Follow the prompts to define the center and radius of the pyramid's base, and then its height.
+
+### Command Options & Toggles
+* **NumSides:** Sets the number of sides for the base of the pyramid.
+* **Edge:** Allows you to define the base by drawing one of its edges.
+
+### Note for better use
+A pyramid with 3 sides is a tetrahedron. A pyramid with 4 sides is a standard pyramid.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Spike):** You are designing a piece of punk-style jewelry and need to create a pointed spike with a square base. The `Pyramid` command with `NumSides=4` is the fastest way to create this shape.
+* **Use Case 2 (V-Shaped Prongs):** The basic shape of a "v-prong" used for setting princess-cut stones can be created with a 3-sided pyramid.
+
+### Other Information
+This is one of the basic solid modeling primitives.
+
+---
+
+## 515. QuadrangulateMesh
+
+### Short Info
+Merge mesh triangles into quadrangles.
+
+### Detailed Description
+The **QuadrangulateMesh** command is an automated mesh topology tool. It inspects a mesh that is made of triangles and attempts to merge adjacent pairs of triangles into four-sided faces (quads). This is useful for preparing a mesh for export to subdivision modeling or sculpting programs, which often work better with quad-based geometry.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `QuadrangulateMesh`.
+3.  The command will attempt to convert the mesh to quads.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is an automated process and the results can vary. It may not be able to convert all triangles to quads, and it can sometimes produce undesirable polygon flows. For precise control, it is often better to manually merge triangles using the `Merge2MeshFaces` command.
+
+### Practical Use Cases
+* **Use Case 1 (Preparing for ZBrush):** You have an STL file of a ring that you want to sculpt on in ZBrush. You can run `QuadrangulateMesh` on the object first to convert as much of it as possible to quads, which will often lead to better and smoother sculpting results.
+
+### Other Information
+This is an advanced tool for managing mesh topology.
+
+---
+
+## 516. Radius
+
+### Short Info
+Report the radius of a curve.
+
+### Detailed Description
+The **Radius** command is an analysis tool that measures the radius of a circle or arc at a specified point.
+
+### Steps to use the command
+1.  Run the command `Radius`.
+2.  At the **Select curve for radius measurement** prompt, select a circle or arc.
+3.  The command will report the radius in the command history and place a temporary marker.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a quick measurement tool. To create a permanent, visible dimension on your model, use the `DimRadius` command instead.
+
+### Practical Use Cases
+* **Use Case 1 (Verifying Fillets):** You have created a filleted corner and want to quickly check its radius. `Radius` will give you an instant measurement.
+* **Use Case 2 (Checking a Ring Rail):** You want to confirm the radius of your ring rail to ensure the finger size is correct.
+
+### Other Information
+This is a simple analysis command for quick verification of circular objects.
+
+---
+
+## 517. RailRevolve
+
+### Short Info
+Revolve a profile curve around an axis and along a rail curve.
+
+### Detailed Description
+The **RailRevolve** command is a powerful and complex surface creation tool. It creates a surface by revolving a profile curve around a central axis, but with a key difference from the standard `Revolve` command: the shape is also guided by a "rail" curve. This means the resulting surface has the rotational quality of a revolve, but its outer profile is controlled by the rail curve.
+
+### Steps to use the command
+1.  Create a profile curve, an axis of revolution, and a rail curve.
+2.  Run the command `RailRevolve`.
+3.  At the **Select profile curve** prompt, select the profile.
+4.  At the **Select rail curve** prompt, select the rail.
+5.  At the **Start of revolve axis** prompt, define the axis line.
+6.  The surface will be created.
+
+### Command Options & Toggles
+This command has no options in the command line.
+
+### Note for better use
+This is an advanced surfacing tool. The profile curve must intersect the rail curve, and the rail curve must intersect the revolve axis.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Domed Ring with a Square Profile):** You want to create a domed ring, but you want its cross-section to be square, not circular. You can draw a square as your profile curve, a circle as your rail curve, and a line through the center as your axis. `RailRevolve` will sweep the square profile around the axis, while forcing its outer corner to follow the circular rail, resulting in a perfectly domed ring with a square profile.
+* **Use Case 2 (Modeling a Wine Glass):** The shape of a wine glass is a classic example. The profile curve would be the cross-section of the glass wall, the rail curve would be the complex, curved outline of the glass's side profile, and the axis would be the vertical centerline.
+
+### Other Information
+This is a very powerful command for creating complex surfaces that have both rotational and profiled characteristics.
+
+---
+
+## 518. ReadCommandFile
+
+### Short Info
+Read and execute a command script from a text file.
+
+### Detailed Description
+The **ReadCommandFile** command is a utility for scripting. It allows you to run a script of Rhino commands that has been saved in an external text file (.txt).
+
+### Steps to use the command
+1.  Create a text file where each line is a Rhino command.
+2.  Run the command `ReadCommandFile`.
+3.  A file browser will open. Select your text file.
+4.  Rhino will execute the commands in the file, one by one.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Running External Scripts):** A user who is not familiar with the script editor can be sent a simple text file containing a macro. They can then use this command to easily run the script without having to open the editor.
+
+### Other Information
+This is a simple way to execute macros that are stored outside of the Rhino interface.
+
+---
+
+## 519. ReadEveryIGESEntity
+
+### Short Info
+Read all IGES entities.
+
+### Detailed Description
+The **ReadEveryIGESEntity** command is a specialized utility for importing IGES files. It forces Rhino to attempt to read all the data from an IGES file, even entities that it does not normally support or recognize. This is a "brute force" import method used for troubleshooting problematic files.
+
+### Steps to use the command
+1.  This command is used before importing. You would run `ReadEveryIGESEntity` to toggle the mode on.
+2.  Then, you would use the `Import` command to open the IGES file.
+
+### Command Options & Toggles
+This command is a toggle.
+
+### Note for better use
+This should only be used as a last resort when a standard `Import` fails on an IGES file. It may result in the import of "bad" or unsupported geometry, but it can sometimes recover data from a file that would otherwise not open at all.
+
+### Practical Use Cases
+* **Use Case 1 (Troubleshooting Imports):** You have received a critical IGES file from a client, but it fails to import. You can try turning on `ReadEveryIGESEntity` to see if it can recover at least some of the geometry from the file.
+
+### Other Information
+This is an advanced tool for file translation experts.
+
+---
+
+## 520. ReadViewportsFromFile
+
+### Short Info
+Set the viewports to a layout saved in another model.
+
+### Detailed Description
+The **ReadViewportsFromFile** command is a utility that changes your current viewport layout to match the viewport layout from another, saved Rhino file.
+
+### Steps to use the command
+1.  Run the command `ReadViewportsFromFile`.
+2.  A file browser will open. Select the .3dm file that has the viewport layout you want to copy.
+3.  Your current viewport layout will be replaced with the one from the selected file.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is useful for standardizing a workspace across multiple files or users.
+
+### Practical Use Cases
+* **Use Case 1 (Standard Workspace):** A design studio has a standard viewport layout that all designers are required to use. A new designer can use `ReadViewportsFromFile` and select a template file to instantly configure their workspace to the company standard.
+
+### Other Information
+This is a workspace customization utility.
+
+---
+
+## 521. Rebuild
+
+### Short Info
+Reconstruct curves, surfaces, and extrusion objects to a specified degree and control point number.
+
+### Detailed Description
+The **Rebuild** command is a fundamental and extremely important editing tool. It reconstructs a curve or surface to have a specific, uniform number of control points and a specific mathematical degree. This is the primary command for simplifying overly complex objects, smoothing out messy ones, or for preparing objects to have a matching structure before using commands like `Loft` or `Sweep`.
+
+### Steps to use the command
+1.  Select the object(s) to rebuild.
+2.  Run the command `Rebuild`.
+3.  A dialog box will appear.
+4.  Enter the desired **Point Count** and **Degree**. A preview will show the deviation from the original.
+5.  Click OK. A new, rebuilt object will be created.
+
+### Command Options & Toggles
+The options are in the dialog box:
+* **Point Count:** The number of control points the new object will have.
+* **Degree:** The mathematical degree (usually 3 for smooth curves/surfaces).
+* **Delete input:** Deletes the original object.
+* **Display deviation:** Shows you how far the new object deviates from the original.
+
+### Note for better use
+Rebuilding will almost always change the shape of your object slightly. The key is to use the lowest possible point count that keeps the deviation within your acceptable tolerance. A curve or surface with fewer control points is easier to edit and results in smoother, higher-quality models.
+
+### Practical Use Cases
+* **Use Case 1 (Simplifying a Curve):** You have a curve that resulted from an `Intersect` operation, and it has 500 control points. It is very difficult to edit. You can use `Rebuild` to change it to a clean, degree 3 curve with only 12 control points, making it smooth and easy to modify.
+* **Use Case 2 (Matching for Lofting):** You are about to `Loft` three profile curves. To get the cleanest possible surface, all three curves should have the same structure. You can select all three, run `Rebuild`, and give them all the same point count and degree. Now, the `Loft` will produce a much cleaner and simpler surface.
+
+### Other Information
+Mastering the `Rebuild` command is an essential skill for creating high-quality, editable NURBS models.
+
+---
+
+## 522. RebuildCrvNonUniform
+
+### Short Info
+Interactively rebuild a curve with a specified tolerance.
+
+### Detailed Description
+The **RebuildCrvNonUniform** (Rebuild Curve Non-Uniform) command is an interactive version of `Rebuild` for curves. It allows you to rebuild a curve by specifying a tolerance, and it provides a real-time preview of the result with sliders to adjust the control point count.
+
+### Steps to use the command
+1.  Select a curve.
+2.  Run the command `RebuildCrvNonUniform`.
+3.  A dialog box appears with sliders and a preview.
+4.  Adjust the sliders to get the desired balance of simplicity and accuracy.
+5.  Click OK.
+
+### Command Options & Toggles
+The options are in the dialog box, allowing you to control tolerance and point count.
+
+### Practical Use Cases
+* **Use Case 1 (Interactive Smoothing):** You have a slightly jittery curve from a trace and want to smooth it out. This command provides an interactive way to see exactly how much detail you are losing as you reduce the point count, allowing you to find the perfect balance.
+
+### Other Information
+This is a more interactive and user-friendly alternative to the standard `Rebuild` command, but it only works on curves.
+
+---
+
+## 523. RebuildEdges
+
+### Short Info
+Restore surface edges to their surface.
+
+### Detailed Description
+The **RebuildEdges** command is a surface repair tool. It restores the edges of a surface to be perfectly aligned with its underlying geometry. Sometimes, due to complex trimming operations or import errors, a surface's trim edges can deviate slightly from the actual edge of the surface. This command fixes that discrepancy.
+
+### Steps to use the command
+1.  Select a surface.
+2.  Run the command `RebuildEdges`.
+3.  The surface's edges will be rebuilt.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Fixing a Failed Join):** You are trying to `Join` two surfaces that look like they are touching, but the join fails. This could be because one of the trim edges is slightly inaccurate. Running `RebuildEdges` on both surfaces can often fix the problem and allow them to be joined correctly.
+
+### Other Information
+This is a useful tool in an advanced model repair workflow.
+
+---
+
+## 524. RebuildMesh
+
+### Short Info
+Remove texture coordinates, surface parameters, vertex colors, and surface curvature from a mesh.
+
+### Detailed Description
+The **RebuildMesh** command is a mesh utility that strips a mesh object of all extra data, such as texture coordinates, vertex colors, and other parameters, leaving only the basic vertex and face information.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `RebuildMesh`.
+3.  The extra data will be removed.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Resetting a Mesh):** You have an imported mesh that has problematic texture coordinates that are causing issues. `RebuildMesh` can be used to completely remove this data, giving you a clean mesh to work with.
+
+### Other Information
+This is a specialized mesh cleanup tool.
+
+---
+
+## 525. RebuildMeshNormals
+
+### Short Info
+Recalculate mesh normals.
+
+### Detailed Description
+The **RebuildMeshNormals** command is a mesh repair tool that recalculates all the vertex and face normals of a mesh object to ensure they are pointing in the correct, averaged direction. This can sometimes fix shading or rendering artifacts on a mesh.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `RebuildMeshNormals`.
+3.  The normals will be recalculated.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+For ensuring all normals point outward on a closed mesh, the `UnifyMeshNormals` command is often more effective.
+
+### Practical Use Cases
+* **Use Case 1 (Fixing Shading Errors):** You have a mesh that has strange dark or light patches on it in a shaded viewport. This can sometimes be caused by incorrect vertex normals. `RebuildMeshNormals` can often fix these shading errors.
+
+### Other Information
+This is a mesh repair tool for fixing shading issues.
+
+---
+
+## 526. RebuildUV
+
+### Short Info
+Reconstruct a surface to a specified degree and control point number in the u- or v-direction.
+
+### Detailed Description
+The **RebuildUV** command is a more controlled version of the `Rebuild` command that works only on surfaces. It allows you to rebuild the surface with a new point count and degree in only the U direction, or only the V direction, leaving the other direction unchanged.
+
+### Steps to use the command
+1.  Select a surface.
+2.  Run the command `RebuildUV`.
+3.  The command line will prompt you to choose a direction (U or V) and to enter the new point count and degree.
+4.  The surface will be rebuilt in that one direction.
+
+### Command Options & Toggles
+The options are presented as prompts in the command line.
+
+### Note for better use
+This is an advanced surfacing tool for users who need precise control over the structure of their surfaces.
+
+### Practical Use Cases
+* **Use Case 1 (Adding Detail in One Direction):** You have a smooth, simple surface for a ring shank. You want to add detail along the length of the shank, but keep the cross-section profile simple. You could use `RebuildUV` to add more control points only in the U direction (along the length), which would give you the control you need without making the profile more complex.
+
+### Other Information
+This is a specialized tool for advanced surface editing.
+
+---
+
+## 527. RecordAnimation
+
+### Short Info
+Render and save all animation frames.
+
+### Detailed Description
+The **RecordAnimation** command is the final step in creating an animation. After you have set up an animation using a command like `Turntable` or `SetFlythroughAnimation`, this command will go through every single frame of the animation, render it, and save it as an image file. The result is a sequence of images that can be combined into a video.
+
+### Steps to use the command
+1.  Set up an animation.
+2.  Run the command `RecordAnimation`.
+3.  A dialog box will appear.
+4.  Choose a target folder, a filename, and the number of frames to record.
+5.  Click "Record." Rhino will then render each frame sequentially.
+
+### Command Options & Toggles
+The options are in the dialog box:
+* **Target folder:** The location to save the image sequence.
+* **Number of frames:** The total number of images to create.
+* **Capture method:** The display mode to use for the animation (e.g., Rendered, Shaded, Wireframe).
+
+### Note for better use
+Rendering an animation can be a very time-consuming process, as it involves creating hundreds or even thousands of individual renders. Always do a low-frame-count test first to make sure the motion and lighting are correct.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Turntable Video):** You have set up a 360-degree turntable animation of a ring. You use `RecordAnimation` to render all 100 frames as separate JPG images. You can then use a video editing program to compile these images into a smooth video to send to a client or post on your website.
+
+### Other Information
+This is the primary command for outputting a finished animation.
+
+---
+
+## 528. Rectangle
+
+### Short Info
+Draw a rectangle from two corner points.
+
+### Detailed Description
+The **Rectangle** command is a fundamental 2D drawing tool used to create a closed, rectangular polyline or surface.
+
+### Steps to use the command
+1.  Run the command `Rectangle`.
+2.  Follow the prompts for the chosen creation method. For the default method:
+    a. At the **First corner of rectangle** prompt, pick a point.
+    b. At the **Other corner or length** prompt, pick the opposite corner.
+
+### Command Options & Toggles
+* **3Point:** Creates a rectangle by picking three points.
+* **Vertical:** Creates a rectangle that is vertical to the CPlane.
+* **Center:** Creates the rectangle from its center point.
+* **Rounded:** Creates a rectangle with filleted or chamfered corners.
+
+### Practical Use Cases
+* **Use Case 1 (Drawing a Princess Cut Stone):** The `Rectangle` command (specifically, the `Square` sub-option) is the fastest way to draw the outline of a square, princess-cut gemstone.
+* **Use Case 2 (Creating a Base Plate):** You are designing a nameplate pendant. The `Rectangle` command is the tool you would use to create the basic rectangular shape of the plate.
+
+### Other Information
+This is one of the most basic and frequently used 2D drawing commands.
+
+---
+
+## 529. RectangularLight
+
+### Short Info
+Insert a rectangular light.
+
+### Detailed Description
+The **RectangularLight** command adds a rectangular light source to the model. This type of light simulates a light source shaped like a photographer's "softbox" or a window. It emits light from a planar, rectangular area, which creates very soft, diffuse shadows and broad, gentle highlights.
+
+### Steps to use the command
+1.  Run the command `RectangularLight`.
+2.  Draw a rectangle in the viewport to define the size and location of the light.
+3.  A rectangular light object will be created.
+
+### Command Options & Toggles
+The options are for drawing the rectangle, similar to the `Rectangle` command.
+
+### Note for better use
+Rectangular lights are one of the best tools for creating realistic, soft studio lighting for jewelry renders. The larger the rectangle, the softer the shadows will be.
+
+### Practical Use Cases
+* **Use Case 1 (Studio Lighting):** To create a professional studio lighting setup, you can place a large `RectangularLight` above and to one side of your ring to act as the main "key" light, and a second, less intense one on the other side to act as a "fill" light. This will produce beautiful, soft shadows and highlights.
+
+### Other Information
+This is a key tool for creating high-quality, photorealistic renderings.
+
+---
+
+## 530. Redo
+
+### Short Info
+Reverse the last Undo.
+
+### Detailed Description
+The **Redo** command is a fundamental editing utility that reverses the last action that was undone with the `Undo` command.
+
+### Steps to use the command
+1.  Run the `Undo` command.
+2.  Run the command `Redo`.
+3.  The action that was undone will be restored.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The keyboard shortcut **Ctrl+Y** is the universal and much faster way to perform this action.
+
+### Practical Use Cases
+* **Use Case 1 (Correcting an Undo):** You have just performed a complex operation. You accidentally press `Undo` (Ctrl+Z) one too many times. `Redo` (Ctrl+Y) will bring your complex operation back without you having to do it all over again.
+
+### Other Information
+This is a standard feature in almost all software.
+
+---
+
+## 531. RedoMultiple
+
+### Short Info
+Redo multiple undone actions.
+
+### Detailed Description
+The **RedoMultiple** command opens a dialog box that shows a list of the most recent actions that have been undone. It allows you to select one or more of these actions and redo them all at once.
+
+### Steps to use the command
+1.  Run the command `RedoMultiple`.
+2.  The "Redo List" dialog box will appear.
+3.  Select the actions you want to redo from the list.
+4.  Click OK.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Step-by-Step Recovery):** You have undone a long sequence of 10 commands. You realize you only wanted to undo the first 5. You can use `RedoMultiple` to select the last 5 undone actions and bring them back in one step.
+
+### Other Information
+This is the multi-action version of the `Redo` command.
+
+---
+
+## 532. RedoView
+
+### Short Info
+Reverse the last UndoView.
+
+### Detailed Description
+The **RedoView** command is a viewport navigation utility. It reverses the last view change that was undone with the `UndoView` command.
+
+### Steps to use the command
+1.  Use `UndoView` to go back to a previous camera position.
+2.  Run the command `RedoView`.
+3.  The camera will return to the position it was in before you ran `UndoView`.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Navigating Camera History):** You are trying to find a specific camera angle you were at a few minutes ago. You use `UndoView` several times to go back, but you go one step too far. `RedoView` will take you forward one step in your camera history.
+
+### Other Information
+This is a simple navigation tool for managing your view history.
+
+---
+
+## 533. ReduceMesh
+
+### Short Info
+Reduce the number of mesh polygons.
+
+### Detailed Description
+The **ReduceMesh** command is a powerful mesh editing tool that reduces the number of polygons in a mesh while trying to preserve its overall shape and detail as much as possible. This is a key tool for simplifying very dense meshes (like those from 3D scanners) to make them more manageable.
+
+### Steps to use the command
+1.  Select a mesh object.
+2.  Run the command `ReduceMesh`.
+3.  A dialog box will appear.
+4.  You can specify the number of polygons you want the final mesh to have, or a percentage reduction.
+5.  Click OK. A new, simplified mesh will be created.
+
+### Command Options & Toggles
+The options are in the dialog box:
+* **Initial polygon count:** Shows you how many polygons the mesh currently has.
+* **Reduce to X polygons:** Allows you to specify the exact number of polygons for the final mesh.
+* **Reduce by X percent:** Allows you to specify a percentage reduction.
+
+### Note for better use
+This is a destructive process that permanently alters the mesh. Always work on a copy. Reducing the polygon count too much will result in a loss of detail. It is a balancing act between file size/performance and visual quality.
+
+### Practical Use Cases
+* **Use Case 1 (Optimizing a 3D Scan):** You have a 3D scan of a ring that has 2 million polygons, making it very slow to work with. You can use `ReduceMesh` to reduce it to a more manageable 200,000 polygons. For a small, organic object, this reduction will often have very little visible impact on the quality but will make the file much faster.
+* **Use Case 2 (Preparing for a Game Engine):** You are creating a piece of jewelry to be used in a real-time application, which requires very low-polygon models. `ReduceMesh` is the primary tool for taking a high-poly model and simplifying it to meet the performance requirements of the application.
+
+### Other Information
+This is an essential command for any workflow that involves 3D scanning or exporting to real-time applications.
+
+---
+
+## 534. RefreshAllTextures
+
+### Short Info
+Reload all texture bitmaps from their files.
+
+### Detailed Description
+The **RefreshAllTextures** command is a rendering utility. It forces Rhino to reload all of the external texture image files that are used in your model's materials.
+
+### Steps to use the command
+1.  Run the command `RefreshAllTextures`.
+2.  Rhino will re-read all the image files from their saved locations on your computer.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command is useful if you have edited a texture image in an external program (like Photoshop) while your Rhino file was open. Rhino will not automatically detect the change. This command forces it to load the new, edited version of the image.
+
+### Practical Use Cases
+* **Use Case 1 (Editing a Texture):** You are working on a render and decide that the wood grain texture you are using is too dark. You open the texture's JPG file in Photoshop, adjust its brightness, and save it (overwriting the original). Back in Rhino, you run `RefreshAllTextures`. The material in your viewport and in your next render will now show the updated, lighter version of the texture.
+
+### Other Information
+This is a simple but important utility for rendering workflows that involve external image editors.
+
+---
+
+## 535. RefreshShade
+
+### Short Info
+Regenerate the render mesh.
+
+### Detailed Description
+The **RefreshShade** command forces a shaded viewport to regenerate its render meshes. This can sometimes fix display errors or artifacts that may appear in shaded or rendered modes.
+
+### Steps to use the command
+1.  Run the command `RefreshShade`.
+2.  The display meshes in the shaded viewports will be recalculated.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Fixing Display Glitches):** You are working on a complex model, and you notice some strange black patches or missing faces in your shaded viewport that you know are not real holes in your model. Running `RefreshShade` will often fix these temporary display errors.
+* **Use Case 2 (After Changing Mesh Settings):** You have gone into the Document Properties and increased the quality of your render mesh. The change may not be immediately visible in the viewport. `RefreshShade` will force the viewport to update and display the new, higher-quality mesh.
+
+### Other Information
+This is a simple display utility for troubleshooting visual artifacts.
+
+---
+
+## 536. ReleaseFromCage
+
+### Short Info
+Detach objects from a control object.
+
+### Detailed Description
+The **ReleaseFromCage** command is a utility used with the `CageEdit` command. It breaks the parametric link between a "captive" object and its "control" cage object. After running this command, the object will no longer be deformed if you edit the cage.
+
+### Steps to use the command
+1.  Run the command `ReleaseFromCage`.
+2.  At the **Select captive objects to release** prompt, select the object(s) that you want to detach from their cage.
+3.  The link will be broken.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is useful when you have finished deforming an object with `CageEdit` and want to "bake" the deformation, making the object independent again.
+
+### Practical Use Cases
+* **Use Case 1 (Finalizing a Deformation):** You have used `CageEdit` to give a ring shank a custom, organic shape. You are happy with the result and want to finalize it. You run `ReleaseFromCage` on the shank. You can now delete the cage object without the shank reverting to its original shape.
+
+### Other Information
+This is the companion command to `CageEdit`.
+
+---
+
+## 537. RelocateGumball
+
+### Short Info
+Move the Gumball widget origin.
+
+### Detailed Description
+The **RelocateGumball** command is a utility that allows you to manually move the pivot point of the Gumball widget to a new location on an object.
+
+### Steps to use the command
+1.  Select an object.
+2.  Run the command `RelocateGumball`.
+3.  You will be prompted to pick a new location for the Gumball.
+4.  The Gumball widget will move to the new location.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+After manually relocating the Gumball, you can snap it back to its default location by using the `GumballAlignment` command with the `Reset` option.
+
+### Practical Use Cases
+* **Use Case 1 (Rotating from a Corner):** You have a square plate and you want to rotate it around one of its corners. By default, the Gumball appears at the center. You can use `RelocateGumball` to snap the Gumball's pivot to the corner. Now, when you use the Gumball's rotation handles, the plate will pivot around that corner instead of its center.
+
+### Other Information
+This command gives you precise control over the pivot point for Gumball transformations.
+
+---
+
+## 538. Gumball
+
+### Short Info
+Display a widget on an object for move, scale, and rotate transforms around the object origin.
+
+### Detailed Description
+(This is a duplicate entry in the source documentation list, pointing to the same command as #296). The **Gumball** command toggles the visibility of the Gumball widget. The Gumball is an interactive manipulator that appears on a selected object, providing handles for moving, scaling, and rotating the object directly in the viewport without needing to run separate commands like `Move`, `Scale`, or `Rotate`.
+
+### Steps to use the command
+1.  Run the command `Gumball`.
+2.  The command line will show the current state (On or Off).
+3.  Click the option to toggle it.
+4.  Alternatively, click the "Gumball" pane in the Status Bar at the bottom of the Rhino window.
+
+### Command Options & Toggles
+This command is a simple toggle between **On** and **Off**.
+
+### Note for better use
+The Gumball is one of the most significant workflow improvements in Rhino 5. Most modern users leave it on at all times. You can click on the white circle ("bunny tail") on the Gumball to access its settings, such as changing its alignment or size.
+
+### Practical Use Cases
+* **Use Case 1 (Interactive Editing):** You have selected a gemstone and need to nudge it slightly up, rotate it a few degrees, and make it a tiny bit larger. With the Gumball on, you can do all of these things interactively by simply dragging the arrows (move), arcs (rotate), and square handles (scale) on the widget, providing instant visual feedback.
+* **Use Case 2 (Numeric Input):** You can click on any Gumball handle (arrow, arc, or scale) to get a text box where you can type in a precise numerical value for the transformation.
+
+### Other Information
+This entry is a duplicate of command #296.
+
+---
+
+## 539. RemapCPlane
+
+### Short Info
+Re-orient objects from a construction plane to another.
+
+### Detailed Description
+The **RemapCPlane** command is a transformation tool that moves and rotates objects from one construction plane to another. It is useful for transferring geometry that was created on a custom, tilted CPlane back to one of the standard world planes.
+
+### Steps to use the command
+1.  Select the object(s) to remap.
+2.  Run the command `RemapCPlane`.
+3.  At the **Source construction plane** prompt, select the CPlane the objects were created on.
+4.  At the **Target construction plane** prompt, select the CPlane you want to move the objects to.
+5.  The objects will be re-oriented.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+You can use saved `NamedCPlane`s as your source and target for this command.
+
+### Practical Use Cases
+* **Use Case 1 (Flattening a Design):** You have created a detailed pattern on a tilted surface using a custom CPlane aligned to that surface. Now you need a flat, 2D version of that pattern for a laser engraver. You can use `RemapCPlane` to take the 3D pattern and remap it to the flat World Top CPlane.
+
+### Other Information
+This is a specialized transformation tool for working with custom construction planes.
+
+---
+
+## 540. RememberCopyOptions
+
+### Short Info
+Control if the Copy option in transform commands is remembered.
+
+### Detailed Description
+The **RememberCopyOptions** command is a system setting that controls whether the "Copy" option in transformation commands (like `Move`, `Rotate`, `Scale`) stays "on" between commands.
+
+### Steps to use the command
+1.  Run the command `RememberCopyOptions`.
+2.  The command line will show the current state (Yes or No).
+3.  Click the option to toggle it.
+
+### Command Options & Toggles
+This command is a simple toggle between **Yes** and **No**.
+
+### Note for better use
+If this is set to Yes, and you use the `Copy` option in the `Rotate` command, the next time you run `Rotate`, the `Copy` option will still be on. If it is set to No (the default), the `Copy` option will reset to its default state for each new command.
+
+### Practical Use Cases
+* **Use Case 1 (Repetitive Copying):** You are in the process of manually laying out several components and you know you will be making many rotated and scaled copies. You can set `RememberCopyOptions` to Yes. Now you don't have to click the "Copy=Yes" option every single time you run the `Rotate` or `Scale` command.
+
+### Other Information
+This is a user-preference setting that can speed up certain repetitive workflows.
+
+---
+
+## 541. RemoveControlPoint
+
+### Short Info
+Remove a control point from a curve or surface.
+
+### Detailed Description
+The **RemoveControlPoint** command is a curve and surface editing tool that deletes one or more selected control points from an object. Removing control points simplifies the object's structure and will change its shape.
+
+### Steps to use the command
+1.  Turn on the control points for a curve or surface (`PointsOn`).
+2.  Select the control point(s) you want to delete.
+3.  Run the command `RemoveControlPoint`.
+4.  The selected points will be deleted, and the object's shape will update.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the opposite of the `InsertControlPoint` command. For general simplification of a curve or surface, the `Rebuild` or `FitCrv` commands are often more effective, as they provide more control over the final result.
+
+### Practical Use Cases
+* **Use Case 1 (Manual Simplification):** You have a curve with a small, unnecessary wiggle in it that is caused by a single extra control point. You can select that one point and use `RemoveControlPoint` to delete it, which will smooth out the curve.
+
+### Other Information
+This is a direct editing tool for simplifying NURBS objects.
+
+---
+
+## 542. RemoveEdge
+
+### Short Info
+Untrim a selected edge of a trimmed surface.
+
+### Detailed Description
+The **RemoveEdge** command is a surface editing tool that "un-trims" a selected edge of a trimmed surface. It removes the trim from that specific edge, causing the surface to revert to its original, un-trimmed boundary at that location.
+
+### Steps to use the command
+1.  Run the command `RemoveEdge`.
+2.  At the **Select surface edge to remove** prompt, click on a trimmed edge of a surface.
+3.  The trim on that edge will be removed.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a more precise version of the `Untrim` command. `Untrim` removes all trims from a surface at once, while `RemoveEdge` allows you to remove them one at a time.
+
+### Practical Use Cases
+* **Use Case 1 (Partial Untrim):** You have a surface with a complex trim that includes a large outer cut and a small interior hole. You want to keep the outer cut but get rid of the hole. You can use `RemoveEdge` and select only the edges that make up the hole to remove that specific trim.
+
+### Other Information
+This is a useful tool for detailed editing of trimmed surfaces.
+
+---
+
+## 543. RemoveFromGroup
+
+### Short Info
+Remove an object from a group.
+
+### Detailed Description
+The **RemoveFromGroup** command is an organizational tool that removes one or more selected objects from the group they belong to. The rest of the group remains intact.
+
+### Steps to use the command
+1.  Select the object(s) you want to remove from a group.
+2.  Run the command `RemoveFromGroup`.
+3.  The selected objects will no longer be part of the group.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Editing an Assembly):** You have a group of 50 pavé stones. You notice that one of them is out of position. You can select that single stone, run `RemoveFromGroup` to make it independent, move it to the correct position, and then use `AddToGroup` to put it back into the main group.
+
+### Other Information
+This is a fundamental command for managing grouped objects.
+
+---
+
+## 544. RemoveKnot
+
+### Short Info
+Remove a knot from a curve or surface.
+
+### Detailed Description
+The **RemoveKnot** command is an advanced curve and surface editing tool. It removes "knots" from the internal mathematical structure of a NURBS object. Removing knots can simplify an object's structure, but it will also change its shape.
+
+### Steps to use the command
+1.  Turn on the control points for a curve or surface.
+2.  Run the command `RemoveKnot`.
+3.  Click on the object near the control point you want to remove.
+4.  The knot and the corresponding control point will be deleted.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a very direct and often unpredictable way to edit a curve. It is generally better to use commands like `Rebuild` or `FitCrv` for simplification.
+
+### Practical Use Cases
+* **Use Case 1 (Manual Simplification):** An advanced user is trying to manually clean up a curve and wants to remove a specific knot that is causing a small imperfection.
+
+### Other Information
+This is an advanced tool for users who need to directly manipulate the mathematical structure of NURBS objects.
+
+---
+
+## 545. RemoveMappingChannel
+
+### Short Info
+Remove a texture mapping channel from an object.
+
+### Detailed Description
+The **RemoveMappingChannel** command is a utility for managing texture mapping. It allows you to delete a specific texture mapping channel from an object. Objects can have multiple mapping channels, and this command lets you remove one without affecting the others.
+
+### Steps to use the command
+1.  Select an object.
+2.  Run the command `RemoveMappingChannel`.
+3.  At the **Mapping channel to remove** prompt, enter the channel number.
+4.  The mapping channel will be deleted.
+
+### Command Options & Toggles
+This command has no options other than the channel number.
+
+### Practical Use Cases
+* **Use Case 1 (Cleaning Up Textures):** You have been experimenting with several different texture maps on an object and have created multiple mapping channels. To clean up the object, you can use this command to remove the channels you are no longer using.
+
+### Other Information
+This is a utility for advanced texture mapping workflows.
+
+---
+
+## 546. RemoveMultiKnot
+
+### Short Info
+Remove multiple knots from curves and surfaces.
+
+### Detailed Description
+The **RemoveMultiKnot** (Remove Multiple Knot) command is an advanced editing tool that removes "fully multiple knots" from a curve or surface. A fully multiple knot is a location where several knots are stacked on top of each other, which is what creates a sharp corner or "kink." This command effectively smooths out a sharp corner.
+
+### Steps to use the command
+1.  Run the command `RemoveMultiKnot`.
+2.  Select a curve or surface at the location of a kink.
+3.  The kink will be removed, and the area will become smooth.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This command will change the shape of your object. It is the opposite of the `InsertKink` command.
+
+### Practical Use Cases
+* **Use Case 1 (Smoothing a Corner):** You have a closed polycurve that has a sharp corner where it was joined. You can use `RemoveMultiKnot` at that corner to smooth it out, creating a continuous, flowing curve.
+
+### Other Information
+This is an advanced tool for controlling the mathematical structure of NURBS objects.
+
+---
+
+## 547. Render
+
+### Short Info
+Render the objects using the current renderer.
+
+### Detailed Description
+The **Render** command is the primary command used to create a photorealistic image of your model. It uses the currently active rendering engine (e.g., Rhino Render, V-Ray), the materials you have applied to your objects, the lights you have placed in your scene, and the camera of the active viewport to generate a high-quality image in a separate "Render Window."
+
+### Steps to use the command
+1.  Set up your materials, lighting, and camera angle.
+2.  Make the viewport you want to render active.
+3.  Run the command `Render`.
+4.  The rendering process will begin, and the final image will appear in the Render Window when it is complete.
+
+### Command Options & Toggles
+The options for rendering (resolution, quality, etc.) are not in the command line. They are set in the Render Properties panel, which can be accessed from the Render menu or by typing `DocumentProperties` and going to the "Render" page.
+
+### Note for better use
+Rendering can be a very time-consuming, processor-intensive task. Before starting a final, high-quality render, it is a good practice to do several low-quality test renders to make sure your lighting and materials are correct.
+
+### Practical Use Cases
+* **Use Case 1 (Client Presentation):** You have finished modeling a ring and have applied realistic gold and diamond materials. You use the `Render` command to create a beautiful, photorealistic image of the ring that you can send to the client for approval.
+* **Use Case 2 (Portfolio Images):** `Render` is the command used to generate all the final, high-quality images of your work for your website or portfolio.
+
+### Other Information
+This is the final output command for creating 2D images from your 3D models.
+
+---
+
+## 548. RenderInWindow
+
+### Short Info
+Render a selected area in a viewport in the render window.
+
+### Detailed Description
+The **RenderInWindow** command allows you to render only a small, rectangular area of the active viewport, instead of the entire view. The result is displayed in the main Render Window. This is useful for quickly test-rendering a specific detail of your model without having to wait for the entire scene to render.
+
+### Steps to use the command
+1.  Run the command `RenderInWindow`.
+2.  You will be prompted to draw a rectangle in the viewport.
+3.  Only the area inside the rectangle will be rendered.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Testing a Material):** You have just applied a new material to a single prong on a ring and want to see how it looks. Instead of rendering the whole ring, you can use `RenderInWindow` to draw a small box around just that prong. This will give you a very fast preview of the new material.
+
+### Other Information
+This is a time-saving tool for iterating on your render settings.
+
+---
+
+## 549. RenderOpenLastRendering
+
+### Short Info
+Open the most recent rendering in the render window.
+
+### Detailed Description
+The **RenderOpenLastRendering** command is a utility that opens the Rhino Render window and displays the last image that was rendered.
+
+### Steps to use the command
+1.  Run the command `RenderOpenLastRendering`.
+2.  The render window will open, showing your most recent render.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Reviewing a Render):** You have just finished a render but accidentally closed the render window. This command allows you to open it again to view the image without having to re-render it.
+
+### Other Information
+This is a simple display utility.
+
+---
+
+## 550. RenderOpenRenderImage
+
+### Short Info
+Open a saved rendering (.rimage) file.
+
+### Detailed Description
+The **RenderOpenRenderImage** command opens a render window to display an image that was saved in Rhino's native render file format (.rimage). This format can store extra data, like depth information, that is not available in standard formats like JPG.
+
+### Steps to use the command
+1.  Run the command `RenderOpenRenderImage`.
+2.  A file browser will open.
+3.  Select an .rimage file.
+4.  The image will be displayed in the render window.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Post-Processing):** You have saved a render in the .rimage format. You can use this command to open it later and then save it out in a different format (like PNG or JPG) or use post-processing effects available in the render window.
+
+### Other Information
+This is a file-opening utility for Rhino's native render format.
+
+
+---
+
+## 551. RenderPreview
+
+### Short Info
+Render the view at a lower quality.
+
+### Detailed Description
+The **RenderPreview** command creates a render of the active viewport, but at a lower quality and resolution than the final `Render` command. Its purpose is to provide a very fast preview of the lighting, materials, and shadows in a scene without having to wait for a full, high-quality render to complete.
+
+### Steps to use the command
+1.  Set up your materials and lighting.
+2.  Make the viewport you want to preview active.
+3.  Run the command `RenderPreview`.
+4.  A fast, lower-quality render will be created in the render window.
+
+### Command Options & Toggles
+This command has no options. It uses the current render settings but at a reduced quality.
+
+### Note for better use
+This is an essential tool for an efficient rendering workflow. You should use `RenderPreview` frequently to test your lighting and material setups before committing to a final, time-consuming, high-resolution render with the `Render` command.
+
+### Practical Use Cases
+* **Use Case 1 (Checking Lighting):** You have just added several new lights to your scene and want to see how they affect the model. Instead of waiting several minutes for a full render, you can use `RenderPreview` to get an almost instant preview of the new lighting scheme.
+* **Use Case 2 (Testing Materials):** You are adjusting the reflectivity of a gold material and want to see how it looks. `RenderPreview` allows you to quickly see the result of your changes without a long wait.
+
+### Other Information
+This is a key workflow tool for anyone doing rendering.
+
+---
+
+## 552. RenderPreviewInWindow
+
+### Short Info
+Render a selected area in a viewport at a lower quality in the render window.
+
+### Detailed Description
+The **RenderPreviewInWindow** command renders only a small, rectangular area of the active viewport at a lower quality, and displays the result in the main Render Window. This is a very fast way to test-render a specific detail of your model.
+
+### Steps to use the command
+1.  Run the command `RenderPreviewInWindow`.
+2.  You will be prompted to draw a rectangle in the viewport.
+3.  Only the area inside the rectangle will be rendered at a low quality in the render window.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Testing a Single Gem):** You are adjusting the material for a single accent stone in a large pavé field. Instead of rendering the whole piece, you can use `RenderPreviewInWindow` to draw a small box around just that one stone to get an ultra-fast preview of your material changes.
+
+### Other Information
+This is a time-saving tool for iterating on your render settings for a specific part of a model.
+
+---
+
+## 553. RenderPreviewWindow
+
+### Short Info
+Render a selected area in a viewport at a lower quality.
+
+### Detailed Description
+The **RenderPreviewWindow** command renders a small, rectangular area of the active viewport at a lower quality, but it displays the result directly *in the viewport* itself, rather than opening the separate render window.
+
+### Steps to use the command
+1.  Run the command `RenderPreviewWindow`.
+2.  You will be prompted to draw a rectangle in the viewport.
+3.  The area inside the rectangle will be rendered at a low quality directly within the viewport.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is the fastest of all the render preview commands, as it does not need to open a separate window. It's excellent for very quick, iterative checks.
+
+### Practical Use Cases
+* **Use Case 1 (Quick Material Feedback):** You are tweaking the color of a material and want to see the result instantly. You can use this command to draw a small window over the object, and it will update with a low-quality render almost immediately, giving you very fast feedback on your changes.
+
+### Other Information
+This is the quickest way to get a render preview of a small detail.
+
+---
+
+## 554. RenderWindow
+
+### Short Info
+Render a selected area in a viewport.
+
+### Detailed Description
+The **RenderWindow** command renders a small, rectangular area of the active viewport at the **full, final render quality**, and displays the result in the main Render Window. This is used to test-render a specific detail at high quality without having to render the entire scene.
+
+### Steps to use the command
+1.  Run the command `RenderWindow`.
+2.  You will be prompted to draw a rectangle in the viewport.
+3.  The area inside the rectangle will be rendered at full quality in the render window.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is different from `RenderPreviewInWindow`, which renders at a lower quality. `RenderWindow` uses your final, high-quality settings.
+
+### Practical Use Cases
+* **Use Case 1 (Final Detail Check):** You have finished setting up your lighting and materials using the faster preview commands. Before you start the final, full-size render, you can use `RenderWindow` to render a small, critical area (like the main gemstone) at full quality to make sure everything is perfect. This can save you from having to re-render the entire image if you spot a small mistake.
+
+### Other Information
+This is an important quality-control step in a professional rendering workflow.
+
+---
+
+## 555. Reparameterize
+
+### Short Info
+Recalculate the parameter space of an object.
+
+### Detailed Description
+The **Reparameterize** command is an advanced technical tool that rebuilds a curve or surface so that its parameter space is more uniform and more closely related to its 3D geometry. The "parameter space" is the internal U and V coordinate system of an object. This command can sometimes fix problems or make objects behave more predictably with certain commands.
+
+### Steps to use the command
+1.  Select a curve or surface.
+2.  Run the command `Reparameterize`.
+3.  A dialog box will appear with options.
+4.  Choose an option (e.g., `Automatic`) and click OK.
+
+### Command Options & Toggles
+* **Automatic:** Attempts to automatically re-parameterize the object.
+* **Manual:** Gives you more control over the new domain.
+
+### Note for better use
+This is an advanced command that should be used with caution, as it can change how textures are mapped to a surface. For most users, this command is not part of a standard workflow.
+
+### Practical Use Cases
+* **Use Case 1 (Fixing a Bad Surface):** You have a surface that is causing problems with other commands, and you suspect its internal parameter space is corrupted or uneven. `Reparameterize` can sometimes fix these kinds of deep-level geometry issues.
+
+### Other Information
+This is a tool for advanced users who need to work with the underlying mathematical structure of NURBS objects.
+
+---
+
+## 556. Repeat
+
+### Short Info
+Repeat the previous command.
+
+### Detailed Description
+The **Repeat** command simply runs the most recent command again.
+
+### Steps to use the command
+1.  Run any command (e.g., `Circle`).
+2.  Run the command `Repeat`.
+3.  The `Circle` command will start again.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Pressing the **Enter** key or the **right mouse button** in a viewport when no command is active is the universal and much faster way to repeat the last command. The `Repeat` command is primarily for use in scripts.
+
+### Practical Use Cases
+* **Use Case 1 (Scripting):** You are writing a script that needs to perform the same action multiple times. You could use the `Repeat` command within the script to do this.
+
+### Other Information
+For daily interactive use, always use the Enter key or right-click to repeat a command.
+
+---
+
+## 557. ReplaceBlock
+
+### Short Info
+Replace block instances with a different block definition.
+
+### Detailed Description
+The **ReplaceBlock** command is a powerful block management tool. It allows you to select one or more block instances in your model and replace them with a different block definition. This is an extremely fast way to swap out components in a complex design.
+
+### Steps to use the command
+1.  Run the command `ReplaceBlock`.
+2.  A dialog box will appear, listing all the block definitions in your file.
+3.  Select the block definition you want to replace from the list.
+4.  You will be prompted: **"Select block instances to replace"**. Select the block(s) in the viewport.
+5.  Another dialog box will appear. Select the new block definition that you want to use as the replacement.
+6.  The selected block instances will be swapped with the new block.
+
+### Command Options & Toggles
+This command has no options in the command line.
+
+### Practical Use Cases
+* **Use Case 1 (Swapping Gemstone Shapes):** You have designed a ring with 10 round diamonds, which you placed as a block. The client decides they want princess-cut (square) diamonds instead. You can create a new block for the princess-cut diamond. Then, use `ReplaceBlock` to select all 10 round diamond instances and instantly swap them for the new princess-cut block.
+* **Use Case 2 (Trying Different Settings):** You have a ring with several 4-prong settings placed as blocks. You want to see how it would look with 6-prong settings instead. You can `Insert` the 6-prong setting block, and then use `ReplaceBlock` to swap all the 4-prong settings for the new 6-prong version.
+
+### Other Information
+This is an incredibly powerful and time-saving command for any workflow that uses blocks.
+
+---
+
+## 558. Rescue3dmFile
+
+### Short Info
+Recover data from a damaged file.
+
+### Detailed Description
+The **Rescue3dmFile** command is an emergency utility used to attempt to recover data from a corrupted or damaged Rhino 3DM file that will not open normally.
+
+### Steps to use the command
+1.  Run the command `Rescue3dmFile`.
+2.  A file browser will open.
+3.  Select the damaged .3dm file.
+4.  Rhino will attempt to read the file and recover as much of the geometric data as possible.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a "last resort" tool. There is no guarantee that it will be able to recover all of your data, but it is always worth trying if a critical file becomes corrupted. Using `IncrementalSave` regularly is the best way to prevent catastrophic data loss.
+
+### Practical Use Cases
+* **Use Case 1 (File Corruption):** You try to `Open` a file you were working on, but you get an error message and the file will not load. `Rescue3dmFile` is the command you would use to try and salvage the geometry from that corrupted file.
+
+### Other Information
+This is a file recovery utility.
+
+---
+
+## 559. Restore
+
+### Short Info
+Restore the Rhino window.
+
+### Detailed Description
+The **Restore** command restores the main Rhino application window to its normal, non-maximized size if it is currently maximized.
+
+### Steps to use the command
+1.  Maximize the Rhino window.
+2.  Run the command `Restore`.
+3.  The window will return to its previous size.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is equivalent to clicking the "Restore Down" button in the top-right corner of the Rhino window.
+
+### Practical Use Cases
+* **Use Case 1 (Window Management):** You need to see another program that is behind your maximized Rhino window. `Restore` will shrink the Rhino window so you can see your desktop.
+
+### Other Information
+This is a simple window management command.
+
+---
+
+## 560. RevCloud
+
+### Short Info
+Draw revision cloud curves.
+
+### Detailed Description
+The **RevCloud** (Revision Cloud) command is a 2D drafting and annotation tool. It creates a curve made of sequential arcs that looks like a cloud shape. In technical drawings, revision clouds are used to draw attention to areas of a design that have been changed or updated.
+
+### Steps to use the command
+1.  Run the command `RevCloud`.
+2.  Click points in the viewport to draw the shape of the cloud.
+3.  Press Enter to close the cloud.
+
+### Command Options & Toggles
+* **ArcLength:** Controls the size of the individual arcs that make up the cloud.
+
+### Practical Use Cases
+* **Use Case 1 (Marking Changes):** You have sent a technical drawing of a ring to a client. They ask you to make one of the dimensions smaller. After you make the change, you can use `RevCloud` to draw a cloud shape around the updated dimension. This makes it very easy for the client to see exactly what has been changed in the new version of the drawing.
+
+### Other Information
+This is a standard annotation tool used in the drafting and engineering industries.
+
+---
+
+## 561. Revert
+
+### Short Info
+Discard changes and revert to the saved document.
+
+### Detailed Description
+The **Revert** command discards all the changes you have made to a file since the last time you saved it. It reloads the last saved version of the file from your hard drive.
+
+### Steps to use the command
+1.  Run the command `Revert`.
+2.  A confirmation dialog box will appear, warning you that all changes will be lost.
+3.  Click Yes to proceed. The file will be reloaded.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+This is a destructive command. Any work you have done since your last save will be permanently lost. It is often safer to use the `Undo` command repeatedly to go back to a previous state.
+
+### Practical Use Cases
+* **Use Case 1 (Starting Over):** You have opened a file and have been experimenting with some design changes for ten minutes, but you decide you don't like any of them and want to go back to exactly how the file was when you opened it. `Revert` is a fast way to do this.
+
+### Other Information
+This is a file management command.
+
+---
+
+## 562. Revolve
+
+### Short Info
+Create a surface by revolving a profile curve around an axis.
+
+### Detailed Description
+The **Revolve** command is a fundamental surface creation tool. It creates a 3D surface or solid by rotating a 2D profile curve around a central axis line. This is the primary method for creating any object that has radial symmetry, such as wine glasses, bowls, or simple ring shanks.
+
+### Steps to use the command
+1.  Create a profile curve and a line to act as the axis.
+2.  Run the command `Revolve`.
+3.  At the **Select curves to revolve** prompt, select your profile curve.
+4.  At the **Start of revolve axis** prompt, define the axis line.
+5.  You will then be prompted for the start and end angles of the revolution (e.g., 360 for a full circle).
+
+### Command Options & Toggles
+* **FullCircle:** Automatically sets the revolve angle to 360 degrees.
+* **DeleteInput:** Deletes the original profile curve.
+* **Deformable:** Creates a more complex, easily editable NURBS surface.
+
+### Note for better use
+The profile curve must not cross the axis of revolution.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Simple Bezel):** You can draw the L-shaped cross-section profile of a bezel. Then, use `Revolve` with a vertical axis at the center of your ring to sweep this profile in a circle, creating the 3D bezel in one operation.
+* **Use Case 2 (Modeling a Cabochon):** You can draw the domed profile curve of a cabochon gemstone. By revolving this curve 360 degrees around a central axis, you can create the 3D stone.
+
+### Other Information
+This is one of the most basic and essential surfacing commands.
+
+---
+
+## 563. RevolvedHole
+
+### Short Info
+Create a hole by revolving a profile curve.
+
+### Detailed Description
+The **RevolvedHole** command is a specialized boolean tool. It creates a hole in a solid object by revolving a profile curve around an axis and subtracting the resulting shape. This is a shortcut that combines the `Revolve` and `BooleanDifference` commands into a single step.
+
+### Steps to use the command
+1.  Run the command `RevolvedHole`.
+2.  At the **Select polysurface for hole** prompt, select the solid object.
+3.  You will then be prompted to select a profile curve and define the axis of revolution.
+4.  A hole will be cut into the solid.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Chamfered Hole):** You need to create a hole through a plate, but you want the edge of the hole to be beveled. You can draw a profile curve that includes this bevel, and then use `RevolvedHole` to create the hole and the bevel at the same time.
+
+### Other Information
+This is a workflow efficiency command.
+
+---
+
+## 564. Rib
+
+### Short Info
+Extrude a curve in two opposite directions to a boundary.
+
+### Detailed Description
+The **Rib** command is a specialized extrusion tool. It takes a single curve and extrudes it in two opposite directions until it hits a boundary object. This is useful for creating thin "ribs" or support structures that perfectly connect to a main surface.
+
+### Steps to use the command
+1.  Create a boundary object (like a ring shank) and a curve inside it.
+2.  Run the command `Rib`.
+3.  At the **Select curve to rib** prompt, select the curve.
+4.  At the **Select boundary polysurface** prompt, select the boundary.
+5.  A solid rib will be created.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Gallery Wire):** You have the inside surface of a ring head and you have drawn a curve where the gallery wire should be. The `Rib` command can extrude this curve in both directions until it hits the inner surface of the head, creating a perfectly fitting gallery wire.
+
+### Other Information
+This is a specialized solid creation tool.
+
+---
+
+## 565. Ribbon
+
+### Short Info
+Offset a curve and create a ruled surface between the curves.
+
+### Detailed Description
+The **Ribbon** command is a surface creation tool. It first offsets a curve, and then creates a simple ruled surface between the original curve and the new offset curve.
+
+### Steps to use the command
+1.  Select a curve.
+2.  Run the command `Ribbon`.
+3.  Define the offset distance and direction.
+4.  A ribbon-like surface will be created.
+
+### Command Options & Toggles
+The options are similar to the `Offset` command, allowing you to control the distance and corner style.
+
+### Note for better use
+This command is essentially a macro that combines the `Offset` and `RuledSrf` commands.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Flat Shank):** You have drawn a single curve representing the centerline of a flat ring shank. The `Ribbon` command can be used to instantly create a flat, ribbon-like surface of a specified width along that curve. You can then `ExtrudeSrf` to give it thickness.
+
+### Other Information
+This is a simple surfacing utility.
+
+---
+
+## 566. Rotate
+
+### Short Info
+Rotate objects around an axis.
+
+### Detailed Description
+The **Rotate** command is a fundamental transformation tool that rotates objects around a center point in the 2D plane of the active viewport.
+
+### Steps to use the command
+1.  Select the object(s) to rotate.
+2.  Run the command `Rotate`.
+3.  At the **Center of rotation** prompt, pick a point to rotate around.
+4.  You will then be prompted to define the angle of rotation by picking reference points or typing an angle.
+
+### Command Options & Toggles
+* **Copy:** Creates a rotated copy of the object instead of moving the original.
+
+### Note for better use
+For rotating objects in full 3D space, use the `Rotate3D` command. The Gumball widget is often a faster, more interactive way to perform simple rotations.
+
+### Practical Use Cases
+* **Use Case 1 (Positioning Prongs):** You have created a single prong at the 12 o'clock position of a setting. You can use `Rotate` with the `Copy=Yes` option to create the other prongs. You would pick the center of the setting as the rotation point and enter 90 degrees to create the next prong for a 4-prong head.
+* **Use Case 2 (Adjusting an Element):** You have placed a decorative element on a ring, but it is slightly crooked. You can use `Rotate` to make a small adjustment to its angle.
+
+### Other Information
+This is one of the most frequently used commands in all of CAD.
+
+---
+
+## 567. Rotate3D
+
+### Short Info
+Rotate objects around a 3-D axis.
+
+### Detailed Description
+The **Rotate3D** command is a transformation tool that rotates objects around a 3D axis that you define. Unlike the standard `Rotate` command, which is constrained to the 2D construction plane, `Rotate3D` allows you to rotate objects around any arbitrary axis in 3D space.
+
+### Steps to use the command
+1.  Select the object(s) to rotate.
+2.  Run the command `Rotate3D`.
+3.  At the **Start of rotation axis** prompt, pick a point.
+4.  At the **End of rotation axis** prompt, pick a second point to define the axis.
+5.  You will then be prompted to define the angle of rotation.
+
+### Command Options & Toggles
+* **Copy:** Creates a rotated copy of the object.
+
+### Practical Use Cases
+* **Use Case 1 (Tilting a Gemstone):** You have a gemstone that is sitting flat in a bezel, but you want to tilt it forward at a 15-degree angle. You would use `Rotate3D`, define a horizontal rotation axis that passes through the center of the stone, and then enter an angle of 15 degrees.
+* **Use Case 2 (Creating Complex Assemblies):** You are modeling a watch and need to rotate one of the gears around its tilted axle. `Rotate3D` is the tool you would use to perform this precise 3D rotation.
+
+### Other Information
+This is the primary tool for performing precise, non-planar rotations.
+
+---
+
+## 568. RotateCamera
+
+### Short Info
+Rotate the view camera.
+
+### Detailed Description
+The **RotateCamera** command is a viewport navigation tool. It rotates the camera's position around the camera's target point. This has the effect of orbiting the view around the center of the scene.
+
+### Steps to use the command
+1.  Run the command `RotateCamera`.
+2.  Click and drag in the viewport to rotate the view.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Holding down the **right mouse button** and dragging in a perspective viewport is the universal and much faster way to perform this action.
+
+### Practical Use Cases
+* **Use Case 1 (Inspecting a Model):** This is the primary method for tumbling and rotating your view to inspect a 3D model from all sides.
+
+### Other Information
+This is a core navigation command, though it is almost always activated with the mouse shortcut.
+
+---
+
+## 569. RotateHole
+
+### Short Info
+Rotate a hole on a planar surface.
+
+### Detailed Description
+The **RotateHole** command is a specialized editing tool that allows you to rotate a hole within a single, planar surface around a center point.
+
+### Steps to use the command
+1.  Run the command `RotateHole`.
+2.  At the **Select hole edge(s) to rotate** prompt, select the edge of the hole.
+3.  At the **Center of rotation** prompt, pick a point.
+4.  Define the rotation angle.
+5.  The hole will be rotated to the new position.
+
+### Command Options & Toggles
+* **Copy:** Creates a rotated copy of the hole.
+
+### Note for better use
+This command only works on holes within a single, flat (planar) surface.
+
+### Practical Use Cases
+* **Use Case 1 (Adjusting a Layout):** You have cut a hole for a marquise-shaped stone on a flat plate, but you decide it needs to be rotated 10 degrees. `RotateHole` allows you to do this without having to undo, rotate the original curve, and re-trim the hole.
+
+### Other Information
+This is a time-saving utility for editing features on flat surfaces.
+
+---
+
+## 570. RotateView
+
+### Short Info
+Rotate the view target.
+
+### Detailed Description
+The **RotateView** command is a viewport navigation tool. It rotates the camera's target point around the camera's location. This has the effect of "panning your head" while standing still.
+
+### Steps to use the command
+1.  Run the command `RotateView`.
+2.  Click and drag in the viewport to rotate the view.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+Holding down **Ctrl + Alt + right mouse button** and dragging is a shortcut for this action.
+
+### Practical Use Cases
+* **Use Case 1 (Looking Around):** You are in a perspective view and want to look around the scene from your current camera position. `RotateView` allows you to do this.
+
+### Other Information
+This is a standard camera navigation tool.
+
+---
+
+## 571. RoundHole
+
+### Short Info
+Create a circular hole.
+
+### Detailed Description
+The **RoundHole** command is a specialized tool that creates a circular hole in a surface or polysurface. It is a shortcut that combines drawing a circle and trimming it into a single operation.
+
+### Steps to use the command
+1.  Run the command `RoundHole`.
+2.  At the **Select surface or polysurface** prompt, select the object to cut.
+3.  Follow the prompts to define the center and radius of the circular hole.
+4.  A hole will be created.
+
+### Command Options & Toggles
+The options are for defining the circle, such as setting the **Diameter** or **Radius**.
+
+### Note for better use
+This is often faster than drawing a circle and then using the `Trim` or `MakeHole` commands.
+
+### Practical Use Cases
+* **Use Case 1 (Drill Holes):** You need to create a small, circular hole through a pendant for a jump ring to pass through. `RoundHole` is the fastest and most direct way to do this.
+
+### Other Information
+This is a simple workflow efficiency command.
+
+---
+
+## 572. RPC
+
+### Short Info
+Insert Rich Photorealistic Content.
+
+### Detailed Description
+The **RPC** command allows you to insert Rich Photorealistic Content (RPC) objects into your model. RPC objects are special, animated 2D assets (like people, trees, and cars) that are designed to look realistic in renders. They are essentially 2D images on a plane that always turns to face the camera.
+
+### Steps to use the command
+1.  Run the command `RPC`.
+2.  A dialog box will appear, allowing you to choose an RPC file.
+3.  Place the object in your scene.
+
+### Command Options & Toggles
+This command has no options in the command line.
+
+### Note for better use
+RPC is a proprietary format from a company called ArchVision. You need to have purchased and installed RPC libraries for this command to be useful.
+
+### Practical Use Cases
+* **Use Case 1 (Architectural Rendering):** An architect is rendering a building and wants to add realistic-looking people walking on the sidewalk. They would use the `RPC` command to insert these assets into their scene. This command has no practical use in jewelry design.
+
+### Other Information
+This is a specialized tool for architectural and environmental visualization.
+
+---
+
+## 573. RPCSetAnimationFrame
+
+### Short Info
+Set the animation frame for an RPC object.
+
+### Detailed Description
+The **RPCSetAnimationFrame** command is a utility for controlling animated RPC objects. If you have inserted an RPC object that has an animation (like a person walking), this command allows you to set which specific frame of that animation is displayed.
+
+### Steps to use the command
+1.  Select an animated RPC object.
+2.  Run the command `RPCSetAnimationFrame`.
+3.  Enter a frame number at the prompt.
+
+### Command Options & Toggles
+This command has no options other than the frame number.
+
+### Practical Use Cases
+* **Use Case 1 (Architectural Rendering):** An architect has placed an RPC object of a walking person. To get the perfect pose for their still render, they can use this command to scrub through the animation and choose the exact frame they want.
+
+### Other Information
+This is a specialized tool for controlling RPC assets.
+
+---
+
+## 574. Run
+
+### Short Info
+Run an external program.
+
+### Detailed Description
+The **Run** command is a utility used in scripts and macros. It allows you to launch an external program from within Rhino.
+
+### Steps to use the command
+1.  This command is used inside a macro or script.
+2.  The syntax is `_Run "C:\Path\To\Program.exe"`.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Scripting):** You could write a script that exports an image and then uses the `Run` command to automatically open that image in Photoshop for post-processing.
+
+### Other Information
+This is a utility for script developers.
+
+---
+
+## 575. RunPythonScript
+
+### Short Info
+Run a Python script.
+
+### Detailed Description
+The **RunPythonScript** command is a utility that executes a Python script file (.py).
+
+### Steps to use the command
+1.  Run the command `RunPythonScript`.
+2.  A file browser will open.
+3.  Select the Python script file you want to run.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Custom Tools):** A designer has downloaded or been given a custom tool that is saved as a Python script. They can use this command to run the tool without having to open the Python editor.
+
+### Other Information
+This is the primary command for executing external Python scripts.
+
+---
+
+## 576. RunScript
+
+### Short Info
+Run a RhinoScript.
+
+### Detailed Description
+The **RunScript** command is a utility that executes a RhinoScript file (.rvb).
+
+### Steps to use the command
+1.  Run the command `RunScript`.
+2.  A file browser will open.
+3.  Select the RhinoScript file you want to run.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Legacy Tools):** A designer is using an older custom tool that was written in RhinoScript. They would use this command to run it.
+
+### Other Information
+This is the primary command for executing external RhinoScript files.
+
+---
+
+## 577. Save
+
+### Short Info
+Save the current model.
+
+### Detailed Description
+The **Save** command saves the currently open model to a file on your computer. If the file has been saved before, this command will overwrite the previous version. If the file is new, it will open the "Save As" dialog box, prompting you for a name and location.
+
+### Steps to use the command
+1.  Run the command `Save`.
+2.  The file will be saved.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The keyboard shortcut **Ctrl+S** is the universal and much faster way to perform this action. It is a very good practice to save your work frequently. For creating sequential backups, the `IncrementalSave` command is highly recommended.
+
+### Practical Use Cases
+* **Use Case 1 (Saving Progress):** You have just finished a major step in your modeling process. You run `Save` (or press Ctrl+S) to ensure that your progress is saved to the file.
+
+### Other Information
+This is one of the most fundamental commands in any software application.
+
+---
+
+## 578. SaveAs
+
+### Short Info
+Save the current model with a different name.
+
+### Detailed Description
+The **SaveAs** command saves the currently open model to a new file with a different name, location, or file type. The original file is left untouched.
+
+### Steps to use the command
+1.  Run the command `SaveAs`.
+2.  A file save dialog box will appear.
+3.  Choose a new name, location, or file type.
+4.  Click "Save."
+
+### Command Options & Toggles
+The options are contained within the save dialog box.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Version):** You have opened your "Ring_V1.3dm" file and are about to make some major changes. Before you start, you can use `SaveAs` to save a new copy named "Ring_V2.3dm." Now you can work on the new version without affecting the old one.
+* **Use Case 2 (Saving to an Older Version):** You need to send a file to a colleague who is using an older version of Rhino. You can use `SaveAs` and, in the "Save as type" dropdown, choose "Rhinoceros 4.0 3D Model" to save a version that they will be able to open.
+
+### Other Information
+This is a fundamental file management command.
+
+---
+
+## 579. SaveAsTemplate
+
+### Short Info
+Save the current model as a template file.
+
+### Detailed Description
+The **SaveAsTemplate** command saves the current file as a template file (.3dm). Template files appear in the list when you run the `New` command. This allows you to save all of your preferred document properties (units, grid settings, layers, dimension styles, etc.) so that you can easily start new projects with all of your settings already configured.
+
+### Steps to use the command
+1.  Set up a blank file exactly how you want your template to be (e.g., set units to millimeters, create your standard layers).
+2.  Run the command `SaveAsTemplate`.
+3.  Give the template file a name.
+4.  Now, when you run the `New` command, your new template will appear in the list.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Standardizing Your Workflow):** You can create a template named "Jewelry_Template_MM" that has your units set to millimeters, your tolerance set to 0.001, and all of your standard layers (Shank, Gems, Prongs, Curves) already created. By starting every new project from this template, you save time and ensure all your files are consistent.
+
+### Other Information
+Creating a custom template is one of the most important things a new user can do to set up an efficient and professional workflow.
+
+---
+
+## 580. SaveRenderWindowAs
+
+### Short Info
+Save the image in the render window to a file.
+
+### Detailed Description
+The **SaveRenderWindowAs** command saves the image that is currently displayed in the Rhino Render window to an external image file, such as a JPG, PNG, or TIFF.
+
+### Steps to use the command
+1.  Create a render using the `Render` command.
+2.  When the render is finished, make sure the render window is active.
+3.  Run the command `SaveRenderWindowAs`.
+4.  A file save dialog will appear.
+5.  Choose a location, name, and file type for your image.
+
+### Command Options & Toggles
+The options in the save dialog allow you to choose the image format and compression settings.
+
+### Practical Use Cases
+* **Use Case 1 (Saving a Final Render):** You have just completed a final, high-quality render of a ring for a client. You use this command to save the image as a high-quality JPG file that you can then email to them or post on your website.
+
+### Other Information
+This is the primary command for saving your final rendered images.
+
+---
+
+## 581. SaveSmall
+
+### Short Info
+Save the current model without render and analysis meshes.
+
+### Detailed Description
+The **SaveSmall** command saves the current model, but first it automatically clears all the render and analysis meshes. This results in a significantly smaller file size, as the dense polygon meshes used for display are not saved with the file.
+
+### Steps to use the command
+1.  Run the command `SaveSmall`.
+2.  The file will be saved without its display meshes.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+When you next open a file that was saved with `SaveSmall`, it may take a moment longer to appear in the shaded viewports, as Rhino has to regenerate the render meshes from the NURBS geometry. This is a very good command to use for final delivery or for archiving files, as it creates the smallest possible .3dm file.
+
+### Practical Use Cases
+* **Use Case 1 (Emailing a File):** You need to email a large, complex Rhino file to a colleague. To reduce the file size and make it easier to send, you can use `SaveSmall`.
+* **Use Case 2 (Archiving Projects):** When you are finished with a project and are archiving it, using `SaveSmall` will save a significant amount of server or hard drive space.
+
+### Other Information
+This is an important file management and optimization command.
+
+---
+
+## 582. Scale
+
+### Short Info
+Change the size of objects uniformly in three directions.
+
+### Detailed Description
+The **Scale** command is a fundamental transformation tool that resizes objects uniformly in all three dimensions (X, Y, and Z). It is also known as a "3D Scale."
+
+### Steps to use the command
+1.  Select the object(s) to scale.
+2.  Run the command `Scale`.
+3.  At the **Base point** prompt, pick a point that will remain stationary.
+4.  At the **Scale factor or first reference point** prompt, you can either type a number (e.g., "2" to double the size, "0.5" to halve it) or pick a reference point.
+5.  If you picked a reference point, you will be prompted for a second reference point to define the new size.
+
+### Command Options & Toggles
+* **Copy:** Creates a scaled copy of the object.
+
+### Note for better use
+The Gumball widget provides a very fast and interactive way to perform uniform scaling by holding down the Shift key and dragging one of the square scale handles.
+
+### Practical Use Cases
+* **Use Case 1 (Resizing a Ring):** You have a finished ring at a size 7, but the client needs a size 9. You can calculate the required scaling factor (e.g., 1.05) and use the `Scale` command, with the origin (0,0,0) as the base point, to uniformly scale the entire ring up to the new size.
+* **Use Case 2 (Adjusting a Component):** You have imported a gemstone model, but it is slightly too small for your setting. You can use `Scale` with reference points to resize it. You would pick the center as the base point, a quadrant on the gem as the first reference point, and the corresponding point on your bezel as the second reference point to make it fit perfectly.
+
+### Other Information
+This is one of the most basic and essential transformation commands.
+
+---
+
+## 583. Scale1D
+
+### Short Info
+Change the size of objects in one direction.
+
+### Detailed Description
+The **Scale1D** (Scale 1 Dimension) command is a transformation tool that resizes objects in a single direction that you define. This is also known as a non-uniform scale.
+
+### Steps to use the command
+1.  Select the object(s) to scale.
+2.  Run the command `Scale1D`.
+3.  At the **Base point** prompt, pick a point that will remain stationary.
+4.  At the **Scale factor or first reference point** prompt, pick a second point to define the original length of the scaling axis.
+5.  At the **Second reference point** prompt, pick a third point to define the new length.
+
+### Command Options & Toggles
+* **Copy:** Creates a scaled copy of the object.
+
+### Note for better use
+This command will stretch or squash your object. It should be used with care on complex geometry, as it can distort the shape in undesirable ways.
+
+### Practical Use Cases
+* **Use Case 1 (Making a Ring Taller):** You have a signet ring and you want to make the top part taller without making it wider or longer. You can use `Scale1D`, define a vertical scaling axis, and stretch the ring in the Z-direction.
+* **Use Case 2 (Stretching a Pattern):** You have a decorative pattern that you want to fit into an elliptical shape. You could use `Scale1D` to stretch the pattern horizontally to match the width of the ellipse.
+
+### Other Information
+This is a key tool for creating non-uniform shapes.
+
+---
+
+## 584. Scale2D
+
+### Short Info
+Change the size of objects uniformly in two directions.
+
+### Detailed Description
+The **Scale2D** command is a transformation tool that resizes objects uniformly in two dimensions (along the X and Y axes of the active construction plane). The height (Z-axis) of the object is not changed.
+
+### Steps to use the command
+1.  Select the object(s) to scale.
+2.  Run the command `Scale2D`.
+3.  Follow the prompts to define a base point and a scale factor, similar to the `Scale` command.
+
+### Command Options & Toggles
+* **Copy:** Creates a scaled copy of the object.
+
+### Practical Use Cases
+* **Use Case 1 (Widening a Ring):** You have a ring and you want to make it wider and longer (in the Top view) without making it any thicker (in the Z-direction). `Scale2D` is the perfect tool for this.
+* **Use Case 2 (Resizing a Flat Pattern):** You have a flat, 2D filigree pattern and need to make it larger. `Scale2D` will resize it in X and Y while ensuring it remains perfectly flat.
+
+### Other Information
+This is a standard 2D scaling tool.
+
+---
+
+## 585. ScaleByPlane
+
+### Short Info
+Change the size of objects non-uniformly in three directions.
+
+### Detailed Description
+The **ScaleByPlane** command is an advanced transformation tool that scales an object by remapping it from a source plane to a target plane. This is similar to the `Orient` command but is specifically for scaling. It allows for complex, non-uniform scaling operations.
+
+### Steps to use the command
+1.  Select the object(s) to scale.
+2.  Run the command `ScaleByPlane`.
+3.  You will be prompted to define a source plane by picking three points.
+4.  You will then be prompted to define a target plane by picking three points.
+5.  The object will be scaled and deformed to fit the new plane.
+
+### Command Options & Toggles
+* **Copy:** Creates a scaled copy of the object.
+
+### Practical Use Cases
+* **Use Case 1 (Fitting a Pattern into a Tapered Shape):** You have a rectangular pattern and you want to fit it into a trapezoidal, tapered area on a ring. You can use `ScaleByPlane`, defining the source plane with the corners of the original pattern and the target plane with the corners of the tapered area. The pattern will be non-uniformly scaled to fit perfectly.
+
+### Other Information
+This is an advanced transformation tool for complex scaling tasks.
+
+---
+
+## 586. ScaleDimStyle
+
+### Short Info
+Scale a dimension style.
+
+### Detailed Description
+The **ScaleDimStyle** command is a utility for managing annotation styles. It scales all the size-related properties of a selected dimension style (like text height, arrowhead size, extension line offsets) by a single factor.
+
+### Steps to use the command
+1.  Run the command `ScaleDimStyle`.
+2.  At the **Name of dimension style to scale** prompt, enter the name of the style.
+3.  At the **Scale factor** prompt, enter a number.
+4.  A new dimension style will be created with the scaled values.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Detail View Style):** You have a standard dimension style for your 1:1 drawings. You are creating a detail view on your layout that is zoomed in at a 4:1 scale. To keep the dimension text the same size on the printed page, you need to create a new style where all the sizes are 1/4 of the original. `ScaleDimStyle` with a factor of 0.25 is the fastest way to do this.
+
+### Other Information
+This is a time-saving utility for managing annotation standards for drawings with multiple scales.
+
+---
+
+## 587. ScaleNU
+
+### Short Info
+Change the size of objects non-uniformly in three directions.
+
+### Detailed Description
+The **ScaleNU** (Scale Non-Uniform) command is a transformation tool that resizes objects non-uniformly in the X, Y, and Z directions. It allows you to specify a different scaling factor for each axis.
+
+### Steps to use the command
+1.  Select the object(s) to scale.
+2.  Run the command `ScaleNU`.
+3.  At the **Base point** prompt, pick a point.
+4.  You will then be prompted to enter the scale factor for the X direction, then the Y direction, and then the Z direction.
+
+### Command Options & Toggles
+* **Copy:** Creates a scaled copy of the object.
+
+### Practical Use Cases
+* **Use Case 1 (Creating an Oval from a Circle):** You have a perfectly round, solid sphere, and you want to turn it into an oval-shaped cabochon. You can use `ScaleNU` to stretch it in the X direction by a factor of 1.5, compress it in the Z direction by a factor of 0.5, and leave the Y direction unchanged.
+* **Use Case 2 (Adjusting Proportions):** You have a finished ring model, but you decide it needs to be slightly wider and a little less tall. `ScaleNU` allows you to make these independent adjustments to its proportions.
+
+### Other Information
+This is the primary tool for non-uniform scaling in 3D.
+
+---
+
+## 588. ScreenCaptureToClipboard
+
+### Short Info
+Save a viewport image to the Clipboard.
+
+### Detailed Description
+The **ScreenCaptureToClipboard** command takes a screenshot of the active viewport and copies it to the Windows clipboard. This is a fast way to grab an image of your model to paste into another application.
+
+### Steps to use the command
+1.  Arrange your view as desired.
+2.  Run the command `ScreenCaptureToClipboard`.
+3.  The image is now on your clipboard.
+
+### Command Options & Toggles
+The options allow you to choose which viewport to capture and how the scale is handled.
+
+### Practical Use Cases
+* **Use Case 1 (Quick Updates):** You are in a chat with a client and want to quickly show them your progress. You can arrange the view, run this command, and then paste the image directly into the chat window.
+
+### Other Information
+This is a simple utility for creating quick screenshots. The `ViewCaptureToFile` command is used to save the image as a file.
+
+---
+
+## 589. ScreenCaptureToFile
+
+### Short Info
+Save a viewport image to a file.
+
+### Detailed Description
+The **ScreenCaptureToFile** command takes a screenshot of the active viewport and saves it as an image file (e.g., JPG, PNG).
+
+### Steps to use the command
+1.  Arrange your view as desired.
+2.  Run the command `ScreenCaptureToFile`.
+3.  A file save dialog will appear.
+4.  Choose a location, name, and file type for your image.
+
+### Command Options & Toggles
+The options allow you to control the resolution and other properties of the saved image.
+
+### Practical Use Cases
+* **Use Case 1 (Work-in-Progress Images):** You want to save a series of images to document the progress of your design. You can use this command to quickly save screenshots of your shaded viewport at various stages.
+
+### Other Information
+This is the companion command to `ScreenCaptureToClipboard`.
+
+---
+
+## 590. Section
+
+### Short Info
+Create a planar curve from the intersection of a cutting plane and objects.
+
+### Detailed Description
+The **Section** command creates cross-section curves by intersecting a cutting plane with one or more objects. It is similar to `Contour` but is used for creating a single cross-section at a specific location rather than a series of evenly spaced ones.
+
+### Steps to use the command
+1.  Select the object(s) to section.
+2.  Run the command `Section`.
+3.  At the **Start of section** prompt, pick a point.
+4.  At the **End of section** prompt, pick a second point to define the cutting plane.
+5.  A new curve will be created where the plane intersects the object(s).
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Creating a Profile Curve):** You have a complex, solid ring shank and you need to get the exact cross-section profile at one specific location. You can run `Section` and draw a line through the shank at that point. The command will generate the precise profile curve.
+* **Use Case 2 (Analysis):** You want to check the wall thickness of a hollow object. You can use `Section` to create a cross-section curve, which will show you the inner and outer profiles, making it easy to measure the thickness.
+
+### Other Information
+This is a fundamental tool for analysis and reverse-engineering.
+
+---
+
+## 591. SelAll
+
+### Short Info
+Select all objects.
+
+### Detailed Description
+The **SelAll** (Select All) command selects every visible object in the model.
+
+### Steps to use the command
+1.  Run the command `SelAll`.
+2.  All objects will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Note for better use
+The keyboard shortcut **Ctrl+A** is the universal and much faster way to perform this action.
+
+### Practical Use Cases
+* **Use Case 1 (Exporting a Model):** You want to export your entire model to another file format. You can use `SelAll` (Ctrl+A) to select everything before running the `Export` command.
+* **Use Case 2 (Grouping):** You want to group every object in your model together to move or scale it as a single unit.
+
+### Other Information
+This is a basic selection command.
+
+---
+
+## 592. SelBadObjects
+
+### Short Info
+Select all objects that are not valid.
+
+### Detailed Description
+The **SelBadObjects** (Select Bad Objects) command is a diagnostic tool. It runs the `Check` command on every object in the model and selects any object that is reported as being "bad" or invalid.
+
+### Steps to use the command
+1.  Run the command `SelBadObjects`.
+2.  If any bad objects are found, they will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Model Cleanup):** Before you export a file for 3D printing, it's a good practice to run `SelBadObjects`. If anything is selected, you know you have some geometry that needs to be repaired before you can proceed.
+
+### Other Information
+This is a key diagnostic and repair tool.
+
+---
+
+## 593. SelBlockInstance
+
+### Short Info
+Select all block instances.
+
+### Detailed Description
+The **SelBlockInstance** command is a selection tool that finds and selects all block instances in the model.
+
+### Steps to use the command
+1.  Run the command `SelBlockInstance`.
+2.  All block instances will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Finding All Blocks):** You want to quickly see which objects in your model are blocks. Running this command will highlight all of them.
+
+### Other Information
+This is a simple selection filter.
+
+---
+
+## 594. SelBlockInstanceNamed
+
+### Short Info
+Select block instances by name.
+
+### Detailed Description
+The **SelBlockInstanceNamed** command is a selection tool that selects all block instances that have a specific name.
+
+### Steps to use the command
+1.  Run the command `SelBlockInstanceNamed`.
+2.  A dialog box will appear listing all the block definitions in your file.
+3.  Select a name from the list.
+4.  All instances of that block will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Selecting All Gems of One Size):** You have a model with many different gemstone blocks ("Diamond_1.5mm", "Diamond_2.0mm", etc.). You want to select only the 1.5mm diamonds. You can run this command and choose "Diamond_1.5mm" from the list to select all of them instantly.
+
+### Other Information
+This is a very powerful and useful tool for working with complex models that use blocks for organization.
+
+---
+
+## 595. SelBoundary
+
+### Short Info
+Select objects based on a boundary curve.
+
+### Detailed Description
+The **SelBoundary** (Select Boundary) command is a selection tool that selects objects based on whether they are inside, outside, or crossing a closed boundary curve.
+
+### Steps to use the command
+1.  Draw a closed curve to act as the selection boundary.
+2.  Run the command `SelBoundary`.
+3.  At the **Select boundary curve** prompt, select the curve.
+4.  The command line will show options for the selection mode.
+5.  Choose an option (e.g., `Inside`). All objects inside the boundary will be selected.
+
+### Command Options & Toggles
+* **Mode (Inside/Outside/Crossing):** Sets the selection criteria.
+
+### Practical Use Cases
+* **Use Case 1 (Selecting Stones in a Region):** You have a pavé field of hundreds of stones and you need to select all the stones that fall within a specific, irregular area. You can draw a closed curve around that area and then use `SelBoundary` with the `Inside` mode to select only those stones.
+
+### Other Information
+This is a more precise selection tool than a simple window or crossing selection.
+
+---
+
+## 596. SelBrush
+
+### Short Info
+Select objects by painting.
+
+### Detailed Description
+The **SelBrush** command is a selection tool that allows you to select objects by "painting" over them with a circular brush.
+
+### Steps to use the command
+1.  Run the command `SelBrush`.
+2.  Click and drag the mouse in the viewport. A circle will appear at your cursor, and any object it touches will be selected.
+
+### Command Options & Toggles
+* **Radius:** Allows you to change the size of the brush.
+
+### Practical Use Cases
+* **Use Case 1 (Selecting from a Dense Field):** You have a very dense field of small objects (like pavé stones or mesh faces) and you need to select a specific, organic-shaped group of them. `SelBrush` allows you to "paint" your selection in a very intuitive, free-form way.
+
+### Other Information
+This is a useful tool for making complex, organic selections.
+
+---
+
+## 597. SelBrushPoints
+
+### Short Info
+Select points by painting.
+
+### Detailed Description
+The **SelBrushPoints** command is a selection tool that allows you to select control points or point objects by "painting" over them with a circular brush.
+
+### Steps to use the command
+1.  Turn on the control points for an object.
+2.  Run the command `SelBrushPoints`.
+3.  Click and drag the mouse. Any control point the brush touches will be selected.
+
+### Command Options & Toggles
+* **Radius:** Allows you to change the size of the brush.
+
+### Practical Use Cases
+* **Use Case 1 (Organic Sculpting):** You are editing a complex, organic surface with thousands of control points. You want to select a soft, circular group of points to pull up to create a dome. `SelBrushPoints` is the perfect tool for "painting" this soft selection.
+
+### Other Information
+This is the point-selection equivalent of the `SelBrush` command.
+
+---
+
+## 598. SelNamedViewWidget
+
+### Short Info
+Select named view camera widgets.
+
+### Detailed Description
+The **SelNamedViewWidget** command is a selection utility that finds and selects all the camera widgets that are created when you save a view with the `NamedView` command.
+
+### Steps to use the command
+1.  Run the command `SelNamedViewWidget`.
+2.  All named view camera widgets will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Cleaning a Scene):** You have saved many named views, and your viewports are now cluttered with camera widgets. This command allows you to select them all at once so you can hide or delete them.
+
+### Other Information
+This is a simple selection filter.
+
+---
+
+## 599. NamedView
+
+### Short Info
+Save and restore views.
+
+### Detailed Description
+(This is a duplicate entry in the source documentation list, pointing to the same command as #425). The **NamedView** command opens a panel that allows you to save and restore specific camera views. This includes the camera's position, rotation, target, and lens length. It's like creating a bookmark for a specific way of looking at your model.
+
+### Steps to use the command
+1.  Run the command `NamedView`.
+2.  The Named Views panel will open.
+3.  Arrange your viewport to the exact camera angle you want to save.
+4.  Click the "Save" icon in the panel and give the view a name.
+5.  To return to that view later, simply double-click its name in the list.
+
+### Command Options & Toggles
+All options are contained within the panel's interface.
+
+### Practical Use Cases
+* **Use Case 1 (Consistent Renders):** You have found the perfect "hero shot" perspective angle for rendering your ring. You use `NamedView` to save this as "Render_Angle_01." Now, you can make changes to your model, and whenever you are ready to render, you can instantly return to that exact same camera angle, ensuring all your renders are consistent.
+
+### Other Information
+This entry is a duplicate of command #425.
+
+---
+
+## 600. SelCaptives
+
+### Short Info
+Select captive objects.
+
+### Detailed Description
+The **SelCaptives** (Select Captives) command is a selection utility used with the `CageEdit` command. It selects the "captive" objects that are being controlled by a selected "control" cage object.
+
+### Steps to use the command
+1.  Run the command `SelCaptives`.
+2.  At the **Select control objects** prompt, select a cage object.
+3.  All the captive objects that are being deformed by that cage will be selected.
+
+### Command Options & Toggles
+This command has no options.
+
+### Practical Use Cases
+* **Use Case 1 (Managing Cage Edits):** You have a complex scene with multiple cage deformations active. You can't remember which ring is being controlled by which cage. You can use `SelCaptives` and click on a cage to instantly see which object(s) it is affecting.
+
+### Other Information
+This is a utility for managing `CageEdit` relationships.    
+
